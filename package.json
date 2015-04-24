@@ -46,6 +46,7 @@
     "deep-extend": "^0.3.2",
     "file-loader": "^0.8.1",
     "grunt": "^0.4.5",
+    "grunt-gh-pages": "^0.10.0",
     "html-loader": "^0.2.3",
     "imports-loader": "^0.6.3",
     "jshint": "^2.6.0",
