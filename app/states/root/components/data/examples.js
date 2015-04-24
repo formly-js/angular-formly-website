@@ -167,6 +167,12 @@ export default [
         title: 'Multi-Input',
         slug: 'multi-input',
         jsbinId: 'yuyawo'
+      },
+      {
+        title: 'Error Summary',
+        slug: 'error-summary',
+        jsbinId: 'gimipu',
+        keywords: 'validation ng-messages ng-animate ngMessages ngAnimate error wrapper'
       }
     ]
   },
