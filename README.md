@@ -1,3 +1,3 @@
-# angular-formly demo
+# angular-formly website
 
-The demo for the angular-formly project
+The website for [angular-formly](https://github.com/formly-js/angular-formly)
