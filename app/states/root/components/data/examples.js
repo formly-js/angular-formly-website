@@ -45,6 +45,11 @@ export default [
         jsbinId: 'haxenu'
       },
       {
+        title: 'Default Value',
+        slug: 'default-value',
+        jsbinId: 'kecaloq'
+      },
+      {
         title: 'Watchers',
         slug: 'watchers',
         jsbinId: 'kilihu'
