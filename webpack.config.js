@@ -3,9 +3,6 @@ var fs = require('fs');
 var webpack = require('webpack');
 var _ = require('lodash');
 
-var packageJsonString = fs.readFileSync('./node_modules/angular-formly/package.json', 'utf8');
-var packageJson = JSON.parse(packageJsonString);
-
 var dev = process.env.NODE_ENV !== 'production';
 
 module.exports = {
@@ -24,8 +21,7 @@ module.exports = {
 
   plugins: _.filter(_.union([
     new webpack.DefinePlugin({
-      ON_DEV: dev,
-      VERSION: JSON.stringify(packageJson.version)
+      ON_DEV: dev
     })
   ], dev ? [] : [
     new webpack.optimize.DedupePlugin(),
