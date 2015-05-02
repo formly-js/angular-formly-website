@@ -90,7 +90,8 @@ export default [
       {
         title: 'Default Options',
         slug: 'default-options',
-        jsbinId: 'medayo'
+        jsbinId: 'medayo',
+        keywords: 'optionsTypes defaultOptions custom types validation validators extends'
       },
       {
         title: 'Extending Types',
