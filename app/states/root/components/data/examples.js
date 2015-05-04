@@ -64,6 +64,11 @@ export default [
         title: 'Reset Model',
         slug: 'reset-model',
         jsbinId: 'fufado'
+      },
+      {
+        title: 'Form State',
+        slug: 'form-state',
+        jsbinId: 'xukure'
       }
     ]
   },
