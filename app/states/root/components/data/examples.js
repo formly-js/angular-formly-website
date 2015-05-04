@@ -140,6 +140,12 @@ export default [
         jsbinId: 'qesaqa'
       },
       {
+        title: 'UI Bootstrap Typeahead',
+        slug: 'ui-bootstrap-typeahead',
+        jsbinId: 'cekego',
+        keywords: 'autocomplete, typeahead, bootstrap'
+      },
+      {
         title: 'Async Select Options with Controller',
         slug: 'async-select-options-with-controller',
         jsbinId: 'jubiha'
