@@ -4,13 +4,14 @@ let internal = {};
 let stateResponders = {};
 
 let stateUtils = module.exports = {
-  resolveParameter: resolveParameter,
-  resolveIdentity: resolveIdentity,
-  getStates: getStates,
-  eventNavigate: eventNavigate,
-  eventHref: eventHref,
-  includesEvent: includesEvent,
-  includes: includes
+  resolveParameter,
+  resolveRequest,
+  resolveIdentity,
+  getStates,
+  eventNavigate,
+  eventHref,
+  includesEvent,
+  includes
 };
 
 
@@ -25,9 +26,7 @@ function stateUtilsProvider() {
 }
 
 module.exports.createProvider = ngModule => {
-  ngModule.provider('stateUtils', stateUtilsProvider)
-    .constant('EMPTY_OBJECT', {}).run(function(stateUtils) {
-    });
+  ngModule.provider('stateUtils', stateUtilsProvider);
 };
 
 function resolveParameter(param) {
@@ -42,6 +41,17 @@ function resolveIdentity(val) {
   };
 }
 
+
+function resolveRequest(url, config, [success, error] = []) {
+  return /*@ngInject*/ function httpGetWithParam($http) {
+    const promise = $http({url, config}).then(res => res.data);
+    if (success || error) {
+      return promise.then(success).catch(error);
+    } else {
+      return promise;
+    }
+  };
+}
 
 function getStates(rootStates) {
   // setup states

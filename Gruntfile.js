@@ -5,7 +5,7 @@ module.exports = function(grunt) {
       options: {
         message: 'Update ' + Date.now() + ' ' + getRandomEmoji()
       },
-      src: ['index.html', 'bundle.js', 'res/**/*', 'favicon.ico', 'CNAME']
+      src: ['index.html', 'bundle.js', 'res/**/*', 'favicon.ico', 'CNAME', 'examples.json']
     }
   });
 

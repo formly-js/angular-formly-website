@@ -3,7 +3,6 @@ const stateUtils = require('stateUtils');
 
 require('./components')(ngModule);
 
-const examples = require('./components/data/examples');
 const logoSrc = require('./components/resources/logo.png');
 
 module.exports = {
@@ -15,7 +14,7 @@ module.exports = {
   controllerAs: 'vm',
   children: require('./children'),
   resolve: {
-    examples: stateUtils.resolveIdentity(examples),
+    examples: stateUtils.resolveRequest('https://rawgit.com/formly-js/angular-formly-website/master/examples.json'),
     logoSrc: stateUtils.resolveIdentity(logoSrc)
   }
 };
