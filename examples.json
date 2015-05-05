@@ -180,7 +180,13 @@
         "title": "Error Summary",
         "slug": "error-summary",
         "jsbinId": "gimipu",
-        "keywords": "validation ng-messages ng-animate ngMessages ngAnimate error wrapper"
+        "keywords": "validation ng-messages ng-animate ngMessages ngAnimate error wrapper validators"
+      },
+      {
+        "title": "Multiple Errors",
+        "slug": "multiple-errors",
+        "jsbinId": "xiqotu",
+        "keywords": "validation ng-messages ngMessages error wrapper validators"
       }
     ]
   },
