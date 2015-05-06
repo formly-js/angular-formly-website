@@ -35,6 +35,12 @@
         "jsbinId": "kecaloq"
       },
       {
+        "title": "Hide Fields",
+        "slug": "hide-fields",
+        "jsbinId": "femepa",
+        "keywords": "hideExpression expressionProperties"
+      },
+      {
         "title": "Watchers",
         "slug": "watchers",
         "jsbinId": "kilihu"
