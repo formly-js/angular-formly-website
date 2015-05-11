@@ -35,6 +35,12 @@
         "jsbinId": "kecaloq"
       },
       {
+        "title": "Hide Fields",
+        "slug": "hide-fields",
+        "jsbinId": "femepa",
+        "keywords": "hideExpression expressionProperties"
+      },
+      {
         "title": "Watchers",
         "slug": "watchers",
         "jsbinId": "kilihu"
@@ -115,6 +121,12 @@
         "jsbinId": "ginere"
       },
       {
+        "title": "Advanced Layout (Flex)",
+        "slug": "advanced-layout-flex",
+        "jsbinId": "hehedo",
+        "keywords": "advanced layout, flex, soooooo awesome!"
+      },
+      {
         "title": "Advanced Layout",
         "slug": "advanced-layout",
         "jsbinId": "yutixo"
@@ -174,7 +186,13 @@
         "title": "Error Summary",
         "slug": "error-summary",
         "jsbinId": "gimipu",
-        "keywords": "validation ng-messages ng-animate ngMessages ngAnimate error wrapper"
+        "keywords": "validation ng-messages ng-animate ngMessages ngAnimate error wrapper validators"
+      },
+      {
+        "title": "Multiple Errors",
+        "slug": "multiple-errors",
+        "jsbinId": "xiqotu",
+        "keywords": "validation ng-messages ngMessages error wrapper validators"
       }
     ]
   },
