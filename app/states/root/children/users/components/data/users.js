@@ -29,9 +29,16 @@ export default [
   {
     name: 'DuckieDocs',
     slug: 'duckiedocs',
-    logo: require('./users-data/no-logo.png'),
+    logo: require('./users-data/duckiedocs/logo.png'),
     link: 'https://github.com/SchizoDuckie/DuckieDocs',
     description: require('./users-data/duckiedocs/description.md')
+  },
+  {
+    name: 'DuckieTV',
+    slug: 'duckietv',
+    logo: require('./users-data/duckietv/logo.png'),
+    link: 'http://duckie.tv/',
+    description: require('./users-data/duckietv/description.md')
   },
   {
     name: 'Add Your Project!',
