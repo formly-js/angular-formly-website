@@ -237,6 +237,12 @@
         "jsbinId": "biliras"
       },
       {
+        "title": "ngMask",
+        "slug": "ng-mask",
+        "jsbinId": "mevidi",
+        "keywords": "ngModelAttrs masked"
+      },
+      {
         "title": "OIM (Online Interface Mapper)",
         "slug": "oim",
         "jsbinId": "gemaje"
