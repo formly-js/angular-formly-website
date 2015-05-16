@@ -3,6 +3,9 @@ function YourCtrl() {
 
   vm.user = {};
 
+  // note, these field types will need to be
+  // pre-defined. See the pre-built and custom templates
+  // http://docs.angular-formly.com/v6.4.0/docs/custom-templates
   vm.userFields = [
     {
       key: 'email',
