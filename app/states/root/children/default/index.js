@@ -38,7 +38,7 @@ module.exports = {
       return `http://docs.angular-formly.com/docs/${slug}`;
     }
 
-    function baseWithSuffix(suffix) {
+    function baseWithSuffix(suffix = '') {
       return `${base}${suffix}`;
     }
 
