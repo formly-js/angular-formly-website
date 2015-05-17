@@ -197,6 +197,18 @@
     ]
   },
   {
+    "title": "Integrations",
+    "name": "integrations",
+    "examples": [
+      {
+        "title": "angular-translate",
+        "slug": "angular-translate",
+        "jsbinId": "hopoco",
+        "keywords": "i18n internationalization translation"
+      }
+    ]
+  },
+  {
     "title": "Advanced",
     "name": "advanced",
     "examples": [
