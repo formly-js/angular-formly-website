@@ -102,6 +102,56 @@
     ]
   },
   {
+    "title": "Integrations",
+    "name": "integrations",
+    "examples": [
+      {
+        "title": "angular-translate",
+        "slug": "angular-translate",
+        "jsbinId": "hopoco",
+        "keywords": "i18n internationalization translation"
+      },
+      {
+        "title": "UI Bootstrap Modal",
+        "slug": "ui-bootstrap-modal",
+        "jsbinId": "wobolu",
+        "keywords": "angular-ui-bootstrap modal"
+      },
+      {
+        "title": "UI Bootstrap Typeahead",
+        "slug": "ui-bootstrap-typeahead",
+        "jsbinId": "cekego",
+        "keywords": "autocomplete, typeahead, bootstrap"
+      },
+      {
+        "title": "Integrate with angular-wizard",
+        "slug": "angular-wizard",
+        "jsbinId": "sajeso"
+      }
+    ]
+  },
+  {
+    "title": "Bootstrap Specific",
+    "name": "bootstrap-specific",
+    "examples": [
+      {
+        "title": "Advanced Layout",
+        "slug": "advanced-layout",
+        "jsbinId": "yutixo"
+      },
+      {
+        "title": "Bootstrap Horizontal",
+        "slug": "bootstrap-horizontal",
+        "jsbinId": "qesaqa"
+      },
+      {
+        "title": "Input add-ons",
+        "slug": "input-add-ons",
+        "jsbinId": "ziwuha"
+      }
+    ]
+  },
+  {
     "title": "Other",
     "name": "other",
     "examples": [
@@ -127,22 +177,6 @@
         "keywords": "advanced layout, flex, soooooo awesome!"
       },
       {
-        "title": "Advanced Layout",
-        "slug": "advanced-layout",
-        "jsbinId": "yutixo"
-      },
-      {
-        "title": "Bootstrap Horizontal",
-        "slug": "bootstrap-horizontal",
-        "jsbinId": "qesaqa"
-      },
-      {
-        "title": "UI Bootstrap Typeahead",
-        "slug": "ui-bootstrap-typeahead",
-        "jsbinId": "cekego",
-        "keywords": "autocomplete, typeahead, bootstrap"
-      },
-      {
         "title": "Async Select Options with Controller",
         "slug": "async-select-options-with-controller",
         "jsbinId": "jubiha"
@@ -163,19 +197,9 @@
         "jsbinId": "buwoka"
       },
       {
-        "title": "Integrate with angular-wizard",
-        "slug": "angular-wizard",
-        "jsbinId": "sajeso"
-      },
-      {
         "title": "Toggle required field validation",
         "slug": "toggle-required",
         "jsbinId": "fuwaji"
-      },
-      {
-        "title": "Input add-ons",
-        "slug": "input-add-ons",
-        "jsbinId": "ziwuha"
       },
       {
         "title": "Multi-Input",
@@ -193,24 +217,6 @@
         "slug": "multiple-errors",
         "jsbinId": "xiqotu",
         "keywords": "validation ng-messages ngMessages error wrapper validators"
-      }
-    ]
-  },
-  {
-    "title": "Integrations",
-    "name": "integrations",
-    "examples": [
-      {
-        "title": "angular-translate",
-        "slug": "angular-translate",
-        "jsbinId": "hopoco",
-        "keywords": "i18n internationalization translation"
-      },
-      {
-        "title": "UI Bootstrap Modal",
-        "slug": "ui-bootstrap-modal",
-        "jsbinId": "wobolu",
-        "keywords": "angular-ui-bootstrap modal"
       }
     ]
   },
