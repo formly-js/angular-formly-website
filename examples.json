@@ -205,6 +205,12 @@
         "slug": "angular-translate",
         "jsbinId": "hopoco",
         "keywords": "i18n internationalization translation"
+      },
+      {
+        "title": "UI Bootstrap Modal",
+        "slug": "ui-bootstrap-modal",
+        "jsbinId": "wobolu",
+        "keywords": "angular-ui-bootstrap modal"
       }
     ]
   },
