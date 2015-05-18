@@ -124,9 +124,15 @@
         "keywords": "autocomplete, typeahead, bootstrap"
       },
       {
-        "title": "Integrate with angular-wizard",
+        "title": "angular-wizard",
         "slug": "angular-wizard",
         "jsbinId": "sajeso"
+      },
+      {
+        "title": "angular-xeditable",
+        "slug": "angular-xeditable",
+        "jsbinId": "bezetu",
+        "keywords": "read only, read-only"
       }
     ]
   },
