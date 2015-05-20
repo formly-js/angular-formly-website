@@ -71,6 +71,12 @@
         "title": "Table Rows",
         "slug": "bootstrap-table-rows",
         "jsbinId": "tuliju"
+      },
+      {
+        "title": "Select",
+        "slug": "select",
+        "jsbinId": "tiwizu",
+        "keywords": "bootstrap select"
       }
     ]
   },
