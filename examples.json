@@ -229,6 +229,12 @@
         "slug": "multiple-errors",
         "jsbinId": "xiqotu",
         "keywords": "validation ng-messages ngMessages error wrapper validators"
+      },
+      {
+        "title": "Filter Select",
+        "slug": "filter-select",
+        "jsbinId": "fisevu",
+        "keywords": "filter select expressionProperties expression properties model formState"
       }
     ]
   },
