@@ -139,6 +139,12 @@
         "slug": "angular-xeditable",
         "jsbinId": "bezetu",
         "keywords": "read only, read-only"
+      },
+      {
+        "title": "is.js",
+        "slug": "is-js",
+        "jsbinId": "vexoqa",
+        "keywords": "validation validators custom validation error"
       }
     ]
   },
