@@ -166,6 +166,11 @@
         "title": "Input add-ons",
         "slug": "input-add-ons",
         "jsbinId": "ziwuha"
+      },
+      {
+        "title": "Multiselect",
+        "slug": "multiselect",
+        "jsbinId": "lokoni"
       }
     ]
   },
