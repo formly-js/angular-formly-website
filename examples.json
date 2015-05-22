@@ -269,6 +269,11 @@
         "jsbinId": "sokube"
       },
       {
+        "title": "Custom IDs and names",
+        "slug": "custom-ids-and-names",
+        "jsbinId": "lodot"
+      },
+      {
         "title": "Custom controller & link",
         "slug": "custom-controller-and-link",
         "jsbinId": "gonode"
