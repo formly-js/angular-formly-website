@@ -1,0 +1,1 @@
+Mongolar uses angular-formly for all its form generations

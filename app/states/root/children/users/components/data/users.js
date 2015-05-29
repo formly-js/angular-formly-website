@@ -40,6 +40,13 @@ export default [
     description: require('./users-data/duckietv/description.md')
   },
   {
+    name: 'mongolar',
+    slug: 'mongolar',
+    logo: require('./users-data/no-logo.png'),
+    link: 'https://github.com/mongolar/mongolar',
+    description: require('./users-data/mongolar/description.md')
+  },
+  {
     name: 'Add Your Project!',
     slug: 'new',
     logo: require('./users-data/new/logo.png'),
