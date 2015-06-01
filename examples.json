@@ -130,6 +130,17 @@
         "keywords": "autocomplete, typeahead, bootstrap"
       },
       {
+        "title": "UI Select",
+        "slug": "ui-select",
+        "jsbinId": "weyeqe"
+      },
+      {
+        "title": "UI Grid",
+        "slug": "ui-grid",
+        "jsbinId": "qutosu",
+        "keywords": "table"
+      },
+      {
         "title": "angular-wizard",
         "slug": "angular-wizard",
         "jsbinId": "sajeso"
