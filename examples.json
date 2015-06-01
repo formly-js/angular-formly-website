@@ -141,6 +141,12 @@
         "keywords": "table"
       },
       {
+        "title": "UI Datepicker",
+        "slug": "ui-datepicker",
+        "jsbinId": "cupubo",
+        "keywords": "datepicker"
+      },
+      {
         "title": "angular-wizard",
         "slug": "angular-wizard",
         "jsbinId": "sajeso"
