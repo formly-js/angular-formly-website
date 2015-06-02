@@ -147,6 +147,12 @@
         "keywords": "datepicker"
       },
       {
+        "title": "UI Timepicker",
+        "slug": "ui-timepicker",
+        "jsbinId": "palesa",
+        "keywords": "timepicker"
+      },
+      {
         "title": "angular-wizard",
         "slug": "angular-wizard",
         "jsbinId": "sajeso"
