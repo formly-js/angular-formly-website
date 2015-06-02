@@ -6,11 +6,11 @@ individual links by the respective sections
 
 ## Requesting an Example
 
-[Watch video](https://www.youtube.com/watch?v=ik4I_Vb2Xh4&index=4&list=PLV5CVI1eNcJi7lVVIuNyRhEuck1Z007BH)
+[Watch video](https://youtu.be/lu-c5C1t4Sk?list=PLV5CVI1eNcJi7lVVIuNyRhEuck1Z007BH)
 
 ## Creating an Example
 
-[Watch video](https://www.youtube.com/watch?v=PWUduFgMN1g&index=3&list=PLV5CVI1eNcJi7lVVIuNyRhEuck1Z007BH)
+[Watch video](https://youtu.be/4dsXXTPET4A?list=PLV5CVI1eNcJi7lVVIuNyRhEuck1Z007BH)
 
 We LOVE examples! It's extremely helpful to everyone involved, so yes, please create examples :-) Follow these steps:
 
