@@ -155,7 +155,8 @@
       {
         "title": "angular-wizard",
         "slug": "angular-wizard",
-        "jsbinId": "sajeso"
+        "jsbinId": "sajeso",
+        "keywords": "multi-step multistep step form multiple"
       },
       {
         "title": "angular-xeditable",
