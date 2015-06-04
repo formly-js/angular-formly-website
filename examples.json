@@ -153,6 +153,11 @@
         "keywords": "timepicker"
       },
       {
+        "title": "Color Picker",
+        "slug": "colorpicker",
+        "jsbinId": "yogiye"
+      },
+      {
         "title": "angular-wizard",
         "slug": "angular-wizard",
         "jsbinId": "sajeso",
