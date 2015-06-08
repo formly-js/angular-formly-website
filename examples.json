@@ -101,9 +101,10 @@
         "jsbinId": "koweni"
       },
       {
-        "title": "Validating Options",
+        "title": "Validate Options w/ api-check",
         "slug": "validate-options",
-        "jsbinId": "qafefu"
+        "jsbinId": "qafefu",
+        "keywords": "api-check apiCheck"
       }
     ]
   },
