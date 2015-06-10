@@ -240,6 +240,12 @@
         "jsbinId": "jubiha"
       },
       {
+        "title": "Cascaded Select",
+        "slug": "cascaded-select",
+        "jsbinId": "jinaca",
+        "keywords": "cascaded dependant select combobox"
+      },
+      {
         "title": "JSON powered",
         "slug": "json-powered",
         "jsbinId": "pakivu"
