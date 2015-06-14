@@ -7,14 +7,16 @@ module.exports = ngModule => {
     return {
       restrict: 'E',
       scope: {
+        noSsl: '@',
         jsbinId: '@'
       },
       link: function(scope, el) {
+        const s = scope.noSSL === 'true' ? '' : 's';
         el.replaceWith(angular.element(`
           <div class="fd-jsbin-example">
             <iframe width="100%"
                     height="100%"
-                    src="http://jsbin.com/${scope.jsbinId}/embed?output">
+                    src="http${s}://jsbin.com/${scope.jsbinId}/embed?output">
             </iframe>
           </div>
         `));

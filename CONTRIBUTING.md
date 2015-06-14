@@ -18,6 +18,7 @@ We LOVE examples! It's extremely helpful to everyone involved, so yes, please cr
 2. Make sure it's awesome and clean
 3. Make a PR to [examples.json](https://github.com/formly-js/angular-formly-website/edit/master/examples.json)
   - The "jsbinId" is the unique part of the jsbin url ("panovu" is the jsbinId for the template)
+  - *IMPORTANT*: Unless you're a jsbin pro subscriber, please add `noSSL: true`. Or just [purchase a pro subscription](https://jsbin.com/upgrade) :-)
   - Feel free to add "keywords" to the entry, this will make it easier to find
   - The "slug" is what will appear in the URL for the example. Make it:
     1) easy to remember
