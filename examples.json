@@ -101,9 +101,10 @@
         "jsbinId": "koweni"
       },
       {
-        "title": "Validating Options",
+        "title": "Validate Options w/ api-check",
         "slug": "validate-options",
-        "jsbinId": "qafefu"
+        "jsbinId": "qafefu",
+        "keywords": "api-check apiCheck"
       }
     ]
   },
@@ -130,9 +131,38 @@
         "keywords": "autocomplete, typeahead, bootstrap"
       },
       {
+        "title": "UI Select",
+        "slug": "ui-select",
+        "jsbinId": "weyeqe"
+      },
+      {
+        "title": "UI Grid",
+        "slug": "ui-grid",
+        "jsbinId": "qutosu",
+        "keywords": "table"
+      },
+      {
+        "title": "UI Datepicker",
+        "slug": "ui-datepicker",
+        "jsbinId": "cupubo",
+        "keywords": "datepicker"
+      },
+      {
+        "title": "UI Timepicker",
+        "slug": "ui-timepicker",
+        "jsbinId": "palesa",
+        "keywords": "timepicker"
+      },
+      {
+        "title": "Color Picker",
+        "slug": "colorpicker",
+        "jsbinId": "yogiye"
+      },
+      {
         "title": "angular-wizard",
         "slug": "angular-wizard",
-        "jsbinId": "sajeso"
+        "jsbinId": "sajeso",
+        "keywords": "multi-step multistep step form multiple"
       },
       {
         "title": "angular-xeditable",
@@ -179,6 +209,11 @@
     "name": "other",
     "examples": [
       {
+        "title": "Testing",
+        "slug": "testing",
+        "jsbinId": "hayixo"
+      },
+      {
         "title": "Disable submit button",
         "slug": "disable-submit-button",
         "jsbinId": "kubeko"
@@ -203,6 +238,12 @@
         "title": "Async Select Options with Controller",
         "slug": "async-select-options-with-controller",
         "jsbinId": "jubiha"
+      },
+      {
+        "title": "Cascaded Select",
+        "slug": "cascaded-select",
+        "jsbinId": "jinaca",
+        "keywords": "cascaded dependant select combobox"
       },
       {
         "title": "JSON powered",
@@ -279,7 +320,7 @@
         "jsbinId": "gonode"
       },
       {
-        "title": "Repeating Seciton",
+        "title": "Repeating Section",
         "slug": "repeating-section",
         "jsbinId": "murule"
       }
