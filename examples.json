@@ -175,7 +175,14 @@
         "slug": "is-js",
         "jsbinId": "vexoqa",
         "keywords": "validation validators custom validation error"
-      }
+      },
+      {
+        "title": "nya-bootstrap-select",
+        "slug": "nya-bootstrap-select",
+        "jsbinId": "rekaci",
+        "noSSL": true,
+        "keywords": "select dropdown nya select options"
+      }      
     ]
   },
   {
