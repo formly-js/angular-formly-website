@@ -307,6 +307,13 @@
         "jsbinId": "gomoro"
       },
       {
+        "title": "Validation on form submit",
+        "slug": "validation-on-form-submit",
+        "jsbinId": "wohecek",
+        "noSSL": true,
+        "keywords": "validation, form, submit"
+      },
+      {
         "title": "Template Wrappers",
         "slug": "template-wrappers",
         "jsbinId": "gomoro"
