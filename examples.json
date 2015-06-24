@@ -113,6 +113,12 @@
     "name": "integrations",
     "examples": [
       {
+        "title": "angular-material",
+        "slug": "angular-material",
+        "jsbinId": "govezi",
+        "keywords": "material design"
+      },
+      {
         "title": "angular-translate",
         "slug": "angular-translate",
         "jsbinId": "hopoco",
