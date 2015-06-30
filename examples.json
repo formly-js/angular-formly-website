@@ -44,6 +44,12 @@
         "title": "Watchers",
         "slug": "watchers",
         "jsbinId": "kilihu"
+      },
+      {
+        "title": "onKeypress",
+        "slug": "on-keypress",
+        "jsbinId": "hecece",
+        "keywords": "ng-keypress ng-keyup ng-keydown ng-click"
       }
     ]
   },
