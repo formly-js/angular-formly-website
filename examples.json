@@ -204,7 +204,8 @@
       {
         "title": "Advanced Layout",
         "slug": "advanced-layout",
-        "jsbinId": "yutixo"
+        "jsbinId": "yutixo",
+        "keywords": "fieldGroup field group"
       },
       {
         "title": "Bootstrap Horizontal",
@@ -251,7 +252,7 @@
         "title": "Advanced Layout (Flex)",
         "slug": "advanced-layout-flex",
         "jsbinId": "hehedo",
-        "keywords": "advanced layout, flex, soooooo awesome!"
+        "keywords": "advanced layout, flex, soooooo awesome!, fieldGroup field group"
       },
       {
         "title": "Async Select Options with Controller",
