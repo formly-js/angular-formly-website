@@ -50,6 +50,12 @@
         "slug": "on-keypress",
         "jsbinId": "hecece",
         "keywords": "ng-keypress ng-keyup ng-keydown ng-click"
+      },
+      {
+        "title": "templateOptions.focus",
+        "slug": "focus",
+        "jsbinId": "nemika",
+        "keywords": "focus on-focus ng-focus onFocus"
       }
     ]
   },
