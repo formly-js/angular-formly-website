@@ -313,6 +313,12 @@
         "slug": "filter-select",
         "jsbinId": "fisevu",
         "keywords": "filter select expressionProperties expression properties model formState"
+      },
+      {
+        "title": "Button Type",
+        "slug": "button",
+        "jsbinId": "puvaxa",
+        "keywords": "api-check apiCheck custom type onClick on-click"
       }
     ]
   },
