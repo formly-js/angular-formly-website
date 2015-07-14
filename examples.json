@@ -41,6 +41,12 @@
         "keywords": "hideExpression expressionProperties"
       },
       {
+        "title": "modelOptions",
+        "slug": "model-options",
+        "jsbinId": "zeroyu",
+        "keywords": "ng-model-options model options"
+      },
+      {
         "title": "Watchers",
         "slug": "watchers",
         "jsbinId": "kilihu"
