@@ -137,6 +137,12 @@
         "keywords": "material design"
       },
       {
+        "title": "angular-material-lite",
+        "slug": "angular-material-lite",
+        "jsbinId": "bujuwi",
+        "keywords": "material design lite"
+      },
+      {
         "title": "angular-translate",
         "slug": "angular-translate",
         "jsbinId": "hopoco",
