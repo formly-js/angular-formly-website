@@ -218,7 +218,14 @@
         "jsbinId": "rekaci",
         "noSSL": true,
         "keywords": "select dropdown nya select options"
-      }      
+      },
+      {
+        "title": "Dropzone.js",
+        "slug": "dropzone-js",
+        "jsbinId": "neyoko",
+        "noSSL": true,
+        "keywords": "fileupload file upload dropzone"
+      }
     ]
   },
   {
