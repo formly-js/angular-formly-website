@@ -286,6 +286,12 @@
         "keywords": "advanced layout, flex, soooooo awesome!, fieldGroup field group"
       },
       {
+        "title": "Nested Forms (sans fieldGroup)",
+        "slug": "nested-formly-forms",
+        "jsbinId": "zaqeke",
+        "keywords": "nesting, formly, forms, custom, type, wrapper, sans fieldGroup, data"
+      },
+      {
         "title": "Async Select Options with Controller",
         "slug": "async-select-options-with-controller",
         "jsbinId": "jubiha"
