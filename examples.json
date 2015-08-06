@@ -123,7 +123,13 @@
         "slug": "validate-options",
         "jsbinId": "qafefu",
         "keywords": "api-check apiCheck"
-      }
+      },
+      {
++        "title": "ng-currency with maxlength",
++        "slug": "ng-currency-maxlength",
++        "jsbinId": "kazuyubiqu",
++        "keywords": "ng-currency, validation, custom-validation, maxlength"
++      },
     ]
   },
   {
