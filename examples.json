@@ -190,6 +190,12 @@
         "keywords": "timepicker"
       },
       {
+        "title": "UI Mask",
+        "slug": "ui-mask",
+        "jsbinId": "tegibe",
+        "keywords": "masked-input"
+      },
+      {
         "title": "Color Picker",
         "slug": "colorpicker",
         "jsbinId": "yogiye"
