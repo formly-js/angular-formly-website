@@ -123,13 +123,7 @@
         "slug": "validate-options",
         "jsbinId": "qafefu",
         "keywords": "api-check apiCheck"
-      },
-      {
-+        "title": "ng-currency with maxlength",
-+        "slug": "ng-currency-maxlength",
-+        "jsbinId": "kazuyubiqu",
-+        "keywords": "ng-currency, validation, custom-validation, maxlength"
-+      },
+      }
     ]
   },
   {
@@ -231,7 +225,13 @@
         "jsbinId": "neyoko",
         "noSSL": true,
         "keywords": "fileupload file upload dropzone"
-      }
+      },
+      {
+        "title": "ng-currency with maxlength",
+        "slug": "ng-currency-maxlength",
+        "jsbinId": "legiqehuvi",
+        "keywords": "ng-currency, validation, custom-validation, maxlength"
+      },
     ]
   },
   {
