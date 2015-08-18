@@ -41,9 +41,27 @@
         "keywords": "hideExpression expressionProperties"
       },
       {
+        "title": "modelOptions",
+        "slug": "model-options",
+        "jsbinId": "zeroyu",
+        "keywords": "ng-model-options model options"
+      },
+      {
         "title": "Watchers",
         "slug": "watchers",
         "jsbinId": "kilihu"
+      },
+      {
+        "title": "onKeypress",
+        "slug": "on-keypress",
+        "jsbinId": "hecece",
+        "keywords": "ng-keypress ng-keyup ng-keydown ng-click"
+      },
+      {
+        "title": "templateOptions.focus",
+        "slug": "focus",
+        "jsbinId": "nemika",
+        "keywords": "focus on-focus ng-focus onFocus"
       }
     ]
   },
@@ -113,10 +131,28 @@
     "name": "integrations",
     "examples": [
       {
+        "title": "angular-material",
+        "slug": "angular-material",
+        "jsbinId": "govezi",
+        "keywords": "material design"
+      },
+      {
+        "title": "angular-material-lite",
+        "slug": "angular-material-lite",
+        "jsbinId": "bujuwi",
+        "keywords": "material design lite"
+      },
+      {
         "title": "angular-translate",
         "slug": "angular-translate",
         "jsbinId": "hopoco",
         "keywords": "i18n internationalization translation"
+      },
+      {
+        "title": "UI Bootstrap Tabs",
+        "slug": "ui-bootstrap-tabs",
+        "jsbinId": "kejuhu",
+        "keywords": "angular-ui-bootstrap tabs"
       },
       {
         "title": "UI Bootstrap Modal",
@@ -133,7 +169,7 @@
       {
         "title": "UI Select",
         "slug": "ui-select",
-        "jsbinId": "weyeqe"
+        "jsbinId": "hakotah"
       },
       {
         "title": "UI Grid",
@@ -152,6 +188,12 @@
         "slug": "ui-timepicker",
         "jsbinId": "palesa",
         "keywords": "timepicker"
+      },
+      {
+        "title": "UI Mask",
+        "slug": "ui-mask",
+        "jsbinId": "hasosog",
+        "keywords": "mask"
       },
       {
         "title": "Color Picker",
@@ -175,6 +217,26 @@
         "slug": "is-js",
         "jsbinId": "vexoqa",
         "keywords": "validation validators custom validation error"
+      },
+      {
+        "title": "nya-bootstrap-select",
+        "slug": "nya-bootstrap-select",
+        "jsbinId": "rekaci",
+        "noSSL": true,
+        "keywords": "select dropdown nya select options"
+      },
+      {
+        "title": "Dropzone.js",
+        "slug": "dropzone-js",
+        "jsbinId": "neyoko",
+        "noSSL": true,
+        "keywords": "fileupload file upload dropzone"
+      },
+      {
+        "title": "ng-currency with maxlength",
+        "slug": "ng-currency-maxlength",
+        "jsbinId": "norujirolu",
+        "keywords": "ng-currency, validation, custom-validation, maxlength"
       }
     ]
   },
@@ -185,12 +247,13 @@
       {
         "title": "Advanced Layout",
         "slug": "advanced-layout",
-        "jsbinId": "yutixo"
+        "jsbinId": "yutixo",
+        "keywords": "fieldGroup field group"
       },
       {
         "title": "Bootstrap Horizontal",
         "slug": "bootstrap-horizontal",
-        "jsbinId": "qesaqa"
+        "jsbinId": "hapava"
       },
       {
         "title": "Input add-ons",
@@ -232,7 +295,13 @@
         "title": "Advanced Layout (Flex)",
         "slug": "advanced-layout-flex",
         "jsbinId": "hehedo",
-        "keywords": "advanced layout, flex, soooooo awesome!"
+        "keywords": "advanced layout, flex, soooooo awesome!, fieldGroup field group"
+      },
+      {
+        "title": "Nested Forms (sans fieldGroup)",
+        "slug": "nested-formly-forms",
+        "jsbinId": "zaqeke",
+        "keywords": "nesting, formly, forms, custom, type, wrapper, sans fieldGroup, data"
       },
       {
         "title": "Async Select Options with Controller",
@@ -258,7 +327,7 @@
       {
         "title": "Async validation of unique value",
         "slug": "unique-value-async-validation",
-        "jsbinId": "buwoka"
+        "jsbinId": "wujapi"
       },
       {
         "title": "Toggle required field validation",
@@ -287,6 +356,12 @@
         "slug": "filter-select",
         "jsbinId": "fisevu",
         "keywords": "filter select expressionProperties expression properties model formState"
+      },
+      {
+        "title": "Button Type",
+        "slug": "button",
+        "jsbinId": "puvaxa",
+        "keywords": "api-check apiCheck custom type onClick on-click"
       }
     ]
   },
@@ -298,6 +373,13 @@
         "title": "Custom Validators",
         "slug": "validators",
         "jsbinId": "gomoro"
+      },
+      {
+        "title": "Validation on form submit",
+        "slug": "validation-on-form-submit",
+        "jsbinId": "wohecek",
+        "noSSL": true,
+        "keywords": "validation, form, submit"
       },
       {
         "title": "Template Wrappers",
