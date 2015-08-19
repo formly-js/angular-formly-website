@@ -311,9 +311,8 @@
       {
         "title": "Cascaded Select",
         "slug": "cascaded-select",
-        "jsbinId": "jinaca",
-        "keywords": "cascaded dependant select combobox",
-        "noSSL": true
+        "jsbinId": "dimojo",
+        "keywords": "cascaded dependant select combobox"
       },
       {
         "title": "JSON powered",
