@@ -11,7 +11,8 @@ module.exports = ngModule => {
         jsbinId: '@'
       },
       link: function(scope, el) {
-        const s = scope.noSSL === 'true' ? '' : 's';
+        // const s = scope.noSSL === 'true' ? '' : 's';
+        const s = ''; // maybe eventually we'll add HTTPS support again...
         el.replaceWith(angular.element(`
           <div class="fd-jsbin-example">
             <iframe width="100%"
