@@ -186,7 +186,8 @@
       {
         "title": "UI Datepicker",
         "slug": "ui-datepicker",
-        "jsbinId": "cupubo",
+        "jsbinId": "yolipi",
+        "noSSL": true,
         "keywords": "datepicker"
       },
       {
