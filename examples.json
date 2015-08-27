@@ -424,6 +424,12 @@
         "jsbinId": "biliras"
       },
       {
+        "title": "fieldTransform",
+        "slug": "field-transform",
+        "jsbinId": "kaluya",
+        "keywords": "parsers is.js validators messages"
+      },
+      {
         "title": "ngMask",
         "slug": "ng-mask",
         "jsbinId": "mevidi",
