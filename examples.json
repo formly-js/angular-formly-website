@@ -62,6 +62,12 @@
         "slug": "focus",
         "jsbinId": "nemika",
         "keywords": "focus on-focus ng-focus onFocus"
+      },
+      {
+        "title": "parsers and formatters",
+        "slug": "parsers-and-formatters",
+        "jsbinId": "luwoso",
+        "keywords": "change model update different"
       }
     ]
   },
