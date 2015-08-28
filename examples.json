@@ -285,7 +285,7 @@
       },
       {
         "title": "Production Tips",
-        "slig": "production-tips",
+        "slug": "production-tips",
         "jsbinId": "kaqaqa",
         "keywords": "disable apiCheck api-check warnings performance"
       },
