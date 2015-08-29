@@ -123,12 +123,6 @@
         "title": "Extending Types",
         "slug": "extending-types",
         "jsbinId": "koweni"
-      },
-      {
-        "title": "Validate Options w/ api-check",
-        "slug": "validate-options",
-        "jsbinId": "qafefu",
-        "keywords": "api-check apiCheck"
       }
     ]
   },
@@ -180,13 +174,13 @@
       {
         "title": "UI Grid",
         "slug": "ui-grid",
-        "jsbinId": "qutosu",
+        "jsbinId": "doguba",
         "keywords": "table"
       },
       {
         "title": "UI Datepicker",
         "slug": "ui-datepicker",
-        "jsbinId": "yolipi",
+        "jsbinId": "cadaga",
         "noSSL": true,
         "keywords": "datepicker"
       },
@@ -228,21 +222,19 @@
       {
         "title": "nya-bootstrap-select",
         "slug": "nya-bootstrap-select",
-        "jsbinId": "rekaci",
-        "noSSL": true,
+        "jsbinId": "vovile",
         "keywords": "select dropdown nya select options"
       },
       {
         "title": "Dropzone.js",
         "slug": "dropzone-js",
-        "jsbinId": "neyoko",
-        "noSSL": true,
+        "jsbinId": "gemebi",
         "keywords": "fileupload file upload dropzone"
       },
       {
         "title": "ng-currency with maxlength",
         "slug": "ng-currency-maxlength",
-        "jsbinId": "norujirolu",
+        "jsbinId": "toqoha",
         "keywords": "ng-currency, validation, custom-validation, maxlength"
       }
     ]
@@ -265,7 +257,7 @@
       {
         "title": "Input add-ons",
         "slug": "input-add-ons",
-        "jsbinId": "ziwuha"
+        "jsbinId": "tiluhi"
       },
       {
         "title": "Multiselect",
@@ -345,7 +337,7 @@
       {
         "title": "Toggle required field validation",
         "slug": "toggle-required",
-        "jsbinId": "fuwaji"
+        "jsbinId": "mewosa"
       },
       {
         "title": "Multi-Input",
