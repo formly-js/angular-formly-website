@@ -263,6 +263,12 @@
         "title": "Multiselect",
         "slug": "multiselect",
         "jsbinId": "lokoni"
+      },
+      {
+        "title": "Grouped Typeahead",
+        "slug": "grouped-typeahead",
+        "jsbinId": "rayake",
+        "keywords": "typeahead, grouped-typeahead"
       }
     ]
   },
