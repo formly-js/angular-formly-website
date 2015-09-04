@@ -381,6 +381,12 @@
     "name": "advanced",
     "examples": [
       {
+        "title": "Dot notation `key`",
+        "slug": "dot-notation",
+        "jsbinId": "baxokit",
+        "keywords": "ng-model-options gettersetter"
+      },
+      {
         "title": "Custom Validators",
         "slug": "validators",
         "jsbinId": "gomoro"
