@@ -381,10 +381,10 @@
     "name": "advanced",
     "examples": [
       {
-        "title": "Dot notation `key`",
-        "slug": "dot-notation",
-        "jsbinId": "baxokit",
-        "keywords": "ng-model-options gettersetter"
+        "title": "Nested property keys",
+        "slug": "nested-property-keys",
+        "jsbinId": "qewore",
+        "keywords": "dot notation arrays"
       },
       {
         "title": "Custom Validators",
