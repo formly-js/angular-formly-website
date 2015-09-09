@@ -441,6 +441,12 @@
         "keywords": "parsers is.js validators messages"
       },
       {
+        "title": "Remove property on hide",
+        "slug": "remove-property-on-hide",
+        "jsbinId": "sufate"
+        "keywords": "hideExpression remove delete fieldTransform"
+      },
+      {
         "title": "ngMask",
         "slug": "ng-mask",
         "jsbinId": "mevidi",
