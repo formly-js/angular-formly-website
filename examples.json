@@ -123,12 +123,6 @@
         "title": "Extending Types",
         "slug": "extending-types",
         "jsbinId": "koweni"
-      },
-      {
-        "title": "Validate Options w/ api-check",
-        "slug": "validate-options",
-        "jsbinId": "qafefu",
-        "keywords": "api-check apiCheck"
       }
     ]
   },
@@ -139,7 +133,7 @@
       {
         "title": "angular-material",
         "slug": "angular-material",
-        "jsbinId": "govezi",
+        "jsbinId": "menequ",
         "keywords": "material design"
       },
       {
@@ -180,13 +174,14 @@
       {
         "title": "UI Grid",
         "slug": "ui-grid",
-        "jsbinId": "qutosu",
+        "jsbinId": "doguba",
         "keywords": "table"
       },
       {
         "title": "UI Datepicker",
         "slug": "ui-datepicker",
-        "jsbinId": "cupubo",
+        "jsbinId": "cadaga",
+        "noSSL": true,
         "keywords": "datepicker"
       },
       {
@@ -227,21 +222,19 @@
       {
         "title": "nya-bootstrap-select",
         "slug": "nya-bootstrap-select",
-        "jsbinId": "rekaci",
-        "noSSL": true,
+        "jsbinId": "vovile",
         "keywords": "select dropdown nya select options"
       },
       {
         "title": "Dropzone.js",
         "slug": "dropzone-js",
-        "jsbinId": "neyoko",
-        "noSSL": true,
+        "jsbinId": "gemebi",
         "keywords": "fileupload file upload dropzone"
       },
       {
         "title": "ng-currency with maxlength",
         "slug": "ng-currency-maxlength",
-        "jsbinId": "norujirolu",
+        "jsbinId": "toqoha",
         "keywords": "ng-currency, validation, custom-validation, maxlength"
       }
     ]
@@ -264,12 +257,18 @@
       {
         "title": "Input add-ons",
         "slug": "input-add-ons",
-        "jsbinId": "ziwuha"
+        "jsbinId": "tiluhi"
       },
       {
         "title": "Multiselect",
         "slug": "multiselect",
         "jsbinId": "lokoni"
+      },
+      {
+        "title": "Grouped Typeahead",
+        "slug": "grouped-typeahead",
+        "jsbinId": "rayake",
+        "keywords": "typeahead, grouped-typeahead"
       }
     ]
   },
@@ -281,6 +280,12 @@
         "title": "Testing",
         "slug": "testing",
         "jsbinId": "hayixo"
+      },
+      {
+        "title": "Production Tips",
+        "slug": "production-tips",
+        "jsbinId": "kaqaqa",
+        "keywords": "disable apiCheck api-check warnings performance"
       },
       {
         "title": "Disable submit button",
@@ -338,7 +343,7 @@
       {
         "title": "Toggle required field validation",
         "slug": "toggle-required",
-        "jsbinId": "fuwaji"
+        "jsbinId": "mewosa"
       },
       {
         "title": "Multi-Input",
@@ -376,6 +381,12 @@
     "name": "advanced",
     "examples": [
       {
+        "title": "Nested property keys",
+        "slug": "nested-property-keys",
+        "jsbinId": "qewore",
+        "keywords": "dot notation arrays"
+      },
+      {
         "title": "Custom Validators",
         "slug": "validators",
         "jsbinId": "gomoro"
@@ -383,8 +394,7 @@
       {
         "title": "Validation on form submit",
         "slug": "validation-on-form-submit",
-        "jsbinId": "wohecek",
-        "noSSL": true,
+        "jsbinId": "yatufi",
         "keywords": "validation, form, submit"
       },
       {
@@ -428,6 +438,12 @@
         "slug": "field-transform",
         "jsbinId": "kaluya",
         "keywords": "parsers is.js validators messages"
+      },
+      {
+        "title": "Remove property on hide",
+        "slug": "remove-property-on-hide",
+        "jsbinId": "sufate",
+        "keywords": "hideExpression remove delete fieldTransform"
       },
       {
         "title": "ngMask",
