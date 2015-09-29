@@ -15,12 +15,7 @@
       <div ng-repeat="example in category.examples | filter:vm.search">
         <a class="example-link" fd-event-navigate="exampleSelected(example)" ng-class="vm.exampleClass(example)">{{example.title}}</a>
       </div>
-      <hr/>
+      <hr ng-if="!$last"/>
     </div>
-  </div>
-  <div>
-    <a href="http://help.angular-formly.com">
-      Get Help
-    </a>
   </div>
 </div>
