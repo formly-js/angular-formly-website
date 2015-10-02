@@ -172,6 +172,11 @@
         "jsbinId": "hakotah"
       },
       {
+        "title": "UI Select (Angular 1.4+)",
+        "slug": "ui-select-angular-1-4",
+        "jsbinId": "qozena"
+      },
+      {
         "title": "UI Grid",
         "slug": "ui-grid",
         "jsbinId": "doguba",
