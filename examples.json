@@ -426,6 +426,12 @@
         "title": "Repeating Section",
         "slug": "repeating-section",
         "jsbinId": "murule"
+      },
+      {
+        "title": "Nonstandard $interpolate symbols",
+        "slug": "nonstandard-interpolate-symbols",
+        "jsbinId": "yarefo",
+        "keywords": "interpolation markup interpolateProvider template"
       }
     ]
   },
