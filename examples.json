@@ -282,6 +282,11 @@
     "name": "other",
     "examples": [
       {
+        "title": "api-check",
+        "slug": "api-check",
+        "jsbinId": "biwawa"
+      },
+      {
         "title": "Testing",
         "slug": "testing",
         "jsbinId": "hayixo"
