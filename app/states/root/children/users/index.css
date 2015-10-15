@@ -4,4 +4,9 @@
     float: left;
     padding: 15px;
   }
+  .user-name {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 14px;
+  }
 }

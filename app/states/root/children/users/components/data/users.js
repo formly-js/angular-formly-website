@@ -47,6 +47,13 @@ export default [
     description: require('./users-data/mongolar/description.md')
   },
   {
+    name: 'tillr',
+    slug: 'tillr',
+    logo: require('./users-data/tillr/logo.png'),
+    link: 'http://tillr.io',
+    description: require('./users-data/tillr/description.md')
+  },
+  {
     name: 'Add Your Project!',
     slug: 'new',
     logo: require('./users-data/new/logo.png'),
