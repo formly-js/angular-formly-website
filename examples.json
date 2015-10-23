@@ -241,6 +241,11 @@
         "slug": "ng-currency-maxlength",
         "jsbinId": "toqoha",
         "keywords": "ng-currency, validation, custom-validation, maxlength"
+      },
+      {
+        "title": "angular-credit-card",
+        "slug": "angular-credit-card",
+        "jsbinId": "hijagut"
       }
     ]
   },
