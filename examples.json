@@ -246,6 +246,13 @@
         "title": "angular-credit-card",
         "slug": "angular-credit-card",
         "jsbinId": "hijagut"
+      },
+      {
+        "title": "angularjs-slider",
+        "slug": "angularjs-slider",
+        "jsbinId": "vudameneko",
+        "keywords": "slider range-slider",
+        "noSSL": true
       }
     ]
   },
