@@ -54,6 +54,13 @@ export default [
     description: require('./users-data/tillr/description.md')
   },
   {
+    name: 'GroupRaise',
+    slug: 'groupraise',
+    logo: require('./users-data/groupraise/logo.png'),
+    link: 'http://groupraise.com',
+    description: require('./users-data/groupraise/description.md')
+  },
+  {
     name: 'Add Your Project!',
     slug: 'new',
     logo: require('./users-data/new/logo.png'),

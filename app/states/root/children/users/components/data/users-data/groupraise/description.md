@@ -1,0 +1,3 @@
+GroupRaise helps restaurants host meals where groups of 20-200+ diners in exchange for donating a percentage of the sales to a charitable cause or organization. These meals are organized, found, and marketed online. The organization process, which could take weeks before or in some cases was not even possible, now takes a few clicks on GroupRaise.com.
+
+GroupRaise improves all aspects of the fundraising experience, but a huge part of this is saving people time. Having clean, interactive, usable forms is critical to this, and (as of 2016) we are midway through transitioning all of our forms to angular-formly!
