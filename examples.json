@@ -196,6 +196,13 @@
         "keywords": "timepicker"
       },
       {
+        "title": "UI tinymce",
+        "slug": "ui-tinymce",
+        "jsbinId": "lalosi",
+        "noSSL": true,
+        "keywords": "tinymce, ui.tinymce"
+      },
+      {
         "title": "UI Mask",
         "slug": "ui-mask",
         "jsbinId": "hasosog",
