@@ -19,8 +19,8 @@
     }
   ],
   "scripts": {
-    "build": "NODE_ENV=production webpack --config webpack.config.js --colors --progress",
-    "start": "NODE_ENV=development webpack-dev-server --colors --progress",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js --colors --progress",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --colors --progress",
     "add-example": "npm run build && git commit -am 'Adding example' && git push && npm run deploy",
     "deploy": "grunt deploy"
   },
@@ -41,6 +41,7 @@
     "autoprefixer-core": "^5.1.7",
     "babel-core": "^4.4.6",
     "babel-loader": "^4.0.0",
+    "cross-env": "^1.0.7",
     "css-loader": "^0.9.1",
     "csswring": "^3.0.2",
     "deep-extend": "^0.3.2",
