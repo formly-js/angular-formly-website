@@ -19,8 +19,8 @@
     }
   ],
   "scripts": {
-    "build": "NODE_ENV=production webpack --config webpack.config.js --colors --progress",
-    "start": "NODE_ENV=development webpack-dev-server --colors --progress",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js --colors --progress",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --colors --progress",
     "add-example": "npm run build && git commit -am 'Adding example' && git push && npm run deploy",
     "deploy": "grunt deploy"
   },
@@ -29,18 +29,19 @@
     "angular": "^1.3.10",
     "angular-aria": "^1.3.10",
     "angular-formly": "^6.1.0",
-    "angular-highlightjs": "^0.4.1",
+    "highlight.js": "^8.4.0",
+    "angular-highlightjs": "0.4.1",
     "angular-ui-router": "^0.2.13",
     "angulartics": "^0.17.2",
     "api-check": "^7.0.0",
-    "bootstrap": "^3.3.2",
-    "highlight.js": "^8.4.0"
+    "bootstrap": "^3.3.2"
   },
   "devDependencies": {
     "angular-animate": "^1.3.11",
     "autoprefixer-core": "^5.1.7",
     "babel-core": "^4.4.6",
     "babel-loader": "^4.0.0",
+    "cross-env": "^1.0.7",
     "css-loader": "^0.9.1",
     "csswring": "^3.0.2",
     "deep-extend": "^0.3.2",
@@ -55,7 +56,7 @@
     "lodash": "^2.4.1",
     "markdown-loader": "^0.1.2",
     "ng-annotate": "^0.15.1",
-    "ng-annotate-loader": "0.0.2",
+    "ng-annotate-loader": "^0.0.2",
     "postcss": "^4.0.6",
     "postcss-loader": "^0.3.0",
     "postcss-nested": "^0.2.2",
