@@ -151,25 +151,25 @@
       {
         "title": "UI Bootstrap Tabs",
         "slug": "ui-bootstrap-tabs",
-        "jsbinId": "kejuhu",
+        "jsbinId": "menegexezo",
         "keywords": "angular-ui-bootstrap tabs"
       },
       {
         "title": "UI Bootstrap Modal",
         "slug": "ui-bootstrap-modal",
-        "jsbinId": "wobolu",
+        "jsbinId": "qateqav",
         "keywords": "angular-ui-bootstrap modal"
       },
       {
         "title": "UI Bootstrap Typeahead",
         "slug": "ui-bootstrap-typeahead",
-        "jsbinId": "cekego",
+        "jsbinId": "lurira",
         "keywords": "autocomplete, typeahead, bootstrap"
       },
       {
         "title": "UI Select",
         "slug": "ui-select",
-        "jsbinId": "hakotah"
+        "jsbinId": "kanoqi"
       },
       {
         "title": "UI Select (Angular 1.4+)",
@@ -179,13 +179,13 @@
       {
         "title": "UI Grid",
         "slug": "ui-grid",
-        "jsbinId": "doguba",
+        "jsbinId": "netafi",
         "keywords": "table"
       },
       {
         "title": "UI Datepicker",
         "slug": "ui-datepicker",
-        "jsbinId": "cadaga",
+        "jsbinId": "zanarah",
         "noSSL": true,
         "keywords": "datepicker"
       },
@@ -194,6 +194,13 @@
         "slug": "ui-timepicker",
         "jsbinId": "palesa",
         "keywords": "timepicker"
+      },
+      {
+        "title": "UI tinymce",
+        "slug": "ui-tinymce",
+        "jsbinId": "lalosi",
+        "noSSL": true,
+        "keywords": "tinymce, ui.tinymce"
       },
       {
         "title": "UI Mask",
@@ -209,7 +216,7 @@
       {
         "title": "angular-wizard",
         "slug": "angular-wizard",
-        "jsbinId": "sajeso",
+        "jsbinId": "fexuji",
         "keywords": "multi-step multistep step form multiple"
       },
       {
@@ -241,6 +248,18 @@
         "slug": "ng-currency-maxlength",
         "jsbinId": "toqoha",
         "keywords": "ng-currency, validation, custom-validation, maxlength"
+      },
+      {
+        "title": "angular-credit-card",
+        "slug": "angular-credit-card",
+        "jsbinId": "hijagut"
+      },
+      {
+        "title": "angularjs-slider",
+        "slug": "angularjs-slider",
+        "jsbinId": "vudameneko",
+        "keywords": "slider range-slider",
+        "noSSL": true
       }
     ]
   },
@@ -319,10 +338,10 @@
         "keywords": "advanced layout, flex, soooooo awesome!, fieldGroup field group"
       },
       {
-        "title": "Nested Forms (sans fieldGroup)",
+        "title": "Nested Forms (fieldGroup wrapper)",
         "slug": "nested-formly-forms",
         "jsbinId": "zaqeke",
-        "keywords": "nesting, formly, forms, custom, type, wrapper, sans fieldGroup, data"
+        "keywords": "nesting, formly, forms, custom, wrapper, fieldGroup"
       },
       {
         "title": "Async Select Options with Controller",
