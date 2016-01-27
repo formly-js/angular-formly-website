@@ -30,7 +30,8 @@ module.exports.createProvider = ngModule => {
 };
 
 function resolveParameter(param) {
-  return /*@ngInject*/ function($stateParams) {
+  return function($stateParams) {
+    'ngInject';
     return $stateParams[param];
   };
 }
@@ -43,7 +44,8 @@ function resolveIdentity(val) {
 
 
 function resolveRequest(url, config, [success, error] = []) {
-  return /*@ngInject*/ function httpGetWithParam($http) {
+  return function httpGetWithParam($http) {
+    'ngInject';
     const promise = $http({url, config}).then(res => res.data);
     if (success || error) {
       return promise.then(success).catch(error);

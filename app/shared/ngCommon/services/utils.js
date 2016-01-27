@@ -9,7 +9,8 @@ let utils = module.exports = {
 module.exports.createProvider = ngModule => {
   ngModule.provider('utils', utilsProvider);
 
-  function /* @ngInject */ utilsProvider(_) {
+  function utilsProvider(_) {
+    'ngInject';
     _.extend(this, utils, {
       $get: function utilsGet() {
         return this;
