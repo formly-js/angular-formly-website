@@ -12,10 +12,10 @@ module.exports = {
   resolve: {
     slug: stateUtils.resolveParameter('slug')
   },
-  controller: /*@ngInject*/ function(users, slug, _, $sce) {
+  controller: function(users, slug, _, $sce) {
+    'ngInject';
     var vm = this;
     vm.user = _.find(users, {slug});
     vm.userDescription = $sce.trustAsHtml(vm.user.description);
   }
 };
-

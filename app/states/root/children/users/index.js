@@ -20,7 +20,8 @@ module.exports = {
     users: stateUtils.resolveIdentity(formlyUsers)
   },
   controllerAs: 'vm',
-  controller: /*@ngInject*/ function(users) {
+  controller: function(users) {
+    'ngInject';
     var vm = this;
     vm.users = users;
     vm.inDetails = inDetails;
@@ -30,4 +31,3 @@ module.exports = {
     }
   }
 };
-

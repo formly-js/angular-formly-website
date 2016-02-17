@@ -1,5 +1,5 @@
-// @ngInject
 module.exports = function ExampleCtrl(examples, category, slug, _, stateUtils) {
+  'ngInject';
   var vm = this;
   let selectedCategory = _.find(examples, {name: category});
   if (!selectedCategory) {

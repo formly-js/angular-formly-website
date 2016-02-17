@@ -21,7 +21,8 @@ module.exports = {
     activationEvents: 'goHome'
   },
   controllerAs: 'vm',
-  controller: /*@ngInject*/ function() {
+  controller: function() {
+    'ngInject';
     var vm = this;
     var base  = `https://github.com/formly-js/angular-formly`;
     angular.extend(vm, {bootstrapHtml, formlyHtml, formlyJs});
@@ -47,4 +48,3 @@ module.exports = {
     }
   }
 };
-
