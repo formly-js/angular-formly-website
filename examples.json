@@ -260,6 +260,13 @@
         "jsbinId": "vudameneko",
         "keywords": "slider range-slider",
         "noSSL": true
+      },
+      {
+        "title": "angular-base64-upload",
+        "slug": "angular-base64-upload",
+        "jsbinId": "fepilo",
+        "keywords": "upload image preview",
+        "noSSL": true
       }
     ]
   },
