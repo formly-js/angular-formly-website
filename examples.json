@@ -409,6 +409,13 @@
         "slug": "button",
         "jsbinId": "puvaxa",
         "keywords": "api-check apiCheck custom type onClick on-click"
+      },
+      {
+        "title": "Date-Time Picker",
+        "slug": "date-time-picker",
+        "jsbinId": "tofezu",
+        "keywords": "datetime date time bootstrap angular ui picker"
+      }
       }
     ]
   },
