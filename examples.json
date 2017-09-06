@@ -169,12 +169,12 @@
       {
         "title": "UI Select",
         "slug": "ui-select",
-        "jsbinId": "kanoqi"
+        "jsbinId": "gagilo"
       },
       {
         "title": "UI Select (Angular 1.4+)",
         "slug": "ui-select-angular-1-4",
-        "jsbinId": "qozena"
+        "jsbinId": "fubahe"
       },
       {
         "title": "UI Grid",
@@ -259,6 +259,13 @@
         "slug": "angularjs-slider",
         "jsbinId": "vudameneko",
         "keywords": "slider range-slider",
+        "noSSL": true
+      },
+      {
+        "title": "angular-base64-upload",
+        "slug": "angular-base64-upload",
+        "jsbinId": "fepilo",
+        "keywords": "upload image preview",
         "noSSL": true
       }
     ]
@@ -402,6 +409,12 @@
         "slug": "button",
         "jsbinId": "puvaxa",
         "keywords": "api-check apiCheck custom type onClick on-click"
+      },
+      {
+        "title": "Date-Time Picker",
+        "slug": "date-time-picker",
+        "jsbinId": "tofezu",
+        "keywords": "datetime date time bootstrap angular ui picker"
       }
     ]
   },
@@ -456,6 +469,13 @@
         "slug": "nonstandard-interpolate-symbols",
         "jsbinId": "yarefo",
         "keywords": "interpolation markup interpolateProvider template"
+      },
+      {
+        "title": "Deal with input file type",
+        "slug": "deal-with-input-file-type",
+        "jsbinId": "koredu",
+        "noSSL": true,
+        "keywords": "file upload file-type input"
       }
     ]
   },
