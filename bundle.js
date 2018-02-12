@@ -69,8 +69,8 @@
 /***/ (function(module, exports) {
 
 	/**
-	 * @license AngularJS v1.6.6
-	 * (c) 2010-2017 Google, Inc. http://angularjs.org
+	 * @license AngularJS v1.6.9
+	 * (c) 2010-2018 Google, Inc. http://angularjs.org
 	 * License: MIT
 	 */
 	(function(window) {'use strict';
@@ -129,7 +129,7 @@
 	 * @description
 	 *
 	 * This object provides a utility for producing rich Error messages within
-	 * Angular. It can be called as follows:
+	 * AngularJS. It can be called as follows:
 	 *
 	 * var exampleMinErr = minErr('example');
 	 * throw exampleMinErr('one', 'This {0} is {1}', foo, bar);
@@ -176,7 +176,7 @@
 	      return match;
 	    });
 
-	    message += '\nhttp://errors.angularjs.org/1.6.6/' +
+	    message += '\nhttp://errors.angularjs.org/1.6.9/' +
 	      (module ? module + '/' : '') + code;
 
 	    for (i = 0, paramPrefix = '?'; i < templateArgs.length; i++, paramPrefix = '&') {
@@ -299,13 +299,11 @@
 	 * @installation
 	 * @description
 	 *
-	 * # ng (core module)
 	 * The ng module is loaded by default when an AngularJS application is started. The module itself
 	 * contains the essential components for an AngularJS application to function. The table below
 	 * lists a high level breakdown of each of the services/factories, filters, directives and testing
 	 * components available within this core module.
 	 *
-	 * <div doc-module-components="ng"></div>
 	 */
 
 	var REGEX_STRING_REGEXP = /^\/(.+)\/([a-z]*)$/;
@@ -1046,7 +1044,7 @@
 	          <button ng-click="update(user)">SAVE</button>
 	        </form>
 	        <pre>form = {{user | json}}</pre>
-	        <pre>master = {{master | json}}</pre>
+	        <pre>leader = {{leader | json}}</pre>
 	      </div>
 	    </file>
 	    <file name="script.js">
@@ -1054,16 +1052,16 @@
 	      angular.
 	        module('copyExample', []).
 	        controller('ExampleController', ['$scope', function($scope) {
-	          $scope.master = {};
+	          $scope.leader = {};
 
 	          $scope.reset = function() {
 	            // Example with 1 argument
-	            $scope.user = angular.copy($scope.master);
+	            $scope.user = angular.copy($scope.leader);
 	          };
 
 	          $scope.update = function(user) {
 	            // Example with 2 arguments
-	            angular.copy(user, $scope.master);
+	            angular.copy(user, $scope.leader);
 	          };
 
 	          $scope.reset();
@@ -1374,7 +1372,7 @@
 	 * used to force either jqLite by leaving ng-jq blank or setting the name of
 	 * the jquery variable under window (eg. jQuery).
 	 *
-	 * Since angular looks for this directive when it is loaded (doesn't wait for the
+	 * Since AngularJS looks for this directive when it is loaded (doesn't wait for the
 	 * DOMContentLoaded event), it must be placed on an element that comes before the script
 	 * which loads angular. Also, only the first instance of `ng-jq` will be used and all
 	 * others ignored.
@@ -1487,7 +1485,7 @@
 	 *
 	 * @description
 	 * Serializes input into a JSON-formatted string. Properties with leading $$ characters will be
-	 * stripped since angular uses this notation internally.
+	 * stripped since AngularJS uses this notation internally.
 	 *
 	 * @param {Object|Array|Date|string|number|boolean} obj Input to be serialized into JSON.
 	 * @param {boolean|number} [pretty=2] If set to true, the JSON output will contain newlines and whitespace.
@@ -1799,6 +1797,10 @@
 	 * document would not be compiled, the `AppController` would not be instantiated and the `{{ a+b }}`
 	 * would not be resolved to `3`.
 	 *
+	 * @example
+	 *
+	 * ### Simple Usage
+	 *
 	 * `ngApp` is the easiest, and most common way to bootstrap an application.
 	 *
 	 <example module="ngAppDemo" name="ng-app">
@@ -1814,6 +1816,10 @@
 	   });
 	   </file>
 	 </example>
+	 *
+	 * @example
+	 *
+	 * ### With `ngStrictDi`
 	 *
 	 * Using `ngStrictDi`, you would see something like this:
 	 *
@@ -1917,7 +1923,7 @@
 	  });
 	  if (appElement) {
 	    if (!isAutoBootstrapAllowed) {
-	      window.console.error('Angular: disabling automatic bootstrap. <script> protocol indicates ' +
+	      window.console.error('AngularJS: disabling automatic bootstrap. <script> protocol indicates ' +
 	          'an extension, document.location.href does not match.');
 	      return;
 	    }
@@ -1931,14 +1937,14 @@
 	 * @name angular.bootstrap
 	 * @module ng
 	 * @description
-	 * Use this function to manually start up angular application.
+	 * Use this function to manually start up AngularJS application.
 	 *
 	 * For more information, see the {@link guide/bootstrap Bootstrap guide}.
 	 *
-	 * Angular will detect if it has been loaded into the browser more than once and only allow the
+	 * AngularJS will detect if it has been loaded into the browser more than once and only allow the
 	 * first loaded script to be bootstrapped and will report a warning to the browser console for
 	 * each of the subsequent scripts. This prevents strange results in applications, where otherwise
-	 * multiple instances of Angular try to work on the DOM.
+	 * multiple instances of AngularJS try to work on the DOM.
 	 *
 	 * <div class="alert alert-warning">
 	 * **Note:** Protractor based end-to-end tests cannot use this function to bootstrap manually.
@@ -1972,7 +1978,7 @@
 	 * </html>
 	 * ```
 	 *
-	 * @param {DOMElement} element DOM element which is the root of angular application.
+	 * @param {DOMElement} element DOM element which is the root of AngularJS application.
 	 * @param {Array<String|Function|Array>=} modules an array of modules to load into the application.
 	 *     Each item in the array should be the name of a predefined module or a (DI annotated)
 	 *     function that will be invoked by the injector as a `config` block.
@@ -2072,9 +2078,9 @@
 	 * @name angular.getTestability
 	 * @module ng
 	 * @description
-	 * Get the testability service for the instance of Angular on the given
+	 * Get the testability service for the instance of AngularJS on the given
 	 * element.
-	 * @param {DOMElement} element DOM element which is the root of angular application.
+	 * @param {DOMElement} element DOM element which is the root of AngularJS application.
 	 */
 	function getTestability(rootElement) {
 	  var injector = angular.element(rootElement).injector();
@@ -2108,8 +2114,8 @@
 	                                 window[jqName];   // use jQuery specified by `ngJq`
 
 	  // Use jQuery if it exists with proper functionality, otherwise default to us.
-	  // Angular 1.2+ requires jQuery 1.7+ for on()/off() support.
-	  // Angular 1.3+ technically requires at least jQuery 2.1+ but it may work with older
+	  // AngularJS 1.2+ requires jQuery 1.7+ for on()/off() support.
+	  // AngularJS 1.3+ technically requires at least jQuery 2.1+ but it may work with older
 	  // versions. It will not work for sure with jQuery <1.7, though.
 	  if (jQuery && jQuery.fn.on) {
 	    jqLite = jQuery;
@@ -2276,7 +2282,7 @@
 	 * @module ng
 	 * @description
 	 *
-	 * Interface for configuring angular {@link angular.module modules}.
+	 * Interface for configuring AngularJS {@link angular.module modules}.
 	 */
 
 	function setupModuleLoader(window) {
@@ -2303,9 +2309,9 @@
 	     * @module ng
 	     * @description
 	     *
-	     * The `angular.module` is a global place for creating, registering and retrieving Angular
+	     * The `angular.module` is a global place for creating, registering and retrieving AngularJS
 	     * modules.
-	     * All modules (angular core or 3rd party) that should be available to an application must be
+	     * All modules (AngularJS core or 3rd party) that should be available to an application must be
 	     * registered using this mechanism.
 	     *
 	     * Passing one argument retrieves an existing {@link angular.Module},
@@ -2555,13 +2561,13 @@
 	           * @ngdoc method
 	           * @name angular.Module#filter
 	           * @module ng
-	           * @param {string} name Filter name - this must be a valid angular expression identifier
+	           * @param {string} name Filter name - this must be a valid AngularJS expression identifier
 	           * @param {Function} filterFactory Factory function for creating new instance of filter.
 	           * @description
 	           * See {@link ng.$filterProvider#register $filterProvider.register()}.
 	           *
 	           * <div class="alert alert-warning">
-	           * **Note:** Filter names must be valid angular {@link expression} identifiers, such as `uppercase` or `orderBy`.
+	           * **Note:** Filter names must be valid AngularJS {@link expression} identifiers, such as `uppercase` or `orderBy`.
 	           * Names with special characters, such as hyphens and dots, are not allowed. If you wish to namespace
 	           * your filters, then you can use capitalization (`myappSubsectionFilterx`) or underscores
 	           * (`myapp_subsection_filterx`).
@@ -2614,7 +2620,13 @@
 	           * @param {Function} configFn Execute this function on module load. Useful for service
 	           *    configuration.
 	           * @description
-	           * Use this method to register work which needs to be performed on module loading.
+	           * Use this method to configure services by injecting their
+	           * {@link angular.Module#provider `providers`}, e.g. for adding routes to the
+	           * {@link ngRoute.$routeProvider $routeProvider}.
+	           *
+	           * Note that you can only inject {@link angular.Module#provider `providers`} and
+	           * {@link angular.Module#constant `constants`} into this function.
+	           *
 	           * For more about how to configure services, see
 	           * {@link providers#provider-recipe Provider Recipe}.
 	           */
@@ -2854,11 +2866,11 @@
 	var version = {
 	  // These placeholder strings will be replaced by grunt's `build` task.
 	  // They need to be double- or single-quoted.
-	  full: '1.6.6',
+	  full: '1.6.9',
 	  major: 1,
 	  minor: 6,
-	  dot: 6,
-	  codeName: 'interdimensional-cable'
+	  dot: 9,
+	  codeName: 'fiery-basilisk'
 	};
 
 
@@ -3004,7 +3016,7 @@
 	      });
 	    }
 	  ])
-	  .info({ angularVersion: '1.6.6' });
+	  .info({ angularVersion: '1.6.9' });
 	}
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -3039,24 +3051,24 @@
 	 *
 	 * If jQuery is available, `angular.element` is an alias for the
 	 * [jQuery](http://api.jquery.com/jQuery/) function. If jQuery is not available, `angular.element`
-	 * delegates to Angular's built-in subset of jQuery, called "jQuery lite" or **jqLite**.
+	 * delegates to AngularJS's built-in subset of jQuery, called "jQuery lite" or **jqLite**.
 	 *
 	 * jqLite is a tiny, API-compatible subset of jQuery that allows
-	 * Angular to manipulate the DOM in a cross-browser compatible way. jqLite implements only the most
+	 * AngularJS to manipulate the DOM in a cross-browser compatible way. jqLite implements only the most
 	 * commonly needed functionality with the goal of having a very small footprint.
 	 *
 	 * To use `jQuery`, simply ensure it is loaded before the `angular.js` file. You can also use the
 	 * {@link ngJq `ngJq`} directive to specify that jqlite should be used over jQuery, or to use a
 	 * specific version of jQuery if multiple versions exist on the page.
 	 *
-	 * <div class="alert alert-info">**Note:** All element references in Angular are always wrapped with jQuery or
+	 * <div class="alert alert-info">**Note:** All element references in AngularJS are always wrapped with jQuery or
 	 * jqLite (such as the element argument in a directive's compile / link function). They are never raw DOM references.</div>
 	 *
 	 * <div class="alert alert-warning">**Note:** Keep in mind that this function will not find elements
 	 * by tag name / CSS selector. For lookups by tag name, try instead `angular.element(document).find(...)`
 	 * or `$document.find()`, or use the standard DOM APIs, e.g. `document.querySelectorAll()`.</div>
 	 *
-	 * ## Angular's jqLite
+	 * ## AngularJS's jqLite
 	 * jqLite provides only the following jQuery methods:
 	 *
 	 * - [`addClass()`](http://api.jquery.com/addClass/) - Does not support a function as first argument
@@ -3097,7 +3109,7 @@
 	 * - [`wrap()`](http://api.jquery.com/wrap/)
 	 *
 	 * ## jQuery/jqLite Extras
-	 * Angular also provides the following additional methods and events to both jQuery and jqLite:
+	 * AngularJS also provides the following additional methods and events to both jQuery and jqLite:
 	 *
 	 * ### Events
 	 * - `$destroy` - AngularJS intercepts all jqLite/jQuery's DOM destruction apis and fires this event
@@ -3427,13 +3439,18 @@
 
 	function jqLiteRemoveClass(element, cssClasses) {
 	  if (cssClasses && element.setAttribute) {
+	    var existingClasses = (' ' + (element.getAttribute('class') || '') + ' ')
+	                            .replace(/[\n\t]/g, ' ');
+	    var newClasses = existingClasses;
+
 	    forEach(cssClasses.split(' '), function(cssClass) {
-	      element.setAttribute('class', trim(
-	          (' ' + (element.getAttribute('class') || '') + ' ')
-	          .replace(/[\n\t]/g, ' ')
-	          .replace(' ' + trim(cssClass) + ' ', ' '))
-	      );
+	      cssClass = trim(cssClass);
+	      newClasses = newClasses.replace(' ' + cssClass + ' ', ' ');
 	    });
+
+	    if (newClasses !== existingClasses) {
+	      element.setAttribute('class', trim(newClasses));
+	    }
 	  }
 	}
 
@@ -3441,15 +3458,18 @@
 	  if (cssClasses && element.setAttribute) {
 	    var existingClasses = (' ' + (element.getAttribute('class') || '') + ' ')
 	                            .replace(/[\n\t]/g, ' ');
+	    var newClasses = existingClasses;
 
 	    forEach(cssClasses.split(' '), function(cssClass) {
 	      cssClass = trim(cssClass);
-	      if (existingClasses.indexOf(' ' + cssClass + ' ') === -1) {
-	        existingClasses += cssClass + ' ';
+	      if (newClasses.indexOf(' ' + cssClass + ' ') === -1) {
+	        newClasses += cssClass + ' ';
 	      }
 	    });
 
-	    element.setAttribute('class', trim(existingClasses));
+	    if (newClasses !== existingClasses) {
+	      element.setAttribute('class', trim(newClasses));
+	    }
 	  }
 	}
 
@@ -4240,8 +4260,8 @@
 	 *   });
 	 * ```
 	 *
-	 * Sometimes you want to get access to the injector of a currently running Angular app
-	 * from outside Angular. Perhaps, you want to inject and compile some markup after the
+	 * Sometimes you want to get access to the injector of a currently running AngularJS app
+	 * from outside AngularJS. Perhaps, you want to inject and compile some markup after the
 	 * application has been bootstrapped. You can do this using the extra `injector()` added
 	 * to JQuery/jqLite elements. See {@link angular.element}.
 	 *
@@ -4357,7 +4377,7 @@
 	 *   })).toBe($injector);
 	 * ```
 	 *
-	 * # Injection Function Annotation
+	 * ## Injection Function Annotation
 	 *
 	 * JavaScript does not have annotations, and annotations are needed for dependency injection. The
 	 * following are all valid ways of annotating function with injection arguments and are equivalent.
@@ -4375,7 +4395,7 @@
 	 *   $injector.invoke(['serviceA', function(serviceA){}]);
 	 * ```
 	 *
-	 * ## Inference
+	 * ### Inference
 	 *
 	 * In JavaScript calling `toString()` on a function returns the function definition. The definition
 	 * can then be parsed and the function arguments can be extracted. This method of discovering
@@ -4383,10 +4403,10 @@
 	 * *NOTE:* This does not work with minification, and obfuscation tools since these tools change the
 	 * argument names.
 	 *
-	 * ## `$inject` Annotation
+	 * ### `$inject` Annotation
 	 * By adding an `$inject` property onto a function the injection parameters can be specified.
 	 *
-	 * ## Inline
+	 * ### Inline
 	 * As an array of injection names, where the last item in the array is the function to call.
 	 */
 
@@ -4474,7 +4494,7 @@
 	 * function is invoked. There are three ways in which the function can be annotated with the needed
 	 * dependencies.
 	 *
-	 * # Argument names
+	 * #### Argument names
 	 *
 	 * The simplest form is to extract the dependencies from the arguments of the function. This is done
 	 * by converting the function into a string using `toString()` method and extracting the argument
@@ -4494,7 +4514,7 @@
 	 * This method does not work with code minification / obfuscation. For this reason the following
 	 * annotation strategies are supported.
 	 *
-	 * # The `$inject` property
+	 * #### The `$inject` property
 	 *
 	 * If a function has an `$inject` property and its value is an array of strings, then the strings
 	 * represent names of services to be injected into the function.
@@ -4510,7 +4530,7 @@
 	 *   expect(injector.annotate(MyController)).toEqual(['$scope', '$route']);
 	 * ```
 	 *
-	 * # The array notation
+	 * #### The array notation
 	 *
 	 * It is often desirable to inline Injected functions and that's when setting the `$inject` property
 	 * is very inconvenient. In these situations using the array notation to specify the dependencies in
@@ -4547,7 +4567,45 @@
 	 *
 	 * @returns {Array.<string>} The names of the services which the function requires.
 	 */
-
+	/**
+	 * @ngdoc method
+	 * @name $injector#loadNewModules
+	 *
+	 * @description
+	 *
+	 * **This is a dangerous API, which you use at your own risk!**
+	 *
+	 * Add the specified modules to the current injector.
+	 *
+	 * This method will add each of the injectables to the injector and execute all of the config and run
+	 * blocks for each module passed to the method.
+	 *
+	 * If a module has already been loaded into the injector then it will not be loaded again.
+	 *
+	 * * The application developer is responsible for loading the code containing the modules; and for
+	 * ensuring that lazy scripts are not downloaded and executed more often that desired.
+	 * * Previously compiled HTML will not be affected by newly loaded directives, filters and components.
+	 * * Modules cannot be unloaded.
+	 *
+	 * You can use {@link $injector#modules `$injector.modules`} to check whether a module has been loaded
+	 * into the injector, which may indicate whether the script has been executed already.
+	 *
+	 * @example
+	 * Here is an example of loading a bundle of modules, with a utility method called `getScript`:
+	 *
+	 * ```javascript
+	 * app.factory('loadModule', function($injector) {
+	 *   return function loadModule(moduleName, bundleUrl) {
+	 *     return getScript(bundleUrl).then(function() { $injector.loadNewModules([moduleName]); });
+	 *   };
+	 * })
+	 * ```
+	 *
+	 * @param {Array<String|Function|Array>=} mods an array of modules to load into the application.
+	 *     Each item in the array should be the name of a predefined module or a (DI annotated)
+	 *     function that will be invoked by the injector as a `config` block.
+	 *     See: {@link angular.module modules}
+	 */
 
 
 	/**
@@ -4560,7 +4618,7 @@
 	 * with the {@link auto.$injector $injector}. Many of these functions are also exposed on
 	 * {@link angular.Module}.
 	 *
-	 * An Angular **service** is a singleton object created by a **service factory**.  These **service
+	 * An AngularJS **service** is a singleton object created by a **service factory**.  These **service
 	 * factories** are functions which, in turn, are created by a **service provider**.
 	 * The **service providers** are constructor functions. When instantiated they must contain a
 	 * property called `$get`, which holds the **service factory** function.
@@ -4611,6 +4669,9 @@
 	 * method {@link ng.$logProvider#debugEnabled debugEnabled}
 	 * which lets you specify whether the {@link ng.$log $log} service will log debug messages to the
 	 * console or not.
+	 *
+	 * It is possible to inject other providers into the provider function,
+	 * but the injected provider must have been defined before the one that requires it.
 	 *
 	 * @param {string} name The name of the instance. NOTE: the provider will be available under `name +
 	                        'Provider'` key.
@@ -4788,7 +4849,7 @@
 	 *
 	 * Value services are similar to constant services, except that they cannot be injected into a
 	 * module configuration function (see {@link angular.Module#config}) but they can be overridden by
-	 * an Angular {@link auto.$provide#decorator decorator}.
+	 * an AngularJS {@link auto.$provide#decorator decorator}.
 	 *
 	 * @param {string} name The name of the instance.
 	 * @param {*} value The value.
@@ -4819,7 +4880,7 @@
 	 *
 	 * But unlike {@link auto.$provide#value value}, a constant can be
 	 * injected into a module configuration function (see {@link angular.Module#config}) and it cannot
-	 * be overridden by an Angular {@link auto.$provide#decorator decorator}.
+	 * be overridden by an AngularJS {@link auto.$provide#decorator decorator}.
 	 *
 	 * @param {string} name The name of the constant.
 	 * @param {*} value The constant value.
@@ -4910,6 +4971,11 @@
 	  instanceInjector = protoInstanceInjector.get('$injector');
 	  instanceInjector.strictDi = strictDi;
 	  forEach(runBlocks, function(fn) { if (fn) instanceInjector.invoke(fn); });
+
+	  instanceInjector.loadNewModules = function(mods) {
+	    forEach(loadModules(mods), function(fn) { if (fn) instanceInjector.invoke(fn); });
+	  };
+
 
 	  return instanceInjector;
 
@@ -5829,7 +5895,7 @@
 	       * @name $animate#pin
 	       * @kind function
 	       * @description Associates the provided element with a host parent element to allow the element to be animated even if it exists
-	       *    outside of the DOM structure of the Angular application. By doing so, any animation triggered via `$animate` can be issued on the
+	       *    outside of the DOM structure of the AngularJS application. By doing so, any animation triggered via `$animate` can be issued on the
 	       *    element despite being outside the realm of the application or within another application. Say for example if the application
 	       *    was bootstrapped on an element that is somewhere inside of the `<body>` tag, but we wanted to allow for an element to be situated
 	       *    as a direct child of `document.body`, then this can be achieved by pinning the element via `$animate.pin(element)`. Keep in mind
@@ -6451,7 +6517,6 @@
 
 	  /**
 	   * @private
-	   * Note: this method is used only by scenario runner
 	   * TODO(vojta): prefix this method with $$ ?
 	   * @param {function()} callback Function that will be called when no outstanding request
 	   */
@@ -6621,7 +6686,7 @@
 	   * @description
 	   * Register callback function that will be called, when url changes.
 	   *
-	   * It's only called when the url is changed from outside of angular:
+	   * It's only called when the url is changed from outside of AngularJS:
 	   * - user types different url into address bar
 	   * - user clicks on history (forward/back) button
 	   * - user clicks on a link
@@ -6631,7 +6696,7 @@
 	   * The listener gets called with new url as parameter.
 	   *
 	   * NOTE: this api is intended for use only by the $location service. Please use the
-	   * {@link ng.$location $location service} to monitor url changes in angular apps.
+	   * {@link ng.$location $location service} to monitor url changes in AngularJS apps.
 	   *
 	   * @param {function(string)} listener Listener function to be called when url changes.
 	   * @return {function(string)} Returns the registered listener fn - handy if the fn is anonymous.
@@ -6666,7 +6731,7 @@
 	  };
 
 	  /**
-	   * Checks whether the url has changed outside of Angular.
+	   * Checks whether the url has changed outside of AngularJS.
 	   * Needs to be exported to be able to check for changes that have been done in sync,
 	   * as hashchange/popstate events fire in async.
 	   */
@@ -6852,8 +6917,8 @@
 	       *
 	       * @description
 	       * A cache object used to store and retrieve data, primarily used by
-	       * {@link $http $http} and the {@link ng.directive:script script} directive to cache
-	       * templates and other data.
+	       * {@link $templateRequest $templateRequest} and the {@link ng.directive:script script}
+	       * directive to cache templates and other data.
 	       *
 	       * ```js
 	       *  angular.module('superCache')
@@ -7106,9 +7171,12 @@
 	 * @this
 	 *
 	 * @description
+	 * `$templateCache` is a {@link $cacheFactory.Cache Cache object} created by the
+	 * {@link ng.$cacheFactory $cacheFactory}.
+	 *
 	 * The first time a template is used, it is loaded in the template cache for quick retrieval. You
-	 * can load templates directly into the cache in a `script` tag, or by consuming the
-	 * `$templateCache` service directly.
+	 * can load templates directly into the cache in a `script` tag, by using {@link $templateRequest},
+	 * or by consuming the `$templateCache` service directly.
 	 *
 	 * Adding via the `script` tag:
 	 *
@@ -7119,8 +7187,8 @@
 	 * ```
 	 *
 	 * **Note:** the `script` tag containing the template does not need to be included in the `head` of
-	 * the document, but it must be a descendent of the {@link ng.$rootElement $rootElement} (IE,
-	 * element with ng-app attribute), otherwise the template will be ignored.
+	 * the document, but it must be a descendent of the {@link ng.$rootElement $rootElement} (e.g.
+	 * element with {@link ngApp} attribute), otherwise the template will be ignored.
 	 *
 	 * Adding via the `$templateCache` service:
 	 *
@@ -7142,8 +7210,6 @@
 	 * ```js
 	 * $templateCache.get('templateId.html')
 	 * ```
-	 *
-	 * See {@link ng.$cacheFactory $cacheFactory}.
 	 *
 	 */
 	function $TemplateCacheProvider() {
@@ -7272,7 +7338,7 @@
 	 * ```
 	 *
 	 * ### Life-cycle hooks
-	 * Directive controllers can provide the following methods that are called by Angular at points in the life-cycle of the
+	 * Directive controllers can provide the following methods that are called by AngularJS at points in the life-cycle of the
 	 * directive:
 	 * * `$onInit()` - Called on each controller after all the controllers on an element have been constructed and
 	 *   had their bindings initialized (and before the pre &amp; post linking functions for the directives on
@@ -7286,7 +7352,7 @@
 	 *   changes. Any actions that you wish to take in response to the changes that you detect must be
 	 *   invoked from this hook; implementing this has no effect on when `$onChanges` is called. For example, this hook
 	 *   could be useful if you wish to perform a deep equality check, or to check a Date object, changes to which would not
-	 *   be detected by Angular's change detector and thus not trigger `$onChanges`. This hook is invoked with no arguments;
+	 *   be detected by AngularJS's change detector and thus not trigger `$onChanges`. This hook is invoked with no arguments;
 	 *   if detecting changes, you must store the previous value(s) for comparison to the current values.
 	 * * `$onDestroy()` - Called on a controller when its containing scope is destroyed. Use this hook for releasing
 	 *   external resources, watches and event handlers. Note that components have their `$onDestroy()` hooks called in
@@ -7298,18 +7364,18 @@
 	 *   they are waiting for their template to load asynchronously and their own compilation and linking has been
 	 *   suspended until that occurs.
 	 *
-	 * #### Comparison with Angular 2 life-cycle hooks
-	 * Angular 2 also uses life-cycle hooks for its components. While the Angular 1 life-cycle hooks are similar there are
-	 * some differences that you should be aware of, especially when it comes to moving your code from Angular 1 to Angular 2:
+	 * #### Comparison with life-cycle hooks in the new Angular
+	 * The new Angular also uses life-cycle hooks for its components. While the AngularJS life-cycle hooks are similar there are
+	 * some differences that you should be aware of, especially when it comes to moving your code from AngularJS to Angular:
 	 *
-	 * * Angular 1 hooks are prefixed with `$`, such as `$onInit`. Angular 2 hooks are prefixed with `ng`, such as `ngOnInit`.
-	 * * Angular 1 hooks can be defined on the controller prototype or added to the controller inside its constructor.
-	 *   In Angular 2 you can only define hooks on the prototype of the Component class.
-	 * * Due to the differences in change-detection, you may get many more calls to `$doCheck` in Angular 1 than you would to
-	 *   `ngDoCheck` in Angular 2
+	 * * AngularJS hooks are prefixed with `$`, such as `$onInit`. Angular hooks are prefixed with `ng`, such as `ngOnInit`.
+	 * * AngularJS hooks can be defined on the controller prototype or added to the controller inside its constructor.
+	 *   In Angular you can only define hooks on the prototype of the Component class.
+	 * * Due to the differences in change-detection, you may get many more calls to `$doCheck` in AngularJS than you would to
+	 *   `ngDoCheck` in Angular.
 	 * * Changes to the model inside `$doCheck` will trigger new turns of the digest loop, which will cause the changes to be
 	 *   propagated throughout the application.
-	 *   Angular 2 does not allow the `ngDoCheck` hook to trigger a change outside of the component. It will either throw an
+	 *   Angular does not allow the `ngDoCheck` hook to trigger a change outside of the component. It will either throw an
 	 *   error or do nothing depending upon the state of `enableProdMode()`.
 	 *
 	 * #### Life-cycle hook examples
@@ -7658,8 +7724,11 @@
 	 * $sce#getTrustedResourceUrl $sce.getTrustedResourceUrl}.
 	 *
 	 *
-	 * #### `replace` ([*DEPRECATED*!], will be removed in next major release - i.e. v2.0)
-	 * specify what the template should replace. Defaults to `false`.
+	 * #### `replace` (*DEPRECATED*)
+	 *
+	 * `replace` will be removed in next major release - i.e. v2.0).
+	 *
+	 * Specifies what the template should replace. Defaults to `false`.
 	 *
 	 * * `true` - the template will replace the directive's element.
 	 * * `false` - the template will replace the contents of the directive's element.
@@ -7999,7 +8068,7 @@
 	        });
 	      })
 	      .controller('GreeterController', ['$scope', function($scope) {
-	        $scope.name = 'Angular';
+	        $scope.name = 'AngularJS';
 	        $scope.html = 'Hello {{name}}';
 	      }]);
 	    </script>
@@ -8013,11 +8082,11 @@
 	     it('should auto compile', function() {
 	       var textarea = $('textarea');
 	       var output = $('div[compile]');
-	       // The initial state reads 'Hello Angular'.
-	       expect(output.getText()).toBe('Hello Angular');
+	       // The initial state reads 'Hello AngularJS'.
+	       expect(output.getText()).toBe('Hello AngularJS');
 	       textarea.clear();
 	       textarea.sendKeys('{{name}}!');
-	       expect(output.getText()).toBe('Angular!');
+	       expect(output.getText()).toBe('AngularJS!');
 	     });
 	   </file>
 	 </example>
@@ -8071,7 +8140,7 @@
 	 * element passed in, or the clone of the element if the `cloneAttachFn` is provided.
 	 *
 	 * After linking the view is not updated until after a call to $digest which typically is done by
-	 * Angular automatically.
+	 * AngularJS automatically.
 	 *
 	 * If you need access to the bound view, there are two ways to do it:
 	 *
@@ -8097,7 +8166,7 @@
 	 *
 	 *
 	 * For information on how the compiler works, see the
-	 * {@link guide/compiler Angular HTML Compiler} section of the Developer Guide.
+	 * {@link guide/compiler AngularJS HTML Compiler} section of the Developer Guide.
 	 *
 	 * @knownIssue
 	 *
@@ -8421,7 +8490,7 @@
 
 	    // TODO(pete) remove the following `forEach` before we release 1.6.0
 	    // The component-router@0.2.0 looks for the annotations on the controller constructor
-	    // Nothing in Angular looks for annotations on the factory function but we can't remove
+	    // Nothing in AngularJS looks for annotations on the factory function but we can't remove
 	    // it from 1.5.x yet.
 
 	    // Copy any annotation properties (starting with $) over to the factory and controller constructor functions
@@ -8514,7 +8583,12 @@
 	   * binding information and a reference to the current scope on to DOM elements.
 	   * If enabled, the compiler will add the following to DOM elements that have been bound to the scope
 	   * * `ng-binding` CSS class
+	   * * `ng-scope` and `ng-isolated-scope` CSS classes
 	   * * `$binding` data property containing an array of the binding expressions
+	   * * Data properties used by the {@link angular.element#methods `scope()`/`isolateScope()` methods} to return
+	   *   the element's scope.
+	   * * Placeholder comments will contain information about what directive and binding caused the placeholder.
+	   *   E.g. `<!-- ngIf: shouldShow() -->`.
 	   *
 	   * You may want to disable this in production for a significant performance boost. See
 	   * {@link guide/production#disabling-debug-data Disabling Debug Data} for more.
@@ -10583,7 +10657,7 @@
 	      }
 
 	      if (jqLite.hasData(firstElementToRemove)) {
-	        // Copy over user data (that includes Angular's $scope etc.). Don't copy private
+	        // Copy over user data (that includes AngularJS's $scope etc.). Don't copy private
 	        // data here because there's no public interface in jQuery to do that and copying over
 	        // event listeners (which is the main use of private data) wouldn't work anyway.
 	        jqLite.data(newNode, jqLite.data(firstElementToRemove));
@@ -10661,7 +10735,7 @@
 	              // the value is there for use in the link fn
 	              destination[scopeName] = $interpolate(lastValue)(scope);
 	            } else if (isBoolean(lastValue)) {
-	              // If the attributes is one of the BOOLEAN_ATTR then Angular will have converted
+	              // If the attributes is one of the BOOLEAN_ATTR then AngularJS will have converted
 	              // the value to boolean rather than a string, so we special case this situation
 	              destination[scopeName] = lastValue;
 	            }
@@ -10815,7 +10889,9 @@
 	function directiveNormalize(name) {
 	  return name
 	    .replace(PREFIX_REGEXP, '')
-	    .replace(SPECIAL_CHARS_REGEXP, fnCamelCaseReplace);
+	    .replace(SPECIAL_CHARS_REGEXP, function(_, letter, offset) {
+	      return offset ? letter.toUpperCase() : letter;
+	    });
 	}
 
 	/**
@@ -10825,7 +10901,7 @@
 	 * @description
 	 * A shared object between directive compile / linking functions which contains normalized DOM
 	 * element attributes. The values reflect current binding state `{{ }}`. The normalization is
-	 * needed since all of these are treated as equivalent in Angular:
+	 * needed since all of these are treated as equivalent in AngularJS:
 	 *
 	 * ```
 	 *    <span ng:bind="a" ng-bind="a" data-ng-bind="a" x-ng-bind="a">
@@ -10931,7 +11007,7 @@
 	 * @this
 	 *
 	 * @description
-	 * The {@link ng.$controller $controller service} is used by Angular to create new
+	 * The {@link ng.$controller $controller service} is used by AngularJS to create new
 	 * controllers.
 	 *
 	 * This provider allows controller registration via the
@@ -11169,7 +11245,7 @@
 	 * @this
 	 *
 	 * @description
-	 * Any uncaught exception in angular expressions is delegated to this service.
+	 * Any uncaught exception in AngularJS expressions is delegated to this service.
 	 * The default implementation simply delegates to `$log.error` which logs it into
 	 * the browser console.
 	 *
@@ -11654,7 +11730,7 @@
 	     * @requires $injector
 	     *
 	     * @description
-	     * The `$http` service is a core Angular service that facilitates communication with the remote
+	     * The `$http` service is a core AngularJS service that facilitates communication with the remote
 	     * HTTP servers via the browser's [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest)
 	     * object or via [JSONP](http://en.wikipedia.org/wiki/JSONP).
 	     *
@@ -11793,7 +11869,7 @@
 	     * which allows you to `push` or `unshift` a new transformation function into the transformation chain.
 	     *
 	     * <div class="alert alert-warning">
-	     * **Note:** Angular does not make a copy of the `data` parameter before it is passed into the `transformRequest` pipeline.
+	     * **Note:** AngularJS does not make a copy of the `data` parameter before it is passed into the `transformRequest` pipeline.
 	     * That means changes to the properties of `data` are not local to the transform function (since Javascript passes objects by reference).
 	     * For example, when calling `$http.get(url, $scope.myObject)`, modifications to the object's properties in a transformRequest
 	     * function will be reflected on the scope and in any templates where the object is data-bound.
@@ -11810,7 +11886,7 @@
 	     * You can augment or replace the default transformations by modifying these properties by adding to or
 	     * replacing the array.
 	     *
-	     * Angular provides the following default transformations:
+	     * AngularJS provides the following default transformations:
 	     *
 	     * Request transformations (`$httpProvider.defaults.transformRequest` and `$http.defaults.transformRequest`) is
 	     * an array with one function that does the following:
@@ -11983,7 +12059,7 @@
 	     * - [JSON vulnerability](http://haacked.com/archive/2008/11/20/anatomy-of-a-subtle-json-vulnerability.aspx)
 	     * - [XSRF](http://en.wikipedia.org/wiki/Cross-site_request_forgery)
 	     *
-	     * Both server and the client must cooperate in order to eliminate these threats. Angular comes
+	     * Both server and the client must cooperate in order to eliminate these threats. AngularJS comes
 	     * pre-configured with strategies that address these issues, but for this to work backend server
 	     * cooperation is required.
 	     *
@@ -11993,7 +12069,7 @@
 	     * allows third party website to turn your JSON resource URL into
 	     * [JSONP](http://en.wikipedia.org/wiki/JSONP) request under some conditions. To
 	     * counter this your server can prefix all JSON requests with following string `")]}',\n"`.
-	     * Angular will automatically strip the prefix before processing it as JSON.
+	     * AngularJS will automatically strip the prefix before processing it as JSON.
 	     *
 	     * For example if your server needs to return:
 	     * ```js
@@ -12006,14 +12082,14 @@
 	     * ['one','two']
 	     * ```
 	     *
-	     * Angular will strip the prefix, before processing the JSON.
+	     * AngularJS will strip the prefix, before processing the JSON.
 	     *
 	     *
 	     * ### Cross Site Request Forgery (XSRF) Protection
 	     *
 	     * [XSRF](http://en.wikipedia.org/wiki/Cross-site_request_forgery) is an attack technique by
 	     * which the attacker can trick an authenticated user into unknowingly executing actions on your
-	     * website. Angular provides a mechanism to counter XSRF. When performing XHR requests, the
+	     * website. AngularJS provides a mechanism to counter XSRF. When performing XHR requests, the
 	     * $http service reads a token from a cookie (by default, `XSRF-TOKEN`) and sets it as an HTTP
 	     * header (`X-XSRF-TOKEN`). Since only JavaScript that runs on your domain could read the
 	     * cookie, your server can be assured that the XHR came from JavaScript running on your domain.
@@ -12032,7 +12108,7 @@
 	     * properties of either $httpProvider.defaults at config-time, $http.defaults at run-time,
 	     * or the per-request config object.
 	     *
-	     * In order to prevent collisions in environments where multiple Angular apps share the
+	     * In order to prevent collisions in environments where multiple AngularJS apps share the
 	     * same domain or subdomain, we recommend that each application uses unique cookie name.
 	     *
 	     * @param {object} config Object describing the request to be made and how it should be
@@ -12336,7 +12412,7 @@
 	     *
 	     * @param {string|TrustedObject} url Absolute or relative URL of the resource that is being requested;
 	     *                                   or an object created by a call to `$sce.trustAsResourceUrl(url)`.
-	     * @param {Object=} config Optional configuration object
+	     * @param {Object=} config Optional configuration object. See https://docs.angularjs.org/api/ng/service/$http#usage
 	     * @returns {HttpPromise} Future object
 	     */
 
@@ -12349,7 +12425,7 @@
 	     *
 	     * @param {string|TrustedObject} url Absolute or relative URL of the resource that is being requested;
 	     *                                   or an object created by a call to `$sce.trustAsResourceUrl(url)`.
-	     * @param {Object=} config Optional configuration object
+	     * @param {Object=} config Optional configuration object. See https://docs.angularjs.org/api/ng/service/$http#usage
 	     * @returns {HttpPromise} Future object
 	     */
 
@@ -12362,7 +12438,7 @@
 	     *
 	     * @param {string|TrustedObject} url Absolute or relative URL of the resource that is being requested;
 	     *                                   or an object created by a call to `$sce.trustAsResourceUrl(url)`.
-	     * @param {Object=} config Optional configuration object
+	     * @param {Object=} config Optional configuration object. See https://docs.angularjs.org/api/ng/service/$http#usage
 	     * @returns {HttpPromise} Future object
 	     */
 
@@ -12378,6 +12454,10 @@
 	     * You can trust a URL by adding it to the whitelist via
 	     * {@link $sceDelegateProvider#resourceUrlWhitelist  `$sceDelegateProvider.resourceUrlWhitelist`} or
 	     * by explicitly trusting the URL via {@link $sce#trustAsResourceUrl `$sce.trustAsResourceUrl(url)`}.
+	     *
+	     * You should avoid generating the URL for the JSONP request from user provided data.
+	     * Provide additional query parameters via `params` property of the `config` parameter, rather than
+	     * modifying the URL itself.
 	     *
 	     * JSONP requests must specify a callback to be used in the response from the server. This callback
 	     * is passed as a query parameter in the request. You must specify the name of this parameter by
@@ -12400,7 +12480,7 @@
 	     *
 	     * @param {string|TrustedObject} url Absolute or relative URL of the resource that is being requested;
 	     *                                   or an object created by a call to `$sce.trustAsResourceUrl(url)`.
-	     * @param {Object=} config Optional configuration object
+	     * @param {Object=} config Optional configuration object. See https://docs.angularjs.org/api/ng/service/$http#usage
 	     * @returns {HttpPromise} Future object
 	     */
 	    createShortMethods('get', 'delete', 'head', 'jsonp');
@@ -12414,7 +12494,7 @@
 	     *
 	     * @param {string} url Relative or absolute URL specifying the destination of the request
 	     * @param {*} data Request content
-	     * @param {Object=} config Optional configuration object
+	     * @param {Object=} config Optional configuration object. See https://docs.angularjs.org/api/ng/service/$http#usage
 	     * @returns {HttpPromise} Future object
 	     */
 
@@ -12427,7 +12507,7 @@
 	     *
 	     * @param {string} url Relative or absolute URL specifying the destination of the request
 	     * @param {*} data Request content
-	     * @param {Object=} config Optional configuration object
+	     * @param {Object=} config Optional configuration object. See https://docs.angularjs.org/api/ng/service/$http#usage
 	     * @returns {HttpPromise} Future object
 	     */
 
@@ -12440,7 +12520,7 @@
 	      *
 	      * @param {string} url Relative or absolute URL specifying the destination of the request
 	      * @param {*} data Request content
-	      * @param {Object=} config Optional configuration object
+	      * @param {Object=} config Optional configuration object. See https://docs.angularjs.org/api/ng/service/$http#usage
 	      * @returns {HttpPromise} Future object
 	      */
 	    createShortMethodsWithData('post', 'put', 'patch');
@@ -12654,20 +12734,26 @@
 	      return url;
 	    }
 
-	    function sanitizeJsonpCallbackParam(url, key) {
-	      if (/[&?][^=]+=JSON_CALLBACK/.test(url)) {
-	        // Throw if the url already contains a reference to JSON_CALLBACK
-	        throw $httpMinErr('badjsonp', 'Illegal use of JSON_CALLBACK in url, "{0}"', url);
+	    function sanitizeJsonpCallbackParam(url, cbKey) {
+	      var parts = url.split('?');
+	      if (parts.length > 2) {
+	        // Throw if the url contains more than one `?` query indicator
+	        throw $httpMinErr('badjsonp', 'Illegal use more than one "?", in url, "{1}"', url);
 	      }
-
-	      var callbackParamRegex = new RegExp('[&?]' + key + '=');
-	      if (callbackParamRegex.test(url)) {
-	        // Throw if the callback param was already provided
-	        throw $httpMinErr('badjsonp', 'Illegal use of callback param, "{0}", in url, "{1}"', key, url);
-	      }
+	      var params = parseKeyValue(parts[1]);
+	      forEach(params, function(value, key) {
+	        if (value === 'JSON_CALLBACK') {
+	          // Throw if the url already contains a reference to JSON_CALLBACK
+	          throw $httpMinErr('badjsonp', 'Illegal use of JSON_CALLBACK in url, "{0}"', url);
+	        }
+	        if (key === cbKey) {
+	          // Throw if the callback param was already provided
+	          throw $httpMinErr('badjsonp', 'Illegal use of callback param, "{0}", in url, "{1}"', cbKey, url);
+	        }
+	      });
 
 	      // Add in the JSON_CALLBACK callback param value
-	      url += ((url.indexOf('?') === -1) ? '?' : '&') + key + '=JSON_CALLBACK';
+	      url += ((url.indexOf('?') === -1) ? '?' : '&') + cbKey + '=JSON_CALLBACK';
 
 	      return url;
 	    }
@@ -12916,9 +13002,9 @@
 	 * Used for configuring the interpolation markup. Defaults to `{{` and `}}`.
 	 *
 	 * <div class="alert alert-danger">
-	 * This feature is sometimes used to mix different markup languages, e.g. to wrap an Angular
+	 * This feature is sometimes used to mix different markup languages, e.g. to wrap an AngularJS
 	 * template within a Python Jinja template (or any other template language). Mixing templating
-	 * languages is **very dangerous**. The embedding template language will not safely escape Angular
+	 * languages is **very dangerous**. The embedding template language will not safely escape AngularJS
 	 * expressions, so any user-controlled values in the template will cause Cross Site Scripting (XSS)
 	 * security bugs!
 	 * </div>
@@ -13034,7 +13120,7 @@
 	     * ```js
 	     *   var $interpolate = ...; // injected
 	     *   var exp = $interpolate('Hello {{name | uppercase}}!');
-	     *   expect(exp({name:'Angular'})).toEqual('Hello ANGULAR!');
+	     *   expect(exp({name:'AngularJS'})).toEqual('Hello ANGULAR!');
 	     * ```
 	     *
 	     * `$interpolate` takes an optional fourth argument, `allOrNothing`. If `allOrNothing` is
@@ -13052,8 +13138,8 @@
 	     *   // "allOrNothing" mode
 	     *   exp = $interpolate('{{greeting}} {{name}}!', false, null, true);
 	     *   expect(exp(context)).toBeUndefined();
-	     *   context.name = 'Angular';
-	     *   expect(exp(context)).toEqual('Hello Angular!');
+	     *   context.name = 'AngularJS';
+	     *   expect(exp(context)).toEqual('Hello AngularJS!');
 	     * ```
 	     *
 	     * `allOrNothing` is useful for interpolating URLs. `ngSrc` and `ngSrcset` use this behavior.
@@ -13227,9 +13313,7 @@
 	            var lastValue;
 	            return scope.$watchGroup(parseFns, /** @this */ function interpolateFnWatcher(values, oldValues) {
 	              var currValue = compute(values);
-	              if (isFunction(listener)) {
-	                listener.call(this, currValue, values !== oldValues ? lastValue : currValue, scope);
-	              }
+	              listener.call(this, currValue, values !== oldValues ? lastValue : currValue, scope);
 	              lastValue = currValue;
 	            });
 	          }
@@ -13294,7 +13378,7 @@
 	      * @name $interval
 	      *
 	      * @description
-	      * Angular's wrapper for `window.setInterval`. The `fn` function is executed every `delay`
+	      * AngularJS's wrapper for `window.setInterval`. The `fn` function is executed every `delay`
 	      * milliseconds.
 	      *
 	      * The return value of registering an interval function is a promise. This promise will be
@@ -13571,7 +13655,7 @@
 	 * @name $locale
 	 *
 	 * @description
-	 * $locale service provides localization rules for various Angular components. As of right now the
+	 * $locale service provides localization rules for various AngularJS components. As of right now the
 	 * only public api is:
 	 *
 	 * * `id` – `{string}` – locale id formatted as `languageId-countryId` (e.g. `en-us`)
@@ -13593,7 +13677,23 @@
 	      i = segments.length;
 
 	  while (i--) {
-	    segments[i] = encodeUriSegment(segments[i]);
+	    // decode forward slashes to prevent them from being double encoded
+	    segments[i] = encodeUriSegment(segments[i].replace(/%2F/g, '/'));
+	  }
+
+	  return segments.join('/');
+	}
+
+	function decodePath(path, html5Mode) {
+	  var segments = path.split('/'),
+	      i = segments.length;
+
+	  while (i--) {
+	    segments[i] = decodeURIComponent(segments[i]);
+	    if (html5Mode) {
+	      // encode forward slashes to prevent them from being mistaken for path separators
+	      segments[i] = segments[i].replace(/\//g, '%2F');
+	    }
 	  }
 
 	  return segments.join('/');
@@ -13608,7 +13708,7 @@
 	}
 
 	var DOUBLE_SLASH_REGEX = /^\s*[\\/]{2,}/;
-	function parseAppUrl(url, locationObj) {
+	function parseAppUrl(url, locationObj, html5Mode) {
 
 	  if (DOUBLE_SLASH_REGEX.test(url)) {
 	    throw $locationMinErr('badpath', 'Invalid url "{0}".', url);
@@ -13619,8 +13719,8 @@
 	    url = '/' + url;
 	  }
 	  var match = urlResolve(url);
-	  locationObj.$$path = decodeURIComponent(prefixed && match.pathname.charAt(0) === '/' ?
-	      match.pathname.substring(1) : match.pathname);
+	  var path = prefixed && match.pathname.charAt(0) === '/' ? match.pathname.substring(1) : match.pathname;
+	  locationObj.$$path = decodePath(path, html5Mode);
 	  locationObj.$$search = parseKeyValue(match.search);
 	  locationObj.$$hash = decodeURIComponent(match.hash);
 
@@ -13695,7 +13795,7 @@
 	          appBaseNoFile);
 	    }
 
-	    parseAppUrl(pathUrl, this);
+	    parseAppUrl(pathUrl, this, true);
 
 	    if (!this.$$path) {
 	      this.$$path = '/';
@@ -13798,7 +13898,7 @@
 	      }
 	    }
 
-	    parseAppUrl(withoutHashUrl, this);
+	    parseAppUrl(withoutHashUrl, this, false);
 
 	    this.$$path = removeWindowsDriveName(this.$$path, withoutHashUrl, appBase);
 
@@ -13812,7 +13912,7 @@
 	     *  * a.setAttribute('href', '/foo')
 	     *   * a.pathname === '/C:/foo' //true
 	     *
-	     * Inside of Angular, we're always using pathnames that
+	     * Inside of AngularJS, we're always using pathnames that
 	     * do not include drive names for routing.
 	     */
 	    function removeWindowsDriveName(path, url, base) {
@@ -14019,7 +14119,7 @@
 	   *
 	   * Return host of current URL.
 	   *
-	   * Note: compared to the non-angular version `location.host` which returns `hostname:port`, this returns the `hostname` portion only.
+	   * Note: compared to the non-AngularJS version `location.host` which returns `hostname:port`, this returns the `hostname` portion only.
 	   *
 	   *
 	   * ```js
@@ -14492,7 +14592,7 @@
 
 	      if (absHref && !elm.attr('target') && !event.isDefaultPrevented()) {
 	        if ($location.$$parseLinkUrl(absHref, relHref)) {
-	          // We do a preventDefault for all urls that are part of the angular application,
+	          // We do a preventDefault for all urls that are part of the AngularJS application,
 	          // in html5mode and also without, so that we are able to abort navigation without
 	          // getting double entries in the location history.
 	          event.preventDefault();
@@ -14788,12 +14888,12 @@
 
 	var objectValueOf = {}.constructor.prototype.valueOf;
 
-	// Sandboxing Angular Expressions
+	// Sandboxing AngularJS Expressions
 	// ------------------------------
-	// Angular expressions are no longer sandboxed. So it is now even easier to access arbitrary JS code by
+	// AngularJS expressions are no longer sandboxed. So it is now even easier to access arbitrary JS code by
 	// various means such as obtaining a reference to native JS functions like the Function constructor.
 	//
-	// As an example, consider the following Angular expression:
+	// As an example, consider the following AngularJS expression:
 	//
 	//   {}.toString.constructor('alert("evil JS code")')
 	//
@@ -16417,11 +16517,26 @@
 	  constructor: Parser,
 
 	  parse: function(text) {
-	    var ast = this.ast.ast(text);
-	    var fn = this.astCompiler.compile(ast);
-	    fn.literal = isLiteral(ast);
-	    fn.constant = isConstant(ast);
+	    var ast = this.getAst(text);
+	    var fn = this.astCompiler.compile(ast.ast);
+	    fn.literal = isLiteral(ast.ast);
+	    fn.constant = isConstant(ast.ast);
+	    fn.oneTime = ast.oneTime;
 	    return fn;
+	  },
+
+	  getAst: function(exp) {
+	    var oneTime = false;
+	    exp = exp.trim();
+
+	    if (exp.charAt(0) === ':' && exp.charAt(1) === ':') {
+	      oneTime = true;
+	      exp = exp.substring(2);
+	    }
+	    return {
+	      ast: this.ast.ast(exp),
+	      oneTime: oneTime
+	    };
 	  }
 	};
 
@@ -16438,15 +16553,15 @@
 	 *
 	 * @description
 	 *
-	 * Converts Angular {@link guide/expression expression} into a function.
+	 * Converts AngularJS {@link guide/expression expression} into a function.
 	 *
 	 * ```js
 	 *   var getter = $parse('user.name');
 	 *   var setter = getter.assign;
-	 *   var context = {user:{name:'angular'}};
+	 *   var context = {user:{name:'AngularJS'}};
 	 *   var locals = {user:{name:'local'}};
 	 *
-	 *   expect(getter(context)).toEqual('angular');
+	 *   expect(getter(context)).toEqual('AngularJS');
 	 *   setter(context, 'newValue');
 	 *   expect(context.user.name).toEqual('newValue');
 	 *   expect(getter(context, locals)).toEqual('local');
@@ -16512,7 +16627,7 @@
 	  *
 	  * @description
 	  *
-	  * Allows defining the set of characters that are allowed in Angular expressions. The function
+	  * Allows defining the set of characters that are allowed in AngularJS expressions. The function
 	  * `identifierStart` will get called to know if a given character is a valid character to be the
 	  * first character for an identifier. The function `identifierContinue` will get called to know if
 	  * a given character is a valid character to be a follow-up identifier character. The functions
@@ -16544,10 +16659,11 @@
 	          isIdentifierStart: isFunction(identStart) && identStart,
 	          isIdentifierContinue: isFunction(identContinue) && identContinue
 	        };
+	    $parse.$$getAst = $$getAst;
 	    return $parse;
 
 	    function $parse(exp, interceptorFn) {
-	      var parsedExpression, oneTime, cacheKey;
+	      var parsedExpression, cacheKey;
 
 	      switch (typeof exp) {
 	        case 'string':
@@ -16557,16 +16673,12 @@
 	          parsedExpression = cache[cacheKey];
 
 	          if (!parsedExpression) {
-	            if (exp.charAt(0) === ':' && exp.charAt(1) === ':') {
-	              oneTime = true;
-	              exp = exp.substring(2);
-	            }
 	            var lexer = new Lexer($parseOptions);
 	            var parser = new Parser(lexer, $filter, $parseOptions);
 	            parsedExpression = parser.parse(exp);
 	            if (parsedExpression.constant) {
 	              parsedExpression.$$watchDelegate = constantWatchDelegate;
-	            } else if (oneTime) {
+	            } else if (parsedExpression.oneTime) {
 	              parsedExpression.$$watchDelegate = parsedExpression.literal ?
 	                  oneTimeLiteralWatchDelegate : oneTimeWatchDelegate;
 	            } else if (parsedExpression.inputs) {
@@ -16582,6 +16694,12 @@
 	        default:
 	          return addInterceptor(noop, interceptorFn);
 	      }
+	    }
+
+	    function $$getAst(exp) {
+	      var lexer = new Lexer($parseOptions);
+	      var parser = new Parser(lexer, $filter, $parseOptions);
+	      return parser.getAst(exp).ast;
 	    }
 
 	    function expressionInputDirtyCheck(newValue, oldValueOfValue, compareObjectIdentity) {
@@ -16777,7 +16895,7 @@
 	 * $q can be used in two fashions --- one which is more similar to Kris Kowal's Q or jQuery's Deferred
 	 * implementations, and the other which resembles ES6 (ES2015) promises to some degree.
 	 *
-	 * # $q constructor
+	 * ## $q constructor
 	 *
 	 * The streamlined ES6 style promise is essentially just using $q as a constructor which takes a `resolver`
 	 * function as the first argument. This is similar to the native Promise implementation from ES6,
@@ -16865,7 +16983,7 @@
 	 * For more on this please see the [Q documentation](https://github.com/kriskowal/q) especially the
 	 * section on serial or parallel joining of promises.
 	 *
-	 * # The Deferred API
+	 * ## The Deferred API
 	 *
 	 * A new instance of deferred is constructed by calling `$q.defer()`.
 	 *
@@ -16887,7 +17005,7 @@
 	 * - promise – `{Promise}` – promise object associated with this deferred.
 	 *
 	 *
-	 * # The Promise API
+	 * ## The Promise API
 	 *
 	 * A new promise instance is created when a deferred instance is created and can be retrieved by
 	 * calling `deferred.promise`.
@@ -16919,7 +17037,7 @@
 	 *   specification](https://github.com/kriskowal/q/wiki/API-Reference#promisefinallycallback) for
 	 *   more information.
 	 *
-	 * # Chaining promises
+	 * ## Chaining promises
 	 *
 	 * Because calling the `then` method of a promise returns a new derived promise, it is easily
 	 * possible to create a chain of promises:
@@ -16939,17 +17057,17 @@
 	 * $http's response interceptors.
 	 *
 	 *
-	 * # Differences between Kris Kowal's Q and $q
+	 * ## Differences between Kris Kowal's Q and $q
 	 *
 	 *  There are two main differences:
 	 *
 	 * - $q is integrated with the {@link ng.$rootScope.Scope} Scope model observation
-	 *   mechanism in angular, which means faster propagation of resolution or rejection into your
+	 *   mechanism in AngularJS, which means faster propagation of resolution or rejection into your
 	 *   models and avoiding unnecessary browser repaints, which would result in flickering UI.
 	 * - Q has many more features than $q, but that comes at a cost of bytes. $q is tiny, but contains
 	 *   all the important functionality needed for common async tasks.
 	 *
-	 * # Testing
+	 * ## Testing
 	 *
 	 *  ```js
 	 *    it('should simulate promise', inject(function($q, $rootScope) {
@@ -17126,6 +17244,10 @@
 	          }
 	        } catch (e) {
 	          rejectPromise(promise, e);
+	          // This error is explicitly marked for being passed to the $exceptionHandler
+	          if (e && e.$$passToExceptionHandler === true) {
+	            exceptionHandler(e);
+	          }
 	        }
 	      }
 	    } finally {
@@ -17618,7 +17740,7 @@
 	     * an in-depth introduction and usage examples.
 	     *
 	     *
-	     * # Inheritance
+	     * ## Inheritance
 	     * A scope can inherit from a parent scope, as in this example:
 	     * ```js
 	         var parent = $rootScope;
@@ -17793,7 +17915,7 @@
 	       *
 	       *
 	       *
-	       * # Example
+	       * @example
 	       * ```js
 	           // let's assume that scope was dependency injected as the $rootScope
 	           var scope = $rootScope;
@@ -17869,14 +17991,15 @@
 	       */
 	      $watch: function(watchExp, listener, objectEquality, prettyPrintExpression) {
 	        var get = $parse(watchExp);
+	        var fn = isFunction(listener) ? listener : noop;
 
 	        if (get.$$watchDelegate) {
-	          return get.$$watchDelegate(this, listener, objectEquality, get, watchExp);
+	          return get.$$watchDelegate(this, fn, objectEquality, get, watchExp);
 	        }
 	        var scope = this,
 	            array = scope.$$watchers,
 	            watcher = {
-	              fn: listener,
+	              fn: fn,
 	              last: initWatchVal,
 	              get: get,
 	              exp: prettyPrintExpression || watchExp,
@@ -17884,10 +18007,6 @@
 	            };
 
 	        lastDirtyWatch = null;
-
-	        if (!isFunction(listener)) {
-	          watcher.fn = noop;
-	        }
 
 	        if (!array) {
 	          array = scope.$$watchers = [];
@@ -18044,7 +18163,7 @@
 	       *   adding, removing, and moving items belonging to an object or array.
 	       *
 	       *
-	       * # Example
+	       * @example
 	       * ```js
 	          $scope.names = ['igor', 'matias', 'misko', 'james'];
 	          $scope.dataCount = 4;
@@ -18242,7 +18361,7 @@
 	       *
 	       * In unit tests, you may need to call `$digest()` to simulate the scope life cycle.
 	       *
-	       * # Example
+	       * @example
 	       * ```js
 	           var scope = ...;
 	           scope.name = 'misko';
@@ -18468,10 +18587,10 @@
 	       *
 	       * @description
 	       * Executes the `expression` on the current scope and returns the result. Any exceptions in
-	       * the expression are propagated (uncaught). This is useful when evaluating Angular
+	       * the expression are propagated (uncaught). This is useful when evaluating AngularJS
 	       * expressions.
 	       *
-	       * # Example
+	       * @example
 	       * ```js
 	           var scope = ng.$rootScope.Scope();
 	           scope.a = 1;
@@ -18481,7 +18600,7 @@
 	           expect(scope.$eval(function(scope){ return scope.a + scope.b; })).toEqual(3);
 	       * ```
 	       *
-	       * @param {(string|function())=} expression An angular expression to be executed.
+	       * @param {(string|function())=} expression An AngularJS expression to be executed.
 	       *
 	       *    - `string`: execute using the rules as defined in  {@link guide/expression expression}.
 	       *    - `function(scope)`: execute the function with the current `scope` parameter.
@@ -18516,7 +18635,7 @@
 	       * will be scheduled. However, it is encouraged to always call code that changes the model
 	       * from within an `$apply` call. That includes code evaluated via `$evalAsync`.
 	       *
-	       * @param {(string|function())=} expression An angular expression to be executed.
+	       * @param {(string|function())=} expression An AngularJS expression to be executed.
 	       *
 	       *    - `string`: execute using the rules as defined in {@link guide/expression expression}.
 	       *    - `function(scope)`: execute the function with the current `scope` parameter.
@@ -18547,15 +18666,14 @@
 	       * @kind function
 	       *
 	       * @description
-	       * `$apply()` is used to execute an expression in angular from outside of the angular
+	       * `$apply()` is used to execute an expression in AngularJS from outside of the AngularJS
 	       * framework. (For example from browser DOM events, setTimeout, XHR or third party libraries).
-	       * Because we are calling into the angular framework we need to perform proper scope life
+	       * Because we are calling into the AngularJS framework we need to perform proper scope life
 	       * cycle of {@link ng.$exceptionHandler exception handling},
 	       * {@link ng.$rootScope.Scope#$digest executing watches}.
 	       *
-	       * ## Life cycle
+	       * **Life cycle: Pseudo-Code of `$apply()`**
 	       *
-	       * # Pseudo-Code of `$apply()`
 	       * ```js
 	           function $apply(expr) {
 	             try {
@@ -18579,7 +18697,7 @@
 	       *    expression was executed using the {@link ng.$rootScope.Scope#$digest $digest()} method.
 	       *
 	       *
-	       * @param {(string|function())=} exp An angular expression to be executed.
+	       * @param {(string|function())=} exp An AngularJS expression to be executed.
 	       *
 	       *    - `string`: execute using the rules as defined in {@link guide/expression expression}.
 	       *    - `function(scope)`: execute the function with current `scope` parameter.
@@ -18619,7 +18737,7 @@
 	       * This can be used to queue up multiple expressions which need to be evaluated in the same
 	       * digest.
 	       *
-	       * @param {(string|function())=} exp An angular expression to be executed.
+	       * @param {(string|function())=} exp An AngularJS expression to be executed.
 	       *
 	       *    - `string`: execute using the rules as defined in {@link guide/expression expression}.
 	       *    - `function(scope)`: execute the function with current `scope` parameter.
@@ -18683,7 +18801,10 @@
 	        return function() {
 	          var indexOfListener = namedListeners.indexOf(listener);
 	          if (indexOfListener !== -1) {
-	            namedListeners[indexOfListener] = null;
+	            // Use delete in the hope of the browser deallocating the memory for the array entry,
+	            // while not shifting the array indexes of other listeners.
+	            // See issue https://github.com/angular/angular.js/issues/16135
+	            delete namedListeners[indexOfListener];
 	            decrementListenerCount(self, 1, name);
 	          }
 	        };
@@ -18750,8 +18871,7 @@
 	          }
 	          //if any listener on the current scope stops propagation, prevent bubbling
 	          if (stopPropagation) {
-	            event.currentScope = null;
-	            return event;
+	            break;
 	          }
 	          //traverse upwards
 	          scope = scope.$parent;
@@ -18911,7 +19031,7 @@
 	 * @name $rootElement
 	 *
 	 * @description
-	 * The root element of Angular application. This is either the element where {@link
+	 * The root element of AngularJS application. This is either the element where {@link
 	 * ng.directive:ngApp ngApp} was declared or the element passed into
 	 * {@link angular.bootstrap}. The element represents the root element of application. It is also the
 	 * location where the application's {@link auto.$injector $injector} service gets
@@ -18927,7 +19047,7 @@
 	 * Private service to sanitize uris for links and images. Used by $compile and $sanitize.
 	 */
 	function $$SanitizeUriProvider() {
-	  var aHrefSanitizationWhitelist = /^\s*(https?|ftp|mailto|tel|file):/,
+	  var aHrefSanitizationWhitelist = /^\s*(https?|s?ftp|mailto|tel|file):/,
 	    imgSrcSanitizationWhitelist = /^\s*((https?|ftp|file|blob):|data:image\/)/;
 
 	  /**
@@ -18983,7 +19103,7 @@
 	    return function sanitizeUri(uri, isImage) {
 	      var regex = isImage ? imgSrcSanitizationWhitelist : aHrefSanitizationWhitelist;
 	      var normalizedVal;
-	      normalizedVal = urlResolve(uri).href;
+	      normalizedVal = urlResolve(uri && uri.trim()).href;
 	      if (normalizedVal !== '' && !normalizedVal.match(regex)) {
 	        return 'unsafe:' + normalizedVal;
 	      }
@@ -19128,7 +19248,7 @@
 	 * and
 	 * {@link ng.$sceDelegateProvider#resourceUrlBlacklist $sceDelegateProvider.resourceUrlBlacklist},
 	 *
-	 * For the general details about this service in Angular, read the main page for {@link ng.$sce
+	 * For the general details about this service in AngularJS, read the main page for {@link ng.$sce
 	 * Strict Contextual Escaping (SCE)}.
 	 *
 	 * **Example**:  Consider the following case. <a name="example"></a>
@@ -19455,13 +19575,13 @@
 	 *
 	 * `$sce` is a service that provides Strict Contextual Escaping services to AngularJS.
 	 *
-	 * # Strict Contextual Escaping
+	 * ## Strict Contextual Escaping
 	 *
 	 * Strict Contextual Escaping (SCE) is a mode in which AngularJS constrains bindings to only render
 	 * trusted values. Its goal is to assist in writing code in a way that (a) is secure by default, and
 	 * (b) makes auditing for security vulnerabilities such as XSS, clickjacking, etc. a lot easier.
 	 *
-	 * ## Overview
+	 * ### Overview
 	 *
 	 * To systematically block XSS security bugs, AngularJS treats all values as untrusted by default in
 	 * HTML or sensitive URL bindings. When binding untrusted values, AngularJS will automatically
@@ -19477,7 +19597,7 @@
 	 *
 	 * As of version 1.2, AngularJS ships with SCE enabled by default.
 	 *
-	 * ## In practice
+	 * ### In practice
 	 *
 	 * Here's an example of a binding in a privileged context:
 	 *
@@ -19514,7 +19634,7 @@
 	 * (and shorthand methods such as {@link ng.$sce#trustAsHtml $sce.trustAsHtml}, etc.) to
 	 * build the trusted versions of your values.
 	 *
-	 * ## How does it work?
+	 * ### How does it work?
 	 *
 	 * In privileged contexts, directives and code will bind to the result of {@link ng.$sce#getTrusted
 	 * $sce.getTrusted(context, value)} rather than to the value directly.  Think of this function as
@@ -19538,12 +19658,12 @@
 	 * }];
 	 * ```
 	 *
-	 * ## Impact on loading templates
+	 * ### Impact on loading templates
 	 *
 	 * This applies both to the {@link ng.directive:ngInclude `ng-include`} directive as well as
 	 * `templateUrl`'s specified by {@link guide/directive directives}.
 	 *
-	 * By default, Angular only loads templates from the same domain and protocol as the application
+	 * By default, AngularJS only loads templates from the same domain and protocol as the application
 	 * document.  This is done by calling {@link ng.$sce#getTrustedResourceUrl
 	 * $sce.getTrustedResourceUrl} on the template URL.  To load templates from other domains and/or
 	 * protocols, you may either {@link ng.$sceDelegateProvider#resourceUrlWhitelist whitelist
@@ -19558,7 +19678,7 @@
 	 * won't work on all browsers.  Also, loading templates from `file://` URL does not work on some
 	 * browsers.
 	 *
-	 * ## This feels like too much overhead
+	 * ### This feels like too much overhead
 	 *
 	 * It's important to remember that SCE only applies to interpolation expressions.
 	 *
@@ -19582,7 +19702,7 @@
 	 * security onto an application later.
 	 *
 	 * <a name="contexts"></a>
-	 * ## What trusted context types are supported?
+	 * ### What trusted context types are supported?
 	 *
 	 * | Context             | Notes          |
 	 * |---------------------|----------------|
@@ -19598,7 +19718,7 @@
 	 * in AngularJS currently, so their corresponding `$sce.trustAs` functions aren't useful yet. This
 	 * might evolve.
 	 *
-	 * ## Format of items in {@link ng.$sceDelegateProvider#resourceUrlWhitelist resourceUrlWhitelist}/{@link ng.$sceDelegateProvider#resourceUrlBlacklist Blacklist} <a name="resourceUrlPatternItem"></a>
+	 * ### Format of items in {@link ng.$sceDelegateProvider#resourceUrlWhitelist resourceUrlWhitelist}/{@link ng.$sceDelegateProvider#resourceUrlBlacklist Blacklist} <a name="resourceUrlPatternItem"></a>
 	 *
 	 *  Each element in these arrays must be one of the following:
 	 *
@@ -19645,7 +19765,7 @@
 	 *
 	 * Refer {@link ng.$sceDelegateProvider $sceDelegateProvider} for an example.
 	 *
-	 * ## Show me an example using SCE.
+	 * ### Show me an example using SCE.
 	 *
 	 * <example module="mySceApp" deps="angular-sanitize.js" name="sce-service">
 	 * <file name="index.html">
@@ -19840,7 +19960,7 @@
 	     * @name $sce#parseAs
 	     *
 	     * @description
-	     * Converts Angular {@link guide/expression expression} into a function.  This is like {@link
+	     * Converts AngularJS {@link guide/expression expression} into a function.  This is like {@link
 	     * ng.$parse $parse} and is identical when the expression is a literal constant.  Otherwise, it
 	     * wraps the expression in a call to {@link ng.$sce#getTrusted $sce.getTrusted(*type*,
 	     * *result*)}
@@ -20275,6 +20395,12 @@
 	   * If you want to pass custom options to the `$http` service, such as setting the Accept header you
 	   * can configure this via {@link $templateRequestProvider#httpOptions}.
 	   *
+	   * `$templateRequest` is used internally by {@link $compile}, {@link ngRoute.$route}, and directives such
+	   * as {@link ngInclude} to download and cache templates.
+	   *
+	   * 3rd party modules should use `$templateRequest` if their services or directives are loading
+	   * templates.
+	   *
 	   * @param {string|TrustedResourceUrl} tpl The HTTP request template URL
 	   * @param {boolean=} ignoreRequestError Whether or not to ignore the exception when the request fails or the template is empty
 	   *
@@ -20290,7 +20416,7 @@
 
 	        // We consider the template cache holds only trusted templates, so
 	        // there's no need to go through whitelisting again for keys that already
-	        // are included in there. This also makes Angular accept any script
+	        // are included in there. This also makes AngularJS accept any script
 	        // directive, no matter its name. However, we still need to unwrap trusted
 	        // types.
 	        if (!isString(tpl) || isUndefined($templateCache.get(tpl))) {
@@ -20468,7 +20594,7 @@
 	      * @name $timeout
 	      *
 	      * @description
-	      * Angular's wrapper for `window.setTimeout`. The `fn` function is wrapped into a try/catch
+	      * AngularJS's wrapper for `window.setTimeout`. The `fn` function is wrapped into a try/catch
 	      * block and delegates any exceptions to
 	      * {@link ng.$exceptionHandler $exceptionHandler} service.
 	      *
@@ -20657,7 +20783,7 @@
 	 * @description
 	 * A reference to the browser's `window` object. While `window`
 	 * is globally available in JavaScript, it causes testability problems, because
-	 * it is a global variable. In angular we always refer to it through the
+	 * it is a global variable. In AngularJS we always refer to it through the
 	 * `$window` service, so it may be overridden, removed or mocked for testing.
 	 *
 	 * Expressions, like the one defined for the `ngClick` directive in the example
@@ -20780,7 +20906,7 @@
 	 * annotated with dependencies and is responsible for creating a filter function.
 	 *
 	 * <div class="alert alert-warning">
-	 * **Note:** Filter names must be valid angular {@link expression} identifiers, such as `uppercase` or `orderBy`.
+	 * **Note:** Filter names must be valid AngularJS {@link expression} identifiers, such as `uppercase` or `orderBy`.
 	 * Names with special characters, such as hyphens and dots, are not allowed. If you wish to namespace
 	 * your filters, then you can use capitalization (`myappSubsectionFilterx`) or underscores
 	 * (`myapp_subsection_filterx`).
@@ -20823,8 +20949,8 @@
 	 * ```
 	 *
 	 *
-	 * For more information about how angular filters work, and how to create your own filters, see
-	 * {@link guide/filter Filters} in the Angular Developer Guide.
+	 * For more information about how AngularJS filters work, and how to create your own filters, see
+	 * {@link guide/filter Filters} in the AngularJS Developer Guide.
 	 */
 
 	/**
@@ -20834,7 +20960,7 @@
 	 * @description
 	 * Filters are used for formatting data displayed to the user.
 	 *
-	 * They can be used in view templates, controllers or services.Angular comes
+	 * They can be used in view templates, controllers or services. AngularJS comes
 	 * with a collection of [built-in filters](api/ng/filter), but it is easy to
 	 * define your own as well.
 	 *
@@ -20876,7 +21002,7 @@
 	   *    the keys are the filter names and the values are the filter factories.
 	   *
 	   *    <div class="alert alert-warning">
-	   *    **Note:** Filter names must be valid angular {@link expression} identifiers, such as `uppercase` or `orderBy`.
+	   *    **Note:** Filter names must be valid AngularJS {@link expression} identifiers, such as `uppercase` or `orderBy`.
 	   *    Names with special characters, such as hyphens and dots, are not allowed. If you wish to namespace
 	   *    your filters, then you can use capitalization (`myappSubsectionFilterx`) or underscores
 	   *    (`myapp_subsection_filterx`).
@@ -21264,11 +21390,14 @@
 	      fractionSize = formats.PATTERNS[1].maxFrac;
 	    }
 
+	    // If the currency symbol is empty, trim whitespace around the symbol
+	    var currencySymbolRe = !currencySymbol ? /\s*\u00A4\s*/g : /\u00A4/g;
+
 	    // if null or undefined pass it through
 	    return (amount == null)
 	        ? amount
 	        : formatNumber(amount, formats.PATTERNS[1], formats.GROUP_SEP, formats.DECIMAL_SEP, fractionSize).
-	            replace(/\u00A4/g, currencySymbol);
+	            replace(currencySymbolRe, currencySymbol);
 	  };
 	}
 
@@ -22161,7 +22290,7 @@
 	 *
 	 *    - `Function`: A getter function. This function will be called with each item as argument and
 	 *      the return value will be used for sorting.
-	 *    - `string`: An Angular expression. This expression will be evaluated against each item and the
+	 *    - `string`: An AngularJS expression. This expression will be evaluated against each item and the
 	 *      result will be used for sorting. For example, use `'label'` to sort by a property called
 	 *      `label` or `'label.substring(0, 3)'` to sort by the first 3 characters of the `label`
 	 *      property.<br />
@@ -22807,10 +22936,10 @@
 	 * @priority 99
 	 *
 	 * @description
-	 * Using Angular markup like `{{hash}}` in an href attribute will
+	 * Using AngularJS markup like `{{hash}}` in an href attribute will
 	 * make the link go to the wrong URL if the user clicks it before
-	 * Angular has a chance to replace the `{{hash}}` markup with its
-	 * value. Until Angular replaces the markup the link will be broken
+	 * AngularJS has a chance to replace the `{{hash}}` markup with its
+	 * value. Until AngularJS replaces the markup the link will be broken
 	 * and will most likely return a 404 error. The `ngHref` directive
 	 * solves this problem.
 	 *
@@ -22858,7 +22987,7 @@
 
 	          element(by.id('link-3')).click();
 
-	          // At this point, we navigate away from an Angular page, so we need
+	          // At this point, we navigate away from an AngularJS page, so we need
 	          // to use browser.driver to get the base webdriver.
 
 	          browser.wait(function() {
@@ -22887,7 +23016,7 @@
 
 	          element(by.id('link-6')).click();
 
-	          // At this point, we navigate away from an Angular page, so we need
+	          // At this point, we navigate away from an AngularJS page, so we need
 	          // to use browser.driver to get the base webdriver.
 	          browser.wait(function() {
 	            return browser.driver.getCurrentUrl().then(function(url) {
@@ -22906,9 +23035,9 @@
 	 * @priority 99
 	 *
 	 * @description
-	 * Using Angular markup like `{{hash}}` in a `src` attribute doesn't
+	 * Using AngularJS markup like `{{hash}}` in a `src` attribute doesn't
 	 * work right: The browser will fetch from the URL with the literal
-	 * text `{{hash}}` until Angular replaces the expression inside
+	 * text `{{hash}}` until AngularJS replaces the expression inside
 	 * `{{hash}}`. The `ngSrc` directive solves this problem.
 	 *
 	 * The buggy way to write it:
@@ -22932,9 +23061,9 @@
 	 * @priority 99
 	 *
 	 * @description
-	 * Using Angular markup like `{{hash}}` in a `srcset` attribute doesn't
+	 * Using AngularJS markup like `{{hash}}` in a `srcset` attribute doesn't
 	 * work right: The browser will fetch from the URL with the literal
-	 * text `{{hash}}` until Angular replaces the expression inside
+	 * text `{{hash}}` until AngularJS replaces the expression inside
 	 * `{{hash}}`. The `ngSrcset` directive solves this problem.
 	 *
 	 * The buggy way to write it:
@@ -23005,14 +23134,14 @@
 	 * @example
 	    <example name="ng-checked">
 	      <file name="index.html">
-	        <label>Check me to check both: <input type="checkbox" ng-model="master"></label><br/>
-	        <input id="checkSlave" type="checkbox" ng-checked="master" aria-label="Slave input">
+	        <label>Check me to check both: <input type="checkbox" ng-model="leader"></label><br/>
+	        <input id="checkFollower" type="checkbox" ng-checked="leader" aria-label="Follower input">
 	      </file>
 	      <file name="protractor.js" type="protractor">
 	        it('should check both checkBoxes', function() {
-	          expect(element(by.id('checkSlave')).getAttribute('checked')).toBeFalsy();
-	          element(by.model('master')).click();
-	          expect(element(by.id('checkSlave')).getAttribute('checked')).toBeTruthy();
+	          expect(element(by.id('checkFollower')).getAttribute('checked')).toBeFalsy();
+	          element(by.model('leader')).click();
+	          expect(element(by.id('checkFollower')).getAttribute('checked')).toBeTruthy();
 	        });
 	      </file>
 	    </example>
@@ -23042,7 +23171,7 @@
 	    <example name="ng-readonly">
 	      <file name="index.html">
 	        <label>Check me to make text readonly: <input type="checkbox" ng-model="checked"></label><br/>
-	        <input type="text" ng-readonly="checked" value="I'm Angular" aria-label="Readonly field" />
+	        <input type="text" ng-readonly="checked" value="I'm AngularJS" aria-label="Readonly field" />
 	      </file>
 	      <file name="protractor.js" type="protractor">
 	        it('should toggle readonly attr', function() {
@@ -23607,15 +23736,15 @@
 	 * If the `name` attribute is specified, the form controller is published onto the current scope under
 	 * this name.
 	 *
-	 * # Alias: {@link ng.directive:ngForm `ngForm`}
+	 * ## Alias: {@link ng.directive:ngForm `ngForm`}
 	 *
-	 * In Angular, forms can be nested. This means that the outer form is valid when all of the child
+	 * In AngularJS, forms can be nested. This means that the outer form is valid when all of the child
 	 * forms are valid as well. However, browsers do not allow nesting of `<form>` elements, so
-	 * Angular provides the {@link ng.directive:ngForm `ngForm`} directive, which behaves identically to
+	 * AngularJS provides the {@link ng.directive:ngForm `ngForm`} directive, which behaves identically to
 	 * `form` but can be nested. Nested forms can be useful, for example, if the validity of a sub-group
 	 * of controls needs to be determined.
 	 *
-	 * # CSS classes
+	 * ## CSS classes
 	 *  - `ng-valid` is set if the form is valid.
 	 *  - `ng-invalid` is set if the form is invalid.
 	 *  - `ng-pending` is set if the form is pending.
@@ -23626,14 +23755,14 @@
 	 * Keep in mind that ngAnimate can detect each of these classes when added and removed.
 	 *
 	 *
-	 * # Submitting a form and preventing the default action
+	 * ## Submitting a form and preventing the default action
 	 *
-	 * Since the role of forms in client-side Angular applications is different than in classical
+	 * Since the role of forms in client-side AngularJS applications is different than in classical
 	 * roundtrip apps, it is desirable for the browser not to translate the form submission into a full
 	 * page reload that sends the data to the server. Instead some javascript logic should be triggered
 	 * to handle the form submission in an application-specific way.
 	 *
-	 * For this reason, Angular prevents the default action (form submission to the server) unless the
+	 * For this reason, AngularJS prevents the default action (form submission to the server) unless the
 	 * `<form>` element has an `action` attribute specified.
 	 *
 	 * You can use one of the following two ways to specify what javascript method should be called when
@@ -23659,8 +23788,7 @@
 	 * submitted. Note that `ngClick` events will occur before the model is updated. Use `ngSubmit`
 	 * to have access to the updated model.
 	 *
-	 * ## Animation Hooks
-	 *
+	 * @animations
 	 * Animations in ngForm are triggered when any of the associated CSS classes are added and removed.
 	 * These classes are: `.ng-pristine`, `.ng-dirty`, `.ng-invalid` and `.ng-valid` as well as any
 	 * other validations that are performed within the form. Animations in ngForm are similar to how
@@ -23972,10 +24100,10 @@
 	   * @name input[text]
 	   *
 	   * @description
-	   * Standard HTML text input with angular data binding, inherited by most of the `input` elements.
+	   * Standard HTML text input with AngularJS data binding, inherited by most of the `input` elements.
 	   *
 	   *
-	   * @param {string} ngModel Assignable angular expression to data-bind to.
+	   * @param {string} ngModel Assignable AngularJS expression to data-bind to.
 	   * @param {string=} name Property name of the form under which the control is published.
 	   * @param {string=} required Adds `required` validation error key if the value is not entered.
 	   * @param {string=} ngRequired Adds `required` attribute and `required` validation constraint to
@@ -23990,7 +24118,7 @@
 	   *    that contains the regular expression body that will be converted to a regular expression
 	   *    as in the ngPattern directive.
 	   * @param {string=} ngPattern Sets `pattern` validation error key if the ngModel {@link ngModel.NgModelController#$viewValue $viewValue}
-	   *    does not match a RegExp found by evaluating the Angular expression given in the attribute value.
+	   *    does not match a RegExp found by evaluating the AngularJS expression given in the attribute value.
 	   *    If the expression evaluates to a RegExp object, then this is used directly.
 	   *    If the expression evaluates to a string, then it will be converted to a RegExp
 	   *    after wrapping it in `^` and `$` characters. For instance, `"abc"` will be converted to
@@ -23998,9 +24126,9 @@
 	   *    **Note:** Avoid using the `g` flag on the RegExp, as it will cause each successive search to
 	   *    start at the index of the last search's match, thus not taking the whole input value into
 	   *    account.
-	   * @param {string=} ngChange Angular expression to be executed when input changes due to user
+	   * @param {string=} ngChange AngularJS expression to be executed when input changes due to user
 	   *    interaction with the input element.
-	   * @param {boolean=} [ngTrim=true] If set to false Angular will not automatically trim the input.
+	   * @param {boolean=} [ngTrim=true] If set to false AngularJS will not automatically trim the input.
 	   *    This parameter is ignored for input[type=password] controls, which will never trim the
 	   *    input.
 	   *
@@ -24074,13 +24202,13 @@
 	     * modern browsers do not yet support this input type, it is important to provide cues to users on the
 	     * expected input format via a placeholder or label.
 	     *
-	     * The model must always be a Date object, otherwise Angular will throw an error.
+	     * The model must always be a Date object, otherwise AngularJS will throw an error.
 	     * Invalid `Date` objects (dates whose `getTime()` is `NaN`) will be rendered as an empty string.
 	     *
 	     * The timezone to be used to read/write the `Date` instance in the model can be defined using
 	     * {@link ng.directive:ngModelOptions ngModelOptions}. By default, this is the timezone of the browser.
 	     *
-	     * @param {string} ngModel Assignable angular expression to data-bind to.
+	     * @param {string} ngModel Assignable AngularJS expression to data-bind to.
 	     * @param {string=} name Property name of the form under which the control is published.
 	     * @param {string=} min Sets the `min` validation error key if the value entered is less than `min`. This must be a
 	     *   valid ISO date string (yyyy-MM-dd). You can also use interpolation inside this attribute
@@ -24098,7 +24226,7 @@
 	     * @param {string=} ngRequired Adds `required` attribute and `required` validation constraint to
 	     *    the element when the ngRequired expression evaluates to true. Use `ngRequired` instead of
 	     *    `required` when you want to data-bind to the `required` attribute.
-	     * @param {string=} ngChange Angular expression to be executed when input changes due to user
+	     * @param {string=} ngChange AngularJS expression to be executed when input changes due to user
 	     *    interaction with the input element.
 	     *
 	     * @example
@@ -24176,13 +24304,13 @@
 	    * the HTML5 date input, a text element will be used. In that case, the text must be entered in a valid ISO-8601
 	    * local datetime format (yyyy-MM-ddTHH:mm:ss), for example: `2010-12-28T14:57:00`.
 	    *
-	    * The model must always be a Date object, otherwise Angular will throw an error.
+	    * The model must always be a Date object, otherwise AngularJS will throw an error.
 	    * Invalid `Date` objects (dates whose `getTime()` is `NaN`) will be rendered as an empty string.
 	    *
 	    * The timezone to be used to read/write the `Date` instance in the model can be defined using
 	    * {@link ng.directive:ngModelOptions ngModelOptions}. By default, this is the timezone of the browser.
 	    *
-	    * @param {string} ngModel Assignable angular expression to data-bind to.
+	    * @param {string} ngModel Assignable AngularJS expression to data-bind to.
 	    * @param {string=} name Property name of the form under which the control is published.
 	    * @param {string=} min Sets the `min` validation error key if the value entered is less than `min`.
 	    *   This must be a valid ISO datetime format (yyyy-MM-ddTHH:mm:ss). You can also use interpolation
@@ -24200,7 +24328,7 @@
 	    * @param {string=} ngRequired Adds `required` attribute and `required` validation constraint to
 	    *    the element when the ngRequired expression evaluates to true. Use `ngRequired` instead of
 	    *    `required` when you want to data-bind to the `required` attribute.
-	    * @param {string=} ngChange Angular expression to be executed when input changes due to user
+	    * @param {string=} ngChange AngularJS expression to be executed when input changes due to user
 	    *    interaction with the input element.
 	    *
 	    * @example
@@ -24279,13 +24407,13 @@
 	   * local time format (HH:mm:ss), for example: `14:57:00`. Model must be a Date object. This binding will always output a
 	   * Date object to the model of January 1, 1970, or local date `new Date(1970, 0, 1, HH, mm, ss)`.
 	   *
-	   * The model must always be a Date object, otherwise Angular will throw an error.
+	   * The model must always be a Date object, otherwise AngularJS will throw an error.
 	   * Invalid `Date` objects (dates whose `getTime()` is `NaN`) will be rendered as an empty string.
 	   *
 	   * The timezone to be used to read/write the `Date` instance in the model can be defined using
 	   * {@link ng.directive:ngModelOptions ngModelOptions}. By default, this is the timezone of the browser.
 	   *
-	   * @param {string} ngModel Assignable angular expression to data-bind to.
+	   * @param {string} ngModel Assignable AngularJS expression to data-bind to.
 	   * @param {string=} name Property name of the form under which the control is published.
 	   * @param {string=} min Sets the `min` validation error key if the value entered is less than `min`.
 	   *   This must be a valid ISO time format (HH:mm:ss). You can also use interpolation inside this
@@ -24303,7 +24431,7 @@
 	   * @param {string=} ngRequired Adds `required` attribute and `required` validation constraint to
 	   *    the element when the ngRequired expression evaluates to true. Use `ngRequired` instead of
 	   *    `required` when you want to data-bind to the `required` attribute.
-	   * @param {string=} ngChange Angular expression to be executed when input changes due to user
+	   * @param {string=} ngChange AngularJS expression to be executed when input changes due to user
 	   *    interaction with the input element.
 	   *
 	   * @example
@@ -24381,13 +24509,13 @@
 	    * the HTML5 week input, a text element will be used. In that case, the text must be entered in a valid ISO-8601
 	    * week format (yyyy-W##), for example: `2013-W02`.
 	    *
-	    * The model must always be a Date object, otherwise Angular will throw an error.
+	    * The model must always be a Date object, otherwise AngularJS will throw an error.
 	    * Invalid `Date` objects (dates whose `getTime()` is `NaN`) will be rendered as an empty string.
 	    *
 	    * The timezone to be used to read/write the `Date` instance in the model can be defined using
 	    * {@link ng.directive:ngModelOptions ngModelOptions}. By default, this is the timezone of the browser.
 	    *
-	    * @param {string} ngModel Assignable angular expression to data-bind to.
+	    * @param {string} ngModel Assignable AngularJS expression to data-bind to.
 	    * @param {string=} name Property name of the form under which the control is published.
 	    * @param {string=} min Sets the `min` validation error key if the value entered is less than `min`.
 	    *   This must be a valid ISO week format (yyyy-W##). You can also use interpolation inside this
@@ -24405,7 +24533,7 @@
 	    * @param {string=} ngRequired Adds `required` attribute and `required` validation constraint to
 	    *    the element when the ngRequired expression evaluates to true. Use `ngRequired` instead of
 	    *    `required` when you want to data-bind to the `required` attribute.
-	    * @param {string=} ngChange Angular expression to be executed when input changes due to user
+	    * @param {string=} ngChange AngularJS expression to be executed when input changes due to user
 	    *    interaction with the input element.
 	    *
 	    * @example
@@ -24483,7 +24611,7 @@
 	   * the HTML5 month input, a text element will be used. In that case, the text must be entered in a valid ISO-8601
 	   * month format (yyyy-MM), for example: `2009-01`.
 	   *
-	   * The model must always be a Date object, otherwise Angular will throw an error.
+	   * The model must always be a Date object, otherwise AngularJS will throw an error.
 	   * Invalid `Date` objects (dates whose `getTime()` is `NaN`) will be rendered as an empty string.
 	   * If the model is not set to the first of the month, the next view to model update will set it
 	   * to the first of the month.
@@ -24491,7 +24619,7 @@
 	   * The timezone to be used to read/write the `Date` instance in the model can be defined using
 	   * {@link ng.directive:ngModelOptions ngModelOptions}. By default, this is the timezone of the browser.
 	   *
-	   * @param {string} ngModel Assignable angular expression to data-bind to.
+	   * @param {string} ngModel Assignable AngularJS expression to data-bind to.
 	   * @param {string=} name Property name of the form under which the control is published.
 	   * @param {string=} min Sets the `min` validation error key if the value entered is less than `min`.
 	   *   This must be a valid ISO month format (yyyy-MM). You can also use interpolation inside this
@@ -24510,7 +24638,7 @@
 	   * @param {string=} ngRequired Adds `required` attribute and `required` validation constraint to
 	   *    the element when the ngRequired expression evaluates to true. Use `ngRequired` instead of
 	   *    `required` when you want to data-bind to the `required` attribute.
-	   * @param {string=} ngChange Angular expression to be executed when input changes due to user
+	   * @param {string=} ngChange AngularJS expression to be executed when input changes due to user
 	   *    interaction with the input element.
 	   *
 	   * @example
@@ -24588,7 +24716,7 @@
 	   * error if not a valid number.
 	   *
 	   * <div class="alert alert-warning">
-	   * The model must always be of type `number` otherwise Angular will throw an error.
+	   * The model must always be of type `number` otherwise AngularJS will throw an error.
 	   * Be aware that a string containing a number is not enough. See the {@link ngModel:numfmt}
 	   * error docs for more information and an example of how to convert your model if necessary.
 	   * </div>
@@ -24603,7 +24731,7 @@
 	   * will also be an empty string.
 	   *
 	   *
-	   * @param {string} ngModel Assignable angular expression to data-bind to.
+	   * @param {string} ngModel Assignable AngularJS expression to data-bind to.
 	   * @param {string=} name Property name of the form under which the control is published.
 	   * @param {string=} min Sets the `min` validation error key if the value entered is less than `min`.
 	   *    Can be interpolated.
@@ -24630,7 +24758,7 @@
 	   *    that contains the regular expression body that will be converted to a regular expression
 	   *    as in the ngPattern directive.
 	   * @param {string=} ngPattern Sets `pattern` validation error key if the ngModel {@link ngModel.NgModelController#$viewValue $viewValue}
-	   *    does not match a RegExp found by evaluating the Angular expression given in the attribute value.
+	   *    does not match a RegExp found by evaluating the AngularJS expression given in the attribute value.
 	   *    If the expression evaluates to a RegExp object, then this is used directly.
 	   *    If the expression evaluates to a string, then it will be converted to a RegExp
 	   *    after wrapping it in `^` and `$` characters. For instance, `"abc"` will be converted to
@@ -24638,7 +24766,7 @@
 	   *    **Note:** Avoid using the `g` flag on the RegExp, as it will cause each successive search to
 	   *    start at the index of the last search's match, thus not taking the whole input value into
 	   *    account.
-	   * @param {string=} ngChange Angular expression to be executed when input changes due to user
+	   * @param {string=} ngChange AngularJS expression to be executed when input changes due to user
 	   *    interaction with the input element.
 	   *
 	   * @example
@@ -24713,7 +24841,7 @@
 	   * the built-in validators (see the {@link guide/forms Forms guide})
 	   * </div>
 	   *
-	   * @param {string} ngModel Assignable angular expression to data-bind to.
+	   * @param {string} ngModel Assignable AngularJS expression to data-bind to.
 	   * @param {string=} name Property name of the form under which the control is published.
 	   * @param {string=} required Sets `required` validation error key if the value is not entered.
 	   * @param {string=} ngRequired Adds `required` attribute and `required` validation constraint to
@@ -24728,7 +24856,7 @@
 	   *    that contains the regular expression body that will be converted to a regular expression
 	   *    as in the ngPattern directive.
 	   * @param {string=} ngPattern Sets `pattern` validation error key if the ngModel {@link ngModel.NgModelController#$viewValue $viewValue}
-	   *    does not match a RegExp found by evaluating the Angular expression given in the attribute value.
+	   *    does not match a RegExp found by evaluating the AngularJS expression given in the attribute value.
 	   *    If the expression evaluates to a RegExp object, then this is used directly.
 	   *    If the expression evaluates to a string, then it will be converted to a RegExp
 	   *    after wrapping it in `^` and `$` characters. For instance, `"abc"` will be converted to
@@ -24736,7 +24864,7 @@
 	   *    **Note:** Avoid using the `g` flag on the RegExp, as it will cause each successive search to
 	   *    start at the index of the last search's match, thus not taking the whole input value into
 	   *    account.
-	   * @param {string=} ngChange Angular expression to be executed when input changes due to user
+	   * @param {string=} ngChange AngularJS expression to be executed when input changes due to user
 	   *    interaction with the input element.
 	   *
 	   * @example
@@ -24812,7 +24940,7 @@
 	   * use `ng-pattern` or modify the built-in validators (see the {@link guide/forms Forms guide})
 	   * </div>
 	   *
-	   * @param {string} ngModel Assignable angular expression to data-bind to.
+	   * @param {string} ngModel Assignable AngularJS expression to data-bind to.
 	   * @param {string=} name Property name of the form under which the control is published.
 	   * @param {string=} required Sets `required` validation error key if the value is not entered.
 	   * @param {string=} ngRequired Adds `required` attribute and `required` validation constraint to
@@ -24827,7 +24955,7 @@
 	   *    that contains the regular expression body that will be converted to a regular expression
 	   *    as in the ngPattern directive.
 	   * @param {string=} ngPattern Sets `pattern` validation error key if the ngModel {@link ngModel.NgModelController#$viewValue $viewValue}
-	   *    does not match a RegExp found by evaluating the Angular expression given in the attribute value.
+	   *    does not match a RegExp found by evaluating the AngularJS expression given in the attribute value.
 	   *    If the expression evaluates to a RegExp object, then this is used directly.
 	   *    If the expression evaluates to a string, then it will be converted to a RegExp
 	   *    after wrapping it in `^` and `$` characters. For instance, `"abc"` will be converted to
@@ -24835,7 +24963,7 @@
 	   *    **Note:** Avoid using the `g` flag on the RegExp, as it will cause each successive search to
 	   *    start at the index of the last search's match, thus not taking the whole input value into
 	   *    account.
-	   * @param {string=} ngChange Angular expression to be executed when input changes due to user
+	   * @param {string=} ngChange AngularJS expression to be executed when input changes due to user
 	   *    interaction with the input element.
 	   *
 	   * @example
@@ -24903,14 +25031,14 @@
 	   * @description
 	   * HTML radio button.
 	   *
-	   * @param {string} ngModel Assignable angular expression to data-bind to.
+	   * @param {string} ngModel Assignable AngularJS expression to data-bind to.
 	   * @param {string} value The value to which the `ngModel` expression should be set when selected.
 	   *    Note that `value` only supports `string` values, i.e. the scope model needs to be a string,
 	   *    too. Use `ngValue` if you need complex models (`number`, `object`, ...).
 	   * @param {string=} name Property name of the form under which the control is published.
-	   * @param {string=} ngChange Angular expression to be executed when input changes due to user
+	   * @param {string=} ngChange AngularJS expression to be executed when input changes due to user
 	   *    interaction with the input element.
-	   * @param {string} ngValue Angular expression to which `ngModel` will be be set when the radio
+	   * @param {string} ngValue AngularJS expression to which `ngModel` will be be set when the radio
 	   *    is selected. Should be used instead of the `value` attribute if you need
 	   *    a non-string `ngModel` (`boolean`, `array`, ...).
 	   *
@@ -24988,34 +25116,34 @@
 	   * See the [HTML Spec on input[type=range]](https://www.w3.org/TR/html5/forms.html#range-state-(type=range))
 	   * for more info.
 	   *
-	   * This has the following consequences for Angular:
+	   * This has the following consequences for AngularJS:
 	   *
 	   * Since the element value should always reflect the current model value, a range input
 	   * will set the bound ngModel expression to the value that the browser has set for the
 	   * input element. For example, in the following input `<input type="range" ng-model="model.value">`,
 	   * if the application sets `model.value = null`, the browser will set the input to `'50'`.
-	   * Angular will then set the model to `50`, to prevent input and model value being out of sync.
+	   * AngularJS will then set the model to `50`, to prevent input and model value being out of sync.
 	   *
 	   * That means the model for range will immediately be set to `50` after `ngModel` has been
 	   * initialized. It also means a range input can never have the required error.
 	   *
 	   * This does not only affect changes to the model value, but also to the values of the `min`,
 	   * `max`, and `step` attributes. When these change in a way that will cause the browser to modify
-	   * the input value, Angular will also update the model value.
+	   * the input value, AngularJS will also update the model value.
 	   *
 	   * Automatic value adjustment also means that a range input element can never have the `required`,
 	   * `min`, or `max` errors.
 	   *
 	   * However, `step` is currently only fully implemented by Firefox. Other browsers have problems
 	   * when the step value changes dynamically - they do not adjust the element value correctly, but
-	   * instead may set the `stepMismatch` error. If that's the case, the Angular will set the `step`
+	   * instead may set the `stepMismatch` error. If that's the case, the AngularJS will set the `step`
 	   * error on the input, and set the model to `undefined`.
 	   *
 	   * Note that `input[range]` is not compatible with`ngMax`, `ngMin`, and `ngStep`, because they do
 	   * not set the `min` and `max` attributes, which means that the browser won't automatically adjust
 	   * the input value based on their values, and will always assume min = 0, max = 100, and step = 1.
 	   *
-	   * @param {string}  ngModel Assignable angular expression to data-bind to.
+	   * @param {string}  ngModel Assignable AngularJS expression to data-bind to.
 	   * @param {string=} name Property name of the form under which the control is published.
 	   * @param {string=} min Sets the `min` validation to ensure that the value entered is greater
 	   *                  than `min`. Can be interpolated.
@@ -25023,7 +25151,7 @@
 	   *                  Can be interpolated.
 	   * @param {string=} step Sets the `step` validation to ensure that the value entered matches the `step`
 	   *                  Can be interpolated.
-	   * @param {string=} ngChange Angular expression to be executed when the ngModel value changes due
+	   * @param {string=} ngChange AngularJS expression to be executed when the ngModel value changes due
 	   *                  to user interaction with the input element.
 	   * @param {expression=} ngChecked If the expression is truthy, then the `checked` attribute will be set on the
 	   *                      element. **Note** : `ngChecked` should not be used alongside `ngModel`.
@@ -25090,11 +25218,11 @@
 	   * @description
 	   * HTML checkbox.
 	   *
-	   * @param {string} ngModel Assignable angular expression to data-bind to.
+	   * @param {string} ngModel Assignable AngularJS expression to data-bind to.
 	   * @param {string=} name Property name of the form under which the control is published.
 	   * @param {expression=} ngTrueValue The value to which the expression should be set when selected.
 	   * @param {expression=} ngFalseValue The value to which the expression should be set when not selected.
-	   * @param {string=} ngChange Angular expression to be executed when input changes due to user
+	   * @param {string=} ngChange AngularJS expression to be executed when input changes due to user
 	   *    interaction with the input element.
 	   *
 	   * @example
@@ -25229,9 +25357,9 @@
 	      deferListener(event, this, this.value);
 	    });
 
-	    // if user modifies input value using context menu in IE, we need "paste" and "cut" events to catch it
+	    // if user modifies input value using context menu in IE, we need "paste", "cut" and "drop" events to catch it
 	    if ($sniffer.hasEvent('paste')) {
-	      element.on('paste cut', deferListener);
+	      element.on('paste cut drop', deferListener);
 	    }
 	  }
 
@@ -25806,11 +25934,11 @@
 	 * @restrict E
 	 *
 	 * @description
-	 * HTML textarea element control with angular data-binding. The data-binding and validation
+	 * HTML textarea element control with AngularJS data-binding. The data-binding and validation
 	 * properties of this element are exactly the same as those of the
 	 * {@link ng.directive:input input element}.
 	 *
-	 * @param {string} ngModel Assignable angular expression to data-bind to.
+	 * @param {string} ngModel Assignable AngularJS expression to data-bind to.
 	 * @param {string=} name Property name of the form under which the control is published.
 	 * @param {string=} required Sets `required` validation error key if the value is not entered.
 	 * @param {string=} ngRequired Adds `required` attribute and `required` validation constraint to
@@ -25822,7 +25950,7 @@
 	 *    maxlength. Setting the attribute to a negative or non-numeric value, allows view values of any
 	 *    length.
 	 * @param {string=} ngPattern Sets `pattern` validation error key if the ngModel {@link ngModel.NgModelController#$viewValue $viewValue}
-	 *    does not match a RegExp found by evaluating the Angular expression given in the attribute value.
+	 *    does not match a RegExp found by evaluating the AngularJS expression given in the attribute value.
 	 *    If the expression evaluates to a RegExp object, then this is used directly.
 	 *    If the expression evaluates to a string, then it will be converted to a RegExp
 	 *    after wrapping it in `^` and `$` characters. For instance, `"abc"` will be converted to
@@ -25830,15 +25958,15 @@
 	 *    **Note:** Avoid using the `g` flag on the RegExp, as it will cause each successive search to
 	 *    start at the index of the last search's match, thus not taking the whole input value into
 	 *    account.
-	 * @param {string=} ngChange Angular expression to be executed when input changes due to user
+	 * @param {string=} ngChange AngularJS expression to be executed when input changes due to user
 	 *    interaction with the input element.
-	 * @param {boolean=} [ngTrim=true] If set to false Angular will not automatically trim the input.
+	 * @param {boolean=} [ngTrim=true] If set to false AngularJS will not automatically trim the input.
 	 *
 	 * @knownIssue
 	 *
 	 * When specifying the `placeholder` attribute of `<textarea>`, Internet Explorer will temporarily
 	 * insert the placeholder value as the textarea's content. If the placeholder value contains
-	 * interpolation (`{{ ... }}`), an error will be logged in the console when Angular tries to update
+	 * interpolation (`{{ ... }}`), an error will be logged in the console when AngularJS tries to update
 	 * the value of the by-then-removed text node. This doesn't affect the functionality of the
 	 * textarea, but can be undesirable.
 	 *
@@ -25865,7 +25993,7 @@
 	 * Specifically, data binding and event handling via `ng-model` is unsupported for `input[file]`.
 	 * </div>
 	 *
-	 * @param {string} ngModel Assignable angular expression to data-bind to.
+	 * @param {string} ngModel Assignable AngularJS expression to data-bind to.
 	 * @param {string=} name Property name of the form under which the control is published.
 	 * @param {string=} required Sets `required` validation error key if the value is not entered.
 	 * @param {boolean=} ngRequired Sets `required` attribute if set to true
@@ -25875,7 +26003,7 @@
 	 *    maxlength. Setting the attribute to a negative or non-numeric value, allows view values of any
 	 *    length.
 	 * @param {string=} ngPattern Sets `pattern` validation error key if the ngModel {@link ngModel.NgModelController#$viewValue $viewValue}
-	 *    value does not match a RegExp found by evaluating the Angular expression given in the attribute value.
+	 *    value does not match a RegExp found by evaluating the AngularJS expression given in the attribute value.
 	 *    If the expression evaluates to a RegExp object, then this is used directly.
 	 *    If the expression evaluates to a string, then it will be converted to a RegExp
 	 *    after wrapping it in `^` and `$` characters. For instance, `"abc"` will be converted to
@@ -25883,9 +26011,9 @@
 	 *    **Note:** Avoid using the `g` flag on the RegExp, as it will cause each successive search to
 	 *    start at the index of the last search's match, thus not taking the whole input value into
 	 *    account.
-	 * @param {string=} ngChange Angular expression to be executed when input changes due to user
+	 * @param {string=} ngChange AngularJS expression to be executed when input changes due to user
 	 *    interaction with the input element.
-	 * @param {boolean=} [ngTrim=true] If set to false Angular will not automatically trim the input.
+	 * @param {boolean=} [ngTrim=true] If set to false AngularJS will not automatically trim the input.
 	 *    This parameter is ignored for input[type=password] controls, which will never trim the
 	 *    input.
 	 *
@@ -26009,6 +26137,8 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngValue
+	 * @restrict A
+	 * @priority 100
 	 *
 	 * @description
 	 * Binds the given expression to the value of the element.
@@ -26021,8 +26151,8 @@
 	 * It can also be used to achieve one-way binding of a given expression to an input element
 	 * such as an `input[text]` or a `textarea`, when that element does not use ngModel.
 	 *
-	 * @element input
-	 * @param {string=} ngValue angular expression, whose value will be bound to the `value` attribute
+	 * @element ANY
+	 * @param {string=} ngValue AngularJS expression, whose value will be bound to the `value` attribute
 	 * and `value` property of the element.
 	 *
 	 * @example
@@ -26102,7 +26232,7 @@
 	 * @restrict AC
 	 *
 	 * @description
-	 * The `ngBind` attribute tells Angular to replace the text content of the specified HTML element
+	 * The `ngBind` attribute tells AngularJS to replace the text content of the specified HTML element
 	 * with the value of a given expression, and to update the text content when the value of that
 	 * expression changes.
 	 *
@@ -26110,7 +26240,7 @@
 	 * `{{ expression }}` which is similar but less verbose.
 	 *
 	 * It is preferable to use `ngBind` instead of `{{ expression }}` if a template is momentarily
-	 * displayed by the browser in its raw state before Angular compiles it. Since `ngBind` is an
+	 * displayed by the browser in its raw state before AngularJS compiles it. Since `ngBind` is an
 	 * element attribute, it makes the bindings invisible to the user while the page is loading.
 	 *
 	 * An alternative solution to this problem would be using the
@@ -26240,7 +26370,7 @@
 	 * Evaluates the expression and inserts the resulting HTML into the element in a secure way. By default,
 	 * the resulting HTML content will be sanitized using the {@link ngSanitize.$sanitize $sanitize} service.
 	 * To utilize this functionality, ensure that `$sanitize` is available, for example, by including {@link
-	 * ngSanitize} in your module's dependencies (not in core Angular). In order to use {@link ngSanitize}
+	 * ngSanitize} in your module's dependencies (not in core AngularJS). In order to use {@link ngSanitize}
 	 * in your module's dependencies, you need to include "angular-sanitize.js" in your application.
 	 *
 	 * You may also bypass sanitization for values you know are safe. To do so, bind to
@@ -26306,6 +26436,7 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngChange
+	 * @restrict A
 	 *
 	 * @description
 	 * Evaluate the given expression when the user changes the input.
@@ -26324,7 +26455,7 @@
 	 *
 	 * Note, this directive requires `ngModel` to be present.
 	 *
-	 * @element input
+	 * @element ANY
 	 * @param {expression} ngChange {@link guide/expression Expression} to evaluate upon change
 	 * in input value.
 	 *
@@ -26566,6 +26697,7 @@
 	 * @ngdoc directive
 	 * @name ngClass
 	 * @restrict AC
+	 * @element ANY
 	 *
 	 * @description
 	 * The `ngClass` directive allows you to dynamically set CSS classes on an HTML element by databinding
@@ -26601,14 +26733,21 @@
 	 * | {@link ng.$animate#addClass addClass}       | just before the class is applied to the element   |
 	 * | {@link ng.$animate#removeClass removeClass} | just before the class is removed from the element |
 	 *
-	 * @element ANY
+	 * ### ngClass and pre-existing CSS3 Transitions/Animations
+	   The ngClass directive still supports CSS3 Transitions/Animations even if they do not follow the ngAnimate CSS naming structure.
+	   Upon animation ngAnimate will apply supplementary CSS classes to track the start and end of an animation, but this will not hinder
+	   any pre-existing CSS transitions already on the element. To get an idea of what happens during a class-based animation, be sure
+	   to view the step by step details of {@link $animate#addClass $animate.addClass} and
+	   {@link $animate#removeClass $animate.removeClass}.
+	 *
 	 * @param {expression} ngClass {@link guide/expression Expression} to eval. The result
 	 *   of the evaluation can be a string representing space delimited class
 	 *   names, an array, or a map of class names to boolean values. In the case of a map, the
 	 *   names of the properties whose values are truthy will be added as css classes to the
 	 *   element.
 	 *
-	 * @example Example that demonstrates basic bindings via ngClass directive.
+	 * @example
+	 * ### Basic
 	   <example name="ng-class">
 	     <file name="index.html">
 	       <p ng-class="{strike: deleted, bold: important, 'has-error': error}">Map Syntax Example</p>
@@ -26698,7 +26837,8 @@
 	     </file>
 	   </example>
 
-	   ## Animations
+	   @example
+	   ### Animations
 
 	   The example below demonstrates how to perform animations using ngClass.
 
@@ -26736,14 +26876,6 @@
 	       });
 	     </file>
 	   </example>
-
-
-	   ## ngClass and pre-existing CSS3 Transitions/Animations
-	   The ngClass directive still supports CSS3 Transitions/Animations even if they do not follow the ngAnimate CSS naming structure.
-	   Upon animation ngAnimate will apply supplementary CSS classes to track the start and end of an animation, but this will not hinder
-	   any pre-existing CSS transitions already on the element. To get an idea of what happens during a class-based animation, be sure
-	   to view the step by step details of {@link $animate#addClass $animate.addClass} and
-	   {@link $animate#removeClass $animate.removeClass}.
 	 */
 	var ngClassDirective = classDirective('', true);
 
@@ -26849,7 +26981,7 @@
 	 * @restrict AC
 	 *
 	 * @description
-	 * The `ngCloak` directive is used to prevent the Angular html template from being briefly
+	 * The `ngCloak` directive is used to prevent the AngularJS html template from being briefly
 	 * displayed by the browser in its raw (uncompiled) form while your application is loading. Use this
 	 * directive to avoid the undesirable flicker effect caused by the html template display.
 	 *
@@ -26868,7 +27000,7 @@
 	 * ```
 	 *
 	 * When this css rule is loaded by the browser, all html elements (including their children) that
-	 * are tagged with the `ngCloak` directive are hidden. When Angular encounters this directive
+	 * are tagged with the `ngCloak` directive are hidden. When AngularJS encounters this directive
 	 * during the compilation of the template it deletes the `ngCloak` element attribute, making
 	 * the compiled element visible.
 	 *
@@ -26940,7 +27072,7 @@
 	 * @example
 	 * Here is a simple form for editing user contact information. Adding, removing, clearing, and
 	 * greeting are methods declared on the controller (see source tab). These methods can
-	 * easily be called from the angular markup. Any changes to the data are automatically reflected
+	 * easily be called from the AngularJS markup. Any changes to the data are automatically reflected
 	 * in the View without the need for a manual update.
 	 *
 	 * Two different declaration styles are included below:
@@ -26950,7 +27082,7 @@
 	 * * one injects `$scope` into the controller:
 	 * `ng-controller="SettingsController2"`
 	 *
-	 * The second option is more common in the Angular community, and is generally used in boilerplates
+	 * The second option is more common in the AngularJS community, and is generally used in boilerplates
 	 * and in this guide. However, there are advantages to binding properties directly to the controller
 	 * and avoiding scope.
 	 *
@@ -27147,31 +27279,31 @@
 	 * @element ANY
 	 * @description
 	 *
-	 * Angular has some features that can conflict with certain restrictions that are applied when using
+	 * AngularJS has some features that can conflict with certain restrictions that are applied when using
 	 * [CSP (Content Security Policy)](https://developer.mozilla.org/en/Security/CSP) rules.
 	 *
-	 * If you intend to implement CSP with these rules then you must tell Angular not to use these
+	 * If you intend to implement CSP with these rules then you must tell AngularJS not to use these
 	 * features.
 	 *
 	 * This is necessary when developing things like Google Chrome Extensions or Universal Windows Apps.
 	 *
 	 *
-	 * The following default rules in CSP affect Angular:
+	 * The following default rules in CSP affect AngularJS:
 	 *
 	 * * The use of `eval()`, `Function(string)` and similar functions to dynamically create and execute
-	 * code from strings is forbidden. Angular makes use of this in the {@link $parse} service to
-	 * provide a 30% increase in the speed of evaluating Angular expressions. (This CSP rule can be
+	 * code from strings is forbidden. AngularJS makes use of this in the {@link $parse} service to
+	 * provide a 30% increase in the speed of evaluating AngularJS expressions. (This CSP rule can be
 	 * disabled with the CSP keyword `unsafe-eval`, but it is generally not recommended as it would
 	 * weaken the protections offered by CSP.)
 	 *
 	 * * The use of inline resources, such as inline `<script>` and `<style>` elements, are forbidden.
-	 * This prevents apps from injecting custom styles directly into the document. Angular makes use of
+	 * This prevents apps from injecting custom styles directly into the document. AngularJS makes use of
 	 * this to include some CSS rules (e.g. {@link ngCloak} and {@link ngHide}). To make these
 	 * directives work when a CSP rule is blocking inline styles, you must link to the `angular-csp.css`
 	 * in your HTML manually. (This CSP rule can be disabled with the CSP keyword `unsafe-inline`, but
 	 * it is generally not recommended as it would weaken the protections offered by CSP.)
 	 *
-	 * If you do not provide `ngCsp` then Angular tries to autodetect if CSP is blocking dynamic code
+	 * If you do not provide `ngCsp` then AngularJS tries to autodetect if CSP is blocking dynamic code
 	 * creation from strings (e.g., `unsafe-eval` not specified in CSP header) and automatically
 	 * deactivates this feature in the {@link $parse} service. This autodetection, however, triggers a
 	 * CSP error to be logged in the console:
@@ -27188,35 +27320,36 @@
 	 *
 	 * *Note: This directive is only available in the `ng-csp` and `data-ng-csp` attribute form.*
 	 *
-	 * You can specify which of the CSP related Angular features should be deactivated by providing
+	 * You can specify which of the CSP related AngularJS features should be deactivated by providing
 	 * a value for the `ng-csp` attribute. The options are as follows:
 	 *
-	 * * no-inline-style: this stops Angular from injecting CSS styles into the DOM
+	 * * no-inline-style: this stops AngularJS from injecting CSS styles into the DOM
 	 *
-	 * * no-unsafe-eval: this stops Angular from optimizing $parse with unsafe eval of strings
+	 * * no-unsafe-eval: this stops AngularJS from optimizing $parse with unsafe eval of strings
 	 *
 	 * You can use these values in the following combinations:
 	 *
 	 *
-	 * * No declaration means that Angular will assume that you can do inline styles, but it will do
+	 * * No declaration means that AngularJS will assume that you can do inline styles, but it will do
 	 * a runtime check for unsafe-eval. E.g. `<body>`. This is backwardly compatible with previous
-	 * versions of Angular.
+	 * versions of AngularJS.
 	 *
-	 * * A simple `ng-csp` (or `data-ng-csp`) attribute will tell Angular to deactivate both inline
+	 * * A simple `ng-csp` (or `data-ng-csp`) attribute will tell AngularJS to deactivate both inline
 	 * styles and unsafe eval. E.g. `<body ng-csp>`. This is backwardly compatible with previous
-	 * versions of Angular.
+	 * versions of AngularJS.
 	 *
-	 * * Specifying only `no-unsafe-eval` tells Angular that we must not use eval, but that we can
+	 * * Specifying only `no-unsafe-eval` tells AngularJS that we must not use eval, but that we can
 	 * inject inline styles. E.g. `<body ng-csp="no-unsafe-eval">`.
 	 *
-	 * * Specifying only `no-inline-style` tells Angular that we must not inject styles, but that we can
+	 * * Specifying only `no-inline-style` tells AngularJS that we must not inject styles, but that we can
 	 * run eval - no automatic check for unsafe eval will occur. E.g. `<body ng-csp="no-inline-style">`
 	 *
-	 * * Specifying both `no-unsafe-eval` and `no-inline-style` tells Angular that we must not inject
+	 * * Specifying both `no-unsafe-eval` and `no-inline-style` tells AngularJS that we must not inject
 	 * styles nor use eval, which is the same as an empty: ng-csp.
 	 * E.g.`<body ng-csp="no-inline-style;no-unsafe-eval">`
 	 *
 	 * @example
+	 *
 	 * This example shows how to apply the `ngCsp` directive to the `html` tag.
 	   ```html
 	     <!doctype html>
@@ -27225,122 +27358,122 @@
 	     ...
 	     </html>
 	   ```
-	  * @example
-	      <!-- Note: the `.csp` suffix in the example name triggers CSP mode in our http server! -->
-	      <example name="example.csp" module="cspExample" ng-csp="true">
-	        <file name="index.html">
-	          <div ng-controller="MainController as ctrl">
-	            <div>
-	              <button ng-click="ctrl.inc()" id="inc">Increment</button>
-	              <span id="counter">
-	                {{ctrl.counter}}
-	              </span>
-	            </div>
 
-	            <div>
-	              <button ng-click="ctrl.evil()" id="evil">Evil</button>
-	              <span id="evilError">
-	                {{ctrl.evilError}}
-	              </span>
-	            </div>
-	          </div>
-	        </file>
-	        <file name="script.js">
-	           angular.module('cspExample', [])
-	             .controller('MainController', function MainController() {
-	                this.counter = 0;
-	                this.inc = function() {
-	                  this.counter++;
-	                };
-	                this.evil = function() {
-	                  try {
-	                    eval('1+2'); // eslint-disable-line no-eval
-	                  } catch (e) {
-	                    this.evilError = e.message;
-	                  }
-	                };
-	              });
-	        </file>
-	        <file name="protractor.js" type="protractor">
-	          var util, webdriver;
+	  <!-- Note: the `.csp` suffix in the example name triggers CSP mode in our http server! -->
+	  <example name="example.csp" module="cspExample" ng-csp="true">
+	    <file name="index.html">
+	      <div ng-controller="MainController as ctrl">
+	        <div>
+	          <button ng-click="ctrl.inc()" id="inc">Increment</button>
+	          <span id="counter">
+	            {{ctrl.counter}}
+	          </span>
+	        </div>
 
-	          var incBtn = element(by.id('inc'));
-	          var counter = element(by.id('counter'));
-	          var evilBtn = element(by.id('evil'));
-	          var evilError = element(by.id('evilError'));
-
-	          function getAndClearSevereErrors() {
-	            return browser.manage().logs().get('browser').then(function(browserLog) {
-	              return browserLog.filter(function(logEntry) {
-	                return logEntry.level.value > webdriver.logging.Level.WARNING.value;
-	              });
-	            });
-	          }
-
-	          function clearErrors() {
-	            getAndClearSevereErrors();
-	          }
-
-	          function expectNoErrors() {
-	            getAndClearSevereErrors().then(function(filteredLog) {
-	              expect(filteredLog.length).toEqual(0);
-	              if (filteredLog.length) {
-	                console.log('browser console errors: ' + util.inspect(filteredLog));
+	        <div>
+	          <button ng-click="ctrl.evil()" id="evil">Evil</button>
+	          <span id="evilError">
+	            {{ctrl.evilError}}
+	          </span>
+	        </div>
+	      </div>
+	    </file>
+	    <file name="script.js">
+	       angular.module('cspExample', [])
+	         .controller('MainController', function MainController() {
+	            this.counter = 0;
+	            this.inc = function() {
+	              this.counter++;
+	            };
+	            this.evil = function() {
+	              try {
+	                eval('1+2'); // eslint-disable-line no-eval
+	              } catch (e) {
+	                this.evilError = e.message;
 	              }
-	            });
+	            };
+	          });
+	    </file>
+	    <file name="protractor.js" type="protractor">
+	      var util, webdriver;
+
+	      var incBtn = element(by.id('inc'));
+	      var counter = element(by.id('counter'));
+	      var evilBtn = element(by.id('evil'));
+	      var evilError = element(by.id('evilError'));
+
+	      function getAndClearSevereErrors() {
+	        return browser.manage().logs().get('browser').then(function(browserLog) {
+	          return browserLog.filter(function(logEntry) {
+	            return logEntry.level.value > webdriver.logging.Level.WARNING.value;
+	          });
+	        });
+	      }
+
+	      function clearErrors() {
+	        getAndClearSevereErrors();
+	      }
+
+	      function expectNoErrors() {
+	        getAndClearSevereErrors().then(function(filteredLog) {
+	          expect(filteredLog.length).toEqual(0);
+	          if (filteredLog.length) {
+	            console.log('browser console errors: ' + util.inspect(filteredLog));
 	          }
+	        });
+	      }
 
-	          function expectError(regex) {
-	            getAndClearSevereErrors().then(function(filteredLog) {
-	              var found = false;
-	              filteredLog.forEach(function(log) {
-	                if (log.message.match(regex)) {
-	                  found = true;
-	                }
-	              });
-	              if (!found) {
-	                throw new Error('expected an error that matches ' + regex);
-	              }
-	            });
+	      function expectError(regex) {
+	        getAndClearSevereErrors().then(function(filteredLog) {
+	          var found = false;
+	          filteredLog.forEach(function(log) {
+	            if (log.message.match(regex)) {
+	              found = true;
+	            }
+	          });
+	          if (!found) {
+	            throw new Error('expected an error that matches ' + regex);
 	          }
+	        });
+	      }
 
-	          beforeEach(function() {
-	            util = require('util');
-	            webdriver = require('selenium-webdriver');
-	          });
+	      beforeEach(function() {
+	        util = require('util');
+	        webdriver = require('selenium-webdriver');
+	      });
 
-	          // For now, we only test on Chrome,
-	          // as Safari does not load the page with Protractor's injected scripts,
-	          // and Firefox webdriver always disables content security policy (#6358)
-	          if (browser.params.browser !== 'chrome') {
-	            return;
-	          }
+	      // For now, we only test on Chrome,
+	      // as Safari does not load the page with Protractor's injected scripts,
+	      // and Firefox webdriver always disables content security policy (#6358)
+	      if (browser.params.browser !== 'chrome') {
+	        return;
+	      }
 
-	          it('should not report errors when the page is loaded', function() {
-	            // clear errors so we are not dependent on previous tests
-	            clearErrors();
-	            // Need to reload the page as the page is already loaded when
-	            // we come here
-	            browser.driver.getCurrentUrl().then(function(url) {
-	              browser.get(url);
-	            });
-	            expectNoErrors();
-	          });
+	      it('should not report errors when the page is loaded', function() {
+	        // clear errors so we are not dependent on previous tests
+	        clearErrors();
+	        // Need to reload the page as the page is already loaded when
+	        // we come here
+	        browser.driver.getCurrentUrl().then(function(url) {
+	          browser.get(url);
+	        });
+	        expectNoErrors();
+	      });
 
-	          it('should evaluate expressions', function() {
-	            expect(counter.getText()).toEqual('0');
-	            incBtn.click();
-	            expect(counter.getText()).toEqual('1');
-	            expectNoErrors();
-	          });
+	      it('should evaluate expressions', function() {
+	        expect(counter.getText()).toEqual('0');
+	        incBtn.click();
+	        expect(counter.getText()).toEqual('1');
+	        expectNoErrors();
+	      });
 
-	          it('should throw and report an error when using "eval"', function() {
-	            evilBtn.click();
-	            expect(evilError.getText()).toMatch(/Content Security Policy/);
-	            expectError(/Content Security Policy/);
-	          });
-	        </file>
-	      </example>
+	      it('should throw and report an error when using "eval"', function() {
+	        evilBtn.click();
+	        expect(evilError.getText()).toMatch(/Content Security Policy/);
+	        expectError(/Content Security Policy/);
+	      });
+	    </file>
+	  </example>
 	  */
 
 	// `ngCsp` is not implemented as a proper directive any more, because we need it be processed while
@@ -27350,13 +27483,14 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngClick
+	 * @restrict A
+	 * @element ANY
+	 * @priority 0
 	 *
 	 * @description
 	 * The ngClick directive allows you to specify custom behavior when
 	 * an element is clicked.
 	 *
-	 * @element ANY
-	 * @priority 0
 	 * @param {expression} ngClick {@link guide/expression Expression} to evaluate upon
 	 * click. ({@link guide/expression#-event- Event object is available as `$event`})
 	 *
@@ -27381,7 +27515,7 @@
 	 */
 	/*
 	 * A collection of directives that allows creation of custom event handlers that are defined as
-	 * angular expressions and are compiled and executed within the current scope.
+	 * AngularJS expressions and are compiled and executed within the current scope.
 	 */
 	var ngEventDirectives = {};
 
@@ -27426,12 +27560,13 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngDblclick
+	 * @restrict A
+	 * @element ANY
+	 * @priority 0
 	 *
 	 * @description
 	 * The `ngDblclick` directive allows you to specify custom behavior on a dblclick event.
 	 *
-	 * @element ANY
-	 * @priority 0
 	 * @param {expression} ngDblclick {@link guide/expression Expression} to evaluate upon
 	 * a dblclick. (The Event object is available as `$event`)
 	 *
@@ -27450,12 +27585,13 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngMousedown
+	 * @restrict A
+	 * @element ANY
+	 * @priority 0
 	 *
 	 * @description
 	 * The ngMousedown directive allows you to specify custom behavior on mousedown event.
 	 *
-	 * @element ANY
-	 * @priority 0
 	 * @param {expression} ngMousedown {@link guide/expression Expression} to evaluate upon
 	 * mousedown. ({@link guide/expression#-event- Event object is available as `$event`})
 	 *
@@ -27474,12 +27610,13 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngMouseup
+	 * @restrict A
+	 * @element ANY
+	 * @priority 0
 	 *
 	 * @description
 	 * Specify custom behavior on mouseup event.
 	 *
-	 * @element ANY
-	 * @priority 0
 	 * @param {expression} ngMouseup {@link guide/expression Expression} to evaluate upon
 	 * mouseup. ({@link guide/expression#-event- Event object is available as `$event`})
 	 *
@@ -27497,12 +27634,13 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngMouseover
+	 * @restrict A
+	 * @element ANY
+	 * @priority 0
 	 *
 	 * @description
 	 * Specify custom behavior on mouseover event.
 	 *
-	 * @element ANY
-	 * @priority 0
 	 * @param {expression} ngMouseover {@link guide/expression Expression} to evaluate upon
 	 * mouseover. ({@link guide/expression#-event- Event object is available as `$event`})
 	 *
@@ -27521,12 +27659,13 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngMouseenter
+	 * @restrict A
+	 * @element ANY
+	 * @priority 0
 	 *
 	 * @description
 	 * Specify custom behavior on mouseenter event.
 	 *
-	 * @element ANY
-	 * @priority 0
 	 * @param {expression} ngMouseenter {@link guide/expression Expression} to evaluate upon
 	 * mouseenter. ({@link guide/expression#-event- Event object is available as `$event`})
 	 *
@@ -27545,12 +27684,13 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngMouseleave
+	 * @restrict A
+	 * @element ANY
+	 * @priority 0
 	 *
 	 * @description
 	 * Specify custom behavior on mouseleave event.
 	 *
-	 * @element ANY
-	 * @priority 0
 	 * @param {expression} ngMouseleave {@link guide/expression Expression} to evaluate upon
 	 * mouseleave. ({@link guide/expression#-event- Event object is available as `$event`})
 	 *
@@ -27569,12 +27709,13 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngMousemove
+	 * @restrict A
+	 * @element ANY
+	 * @priority 0
 	 *
 	 * @description
 	 * Specify custom behavior on mousemove event.
 	 *
-	 * @element ANY
-	 * @priority 0
 	 * @param {expression} ngMousemove {@link guide/expression Expression} to evaluate upon
 	 * mousemove. ({@link guide/expression#-event- Event object is available as `$event`})
 	 *
@@ -27593,12 +27734,13 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngKeydown
+	 * @restrict A
+	 * @element ANY
+	 * @priority 0
 	 *
 	 * @description
 	 * Specify custom behavior on keydown event.
 	 *
-	 * @element ANY
-	 * @priority 0
 	 * @param {expression} ngKeydown {@link guide/expression Expression} to evaluate upon
 	 * keydown. (Event object is available as `$event` and can be interrogated for keyCode, altKey, etc.)
 	 *
@@ -27615,12 +27757,13 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngKeyup
+	 * @restrict A
+	 * @element ANY
+	 * @priority 0
 	 *
 	 * @description
 	 * Specify custom behavior on keyup event.
 	 *
-	 * @element ANY
-	 * @priority 0
 	 * @param {expression} ngKeyup {@link guide/expression Expression} to evaluate upon
 	 * keyup. (Event object is available as `$event` and can be interrogated for keyCode, altKey, etc.)
 	 *
@@ -27642,11 +27785,12 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngKeypress
+	 * @restrict A
+	 * @element ANY
 	 *
 	 * @description
 	 * Specify custom behavior on keypress event.
 	 *
-	 * @element ANY
 	 * @param {expression} ngKeypress {@link guide/expression Expression} to evaluate upon
 	 * keypress. ({@link guide/expression#-event- Event object is available as `$event`}
 	 * and can be interrogated for keyCode, altKey, etc.)
@@ -27664,9 +27808,12 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngSubmit
+	 * @restrict A
+	 * @element form
+	 * @priority 0
 	 *
 	 * @description
-	 * Enables binding angular expressions to onsubmit events.
+	 * Enables binding AngularJS expressions to onsubmit events.
 	 *
 	 * Additionally it prevents the default action (which for form means sending the request to the
 	 * server and reloading the current page), but only if the form does not contain `action`,
@@ -27679,8 +27826,6 @@
 	 * for a detailed discussion of when `ngSubmit` may be triggered.
 	 * </div>
 	 *
-	 * @element form
-	 * @priority 0
 	 * @param {expression} ngSubmit {@link guide/expression Expression} to eval.
 	 * ({@link guide/expression#-event- Event object is available as `$event`})
 	 *
@@ -27727,6 +27872,9 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngFocus
+	 * @restrict A
+	 * @element window, input, select, textarea, a
+	 * @priority 0
 	 *
 	 * @description
 	 * Specify custom behavior on focus event.
@@ -27735,8 +27883,6 @@
 	 * AngularJS executes the expression using `scope.$evalAsync` if the event is fired
 	 * during an `$apply` to ensure a consistent state.
 	 *
-	 * @element window, input, select, textarea, a
-	 * @priority 0
 	 * @param {expression} ngFocus {@link guide/expression Expression} to evaluate upon
 	 * focus. ({@link guide/expression#-event- Event object is available as `$event`})
 	 *
@@ -27747,6 +27893,9 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngBlur
+	 * @restrict A
+	 * @element window, input, select, textarea, a
+	 * @priority 0
 	 *
 	 * @description
 	 * Specify custom behavior on blur event.
@@ -27759,8 +27908,6 @@
 	 * AngularJS executes the expression using `scope.$evalAsync` if the event is fired
 	 * during an `$apply` to ensure a consistent state.
 	 *
-	 * @element window, input, select, textarea, a
-	 * @priority 0
 	 * @param {expression} ngBlur {@link guide/expression Expression} to evaluate upon
 	 * blur. ({@link guide/expression#-event- Event object is available as `$event`})
 	 *
@@ -27771,12 +27918,13 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngCopy
+	 * @restrict A
+	 * @element window, input, select, textarea, a
+	 * @priority 0
 	 *
 	 * @description
 	 * Specify custom behavior on copy event.
 	 *
-	 * @element window, input, select, textarea, a
-	 * @priority 0
 	 * @param {expression} ngCopy {@link guide/expression Expression} to evaluate upon
 	 * copy. ({@link guide/expression#-event- Event object is available as `$event`})
 	 *
@@ -27792,12 +27940,13 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngCut
+	 * @restrict A
+	 * @element window, input, select, textarea, a
+	 * @priority 0
 	 *
 	 * @description
 	 * Specify custom behavior on cut event.
 	 *
-	 * @element window, input, select, textarea, a
-	 * @priority 0
 	 * @param {expression} ngCut {@link guide/expression Expression} to evaluate upon
 	 * cut. ({@link guide/expression#-event- Event object is available as `$event`})
 	 *
@@ -27813,12 +27962,13 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngPaste
+	 * @restrict A
+	 * @element window, input, select, textarea, a
+	 * @priority 0
 	 *
 	 * @description
 	 * Specify custom behavior on paste event.
 	 *
-	 * @element window, input, select, textarea, a
-	 * @priority 0
 	 * @param {expression} ngPaste {@link guide/expression Expression} to evaluate upon
 	 * paste. ({@link guide/expression#-event- Event object is available as `$event`})
 	 *
@@ -27961,6 +28111,8 @@
 	 * @ngdoc directive
 	 * @name ngInclude
 	 * @restrict ECA
+	 * @scope
+	 * @priority -400
 	 *
 	 * @description
 	 * Fetches, compiles and includes an external HTML fragment.
@@ -27969,7 +28121,7 @@
 	 * application document. This is done by calling {@link $sce#getTrustedResourceUrl
 	 * $sce.getTrustedResourceUrl} on it. To load templates from other domains or protocols
 	 * you may either {@link ng.$sceDelegateProvider#resourceUrlWhitelist whitelist them} or
-	 * {@link $sce#trustAsResourceUrl wrap them} as trusted values. Refer to Angular's {@link
+	 * {@link $sce#trustAsResourceUrl wrap them} as trusted values. Refer to AngularJS's {@link
 	 * ng.$sce Strict Contextual Escaping}.
 	 *
 	 * In addition, the browser's
@@ -27987,10 +28139,7 @@
 	 *
 	 * The enter and leave animation occur concurrently.
 	 *
-	 * @scope
-	 * @priority 400
-	 *
-	 * @param {string} ngInclude|src angular expression evaluating to URL. If the source is a string constant,
+	 * @param {string} ngInclude|src AngularJS expression evaluating to URL. If the source is a string constant,
 	 *                 make sure you wrap it in **single** quotes, e.g. `src="'myPartialTemplate.html'"`.
 	 * @param {string=} onload Expression to evaluate when a new partial is loaded.
 	 *                  <div class="alert alert-warning">
@@ -28267,6 +28416,10 @@
 	 * @ngdoc directive
 	 * @name ngInit
 	 * @restrict AC
+	 * @priority 450
+	 * @element ANY
+	 *
+	 * @param {expression} ngInit {@link guide/expression Expression} to eval.
 	 *
 	 * @description
 	 * The `ngInit` directive allows you to evaluate an expression in the
@@ -28274,10 +28427,16 @@
 	 *
 	 * <div class="alert alert-danger">
 	 * This directive can be abused to add unnecessary amounts of logic into your templates.
-	 * There are only a few appropriate uses of `ngInit`, such as for aliasing special properties of
-	 * {@link ng.directive:ngRepeat `ngRepeat`}, as seen in the demo below; and for injecting data via
-	 * server side scripting. Besides these few cases, you should use {@link guide/controller controllers}
-	 * rather than `ngInit` to initialize values on a scope.
+	 * There are only a few appropriate uses of `ngInit`:
+	 * <ul>
+	 *   <li>aliasing special properties of {@link ng.directive:ngRepeat `ngRepeat`},
+	 *     as seen in the demo below.</li>
+	 *   <li>initializing data during development, or for examples, as seen throughout these docs.</li>
+	 *   <li>injecting data via server side scripting.</li>
+	 * </ul>
+	 *
+	 * Besides these few cases, you should use {@link guide/component Components} or
+	 * {@link guide/controller Controllers} rather than `ngInit` to initialize values on a scope.
 	 * </div>
 	 *
 	 * <div class="alert alert-warning">
@@ -28287,11 +28446,6 @@
 	 * `<div ng-init="test1 = ($index | toString)"></div>`
 	 * </pre>
 	 * </div>
-	 *
-	 * @priority 450
-	 *
-	 * @element ANY
-	 * @param {expression} ngInit {@link guide/expression Expression} to eval.
 	 *
 	 * @example
 	   <example module="initExample" name="ng-init">
@@ -28335,6 +28489,10 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngList
+	 * @restrict A
+	 * @priority 100
+	 *
+	 * @param {string=} ngList optional delimiter that should be used to split the value.
 	 *
 	 * @description
 	 * Text input that converts between a delimited string and an array of strings. The default
@@ -28350,7 +28508,8 @@
 	 *   when joining the list items back together) and whitespace around each list item is stripped
 	 *   before it is added to the model.
 	 *
-	 * ### Example with Validation
+	 * @example
+	 * ### Validation
 	 *
 	 * <example name="ngList-directive" module="listExample">
 	 *   <file name="app.js">
@@ -28397,7 +28556,9 @@
 	 *   </file>
 	 * </example>
 	 *
-	 * ### Example - splitting on newline
+	 * @example
+	 * ### Splitting on newline
+	 *
 	 * <example name="ngList-directive-newlines">
 	 *   <file name="index.html">
 	 *    <textarea ng-model="list" ng-list="&#10;" ng-trim="false"></textarea>
@@ -28413,8 +28574,6 @@
 	 *   </file>
 	 * </example>
 	 *
-	 * @element input
-	 * @param {string=} ngList optional delimiter that should be used to split the value.
 	 */
 	var ngListDirective = function() {
 	  return {
@@ -28485,7 +28644,6 @@
 	/**
 	 * @ngdoc type
 	 * @name ngModel.NgModelController
-	 *
 	 * @property {*} $viewValue The actual value from the control's view. For `input` elements, this is a
 	 * String. See {@link ngModel.NgModelController#$setViewValue} for information about when the $viewValue
 	 * is set.
@@ -28586,8 +28744,10 @@
 	 * };
 	 * ```
 	 *
-	 * @property {Array.<Function>} $viewChangeListeners Array of functions to execute whenever the
-	 *     view value has changed. It is called with no arguments, and its return value is ignored.
+	 * @property {Array.<Function>} $viewChangeListeners Array of functions to execute whenever
+	 *     a change to {@link ngModel.NgModelController#$viewValue `$viewValue`} has caused a change
+	 *     to {@link ngModel.NgModelController#$modelValue `$modelValue`}.
+	 *     It is called with no arguments, and its return value is ignored.
 	 *     This can be used in place of additional $watches against the model value.
 	 *
 	 * @property {Object} $error An object hash with all failing validator ids as keys.
@@ -28609,7 +28769,7 @@
 	 * listening to DOM events.
 	 * Such DOM related logic should be provided by other directives which make use of
 	 * `NgModelController` for data-binding to control elements.
-	 * Angular provides this DOM logic for most {@link input `input`} elements.
+	 * AngularJS provides this DOM logic for most {@link input `input`} elements.
 	 * At the end of this page you can find a {@link ngModel.NgModelController#custom-control-example
 	 * custom control example} that uses `ngModelController` to bind to `contenteditable` elements.
 	 *
@@ -28729,6 +28889,9 @@
 	  this.$name = $interpolate($attr.name || '', false)($scope);
 	  this.$$parentForm = nullFormCtrl;
 	  this.$options = defaultModelOptions;
+	  this.$$updateEvents = '';
+	  // Attach the correct context to the event handler function for updateOn
+	  this.$$updateEventHandler = this.$$updateEventHandler.bind(this);
 
 	  this.$$parsedNgModel = $parse($attr.ngModel);
 	  this.$$parsedNgModelAssign = this.$$parsedNgModel.assign;
@@ -28925,13 +29088,14 @@
 	   * and reset the input to the last committed view value.
 	   *
 	   * It is also possible that you run into difficulties if you try to update the ngModel's `$modelValue`
-	   * programmatically before these debounced/future events have resolved/occurred, because Angular's
+	   * programmatically before these debounced/future events have resolved/occurred, because AngularJS's
 	   * dirty checking mechanism is not able to tell whether the model has actually changed or not.
 	   *
 	   * The `$rollbackViewValue()` method should be called before programmatically changing the model of an
 	   * input which may have such events pending. This is important in order to make sure that the
 	   * input field will be updated with the new model value and any pending operations are cancelled.
 	   *
+	   * @example
 	   * <example name="ng-model-cancel-update" module="cancel-update-example">
 	   *   <file name="app.js">
 	   *     angular.module('cancel-update-example', [])
@@ -29333,11 +29497,184 @@
 	   * See {@link ngModelOptions} for information about what options can be specified
 	   * and how model option inheritance works.
 	   *
+	   * <div class="alert alert-warning">
+	   * **Note:** this function only affects the options set on the `ngModelController`,
+	   * and not the options on the {@link ngModelOptions} directive from which they might have been
+	   * obtained initially.
+	   * </div>
+	   *
+	   * <div class="alert alert-danger">
+	   * **Note:** it is not possible to override the `getterSetter` option.
+	   * </div>
+	   *
 	   * @param {Object} options a hash of settings to override the previous options
 	   *
 	   */
 	  $overrideModelOptions: function(options) {
 	    this.$options = this.$options.createChild(options);
+	    this.$$setUpdateOnEvents();
+	  },
+
+	  /**
+	   * @ngdoc method
+	   *
+	   * @name  ngModel.NgModelController#$processModelValue
+
+	   * @description
+	   *
+	   * Runs the model -> view pipeline on the current
+	   * {@link ngModel.NgModelController#$modelValue $modelValue}.
+	   *
+	   * The following actions are performed by this method:
+	   *
+	   * - the `$modelValue` is run through the {@link ngModel.NgModelController#$formatters $formatters}
+	   * and the result is set to the {@link ngModel.NgModelController#$viewValue $viewValue}
+	   * - the `ng-empty` or `ng-not-empty` class is set on the element
+	   * - if the `$viewValue` has changed:
+	   *   - {@link ngModel.NgModelController#$render $render} is called on the control
+	   *   - the {@link ngModel.NgModelController#$validators $validators} are run and
+	   *   the validation status is set.
+	   *
+	   * This method is called by ngModel internally when the bound scope value changes.
+	   * Application developers usually do not have to call this function themselves.
+	   *
+	   * This function can be used when the `$viewValue` or the rendered DOM value are not correctly
+	   * formatted and the `$modelValue` must be run through the `$formatters` again.
+	   *
+	   * @example
+	   * Consider a text input with an autocomplete list (for fruit), where the items are
+	   * objects with a name and an id.
+	   * A user enters `ap` and then selects `Apricot` from the list.
+	   * Based on this, the autocomplete widget will call `$setViewValue({name: 'Apricot', id: 443})`,
+	   * but the rendered value will still be `ap`.
+	   * The widget can then call `ctrl.$processModelValue()` to run the model -> view
+	   * pipeline again, which formats the object to the string `Apricot`,
+	   * then updates the `$viewValue`, and finally renders it in the DOM.
+	   *
+	   * <example module="inputExample" name="ng-model-process">
+	     <file name="index.html">
+	      <div ng-controller="inputController" style="display: flex;">
+	        <div style="margin-right: 30px;">
+	          Search Fruit:
+	          <basic-autocomplete items="items" on-select="selectedFruit = item"></basic-autocomplete>
+	        </div>
+	        <div>
+	          Model:<br>
+	          <pre>{{selectedFruit | json}}</pre>
+	        </div>
+	      </div>
+	     </file>
+	     <file name="app.js">
+	      angular.module('inputExample', [])
+	        .controller('inputController', function($scope) {
+	          $scope.items = [
+	            {name: 'Apricot', id: 443},
+	            {name: 'Clementine', id: 972},
+	            {name: 'Durian', id: 169},
+	            {name: 'Jackfruit', id: 982},
+	            {name: 'Strawberry', id: 863}
+	          ];
+	        })
+	        .component('basicAutocomplete', {
+	          bindings: {
+	            items: '<',
+	            onSelect: '&'
+	          },
+	          templateUrl: 'autocomplete.html',
+	          controller: function($element, $scope) {
+	            var that = this;
+	            var ngModel;
+
+	            that.$postLink = function() {
+	              ngModel = $element.find('input').controller('ngModel');
+
+	              ngModel.$formatters.push(function(value) {
+	                return (value && value.name) || value;
+	              });
+
+	              ngModel.$parsers.push(function(value) {
+	                var match = value;
+	                for (var i = 0; i < that.items.length; i++) {
+	                  if (that.items[i].name === value) {
+	                    match = that.items[i];
+	                    break;
+	                  }
+	                }
+
+	                return match;
+	              });
+	            };
+
+	            that.selectItem = function(item) {
+	              ngModel.$setViewValue(item);
+	              ngModel.$processModelValue();
+	              that.onSelect({item: item});
+	            };
+	          }
+	        });
+	     </file>
+	     <file name="autocomplete.html">
+	       <div>
+	         <input type="search" ng-model="$ctrl.searchTerm" />
+	         <ul>
+	           <li ng-repeat="item in $ctrl.items | filter:$ctrl.searchTerm">
+	             <button ng-click="$ctrl.selectItem(item)">{{ item.name }}</button>
+	           </li>
+	         </ul>
+	       </div>
+	     </file>
+	   * </example>
+	   *
+	   */
+	  $processModelValue: function() {
+	    var viewValue = this.$$format();
+
+	    if (this.$viewValue !== viewValue) {
+	      this.$$updateEmptyClasses(viewValue);
+	      this.$viewValue = this.$$lastCommittedViewValue = viewValue;
+	      this.$render();
+	      // It is possible that model and view value have been updated during render
+	      this.$$runValidators(this.$modelValue, this.$viewValue, noop);
+	    }
+	  },
+
+	  /**
+	   * This method is called internally to run the $formatters on the $modelValue
+	   */
+	  $$format: function() {
+	    var formatters = this.$formatters,
+	        idx = formatters.length;
+
+	    var viewValue = this.$modelValue;
+	    while (idx--) {
+	      viewValue = formatters[idx](viewValue);
+	    }
+
+	    return viewValue;
+	  },
+
+	  /**
+	   * This method is called internally when the bound scope value changes.
+	   */
+	  $$setModelValue: function(modelValue) {
+	    this.$modelValue = this.$$rawModelValue = modelValue;
+	    this.$$parserValid = undefined;
+	    this.$processModelValue();
+	  },
+
+	  $$setUpdateOnEvents: function() {
+	    if (this.$$updateEvents) {
+	      this.$$element.off(this.$$updateEvents, this.$$updateEventHandler);
+	    }
+
+	    this.$$updateEvents = this.$options.getOption('updateOn');
+	    if (this.$$updateEvents) {
+	      this.$$element.on(this.$$updateEvents, this.$$updateEventHandler);
+	    }
+	  },
+
+	  $$updateEventHandler: function(ev) {
+	    this.$$debounceViewValueCommit(ev && ev.type);
 	  }
 	};
 
@@ -29354,30 +29691,14 @@
 	    var modelValue = ctrl.$$ngModelGet(scope);
 
 	    // if scope model value and ngModel value are out of sync
-	    // TODO(perf): why not move this to the action fn?
+	    // This cannot be moved to the action function, because it would not catch the
+	    // case where the model is changed in the ngChange function or the model setter
 	    if (modelValue !== ctrl.$modelValue &&
-	       // checks for NaN is needed to allow setting the model to NaN when there's an asyncValidator
-	        // eslint-disable-next-line no-self-compare
-	       (ctrl.$modelValue === ctrl.$modelValue || modelValue === modelValue)
+	      // checks for NaN is needed to allow setting the model to NaN when there's an asyncValidator
+	      // eslint-disable-next-line no-self-compare
+	      (ctrl.$modelValue === ctrl.$modelValue || modelValue === modelValue)
 	    ) {
-	      ctrl.$modelValue = ctrl.$$rawModelValue = modelValue;
-	      ctrl.$$parserValid = undefined;
-
-	      var formatters = ctrl.$formatters,
-	          idx = formatters.length;
-
-	      var viewValue = modelValue;
-	      while (idx--) {
-	        viewValue = formatters[idx](viewValue);
-	      }
-	      if (ctrl.$viewValue !== viewValue) {
-	        ctrl.$$updateEmptyClasses(viewValue);
-	        ctrl.$viewValue = ctrl.$$lastCommittedViewValue = viewValue;
-	        ctrl.$render();
-
-	        // It is possible that model and view value have been updated during render
-	        ctrl.$$runValidators(ctrl.$modelValue, ctrl.$viewValue, noop);
-	      }
+	      ctrl.$$setModelValue(modelValue);
 	    }
 
 	    return modelValue;
@@ -29403,7 +29724,7 @@
 	 *        classes and can be bound to as `{{ someForm.someControl.$error.myError }}`.
 	 * @param {boolean} isValid Whether the current state is valid (true), invalid (false), pending (undefined),
 	 *                          or skipped (null). Pending is used for unfulfilled `$asyncValidators`.
-	 *                          Skipped is used by Angular when validators do not run because of parse errors and
+	 *                          Skipped is used by AngularJS when validators do not run because of parse errors and
 	 *                          when `$asyncValidators` do not run because any of the `$validators` failed.
 	 */
 	addSetValidityMethod({
@@ -29420,9 +29741,9 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngModel
-	 *
-	 * @element input
+	 * @restrict A
 	 * @priority 1
+	 * @param {expression} ngModel assignable {@link guide/expression Expression} to bind to.
 	 *
 	 * @description
 	 * The `ngModel` directive binds an `input`,`select`, `textarea` (or custom form control) to a
@@ -29464,7 +29785,7 @@
 	 *  - {@link ng.directive:select select}
 	 *  - {@link ng.directive:textarea textarea}
 	 *
-	 * # Complex Models (objects or collections)
+	 * ## Complex Models (objects or collections)
 	 *
 	 * By default, `ngModel` watches the model by reference, not value. This is important to know when
 	 * binding inputs to models that are objects (e.g. `Date`) or collections (e.g. arrays). If only properties of the
@@ -29480,7 +29801,7 @@
 	 * first level of the object (or only changing the properties of an item in the collection if it's an array) will still
 	 * not trigger a re-rendering of the model.
 	 *
-	 * # CSS classes
+	 * ## CSS classes
 	 * The following CSS classes are added and removed on the associated input/select/textarea element
 	 * depending on the validity of the model.
 	 *
@@ -29499,8 +29820,7 @@
 	 *
 	 * Keep in mind that ngAnimate can detect each of these classes when added and removed.
 	 *
-	 * ## Animation Hooks
-	 *
+	 * @animations
 	 * Animations within models are triggered when any of the associated CSS classes are added and removed
 	 * on the input element which is attached to the model. These classes include: `.ng-pristine`, `.ng-dirty`,
 	 * `.ng-invalid` and `.ng-valid` as well as any other validations that are performed on the model itself.
@@ -29524,6 +29844,7 @@
 	 * </pre>
 	 *
 	 * @example
+	 * ### Basic Usage
 	 * <example deps="angular-animate.js" animations="true" fixBase="true" module="inputExample" name="ng-model">
 	     <file name="index.html">
 	       <script>
@@ -29553,7 +29874,8 @@
 	     </file>
 	 * </example>
 	 *
-	 * ## Binding to a getter/setter
+	 * @example
+	 * ### Binding to a getter/setter
 	 *
 	 * Sometimes it's helpful to bind `ngModel` to a getter/setter function.  A getter/setter is a
 	 * function that returns a representation of the model when called with zero arguments, and sets
@@ -29562,7 +29884,7 @@
 	 * to the view.
 	 *
 	 * <div class="alert alert-success">
-	 * **Best Practice:** It's best to keep getters fast because Angular is likely to call them more
+	 * **Best Practice:** It's best to keep getters fast because AngularJS is likely to call them more
 	 * frequently than other parts of your code.
 	 * </div>
 	 *
@@ -29644,11 +29966,7 @@
 	        },
 	        post: function ngModelPostLink(scope, element, attr, ctrls) {
 	          var modelCtrl = ctrls[0];
-	          if (modelCtrl.$options.getOption('updateOn')) {
-	            element.on(modelCtrl.$options.getOption('updateOn'), function(ev) {
-	              modelCtrl.$$debounceViewValueCommit(ev && ev.type);
-	            });
-	          }
+	          modelCtrl.$$setUpdateOnEvents();
 
 	          function setTouched() {
 	            modelCtrl.$setTouched();
@@ -29761,6 +30079,8 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngModelOptions
+	 * @restrict A
+	 * @priority 10
 	 *
 	 * @description
 	 * This directive allows you to modify the behaviour of {@link ngModel} directives within your
@@ -29768,8 +30088,8 @@
 	 * directives will use the options of their nearest `ngModelOptions` ancestor.
 	 *
 	 * The `ngModelOptions` settings are found by evaluating the value of the attribute directive as
-	 * an Angular expression. This expression should evaluate to an object, whose properties contain
-	 * the settings. For example: `<div "ng-model-options"="{ debounce: 100 }"`.
+	 * an AngularJS expression. This expression should evaluate to an object, whose properties contain
+	 * the settings. For example: `<div ng-model-options="{ debounce: 100 }"`.
 	 *
 	 * ## Inheriting Options
 	 *
@@ -29844,6 +30164,8 @@
 	 * `submit` event. Note that `ngClick` events will occur before the model is updated. Use `ngSubmit`
 	 * to have access to the updated model.
 	 *
+	 * ### Overriding immediate updates
+	 *
 	 * The following example shows how to override immediate updates. Changes on the inputs within the
 	 * form will update the model only when the control loses focus (blur event). If `escape` key is
 	 * pressed while the input field is focused, the value is reset to the value in the current model.
@@ -29903,6 +30225,8 @@
 	 *   </file>
 	 * </example>
 	 *
+	 * ### Debouncing updates
+	 *
 	 * The next example shows how to debounce model changes. Model will be updated only 1 sec after last change.
 	 * If the `Clear` button is pressed, any debounced action is canceled and the value becomes empty.
 	 *
@@ -29926,6 +30250,7 @@
 	 *       }]);
 	 *   </file>
 	 * </example>
+	 *
 	 *
 	 * ## Model updates and validation
 	 *
@@ -29974,20 +30299,41 @@
 	 * You can specify the timezone that date/time input directives expect by providing its name in the
 	 * `timezone` property.
 	 *
+	 *
+	 * ## Programmatically changing options
+	 *
+	 * The `ngModelOptions` expression is only evaluated once when the directive is linked; it is not
+	 * watched for changes. However, it is possible to override the options on a single
+	 * {@link ngModel.NgModelController} instance with
+	 * {@link ngModel.NgModelController#$overrideModelOptions `NgModelController#$overrideModelOptions()`}.
+	 *
+	 *
 	 * @param {Object} ngModelOptions options to apply to {@link ngModel} directives on this element and
 	 *   and its descendents. Valid keys are:
 	 *   - `updateOn`: string specifying which event should the input be bound to. You can set several
 	 *     events using an space delimited list. There is a special event called `default` that
-	 *     matches the default events belonging to the control.
+	 *     matches the default events belonging to the control. These are the events that are bound to
+	 *     the control, and when fired, update the `$viewValue` via `$setViewValue`.
+	 *
+	 *     `ngModelOptions` considers every event that is not listed in `updateOn` a "default" event,
+	 *     since different control types use different default events.
+	 *
+	 *     See also the section {@link ngModelOptions#triggering-and-debouncing-model-updates
+	 *     Triggering and debouncing model updates}.
+	 *
 	 *   - `debounce`: integer value which contains the debounce model update value in milliseconds. A
 	 *     value of 0 triggers an immediate update. If an object is supplied instead, you can specify a
 	 *     custom value for each event. For example:
 	 *     ```
 	 *     ng-model-options="{
-	 *       updateOn: 'default blur',
+	 *       updateOn: 'default blur click',
 	 *       debounce: { 'default': 500, 'blur': 0 }
 	 *     }"
 	 *     ```
+	 *
+	 *     "default" also applies to all events that are listed in `updateOn` but are not
+	 *     listed in `debounce`, i.e. "click" would also be debounced by 500 milliseconds.
+	 *
 	 *   - `allowInvalid`: boolean value which indicates that the model can be set with values that did
 	 *     not validate correctly instead of the default behavior of setting the model to undefined.
 	 *   - `getterSetter`: boolean value which determines whether or not to treat functions bound to
@@ -30039,32 +30385,31 @@
 	 * @name ngNonBindable
 	 * @restrict AC
 	 * @priority 1000
+	 * @element ANY
 	 *
 	 * @description
-	 * The `ngNonBindable` directive tells Angular not to compile or bind the contents of the current
-	 * DOM element. This is useful if the element contains what appears to be Angular directives and
-	 * bindings but which should be ignored by Angular. This could be the case if you have a site that
-	 * displays snippets of code, for instance.
-	 *
-	 * @element ANY
+	 * The `ngNonBindable` directive tells AngularJS not to compile or bind the contents of the current
+	 * DOM element, including directives on the element itself that have a lower priority than
+	 * `ngNonBindable`. This is useful if the element contains what appears to be AngularJS directives
+	 * and bindings but which should be ignored by AngularJS. This could be the case if you have a site
+	 * that displays snippets of code, for instance.
 	 *
 	 * @example
 	 * In this example there are two locations where a simple interpolation binding (`{{}}`) is present,
 	 * but the one wrapped in `ngNonBindable` is left alone.
 	 *
-	 * @example
-	    <example name="ng-non-bindable">
-	      <file name="index.html">
-	        <div>Normal: {{1 + 2}}</div>
-	        <div ng-non-bindable>Ignored: {{1 + 2}}</div>
-	      </file>
-	      <file name="protractor.js" type="protractor">
-	       it('should check ng-non-bindable', function() {
-	         expect(element(by.binding('1 + 2')).getText()).toContain('3');
-	         expect(element.all(by.css('div')).last().getText()).toMatch(/1 \+ 2/);
-	       });
-	      </file>
-	    </example>
+	  <example name="ng-non-bindable">
+	    <file name="index.html">
+	      <div>Normal: {{1 + 2}}</div>
+	      <div ng-non-bindable>Ignored: {{1 + 2}}</div>
+	    </file>
+	    <file name="protractor.js" type="protractor">
+	     it('should check ng-non-bindable', function() {
+	       expect(element(by.binding('1 + 2')).getText()).toContain('3');
+	       expect(element.all(by.css('div')).last().getText()).toMatch(/1 \+ 2/);
+	     });
+	    </file>
+	  </example>
 	 */
 	var ngNonBindableDirective = ngDirective({ terminal: true, priority: 1000 });
 
@@ -30792,27 +31137,27 @@
 	 * @description
 	 * `ngPluralize` is a directive that displays messages according to en-US localization rules.
 	 * These rules are bundled with angular.js, but can be overridden
-	 * (see {@link guide/i18n Angular i18n} dev guide). You configure ngPluralize directive
+	 * (see {@link guide/i18n AngularJS i18n} dev guide). You configure ngPluralize directive
 	 * by specifying the mappings between
 	 * [plural categories](http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html)
 	 * and the strings to be displayed.
 	 *
-	 * # Plural categories and explicit number rules
+	 * ## Plural categories and explicit number rules
 	 * There are two
 	 * [plural categories](http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html)
-	 * in Angular's default en-US locale: "one" and "other".
+	 * in AngularJS's default en-US locale: "one" and "other".
 	 *
 	 * While a plural category may match many numbers (for example, in en-US locale, "other" can match
 	 * any number that is not 1), an explicit number rule can only match one number. For example, the
 	 * explicit number rule for "3" matches the number 3. There are examples of plural categories
 	 * and explicit number rules throughout the rest of this documentation.
 	 *
-	 * # Configuring ngPluralize
+	 * ## Configuring ngPluralize
 	 * You configure ngPluralize by providing 2 attributes: `count` and `when`.
 	 * You can also provide an optional attribute, `offset`.
 	 *
 	 * The value of the `count` attribute can be either a string or an {@link guide/expression
-	 * Angular expression}; these are evaluated on the current scope for its bound value.
+	 * AngularJS expression}; these are evaluated on the current scope for its bound value.
 	 *
 	 * The `when` attribute specifies the mappings between plural categories and the actual
 	 * string to be displayed. The value of the attribute should be a JSON object.
@@ -30834,14 +31179,14 @@
 	 * show "a dozen people are viewing".
 	 *
 	 * You can use a set of closed braces (`{}`) as a placeholder for the number that you want substituted
-	 * into pluralized strings. In the previous example, Angular will replace `{}` with
+	 * into pluralized strings. In the previous example, AngularJS will replace `{}` with
 	 * <span ng-non-bindable>`{{personCount}}`</span>. The closed braces `{}` is a placeholder
 	 * for <span ng-non-bindable>{{numberExpression}}</span>.
 	 *
 	 * If no rule is defined for a category, then an empty string is displayed and a warning is generated.
 	 * Note that some locales define more categories than `one` and `other`. For example, fr-fr defines `few` and `many`.
 	 *
-	 * # Configuring ngPluralize with offset
+	 * ## Configuring ngPluralize with offset
 	 * The `offset` attribute allows further customization of pluralized text, which can result in
 	 * a better user experience. For example, instead of the message "4 people are viewing this document",
 	 * you might display "John, Kate and 2 others are viewing this document".
@@ -30862,7 +31207,7 @@
 	 * three explicit number rules 0, 1 and 2.
 	 * When one person, perhaps John, views the document, "John is viewing" will be shown.
 	 * When three people view the document, no explicit number rule is found, so
-	 * an offset of 2 is taken off 3, and Angular uses 1 to decide the plural category.
+	 * an offset of 2 is taken off 3, and AngularJS uses 1 to decide the plural category.
 	 * In this case, plural category 'one' is matched and "John, Mary and one other person are viewing"
 	 * is shown.
 	 *
@@ -31053,7 +31398,7 @@
 	 * </div>
 	 *
 	 *
-	 * # Iterating over object properties
+	 * ## Iterating over object properties
 	 *
 	 * It is possible to get `ngRepeat` to iterate over the properties of an object using the following
 	 * syntax:
@@ -31065,14 +31410,14 @@
 	 * However, there are a few limitations compared to array iteration:
 	 *
 	 * - The JavaScript specification does not define the order of keys
-	 *   returned for an object, so Angular relies on the order returned by the browser
+	 *   returned for an object, so AngularJS relies on the order returned by the browser
 	 *   when running `for key in myObj`. Browsers generally follow the strategy of providing
 	 *   keys in the order in which they were defined, although there are exceptions when keys are deleted
 	 *   and reinstated. See the
 	 *   [MDN page on `delete` for more info](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete#Cross-browser_notes).
 	 *
 	 * - `ngRepeat` will silently *ignore* object keys starting with `$`, because
-	 *   it's a prefix used by Angular for public (`$`) and private (`$$`) properties.
+	 *   it's a prefix used by AngularJS for public (`$`) and private (`$$`) properties.
 	 *
 	 * - The built-in filters {@link ng.orderBy orderBy} and {@link ng.filter filter} do not work with
 	 *   objects, and will throw an error if used with one.
@@ -31083,7 +31428,7 @@
 	 * or implement a `$watch` on the object yourself.
 	 *
 	 *
-	 * # Tracking and Duplicates
+	 * ## Tracking and Duplicates
 	 *
 	 * `ngRepeat` uses {@link $rootScope.Scope#$watchCollection $watchCollection} to detect changes in
 	 * the collection. When a change happens, `ngRepeat` then makes the corresponding changes to the DOM:
@@ -31097,73 +31442,150 @@
 	 * For example, if an item is added to the collection, `ngRepeat` will know that all other items
 	 * already have DOM elements, and will not re-render them.
 	 *
-	 * The default tracking function (which tracks items by their identity) does not allow
-	 * duplicate items in arrays. This is because when there are duplicates, it is not possible
-	 * to maintain a one-to-one mapping between collection items and DOM elements.
-	 *
-	 * If you do need to repeat duplicate items, you can substitute the default tracking behavior
-	 * with your own using the `track by` expression.
-	 *
-	 * For example, you may track items by the index of each item in the collection, using the
-	 * special scope property `$index`:
-	 * ```html
-	 *    <div ng-repeat="n in [42, 42, 43, 43] track by $index">
-	 *      {{n}}
-	 *    </div>
-	 * ```
-	 *
-	 * You may also use arbitrary expressions in `track by`, including references to custom functions
-	 * on the scope:
-	 * ```html
-	 *    <div ng-repeat="n in [42, 42, 43, 43] track by myTrackingFunction(n)">
-	 *      {{n}}
-	 *    </div>
-	 * ```
+	 * All different types of tracking functions, their syntax, and and their support for duplicate
+	 * items in collections can be found in the
+	 * {@link ngRepeat#ngRepeat-arguments ngRepeat expression description}.
 	 *
 	 * <div class="alert alert-success">
-	 * If you are working with objects that have a unique identifier property, you should track
-	 * by this identifier instead of the object instance. Should you reload your data later, `ngRepeat`
-	 * will not have to rebuild the DOM elements for items it has already rendered, even if the
-	 * JavaScript objects in the collection have been substituted for new ones. For large collections,
-	 * this significantly improves rendering performance. If you don't have a unique identifier,
-	 * `track by $index` can also provide a performance boost.
+	 * **Best Practice:** If you are working with objects that have a unique identifier property, you
+	 * should track by this identifier instead of the object instance,
+	 * e.g. `item in items track by item.id`.
+	 * Should you reload your data later, `ngRepeat` will not have to rebuild the DOM elements for items
+	 * it has already rendered, even if the JavaScript objects in the collection have been substituted
+	 * for new ones. For large collections, this significantly improves rendering performance.
 	 * </div>
 	 *
-	 * ```html
-	 *    <div ng-repeat="model in collection track by model.id">
-	 *      {{model.name}}
-	 *    </div>
-	 * ```
+	 * ### Effects of DOM Element re-use
 	 *
-	 * <br />
-	 * <div class="alert alert-warning">
-	 * Avoid using `track by $index` when the repeated template contains
-	 * {@link guide/expression#one-time-binding one-time bindings}. In such cases, the `nth` DOM
-	 * element will always be matched with the `nth` item of the array, so the bindings on that element
-	 * will not be updated even when the corresponding item changes, essentially causing the view to get
-	 * out-of-sync with the underlying data.
-	 * </div>
+	 * When DOM elements are re-used, ngRepeat updates the scope for the element, which will
+	 * automatically update any active bindings on the template. However, other
+	 * functionality will not be updated, because the element is not re-created:
 	 *
-	 * When no `track by` expression is provided, it is equivalent to tracking by the built-in
-	 * `$id` function, which tracks items by their identity:
-	 * ```html
-	 *    <div ng-repeat="obj in collection track by $id(obj)">
-	 *      {{obj.prop}}
-	 *    </div>
-	 * ```
+	 * - Directives are not re-compiled
+	 * - {@link guide/expression#one-time-binding one-time expressions} on the repeated template are not
+	 * updated if they have stabilized.
 	 *
-	 * <br />
-	 * <div class="alert alert-warning">
-	 * **Note:** `track by` must always be the last expression:
-	 * </div>
-	 * ```
-	 *    <div ng-repeat="model in collection | orderBy: 'id' as filtered_result track by model.id">
-	 *      {{model.name}}
-	 *    </div>
-	 * ```
+	 * The above affects all kinds of element re-use due to tracking, but may be especially visible
+	 * when tracking by `$index` due to the way ngRepeat re-uses elements.
 	 *
+	 * The following example shows the effects of different actions with tracking:
+
+	  <example module="ngRepeat" name="ngRepeat-tracking" deps="angular-animate.js" animations="true">
+	    <file name="script.js">
+	      angular.module('ngRepeat', ['ngAnimate']).controller('repeatController', function($scope) {
+	        var friends = [
+	          {name:'John', age:25},
+	          {name:'Mary', age:40},
+	          {name:'Peter', age:85}
+	        ];
+
+	        $scope.removeFirst = function() {
+	          $scope.friends.shift();
+	        };
+
+	        $scope.updateAge = function() {
+	          $scope.friends.forEach(function(el) {
+	            el.age = el.age + 5;
+	          });
+	        };
+
+	        $scope.copy = function() {
+	          $scope.friends = angular.copy($scope.friends);
+	        };
+
+	        $scope.reset = function() {
+	          $scope.friends = angular.copy(friends);
+	        };
+
+	        $scope.reset();
+	      });
+	    </file>
+	    <file name="index.html">
+	      <div ng-controller="repeatController">
+	        <ol>
+	          <li>When you click "Update Age", only the first list updates the age, because all others have
+	          a one-time binding on the age property. If you then click "Copy", the current friend list
+	          is copied, and now the second list updates the age, because the identity of the collection items
+	          has changed and the list must be re-rendered. The 3rd and 4th list stay the same, because all the
+	          items are already known according to their tracking functions.
+	          </li>
+	          <li>When you click "Remove First", the 4th list has the wrong age on both remaining items. This is
+	          due to tracking by $index: when the first collection item is removed, ngRepeat reuses the first
+	          DOM element for the new first collection item, and so on. Since the age property is one-time
+	          bound, the value remains from the collection item which was previously at this index.
+	          </li>
+	        </ol>
+
+	        <button ng-click="removeFirst()">Remove First</button>
+	        <button ng-click="updateAge()">Update Age</button>
+	        <button ng-click="copy()">Copy</button>
+	        <br><button ng-click="reset()">Reset List</button>
+	        <br>
+	        <code>track by $id(friend)</code> (default):
+	        <ul class="example-animate-container">
+	          <li class="animate-repeat" ng-repeat="friend in friends">
+	            {{friend.name}} is {{friend.age}} years old.
+	          </li>
+	        </ul>
+	        <code>track by $id(friend)</code> (default), with age one-time binding:
+	        <ul class="example-animate-container">
+	          <li class="animate-repeat" ng-repeat="friend in friends">
+	            {{friend.name}} is {{::friend.age}} years old.
+	          </li>
+	        </ul>
+	        <code>track by friend.name</code>, with age one-time binding:
+	        <ul class="example-animate-container">
+	          <li class="animate-repeat" ng-repeat="friend in friends track by friend.name">
+	            {{friend.name}}  is {{::friend.age}} years old.
+	          </li>
+	        </ul>
+	        <code>track by $index</code>, with age one-time binding:
+	        <ul class="example-animate-container">
+	          <li class="animate-repeat" ng-repeat="friend in friends track by $index">
+	            {{friend.name}} is {{::friend.age}} years old.
+	          </li>
+	        </ul>
+	      </div>
+	    </file>
+	    <file name="animations.css">
+	      .example-animate-container {
+	        background:white;
+	        border:1px solid black;
+	        list-style:none;
+	        margin:0;
+	        padding:0 10px;
+	      }
+
+	      .animate-repeat {
+	        line-height:30px;
+	        list-style:none;
+	        box-sizing:border-box;
+	      }
+
+	      .animate-repeat.ng-move,
+	      .animate-repeat.ng-enter,
+	      .animate-repeat.ng-leave {
+	        transition:all linear 0.5s;
+	      }
+
+	      .animate-repeat.ng-leave.ng-leave-active,
+	      .animate-repeat.ng-move,
+	      .animate-repeat.ng-enter {
+	        opacity:0;
+	        max-height:0;
+	      }
+
+	      .animate-repeat.ng-leave,
+	      .animate-repeat.ng-move.ng-move-active,
+	      .animate-repeat.ng-enter.ng-enter-active {
+	        opacity:1;
+	        max-height:30px;
+	      }
+	    </file>
+	  </example>
+
 	 *
-	 * # Special repeat start and end points
+	 * ## Special repeat start and end points
 	 * To repeat a series of elements instead of just one parent element, ngRepeat (as well as other ng directives) supports extending
 	 * the range of the repeater by defining explicit start and end points by using **ng-repeat-start** and **ng-repeat-end** respectively.
 	 * The **ng-repeat-start** directive works the same as **ng-repeat**, but will repeat all the HTML code (including the tag it's defined on)
@@ -31238,24 +31660,38 @@
 	 *     more than one tracking expression value resolve to the same key. (This would mean that two distinct objects are
 	 *     mapped to the same DOM element, which is not possible.)
 	 *
+	 *     *Default tracking: $id()*: `item in items` is equivalent to `item in items track by $id(item)`.
+	 *     This implies that the DOM elements will be associated by item identity in the collection.
+	 *
+	 *     The built-in `$id()` function can be used to assign a unique
+	 *     `$$hashKey` property to each item in the collection. This property is then used as a key to associated DOM elements
+	 *     with the corresponding item in the collection by identity. Moving the same object would move
+	 *     the DOM element in the same way in the DOM.
+	 *     Note that the default id function does not support duplicate primitive values (`number`, `string`),
+	 *     but supports duplictae non-primitive values (`object`) that are *equal* in shape.
+	 *
+	 *     *Custom Expression*: It is possible to use any AngularJS expression to compute the tracking
+	 *     id, for example with a function, or using a property on the collection items.
+	 *     `item in items track by item.id` is a typical pattern when the items have a unique identifier,
+	 *     e.g. database id. In this case the object identity does not matter. Two objects are considered
+	 *     equivalent as long as their `id` property is same.
+	 *     Tracking by unique identifier is the most performant way and should be used whenever possible.
+	 *
+	 *     *$index*: This special property tracks the collection items by their index, and
+	 *     re-uses the DOM elements that match that index, e.g. `item in items track by $index`. This can
+	 *     be used for a performance improvement if no unique identfier is available and the identity of
+	 *     the collection items cannot be easily computed. It also allows duplicates.
+	 *
 	 *     <div class="alert alert-warning">
-	 *       <strong>Note:</strong> the `track by` expression must come last - after any filters, and the alias expression.
+	 *       <strong>Note:</strong> Re-using DOM elements can have unforeseen effects. Read the
+	 *       {@link ngRepeat#tracking-and-duplicates section on tracking and duplicates} for
+	 *       more info.
 	 *     </div>
 	 *
-	 *     For example: `item in items` is equivalent to `item in items track by $id(item)`. This implies that the DOM elements
-	 *     will be associated by item identity in the array.
-	 *
-	 *     For example: `item in items track by $id(item)`. A built in `$id()` function can be used to assign a unique
-	 *     `$$hashKey` property to each item in the array. This property is then used as a key to associated DOM elements
-	 *     with the corresponding item in the array by identity. Moving the same object in array would move the DOM
-	 *     element in the same way in the DOM.
-	 *
-	 *     For example: `item in items track by item.id` is a typical pattern when the items come from the database. In this
-	 *     case the object identity does not matter. Two objects are considered equivalent as long as their `id`
-	 *     property is same.
-	 *
-	 *     For example: `item in items | filter:searchText track by item.id` is a pattern that might be used to apply a filter
-	 *     to items in conjunction with a tracking expression.
+	 *     <div class="alert alert-warning">
+	 *       <strong>Note:</strong> the `track by` expression must come last - after any filters, and the alias expression:
+	 *       `item in items | filter:searchText as results  track by item.id`
+	 *     </div>
 	 *
 	 *   * `variable in expression as alias_expression` – You can also provide an optional alias expression which will then store the
 	 *     intermediate results of the repeater after the filters have been applied. Typically this is used to render a special message
@@ -31264,21 +31700,21 @@
 	 *     For example: `item in items | filter:x as results` will store the fragment of the repeated items as `results`, but only after
 	 *     the items have been processed through the filter.
 	 *
-	 *     Please note that `as [variable name] is not an operator but rather a part of ngRepeat micro-syntax so it can be used only at the end
-	 *     (and not as operator, inside an expression).
+	 *     Please note that `as [variable name] is not an operator but rather a part of ngRepeat
+	 *     micro-syntax so it can be used only after all filters (and not as operator, inside an expression).
 	 *
-	 *     For example: `item in items | filter : x | orderBy : order | limitTo : limit as results` .
+	 *     For example: `item in items | filter : x | orderBy : order | limitTo : limit as results track by item.id` .
 	 *
 	 * @example
 	 * This example uses `ngRepeat` to display a list of people. A filter is used to restrict the displayed
 	 * results by name or by age. New (entering) and removed (leaving) items are animated.
-	  <example module="ngRepeat" name="ngRepeat" deps="angular-animate.js" animations="true" name="ng-repeat">
+	  <example module="ngRepeat" name="ngRepeat" deps="angular-animate.js" animations="true">
 	    <file name="index.html">
 	      <div ng-controller="repeatController">
 	        I have {{friends.length}} friends. They are:
 	        <input type="search" ng-model="q" placeholder="filter friends..." aria-label="filter friends" />
 	        <ul class="example-animate-container">
-	          <li class="animate-repeat" ng-repeat="friend in friends | filter:q as results">
+	          <li class="animate-repeat" ng-repeat="friend in friends | filter:q as results track by friend.name">
 	            [{{$index + 1}}] {{friend.name}} who is {{friend.age}} years old.
 	          </li>
 	          <li class="animate-repeat" ng-if="results.length === 0">
@@ -31650,7 +32086,11 @@
 	 * By default you don't need to override anything in CSS and the animations will work around the
 	 * display style.
 	 *
-	 * ## A note about animations with `ngShow`
+	 * @animations
+	 * | Animation                                           | Occurs                                                                                                        |
+	 * |-----------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+	 * | {@link $animate#addClass addClass} `.ng-hide`       | After the `ngShow` expression evaluates to a non truthy value and just before the contents are set to hidden. |
+	 * | {@link $animate#removeClass removeClass} `.ng-hide` | After the `ngShow` expression evaluates to a truthy value and just before contents are set to visible.        |
 	 *
 	 * Animations in `ngShow`/`ngHide` work with the show and hide events that are triggered when the
 	 * directive expression is true and false. This system works like the animation system present with
@@ -31671,12 +32111,6 @@
 	 *
 	 * Keep in mind that, as of AngularJS version 1.3, there is no need to change the display property
 	 * to block during animation states - ngAnimate will automatically handle the style toggling for you.
-	 *
-	 * @animations
-	 * | Animation                                           | Occurs                                                                                                        |
-	 * |-----------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
-	 * | {@link $animate#addClass addClass} `.ng-hide`       | After the `ngShow` expression evaluates to a non truthy value and just before the contents are set to hidden. |
-	 * | {@link $animate#removeClass removeClass} `.ng-hide` | After the `ngShow` expression evaluates to a truthy value and just before contents are set to visible.        |
 	 *
 	 * @element ANY
 	 * @param {expression} ngShow If the {@link guide/expression expression} is truthy/falsy then the
@@ -31852,7 +32286,11 @@
 	 * By default you don't need to override in CSS anything and the animations will work around the
 	 * display style.
 	 *
-	 * ## A note about animations with `ngHide`
+	 * @animations
+	 * | Animation                                           | Occurs                                                                                                     |
+	 * |-----------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+	 * | {@link $animate#addClass addClass} `.ng-hide`       | After the `ngHide` expression evaluates to a truthy value and just before the contents are set to hidden.  |
+	 * | {@link $animate#removeClass removeClass} `.ng-hide` | After the `ngHide` expression evaluates to a non truthy value and just before contents are set to visible. |
 	 *
 	 * Animations in `ngShow`/`ngHide` work with the show and hide events that are triggered when the
 	 * directive expression is true and false. This system works like the animation system present with
@@ -31873,13 +32311,6 @@
 	 *
 	 * Keep in mind that, as of AngularJS version 1.3, there is no need to change the display property
 	 * to block during animation states - ngAnimate will automatically handle the style toggling for you.
-	 *
-	 * @animations
-	 * | Animation                                           | Occurs                                                                                                     |
-	 * |-----------------------------------------------------|------------------------------------------------------------------------------------------------------------|
-	 * | {@link $animate#addClass addClass} `.ng-hide`       | After the `ngHide` expression evaluates to a truthy value and just before the contents are set to hidden.  |
-	 * | {@link $animate#removeClass removeClass} `.ng-hide` | After the `ngHide` expression evaluates to a non truthy value and just before contents are set to visible. |
-	 *
 	 *
 	 * @element ANY
 	 * @param {expression} ngHide If the {@link guide/expression expression} is truthy/falsy then the
@@ -32440,7 +32871,6 @@
 	var ngTranscludeDirective = ['$compile', function($compile) {
 	  return {
 	    restrict: 'EAC',
-	    terminal: true,
 	    compile: function ngTranscludeCompile(tElement) {
 
 	      // Remove and cache any original content to act as a fallback
@@ -32593,7 +33023,8 @@
 	 *       <option value="option-1">Option 1</option>
 	 *       <option value="option-2">Option 2</option>
 	 *     </select><br>
-	 *     <span ng-if="myForm.testSelect.$error.unknownValue">Error: The current model doesn't match any option</span>
+	 *     <span class="error" ng-if="myForm.testSelect.$error.unknownValue">
+	 *       Error: The current model doesn't match any option</span><br>
 	 *
 	 *     <button ng-click="forceUnknownOption()">Force unknown option</button><br>
 	 *   </form>
@@ -32642,11 +33073,11 @@
 	 * <div ng-controller="ExampleController">
 	 *   <form name="myForm">
 	 *     <label for="testSelect"> Select: </label><br>
-	 *     <select name="testSelect" ng-model="selected" unknown-value-required>
+	 *     <select name="testSelect" ng-model="selected" required unknown-value-required>
 	 *       <option value="option-1">Option 1</option>
 	 *       <option value="option-2">Option 2</option>
 	 *     </select><br>
-	 *     <span ng-if="myForm.testSelect.$error.required">Error: Please select a value</span><br>
+	 *     <span class="error" ng-if="myForm.testSelect.$error.required">Error: Please select a value</span><br>
 	 *
 	 *     <button ng-click="forceUnknownOption()">Force unknown option</button><br>
 	 *   </form>
@@ -32681,6 +33112,22 @@
 	 *       }
 	 *     };
 	 *   });
+	 * </file>
+	 * <file name="protractor.js" type="protractor">
+	 *  it('should show the error message when the unknown option is selected', function() {
+
+	      var error = element(by.className('error'));
+
+	      expect(error.getText()).toBe('Error: Please select a value');
+
+	      element(by.cssContainingText('option', 'Option 1')).click();
+
+	      expect(error.isPresent()).toBe(false);
+
+	      element(by.tagName('button')).click();
+
+	      expect(error.getText()).toBe('Error: Please select a value');
+	    });
 	 * </file>
 	 *</example>
 	 *
@@ -33023,7 +33470,7 @@
 	 * @restrict E
 	 *
 	 * @description
-	 * HTML `select` element with angular data-binding.
+	 * HTML `select` element with AngularJS data-binding.
 	 *
 	 * The `select` directive is used together with {@link ngModel `ngModel`} to provide data-binding
 	 * between the scope and the `<select>` control (including setting default values).
@@ -33075,7 +33522,7 @@
 	 * Chrome and Internet Explorer / Edge.
 	 *
 	 *
-	 * @param {string} ngModel Assignable angular expression to data-bind to.
+	 * @param {string} ngModel Assignable AngularJS expression to data-bind to.
 	 * @param {string=} name Property name of the form under which the control is published.
 	 * @param {string=} multiple Allows multiple options to be selected. The selected values will be
 	 *     bound to the model as an array.
@@ -33083,7 +33530,7 @@
 	 * @param {string=} ngRequired Adds required attribute and required validation constraint to
 	 * the element when the ngRequired expression evaluates to true. Use ngRequired instead of required
 	 * when you want to data-bind to the required attribute.
-	 * @param {string=} ngChange Angular expression to be executed when selected option(s) changes due to user
+	 * @param {string=} ngChange AngularJS expression to be executed when selected option(s) changes due to user
 	 *    interaction with the select element.
 	 * @param {string=} ngOptions sets the options that the select is populated with and defines what is
 	 * set on the model on selection. See {@link ngOptions `ngOptions`}.
@@ -33152,6 +33599,7 @@
 	 * </file>
 	 *</example>
 	 *
+	 * @example
 	 * ### Using `ngRepeat` to generate `select` options
 	 * <example name="select-ngrepeat" module="ngrepeatSelect">
 	 * <file name="index.html">
@@ -33181,6 +33629,7 @@
 	 * </file>
 	 *</example>
 	 *
+	 * @example
 	 * ### Using `ngValue` to bind the model to an array of objects
 	 * <example name="select-ngvalue" module="ngvalueSelect">
 	 * <file name="index.html">
@@ -33213,6 +33662,7 @@
 	 * </file>
 	 *</example>
 	 *
+	 * @example
 	 * ### Using `select` with `ngOptions` and setting a default value
 	 * See the {@link ngOptions ngOptions documentation} for more `ngOptions` usage examples.
 	 *
@@ -33244,7 +33694,7 @@
 	 * </file>
 	 *</example>
 	 *
-	 *
+	 * @example
 	 * ### Binding `select` to a non-string value via `ngModel` parsing / formatting
 	 *
 	 * <example name="select-with-non-string-options" module="nonStringSelect">
@@ -33445,13 +33895,17 @@
 	 * @name ngRequired
 	 * @restrict A
 	 *
+	 * @param {expression} ngRequired AngularJS expression. If it evaluates to `true`, it sets the
+	 *                                `required` attribute to the element and adds the `required`
+	 *                                {@link ngModel.NgModelController#$validators `validator`}.
+	 *
 	 * @description
 	 *
 	 * ngRequired adds the required {@link ngModel.NgModelController#$validators `validator`} to {@link ngModel `ngModel`}.
 	 * It is most often used for {@link input `input`} and {@link select `select`} controls, but can also be
 	 * applied to custom controls.
 	 *
-	 * The directive sets the `required` attribute on the element if the Angular expression inside
+	 * The directive sets the `required` attribute on the element if the AngularJS expression inside
 	 * `ngRequired` evaluates to true. A special directive for setting `required` is necessary because we
 	 * cannot use interpolation inside `required`. See the {@link guide/interpolation interpolation guide}
 	 * for more info.
@@ -33521,6 +33975,11 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngPattern
+	 * @restrict A
+	 *
+	 * @param {expression|RegExp} ngPattern AngularJS expression that must evaluate to a `RegExp` or a `String`
+	 *                                      parsable into a `RegExp`, or a `RegExp` literal. See above for
+	 *                                      more details.
 	 *
 	 * @description
 	 *
@@ -33528,11 +33987,12 @@
 	 * It is most often used for text-based {@link input `input`} controls, but can also be applied to custom text-based controls.
 	 *
 	 * The validator sets the `pattern` error key if the {@link ngModel.NgModelController#$viewValue `ngModel.$viewValue`}
-	 * does not match a RegExp which is obtained by evaluating the Angular expression given in the
-	 * `ngPattern` attribute value:
-	 * * If the expression evaluates to a RegExp object, then this is used directly.
-	 * * If the expression evaluates to a string, then it will be converted to a RegExp after wrapping it
-	 * in `^` and `$` characters. For instance, `"abc"` will be converted to `new RegExp('^abc$')`.
+	 * does not match a RegExp which is obtained from the `ngPattern` attribute value:
+	 * - the value is an AngularJS expression:
+	 *   - If the expression evaluates to a RegExp object, then this is used directly.
+	 *   - If the expression evaluates to a string, then it will be converted to a RegExp after wrapping it
+	 *     in `^` and `$` characters. For instance, `"abc"` will be converted to `new RegExp('^abc$')`.
+	 * - If the value is a RegExp literal, e.g. `ngPattern="/^\d+$/"`, it is used directly.
 	 *
 	 * <div class="alert alert-info">
 	 * **Note:** Avoid using the `g` flag on the RegExp, as it will cause each successive search to
@@ -33627,6 +34087,11 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngMaxlength
+	 * @restrict A
+	 *
+	 * @param {expression} ngMaxlength AngularJS expression that must evaluate to a `Number` or `String`
+	 *                                 parsable into a `Number`. Used as value for the `maxlength`
+	 *                                 {@link ngModel.NgModelController#$validators validator}.
 	 *
 	 * @description
 	 *
@@ -33634,7 +34099,7 @@
 	 * It is most often used for text-based {@link input `input`} controls, but can also be applied to custom text-based controls.
 	 *
 	 * The validator sets the `maxlength` error key if the {@link ngModel.NgModelController#$viewValue `ngModel.$viewValue`}
-	 * is longer than the integer obtained by evaluating the Angular expression given in the
+	 * is longer than the integer obtained by evaluating the AngularJS expression given in the
 	 * `ngMaxlength` attribute value.
 	 *
 	 * <div class="alert alert-info">
@@ -33713,6 +34178,11 @@
 	/**
 	 * @ngdoc directive
 	 * @name ngMinlength
+	 * @restrict A
+	 *
+	 * @param {expression} ngMinlength AngularJS expression that must evaluate to a `Number` or `String`
+	 *                                 parsable into a `Number`. Used as value for the `minlength`
+	 *                                 {@link ngModel.NgModelController#$validators validator}.
 	 *
 	 * @description
 	 *
@@ -33720,7 +34190,7 @@
 	 * It is most often used for text-based {@link input `input`} controls, but can also be applied to custom text-based controls.
 	 *
 	 * The validator sets the `minlength` error key if the {@link ngModel.NgModelController#$viewValue `ngModel.$viewValue`}
-	 * is shorter than the integer obtained by evaluating the Angular expression given in the
+	 * is shorter than the integer obtained by evaluating the AngularJS expression given in the
 	 * `ngMinlength` attribute value.
 	 *
 	 * <div class="alert alert-info">
@@ -33796,7 +34266,7 @@
 	if (window.angular.bootstrap) {
 	  // AngularJS is already loaded, so we can return here...
 	  if (window.console) {
-	    console.log('WARNING: Tried to load angular more than once.');
+	    console.log('WARNING: Tried to load AngularJS more than once.');
 	  }
 	  return;
 	}
@@ -33972,8 +34442,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/kdodds/Desktop/angular-formly-website/node_modules/css-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/postcss-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/bootstrap/dist/css/bootstrap.css", function() {
-			var newContent = require("!!/Users/kdodds/Desktop/angular-formly-website/node_modules/css-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/postcss-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/bootstrap/dist/css/bootstrap.css");
+		module.hot.accept("!!/home/abdellatif/www/contrib/angular-formly-website/node_modules/css-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/postcss-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/bootstrap/dist/css/bootstrap.css", function() {
+			var newContent = require("!!/home/abdellatif/www/contrib/angular-formly-website/node_modules/css-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/postcss-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/bootstrap/dist/css/bootstrap.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -33986,7 +34456,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
-	exports.push([module.id, "/*!\n * Bootstrap v3.3.7 (http://getbootstrap.com)\n * Copyright 2011-2016 Twitter, Inc.\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n *//*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{margin:.67em 0;font-size:2em}mark{color:#000;background:#ff0}small{font-size:80%}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{height:0;box-sizing:content-box}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{margin:0;font:inherit;color:inherit}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{box-sizing:content-box;-webkit-appearance:textfield}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{padding:.35em .625em .75em;margin:0 2px;border:1px solid silver}legend{padding:0;border:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-spacing:0;border-collapse:collapse}td,th{padding:0}/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */@media print{*,*:before,*:after{color:#000!important;text-shadow:none!important;background:transparent!important;box-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:\" (\" attr(href) \")\"}abbr[title]:after{content:\" (\" attr(title) \")\"}a[href^=\"#\"]:after,a[href^=\"javascript:\"]:after{content:\"\"}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100%!important}p,h2,h3{orphans:3;widows:3}h2,h3{page-break-after:avoid}.navbar{display:none}.btn>.caret,.dropup>.btn>.caret{border-top-color:#000!important}.label{border:1px solid #000}.table{border-collapse:collapse!important}.table td,.table th{background-color:#fff!important}.table-bordered th,.table-bordered td{border:1px solid #ddd!important}}@font-face{font-family:Glyphicons Halflings;src:url("+__webpack_require__(5)+");src:url("+__webpack_require__(5)+"?#iefix) format('embedded-opentype'),url("+__webpack_require__(6)+") format('woff2'),url("+__webpack_require__(7)+") format('woff'),url("+__webpack_require__(8)+") format('truetype'),url("+__webpack_require__(9)+"#glyphicons_halflingsregular) format('svg')}.glyphicon{position:relative;top:1px;display:inline-block;font-family:Glyphicons Halflings;font-style:normal;font-weight:400;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.glyphicon-asterisk:before{content:\"\\002a\"}.glyphicon-plus:before{content:\"\\002b\"}.glyphicon-euro:before,.glyphicon-eur:before{content:\"\\20ac\"}.glyphicon-minus:before{content:\"\\2212\"}.glyphicon-cloud:before{content:\"\\2601\"}.glyphicon-envelope:before{content:\"\\2709\"}.glyphicon-pencil:before{content:\"\\270f\"}.glyphicon-glass:before{content:\"\\e001\"}.glyphicon-music:before{content:\"\\e002\"}.glyphicon-search:before{content:\"\\e003\"}.glyphicon-heart:before{content:\"\\e005\"}.glyphicon-star:before{content:\"\\e006\"}.glyphicon-star-empty:before{content:\"\\e007\"}.glyphicon-user:before{content:\"\\e008\"}.glyphicon-film:before{content:\"\\e009\"}.glyphicon-th-large:before{content:\"\\e010\"}.glyphicon-th:before{content:\"\\e011\"}.glyphicon-th-list:before{content:\"\\e012\"}.glyphicon-ok:before{content:\"\\e013\"}.glyphicon-remove:before{content:\"\\e014\"}.glyphicon-zoom-in:before{content:\"\\e015\"}.glyphicon-zoom-out:before{content:\"\\e016\"}.glyphicon-off:before{content:\"\\e017\"}.glyphicon-signal:before{content:\"\\e018\"}.glyphicon-cog:before{content:\"\\e019\"}.glyphicon-trash:before{content:\"\\e020\"}.glyphicon-home:before{content:\"\\e021\"}.glyphicon-file:before{content:\"\\e022\"}.glyphicon-time:before{content:\"\\e023\"}.glyphicon-road:before{content:\"\\e024\"}.glyphicon-download-alt:before{content:\"\\e025\"}.glyphicon-download:before{content:\"\\e026\"}.glyphicon-upload:before{content:\"\\e027\"}.glyphicon-inbox:before{content:\"\\e028\"}.glyphicon-play-circle:before{content:\"\\e029\"}.glyphicon-repeat:before{content:\"\\e030\"}.glyphicon-refresh:before{content:\"\\e031\"}.glyphicon-list-alt:before{content:\"\\e032\"}.glyphicon-lock:before{content:\"\\e033\"}.glyphicon-flag:before{content:\"\\e034\"}.glyphicon-headphones:before{content:\"\\e035\"}.glyphicon-volume-off:before{content:\"\\e036\"}.glyphicon-volume-down:before{content:\"\\e037\"}.glyphicon-volume-up:before{content:\"\\e038\"}.glyphicon-qrcode:before{content:\"\\e039\"}.glyphicon-barcode:before{content:\"\\e040\"}.glyphicon-tag:before{content:\"\\e041\"}.glyphicon-tags:before{content:\"\\e042\"}.glyphicon-book:before{content:\"\\e043\"}.glyphicon-bookmark:before{content:\"\\e044\"}.glyphicon-print:before{content:\"\\e045\"}.glyphicon-camera:before{content:\"\\e046\"}.glyphicon-font:before{content:\"\\e047\"}.glyphicon-bold:before{content:\"\\e048\"}.glyphicon-italic:before{content:\"\\e049\"}.glyphicon-text-height:before{content:\"\\e050\"}.glyphicon-text-width:before{content:\"\\e051\"}.glyphicon-align-left:before{content:\"\\e052\"}.glyphicon-align-center:before{content:\"\\e053\"}.glyphicon-align-right:before{content:\"\\e054\"}.glyphicon-align-justify:before{content:\"\\e055\"}.glyphicon-list:before{content:\"\\e056\"}.glyphicon-indent-left:before{content:\"\\e057\"}.glyphicon-indent-right:before{content:\"\\e058\"}.glyphicon-facetime-video:before{content:\"\\e059\"}.glyphicon-picture:before{content:\"\\e060\"}.glyphicon-map-marker:before{content:\"\\e062\"}.glyphicon-adjust:before{content:\"\\e063\"}.glyphicon-tint:before{content:\"\\e064\"}.glyphicon-edit:before{content:\"\\e065\"}.glyphicon-share:before{content:\"\\e066\"}.glyphicon-check:before{content:\"\\e067\"}.glyphicon-move:before{content:\"\\e068\"}.glyphicon-step-backward:before{content:\"\\e069\"}.glyphicon-fast-backward:before{content:\"\\e070\"}.glyphicon-backward:before{content:\"\\e071\"}.glyphicon-play:before{content:\"\\e072\"}.glyphicon-pause:before{content:\"\\e073\"}.glyphicon-stop:before{content:\"\\e074\"}.glyphicon-forward:before{content:\"\\e075\"}.glyphicon-fast-forward:before{content:\"\\e076\"}.glyphicon-step-forward:before{content:\"\\e077\"}.glyphicon-eject:before{content:\"\\e078\"}.glyphicon-chevron-left:before{content:\"\\e079\"}.glyphicon-chevron-right:before{content:\"\\e080\"}.glyphicon-plus-sign:before{content:\"\\e081\"}.glyphicon-minus-sign:before{content:\"\\e082\"}.glyphicon-remove-sign:before{content:\"\\e083\"}.glyphicon-ok-sign:before{content:\"\\e084\"}.glyphicon-question-sign:before{content:\"\\e085\"}.glyphicon-info-sign:before{content:\"\\e086\"}.glyphicon-screenshot:before{content:\"\\e087\"}.glyphicon-remove-circle:before{content:\"\\e088\"}.glyphicon-ok-circle:before{content:\"\\e089\"}.glyphicon-ban-circle:before{content:\"\\e090\"}.glyphicon-arrow-left:before{content:\"\\e091\"}.glyphicon-arrow-right:before{content:\"\\e092\"}.glyphicon-arrow-up:before{content:\"\\e093\"}.glyphicon-arrow-down:before{content:\"\\e094\"}.glyphicon-share-alt:before{content:\"\\e095\"}.glyphicon-resize-full:before{content:\"\\e096\"}.glyphicon-resize-small:before{content:\"\\e097\"}.glyphicon-exclamation-sign:before{content:\"\\e101\"}.glyphicon-gift:before{content:\"\\e102\"}.glyphicon-leaf:before{content:\"\\e103\"}.glyphicon-fire:before{content:\"\\e104\"}.glyphicon-eye-open:before{content:\"\\e105\"}.glyphicon-eye-close:before{content:\"\\e106\"}.glyphicon-warning-sign:before{content:\"\\e107\"}.glyphicon-plane:before{content:\"\\e108\"}.glyphicon-calendar:before{content:\"\\e109\"}.glyphicon-random:before{content:\"\\e110\"}.glyphicon-comment:before{content:\"\\e111\"}.glyphicon-magnet:before{content:\"\\e112\"}.glyphicon-chevron-up:before{content:\"\\e113\"}.glyphicon-chevron-down:before{content:\"\\e114\"}.glyphicon-retweet:before{content:\"\\e115\"}.glyphicon-shopping-cart:before{content:\"\\e116\"}.glyphicon-folder-close:before{content:\"\\e117\"}.glyphicon-folder-open:before{content:\"\\e118\"}.glyphicon-resize-vertical:before{content:\"\\e119\"}.glyphicon-resize-horizontal:before{content:\"\\e120\"}.glyphicon-hdd:before{content:\"\\e121\"}.glyphicon-bullhorn:before{content:\"\\e122\"}.glyphicon-bell:before{content:\"\\e123\"}.glyphicon-certificate:before{content:\"\\e124\"}.glyphicon-thumbs-up:before{content:\"\\e125\"}.glyphicon-thumbs-down:before{content:\"\\e126\"}.glyphicon-hand-right:before{content:\"\\e127\"}.glyphicon-hand-left:before{content:\"\\e128\"}.glyphicon-hand-up:before{content:\"\\e129\"}.glyphicon-hand-down:before{content:\"\\e130\"}.glyphicon-circle-arrow-right:before{content:\"\\e131\"}.glyphicon-circle-arrow-left:before{content:\"\\e132\"}.glyphicon-circle-arrow-up:before{content:\"\\e133\"}.glyphicon-circle-arrow-down:before{content:\"\\e134\"}.glyphicon-globe:before{content:\"\\e135\"}.glyphicon-wrench:before{content:\"\\e136\"}.glyphicon-tasks:before{content:\"\\e137\"}.glyphicon-filter:before{content:\"\\e138\"}.glyphicon-briefcase:before{content:\"\\e139\"}.glyphicon-fullscreen:before{content:\"\\e140\"}.glyphicon-dashboard:before{content:\"\\e141\"}.glyphicon-paperclip:before{content:\"\\e142\"}.glyphicon-heart-empty:before{content:\"\\e143\"}.glyphicon-link:before{content:\"\\e144\"}.glyphicon-phone:before{content:\"\\e145\"}.glyphicon-pushpin:before{content:\"\\e146\"}.glyphicon-usd:before{content:\"\\e148\"}.glyphicon-gbp:before{content:\"\\e149\"}.glyphicon-sort:before{content:\"\\e150\"}.glyphicon-sort-by-alphabet:before{content:\"\\e151\"}.glyphicon-sort-by-alphabet-alt:before{content:\"\\e152\"}.glyphicon-sort-by-order:before{content:\"\\e153\"}.glyphicon-sort-by-order-alt:before{content:\"\\e154\"}.glyphicon-sort-by-attributes:before{content:\"\\e155\"}.glyphicon-sort-by-attributes-alt:before{content:\"\\e156\"}.glyphicon-unchecked:before{content:\"\\e157\"}.glyphicon-expand:before{content:\"\\e158\"}.glyphicon-collapse-down:before{content:\"\\e159\"}.glyphicon-collapse-up:before{content:\"\\e160\"}.glyphicon-log-in:before{content:\"\\e161\"}.glyphicon-flash:before{content:\"\\e162\"}.glyphicon-log-out:before{content:\"\\e163\"}.glyphicon-new-window:before{content:\"\\e164\"}.glyphicon-record:before{content:\"\\e165\"}.glyphicon-save:before{content:\"\\e166\"}.glyphicon-open:before{content:\"\\e167\"}.glyphicon-saved:before{content:\"\\e168\"}.glyphicon-import:before{content:\"\\e169\"}.glyphicon-export:before{content:\"\\e170\"}.glyphicon-send:before{content:\"\\e171\"}.glyphicon-floppy-disk:before{content:\"\\e172\"}.glyphicon-floppy-saved:before{content:\"\\e173\"}.glyphicon-floppy-remove:before{content:\"\\e174\"}.glyphicon-floppy-save:before{content:\"\\e175\"}.glyphicon-floppy-open:before{content:\"\\e176\"}.glyphicon-credit-card:before{content:\"\\e177\"}.glyphicon-transfer:before{content:\"\\e178\"}.glyphicon-cutlery:before{content:\"\\e179\"}.glyphicon-header:before{content:\"\\e180\"}.glyphicon-compressed:before{content:\"\\e181\"}.glyphicon-earphone:before{content:\"\\e182\"}.glyphicon-phone-alt:before{content:\"\\e183\"}.glyphicon-tower:before{content:\"\\e184\"}.glyphicon-stats:before{content:\"\\e185\"}.glyphicon-sd-video:before{content:\"\\e186\"}.glyphicon-hd-video:before{content:\"\\e187\"}.glyphicon-subtitles:before{content:\"\\e188\"}.glyphicon-sound-stereo:before{content:\"\\e189\"}.glyphicon-sound-dolby:before{content:\"\\e190\"}.glyphicon-sound-5-1:before{content:\"\\e191\"}.glyphicon-sound-6-1:before{content:\"\\e192\"}.glyphicon-sound-7-1:before{content:\"\\e193\"}.glyphicon-copyright-mark:before{content:\"\\e194\"}.glyphicon-registration-mark:before{content:\"\\e195\"}.glyphicon-cloud-download:before{content:\"\\e197\"}.glyphicon-cloud-upload:before{content:\"\\e198\"}.glyphicon-tree-conifer:before{content:\"\\e199\"}.glyphicon-tree-deciduous:before{content:\"\\e200\"}.glyphicon-cd:before{content:\"\\e201\"}.glyphicon-save-file:before{content:\"\\e202\"}.glyphicon-open-file:before{content:\"\\e203\"}.glyphicon-level-up:before{content:\"\\e204\"}.glyphicon-copy:before{content:\"\\e205\"}.glyphicon-paste:before{content:\"\\e206\"}.glyphicon-alert:before{content:\"\\e209\"}.glyphicon-equalizer:before{content:\"\\e210\"}.glyphicon-king:before{content:\"\\e211\"}.glyphicon-queen:before{content:\"\\e212\"}.glyphicon-pawn:before{content:\"\\e213\"}.glyphicon-bishop:before{content:\"\\e214\"}.glyphicon-knight:before{content:\"\\e215\"}.glyphicon-baby-formula:before{content:\"\\e216\"}.glyphicon-tent:before{content:\"\\26fa\"}.glyphicon-blackboard:before{content:\"\\e218\"}.glyphicon-bed:before{content:\"\\e219\"}.glyphicon-apple:before{content:\"\\f8ff\"}.glyphicon-erase:before{content:\"\\e221\"}.glyphicon-hourglass:before{content:\"\\231b\"}.glyphicon-lamp:before{content:\"\\e223\"}.glyphicon-duplicate:before{content:\"\\e224\"}.glyphicon-piggy-bank:before{content:\"\\e225\"}.glyphicon-scissors:before{content:\"\\e226\"}.glyphicon-bitcoin:before{content:\"\\e227\"}.glyphicon-btc:before{content:\"\\e227\"}.glyphicon-xbt:before{content:\"\\e227\"}.glyphicon-yen:before{content:\"\\00a5\"}.glyphicon-jpy:before{content:\"\\00a5\"}.glyphicon-ruble:before{content:\"\\20bd\"}.glyphicon-rub:before{content:\"\\20bd\"}.glyphicon-scale:before{content:\"\\e230\"}.glyphicon-ice-lolly:before{content:\"\\e231\"}.glyphicon-ice-lolly-tasted:before{content:\"\\e232\"}.glyphicon-education:before{content:\"\\e233\"}.glyphicon-option-horizontal:before{content:\"\\e234\"}.glyphicon-option-vertical:before{content:\"\\e235\"}.glyphicon-menu-hamburger:before{content:\"\\e236\"}.glyphicon-modal-window:before{content:\"\\e237\"}.glyphicon-oil:before{content:\"\\e238\"}.glyphicon-grain:before{content:\"\\e239\"}.glyphicon-sunglasses:before{content:\"\\e240\"}.glyphicon-text-size:before{content:\"\\e241\"}.glyphicon-text-color:before{content:\"\\e242\"}.glyphicon-text-background:before{content:\"\\e243\"}.glyphicon-object-align-top:before{content:\"\\e244\"}.glyphicon-object-align-bottom:before{content:\"\\e245\"}.glyphicon-object-align-horizontal:before{content:\"\\e246\"}.glyphicon-object-align-left:before{content:\"\\e247\"}.glyphicon-object-align-vertical:before{content:\"\\e248\"}.glyphicon-object-align-right:before{content:\"\\e249\"}.glyphicon-triangle-right:before{content:\"\\e250\"}.glyphicon-triangle-left:before{content:\"\\e251\"}.glyphicon-triangle-bottom:before{content:\"\\e252\"}.glyphicon-triangle-top:before{content:\"\\e253\"}.glyphicon-console:before{content:\"\\e254\"}.glyphicon-superscript:before{content:\"\\e255\"}.glyphicon-subscript:before{content:\"\\e256\"}.glyphicon-menu-left:before{content:\"\\e257\"}.glyphicon-menu-right:before{content:\"\\e258\"}.glyphicon-menu-down:before{content:\"\\e259\"}.glyphicon-menu-up:before{content:\"\\e260\"}*{box-sizing:border-box}*:before,*:after{box-sizing:border-box}html{font-size:10px;-webkit-tap-highlight-color:transparent}body{font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;color:#333;background-color:#fff}input,button,select,textarea{font-family:inherit;font-size:inherit;line-height:inherit}a{color:#337ab7;text-decoration:none}a:hover,a:focus{color:#23527c;text-decoration:underline}a:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}figure{margin:0}img{vertical-align:middle}.img-responsive,.thumbnail>img,.thumbnail a>img,.carousel-inner>.item>img,.carousel-inner>.item>a>img{display:block;max-width:100%;height:auto}.img-rounded{border-radius:6px}.img-thumbnail{display:inline-block;max-width:100%;height:auto;padding:4px;line-height:1.42857143;background-color:#fff;border:1px solid #ddd;border-radius:4px;transition:all .2s ease-in-out}.img-circle{border-radius:50%}hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #eee}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}.sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}[role=button]{cursor:pointer}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{font-family:inherit;font-weight:500;line-height:1.1;color:inherit}h1 small,h2 small,h3 small,h4 small,h5 small,h6 small,.h1 small,.h2 small,.h3 small,.h4 small,.h5 small,.h6 small,h1 .small,h2 .small,h3 .small,h4 .small,h5 .small,h6 .small,.h1 .small,.h2 .small,.h3 .small,.h4 .small,.h5 .small,.h6 .small{font-weight:400;line-height:1;color:#777}h1,.h1,h2,.h2,h3,.h3{margin-top:20px;margin-bottom:10px}h1 small,.h1 small,h2 small,.h2 small,h3 small,.h3 small,h1 .small,.h1 .small,h2 .small,.h2 .small,h3 .small,.h3 .small{font-size:65%}h4,.h4,h5,.h5,h6,.h6{margin-top:10px;margin-bottom:10px}h4 small,.h4 small,h5 small,.h5 small,h6 small,.h6 small,h4 .small,.h4 .small,h5 .small,.h5 .small,h6 .small,.h6 .small{font-size:75%}h1,.h1{font-size:36px}h2,.h2{font-size:30px}h3,.h3{font-size:24px}h4,.h4{font-size:18px}h5,.h5{font-size:14px}h6,.h6{font-size:12px}p{margin:0 0 10px}.lead{margin-bottom:20px;font-size:16px;font-weight:300;line-height:1.4}@media(min-width:768px){.lead{font-size:21px}}small,.small{font-size:85%}mark,.mark{padding:.2em;background-color:#fcf8e3}.text-left{text-align:left}.text-right{text-align:right}.text-center{text-align:center}.text-justify{text-align:justify}.text-nowrap{white-space:nowrap}.text-lowercase{text-transform:lowercase}.text-uppercase{text-transform:uppercase}.text-capitalize{text-transform:capitalize}.text-muted{color:#777}.text-primary{color:#337ab7}a.text-primary:hover,a.text-primary:focus{color:#286090}.text-success{color:#3c763d}a.text-success:hover,a.text-success:focus{color:#2b542c}.text-info{color:#31708f}a.text-info:hover,a.text-info:focus{color:#245269}.text-warning{color:#8a6d3b}a.text-warning:hover,a.text-warning:focus{color:#66512c}.text-danger{color:#a94442}a.text-danger:hover,a.text-danger:focus{color:#843534}.bg-primary{color:#fff;background-color:#337ab7}a.bg-primary:hover,a.bg-primary:focus{background-color:#286090}.bg-success{background-color:#dff0d8}a.bg-success:hover,a.bg-success:focus{background-color:#c1e2b3}.bg-info{background-color:#d9edf7}a.bg-info:hover,a.bg-info:focus{background-color:#afd9ee}.bg-warning{background-color:#fcf8e3}a.bg-warning:hover,a.bg-warning:focus{background-color:#f7ecb5}.bg-danger{background-color:#f2dede}a.bg-danger:hover,a.bg-danger:focus{background-color:#e4b9b9}.page-header{padding-bottom:9px;margin:40px 0 20px;border-bottom:1px solid #eee}ul,ol{margin-top:0;margin-bottom:10px}ul ul,ol ul,ul ol,ol ol{margin-bottom:0}.list-unstyled{padding-left:0;list-style:none}.list-inline{padding-left:0;margin-left:-5px;list-style:none}.list-inline>li{display:inline-block;padding-right:5px;padding-left:5px}dl{margin-top:0;margin-bottom:20px}dt,dd{line-height:1.42857143}dt{font-weight:700}dd{margin-left:0}@media(min-width:768px){.dl-horizontal dt{float:left;width:160px;overflow:hidden;clear:left;text-align:right;text-overflow:ellipsis;white-space:nowrap}.dl-horizontal dd{margin-left:180px}}abbr[title],abbr[data-original-title]{cursor:help;border-bottom:1px dotted #777}.initialism{font-size:90%;text-transform:uppercase}blockquote{padding:10px 20px;margin:0 0 20px;font-size:17.5px;border-left:5px solid #eee}blockquote p:last-child,blockquote ul:last-child,blockquote ol:last-child{margin-bottom:0}blockquote footer,blockquote small,blockquote .small{display:block;font-size:80%;line-height:1.42857143;color:#777}blockquote footer:before,blockquote small:before,blockquote .small:before{content:'\\2014 \\00A0'}.blockquote-reverse,blockquote.pull-right{padding-right:15px;padding-left:0;text-align:right;border-right:5px solid #eee;border-left:0}.blockquote-reverse footer:before,blockquote.pull-right footer:before,.blockquote-reverse small:before,blockquote.pull-right small:before,.blockquote-reverse .small:before,blockquote.pull-right .small:before{content:''}.blockquote-reverse footer:after,blockquote.pull-right footer:after,.blockquote-reverse small:after,blockquote.pull-right small:after,.blockquote-reverse .small:after,blockquote.pull-right .small:after{content:'\\00A0 \\2014'}address{margin-bottom:20px;font-style:normal;line-height:1.42857143}code,kbd,pre,samp{font-family:Menlo,Monaco,Consolas,Courier New,monospace}code{padding:2px 4px;font-size:90%;color:#c7254e;background-color:#f9f2f4;border-radius:4px}kbd{padding:2px 4px;font-size:90%;color:#fff;background-color:#333;border-radius:3px;box-shadow:inset 0 -1px 0 rgba(0,0,0,.25)}kbd kbd{padding:0;font-size:100%;font-weight:700;box-shadow:none}pre{display:block;padding:9.5px;margin:0 0 10px;font-size:13px;line-height:1.42857143;color:#333;word-break:break-all;word-wrap:break-word;background-color:#f5f5f5;border:1px solid #ccc;border-radius:4px}pre code{padding:0;font-size:inherit;color:inherit;white-space:pre-wrap;background-color:transparent;border-radius:0}.pre-scrollable{max-height:340px;overflow-y:scroll}.container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media(min-width:768px){.container{width:750px}}@media(min-width:992px){.container{width:970px}}@media(min-width:1200px){.container{width:1170px}}.container-fluid{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.row{margin-right:-15px;margin-left:-15px}.col-xs-1,.col-sm-1,.col-md-1,.col-lg-1,.col-xs-2,.col-sm-2,.col-md-2,.col-lg-2,.col-xs-3,.col-sm-3,.col-md-3,.col-lg-3,.col-xs-4,.col-sm-4,.col-md-4,.col-lg-4,.col-xs-5,.col-sm-5,.col-md-5,.col-lg-5,.col-xs-6,.col-sm-6,.col-md-6,.col-lg-6,.col-xs-7,.col-sm-7,.col-md-7,.col-lg-7,.col-xs-8,.col-sm-8,.col-md-8,.col-lg-8,.col-xs-9,.col-sm-9,.col-md-9,.col-lg-9,.col-xs-10,.col-sm-10,.col-md-10,.col-lg-10,.col-xs-11,.col-sm-11,.col-md-11,.col-lg-11,.col-xs-12,.col-sm-12,.col-md-12,.col-lg-12{position:relative;min-height:1px;padding-right:15px;padding-left:15px}.col-xs-1,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-10,.col-xs-11,.col-xs-12{float:left}.col-xs-12{width:100%}.col-xs-11{width:91.66666667%}.col-xs-10{width:83.33333333%}.col-xs-9{width:75%}.col-xs-8{width:66.66666667%}.col-xs-7{width:58.33333333%}.col-xs-6{width:50%}.col-xs-5{width:41.66666667%}.col-xs-4{width:33.33333333%}.col-xs-3{width:25%}.col-xs-2{width:16.66666667%}.col-xs-1{width:8.33333333%}.col-xs-pull-12{right:100%}.col-xs-pull-11{right:91.66666667%}.col-xs-pull-10{right:83.33333333%}.col-xs-pull-9{right:75%}.col-xs-pull-8{right:66.66666667%}.col-xs-pull-7{right:58.33333333%}.col-xs-pull-6{right:50%}.col-xs-pull-5{right:41.66666667%}.col-xs-pull-4{right:33.33333333%}.col-xs-pull-3{right:25%}.col-xs-pull-2{right:16.66666667%}.col-xs-pull-1{right:8.33333333%}.col-xs-pull-0{right:auto}.col-xs-push-12{left:100%}.col-xs-push-11{left:91.66666667%}.col-xs-push-10{left:83.33333333%}.col-xs-push-9{left:75%}.col-xs-push-8{left:66.66666667%}.col-xs-push-7{left:58.33333333%}.col-xs-push-6{left:50%}.col-xs-push-5{left:41.66666667%}.col-xs-push-4{left:33.33333333%}.col-xs-push-3{left:25%}.col-xs-push-2{left:16.66666667%}.col-xs-push-1{left:8.33333333%}.col-xs-push-0{left:auto}.col-xs-offset-12{margin-left:100%}.col-xs-offset-11{margin-left:91.66666667%}.col-xs-offset-10{margin-left:83.33333333%}.col-xs-offset-9{margin-left:75%}.col-xs-offset-8{margin-left:66.66666667%}.col-xs-offset-7{margin-left:58.33333333%}.col-xs-offset-6{margin-left:50%}.col-xs-offset-5{margin-left:41.66666667%}.col-xs-offset-4{margin-left:33.33333333%}.col-xs-offset-3{margin-left:25%}.col-xs-offset-2{margin-left:16.66666667%}.col-xs-offset-1{margin-left:8.33333333%}.col-xs-offset-0{margin-left:0}@media(min-width:768px){.col-sm-1,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-10,.col-sm-11,.col-sm-12{float:left}.col-sm-12{width:100%}.col-sm-11{width:91.66666667%}.col-sm-10{width:83.33333333%}.col-sm-9{width:75%}.col-sm-8{width:66.66666667%}.col-sm-7{width:58.33333333%}.col-sm-6{width:50%}.col-sm-5{width:41.66666667%}.col-sm-4{width:33.33333333%}.col-sm-3{width:25%}.col-sm-2{width:16.66666667%}.col-sm-1{width:8.33333333%}.col-sm-pull-12{right:100%}.col-sm-pull-11{right:91.66666667%}.col-sm-pull-10{right:83.33333333%}.col-sm-pull-9{right:75%}.col-sm-pull-8{right:66.66666667%}.col-sm-pull-7{right:58.33333333%}.col-sm-pull-6{right:50%}.col-sm-pull-5{right:41.66666667%}.col-sm-pull-4{right:33.33333333%}.col-sm-pull-3{right:25%}.col-sm-pull-2{right:16.66666667%}.col-sm-pull-1{right:8.33333333%}.col-sm-pull-0{right:auto}.col-sm-push-12{left:100%}.col-sm-push-11{left:91.66666667%}.col-sm-push-10{left:83.33333333%}.col-sm-push-9{left:75%}.col-sm-push-8{left:66.66666667%}.col-sm-push-7{left:58.33333333%}.col-sm-push-6{left:50%}.col-sm-push-5{left:41.66666667%}.col-sm-push-4{left:33.33333333%}.col-sm-push-3{left:25%}.col-sm-push-2{left:16.66666667%}.col-sm-push-1{left:8.33333333%}.col-sm-push-0{left:auto}.col-sm-offset-12{margin-left:100%}.col-sm-offset-11{margin-left:91.66666667%}.col-sm-offset-10{margin-left:83.33333333%}.col-sm-offset-9{margin-left:75%}.col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-7{margin-left:58.33333333%}.col-sm-offset-6{margin-left:50%}.col-sm-offset-5{margin-left:41.66666667%}.col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-3{margin-left:25%}.col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-1{margin-left:8.33333333%}.col-sm-offset-0{margin-left:0}}@media(min-width:992px){.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12{float:left}.col-md-12{width:100%}.col-md-11{width:91.66666667%}.col-md-10{width:83.33333333%}.col-md-9{width:75%}.col-md-8{width:66.66666667%}.col-md-7{width:58.33333333%}.col-md-6{width:50%}.col-md-5{width:41.66666667%}.col-md-4{width:33.33333333%}.col-md-3{width:25%}.col-md-2{width:16.66666667%}.col-md-1{width:8.33333333%}.col-md-pull-12{right:100%}.col-md-pull-11{right:91.66666667%}.col-md-pull-10{right:83.33333333%}.col-md-pull-9{right:75%}.col-md-pull-8{right:66.66666667%}.col-md-pull-7{right:58.33333333%}.col-md-pull-6{right:50%}.col-md-pull-5{right:41.66666667%}.col-md-pull-4{right:33.33333333%}.col-md-pull-3{right:25%}.col-md-pull-2{right:16.66666667%}.col-md-pull-1{right:8.33333333%}.col-md-pull-0{right:auto}.col-md-push-12{left:100%}.col-md-push-11{left:91.66666667%}.col-md-push-10{left:83.33333333%}.col-md-push-9{left:75%}.col-md-push-8{left:66.66666667%}.col-md-push-7{left:58.33333333%}.col-md-push-6{left:50%}.col-md-push-5{left:41.66666667%}.col-md-push-4{left:33.33333333%}.col-md-push-3{left:25%}.col-md-push-2{left:16.66666667%}.col-md-push-1{left:8.33333333%}.col-md-push-0{left:auto}.col-md-offset-12{margin-left:100%}.col-md-offset-11{margin-left:91.66666667%}.col-md-offset-10{margin-left:83.33333333%}.col-md-offset-9{margin-left:75%}.col-md-offset-8{margin-left:66.66666667%}.col-md-offset-7{margin-left:58.33333333%}.col-md-offset-6{margin-left:50%}.col-md-offset-5{margin-left:41.66666667%}.col-md-offset-4{margin-left:33.33333333%}.col-md-offset-3{margin-left:25%}.col-md-offset-2{margin-left:16.66666667%}.col-md-offset-1{margin-left:8.33333333%}.col-md-offset-0{margin-left:0}}@media(min-width:1200px){.col-lg-1,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-10,.col-lg-11,.col-lg-12{float:left}.col-lg-12{width:100%}.col-lg-11{width:91.66666667%}.col-lg-10{width:83.33333333%}.col-lg-9{width:75%}.col-lg-8{width:66.66666667%}.col-lg-7{width:58.33333333%}.col-lg-6{width:50%}.col-lg-5{width:41.66666667%}.col-lg-4{width:33.33333333%}.col-lg-3{width:25%}.col-lg-2{width:16.66666667%}.col-lg-1{width:8.33333333%}.col-lg-pull-12{right:100%}.col-lg-pull-11{right:91.66666667%}.col-lg-pull-10{right:83.33333333%}.col-lg-pull-9{right:75%}.col-lg-pull-8{right:66.66666667%}.col-lg-pull-7{right:58.33333333%}.col-lg-pull-6{right:50%}.col-lg-pull-5{right:41.66666667%}.col-lg-pull-4{right:33.33333333%}.col-lg-pull-3{right:25%}.col-lg-pull-2{right:16.66666667%}.col-lg-pull-1{right:8.33333333%}.col-lg-pull-0{right:auto}.col-lg-push-12{left:100%}.col-lg-push-11{left:91.66666667%}.col-lg-push-10{left:83.33333333%}.col-lg-push-9{left:75%}.col-lg-push-8{left:66.66666667%}.col-lg-push-7{left:58.33333333%}.col-lg-push-6{left:50%}.col-lg-push-5{left:41.66666667%}.col-lg-push-4{left:33.33333333%}.col-lg-push-3{left:25%}.col-lg-push-2{left:16.66666667%}.col-lg-push-1{left:8.33333333%}.col-lg-push-0{left:auto}.col-lg-offset-12{margin-left:100%}.col-lg-offset-11{margin-left:91.66666667%}.col-lg-offset-10{margin-left:83.33333333%}.col-lg-offset-9{margin-left:75%}.col-lg-offset-8{margin-left:66.66666667%}.col-lg-offset-7{margin-left:58.33333333%}.col-lg-offset-6{margin-left:50%}.col-lg-offset-5{margin-left:41.66666667%}.col-lg-offset-4{margin-left:33.33333333%}.col-lg-offset-3{margin-left:25%}.col-lg-offset-2{margin-left:16.66666667%}.col-lg-offset-1{margin-left:8.33333333%}.col-lg-offset-0{margin-left:0}}table{background-color:transparent}caption{padding-top:8px;padding-bottom:8px;color:#777;text-align:left}th{text-align:left}.table{width:100%;max-width:100%;margin-bottom:20px}.table>thead>tr>th,.table>tbody>tr>th,.table>tfoot>tr>th,.table>thead>tr>td,.table>tbody>tr>td,.table>tfoot>tr>td{padding:8px;line-height:1.42857143;vertical-align:top;border-top:1px solid #ddd}.table>thead>tr>th{vertical-align:bottom;border-bottom:2px solid #ddd}.table>caption+thead>tr:first-child>th,.table>colgroup+thead>tr:first-child>th,.table>thead:first-child>tr:first-child>th,.table>caption+thead>tr:first-child>td,.table>colgroup+thead>tr:first-child>td,.table>thead:first-child>tr:first-child>td{border-top:0}.table>tbody+tbody{border-top:2px solid #ddd}.table .table{background-color:#fff}.table-condensed>thead>tr>th,.table-condensed>tbody>tr>th,.table-condensed>tfoot>tr>th,.table-condensed>thead>tr>td,.table-condensed>tbody>tr>td,.table-condensed>tfoot>tr>td{padding:5px}.table-bordered{border:1px solid #ddd}.table-bordered>thead>tr>th,.table-bordered>tbody>tr>th,.table-bordered>tfoot>tr>th,.table-bordered>thead>tr>td,.table-bordered>tbody>tr>td,.table-bordered>tfoot>tr>td{border:1px solid #ddd}.table-bordered>thead>tr>th,.table-bordered>thead>tr>td{border-bottom-width:2px}.table-striped>tbody>tr:nth-of-type(odd){background-color:#f9f9f9}.table-hover>tbody>tr:hover{background-color:#f5f5f5}table col[class*=col-]{position:static;display:table-column;float:none}table td[class*=col-],table th[class*=col-]{position:static;display:table-cell;float:none}.table>thead>tr>td.active,.table>tbody>tr>td.active,.table>tfoot>tr>td.active,.table>thead>tr>th.active,.table>tbody>tr>th.active,.table>tfoot>tr>th.active,.table>thead>tr.active>td,.table>tbody>tr.active>td,.table>tfoot>tr.active>td,.table>thead>tr.active>th,.table>tbody>tr.active>th,.table>tfoot>tr.active>th{background-color:#f5f5f5}.table-hover>tbody>tr>td.active:hover,.table-hover>tbody>tr>th.active:hover,.table-hover>tbody>tr.active:hover>td,.table-hover>tbody>tr:hover>.active,.table-hover>tbody>tr.active:hover>th{background-color:#e8e8e8}.table>thead>tr>td.success,.table>tbody>tr>td.success,.table>tfoot>tr>td.success,.table>thead>tr>th.success,.table>tbody>tr>th.success,.table>tfoot>tr>th.success,.table>thead>tr.success>td,.table>tbody>tr.success>td,.table>tfoot>tr.success>td,.table>thead>tr.success>th,.table>tbody>tr.success>th,.table>tfoot>tr.success>th{background-color:#dff0d8}.table-hover>tbody>tr>td.success:hover,.table-hover>tbody>tr>th.success:hover,.table-hover>tbody>tr.success:hover>td,.table-hover>tbody>tr:hover>.success,.table-hover>tbody>tr.success:hover>th{background-color:#d0e9c6}.table>thead>tr>td.info,.table>tbody>tr>td.info,.table>tfoot>tr>td.info,.table>thead>tr>th.info,.table>tbody>tr>th.info,.table>tfoot>tr>th.info,.table>thead>tr.info>td,.table>tbody>tr.info>td,.table>tfoot>tr.info>td,.table>thead>tr.info>th,.table>tbody>tr.info>th,.table>tfoot>tr.info>th{background-color:#d9edf7}.table-hover>tbody>tr>td.info:hover,.table-hover>tbody>tr>th.info:hover,.table-hover>tbody>tr.info:hover>td,.table-hover>tbody>tr:hover>.info,.table-hover>tbody>tr.info:hover>th{background-color:#c4e3f3}.table>thead>tr>td.warning,.table>tbody>tr>td.warning,.table>tfoot>tr>td.warning,.table>thead>tr>th.warning,.table>tbody>tr>th.warning,.table>tfoot>tr>th.warning,.table>thead>tr.warning>td,.table>tbody>tr.warning>td,.table>tfoot>tr.warning>td,.table>thead>tr.warning>th,.table>tbody>tr.warning>th,.table>tfoot>tr.warning>th{background-color:#fcf8e3}.table-hover>tbody>tr>td.warning:hover,.table-hover>tbody>tr>th.warning:hover,.table-hover>tbody>tr.warning:hover>td,.table-hover>tbody>tr:hover>.warning,.table-hover>tbody>tr.warning:hover>th{background-color:#faf2cc}.table>thead>tr>td.danger,.table>tbody>tr>td.danger,.table>tfoot>tr>td.danger,.table>thead>tr>th.danger,.table>tbody>tr>th.danger,.table>tfoot>tr>th.danger,.table>thead>tr.danger>td,.table>tbody>tr.danger>td,.table>tfoot>tr.danger>td,.table>thead>tr.danger>th,.table>tbody>tr.danger>th,.table>tfoot>tr.danger>th{background-color:#f2dede}.table-hover>tbody>tr>td.danger:hover,.table-hover>tbody>tr>th.danger:hover,.table-hover>tbody>tr.danger:hover>td,.table-hover>tbody>tr:hover>.danger,.table-hover>tbody>tr.danger:hover>th{background-color:#ebcccc}.table-responsive{min-height:.01%;overflow-x:auto}@media screen and (max-width:767px){.table-responsive{width:100%;margin-bottom:15px;overflow-y:hidden;-ms-overflow-style:-ms-autohiding-scrollbar;border:1px solid #ddd}.table-responsive>.table{margin-bottom:0}.table-responsive>.table>thead>tr>th,.table-responsive>.table>tbody>tr>th,.table-responsive>.table>tfoot>tr>th,.table-responsive>.table>thead>tr>td,.table-responsive>.table>tbody>tr>td,.table-responsive>.table>tfoot>tr>td{white-space:nowrap}.table-responsive>.table-bordered{border:0}.table-responsive>.table-bordered>thead>tr>th:first-child,.table-responsive>.table-bordered>tbody>tr>th:first-child,.table-responsive>.table-bordered>tfoot>tr>th:first-child,.table-responsive>.table-bordered>thead>tr>td:first-child,.table-responsive>.table-bordered>tbody>tr>td:first-child,.table-responsive>.table-bordered>tfoot>tr>td:first-child{border-left:0}.table-responsive>.table-bordered>thead>tr>th:last-child,.table-responsive>.table-bordered>tbody>tr>th:last-child,.table-responsive>.table-bordered>tfoot>tr>th:last-child,.table-responsive>.table-bordered>thead>tr>td:last-child,.table-responsive>.table-bordered>tbody>tr>td:last-child,.table-responsive>.table-bordered>tfoot>tr>td:last-child{border-right:0}.table-responsive>.table-bordered>tbody>tr:last-child>th,.table-responsive>.table-bordered>tfoot>tr:last-child>th,.table-responsive>.table-bordered>tbody>tr:last-child>td,.table-responsive>.table-bordered>tfoot>tr:last-child>td{border-bottom:0}}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;padding:0;margin-bottom:20px;font-size:21px;line-height:inherit;color:#333;border:0;border-bottom:1px solid #e5e5e5}label{display:inline-block;max-width:100%;margin-bottom:5px;font-weight:700}input[type=search]{box-sizing:border-box}input[type=radio],input[type=checkbox]{margin:4px 0 0;margin-top:1px \\9;line-height:normal}input[type=file]{display:block}input[type=range]{display:block;width:100%}select[multiple],select[size]{height:auto}input[type=file]:focus,input[type=radio]:focus,input[type=checkbox]:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}output{display:block;padding-top:7px;font-size:14px;line-height:1.42857143;color:#555}.form-control{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;box-shadow:inset 0 1px 1px rgba(0,0,0,.075);transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}.form-control:focus{border-color:#66afe9;outline:0;box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)}.form-control::-moz-placeholder{color:#999;opacity:1}.form-control:-ms-input-placeholder{color:#999}.form-control::-webkit-input-placeholder{color:#999}.form-control::-ms-expand{background-color:transparent;border:0}.form-control[disabled],.form-control[readonly],fieldset[disabled] .form-control{background-color:#eee;opacity:1}.form-control[disabled],fieldset[disabled] .form-control{cursor:not-allowed}textarea.form-control{height:auto}input[type=search]{-webkit-appearance:none}@media screen and (-webkit-min-device-pixel-ratio:0){input[type=date].form-control,input[type=time].form-control,input[type=datetime-local].form-control,input[type=month].form-control{line-height:34px}input[type=date].input-sm,input[type=time].input-sm,input[type=datetime-local].input-sm,input[type=month].input-sm,.input-group-sm input[type=date],.input-group-sm input[type=time],.input-group-sm input[type=datetime-local],.input-group-sm input[type=month]{line-height:30px}input[type=date].input-lg,input[type=time].input-lg,input[type=datetime-local].input-lg,input[type=month].input-lg,.input-group-lg input[type=date],.input-group-lg input[type=time],.input-group-lg input[type=datetime-local],.input-group-lg input[type=month]{line-height:46px}}.form-group{margin-bottom:15px}.radio,.checkbox{position:relative;display:block;margin-top:10px;margin-bottom:10px}.radio label,.checkbox label{min-height:20px;padding-left:20px;margin-bottom:0;font-weight:400;cursor:pointer}.radio input[type=radio],.radio-inline input[type=radio],.checkbox input[type=checkbox],.checkbox-inline input[type=checkbox]{position:absolute;margin-top:4px \\9;margin-left:-20px}.radio+.radio,.checkbox+.checkbox{margin-top:-5px}.radio-inline,.checkbox-inline{position:relative;display:inline-block;padding-left:20px;margin-bottom:0;font-weight:400;vertical-align:middle;cursor:pointer}.radio-inline+.radio-inline,.checkbox-inline+.checkbox-inline{margin-top:0;margin-left:10px}input[type=radio][disabled],input[type=checkbox][disabled],input[type=radio].disabled,input[type=checkbox].disabled,fieldset[disabled] input[type=radio],fieldset[disabled] input[type=checkbox]{cursor:not-allowed}.radio-inline.disabled,.checkbox-inline.disabled,fieldset[disabled] .radio-inline,fieldset[disabled] .checkbox-inline{cursor:not-allowed}.radio.disabled label,.checkbox.disabled label,fieldset[disabled] .radio label,fieldset[disabled] .checkbox label{cursor:not-allowed}.form-control-static{min-height:34px;padding-top:7px;padding-bottom:7px;margin-bottom:0}.form-control-static.input-lg,.form-control-static.input-sm{padding-right:0;padding-left:0}.input-sm{height:30px;padding:5px 10px;font-size:12px;line-height:1.5;border-radius:3px}select.input-sm{height:30px;line-height:30px}textarea.input-sm,select[multiple].input-sm{height:auto}.form-group-sm .form-control{height:30px;padding:5px 10px;font-size:12px;line-height:1.5;border-radius:3px}.form-group-sm select.form-control{height:30px;line-height:30px}.form-group-sm textarea.form-control,.form-group-sm select[multiple].form-control{height:auto}.form-group-sm .form-control-static{height:30px;min-height:32px;padding:6px 10px;font-size:12px;line-height:1.5}.input-lg{height:46px;padding:10px 16px;font-size:18px;line-height:1.3333333;border-radius:6px}select.input-lg{height:46px;line-height:46px}textarea.input-lg,select[multiple].input-lg{height:auto}.form-group-lg .form-control{height:46px;padding:10px 16px;font-size:18px;line-height:1.3333333;border-radius:6px}.form-group-lg select.form-control{height:46px;line-height:46px}.form-group-lg textarea.form-control,.form-group-lg select[multiple].form-control{height:auto}.form-group-lg .form-control-static{height:46px;min-height:38px;padding:11px 16px;font-size:18px;line-height:1.3333333}.has-feedback{position:relative}.has-feedback .form-control{padding-right:42.5px}.form-control-feedback{position:absolute;top:0;right:0;z-index:2;display:block;width:34px;height:34px;line-height:34px;text-align:center;pointer-events:none}.input-lg+.form-control-feedback,.input-group-lg+.form-control-feedback,.form-group-lg .form-control+.form-control-feedback{width:46px;height:46px;line-height:46px}.input-sm+.form-control-feedback,.input-group-sm+.form-control-feedback,.form-group-sm .form-control+.form-control-feedback{width:30px;height:30px;line-height:30px}.has-success .help-block,.has-success .control-label,.has-success .radio,.has-success .checkbox,.has-success .radio-inline,.has-success .checkbox-inline,.has-success.radio label,.has-success.checkbox label,.has-success.radio-inline label,.has-success.checkbox-inline label{color:#3c763d}.has-success .form-control{border-color:#3c763d;box-shadow:inset 0 1px 1px rgba(0,0,0,.075)}.has-success .form-control:focus{border-color:#2b542c;box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #67b168}.has-success .input-group-addon{color:#3c763d;background-color:#dff0d8;border-color:#3c763d}.has-success .form-control-feedback{color:#3c763d}.has-warning .help-block,.has-warning .control-label,.has-warning .radio,.has-warning .checkbox,.has-warning .radio-inline,.has-warning .checkbox-inline,.has-warning.radio label,.has-warning.checkbox label,.has-warning.radio-inline label,.has-warning.checkbox-inline label{color:#8a6d3b}.has-warning .form-control{border-color:#8a6d3b;box-shadow:inset 0 1px 1px rgba(0,0,0,.075)}.has-warning .form-control:focus{border-color:#66512c;box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #c0a16b}.has-warning .input-group-addon{color:#8a6d3b;background-color:#fcf8e3;border-color:#8a6d3b}.has-warning .form-control-feedback{color:#8a6d3b}.has-error .help-block,.has-error .control-label,.has-error .radio,.has-error .checkbox,.has-error .radio-inline,.has-error .checkbox-inline,.has-error.radio label,.has-error.checkbox label,.has-error.radio-inline label,.has-error.checkbox-inline label{color:#a94442}.has-error .form-control{border-color:#a94442;box-shadow:inset 0 1px 1px rgba(0,0,0,.075)}.has-error .form-control:focus{border-color:#843534;box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483}.has-error .input-group-addon{color:#a94442;background-color:#f2dede;border-color:#a94442}.has-error .form-control-feedback{color:#a94442}.has-feedback label~.form-control-feedback{top:25px}.has-feedback label.sr-only~.form-control-feedback{top:0}.help-block{display:block;margin-top:5px;margin-bottom:10px;color:#737373}@media(min-width:768px){.form-inline .form-group{display:inline-block;margin-bottom:0;vertical-align:middle}.form-inline .form-control{display:inline-block;width:auto;vertical-align:middle}.form-inline .form-control-static{display:inline-block}.form-inline .input-group{display:inline-table;vertical-align:middle}.form-inline .input-group .input-group-addon,.form-inline .input-group .input-group-btn,.form-inline .input-group .form-control{width:auto}.form-inline .input-group>.form-control{width:100%}.form-inline .control-label{margin-bottom:0;vertical-align:middle}.form-inline .radio,.form-inline .checkbox{display:inline-block;margin-top:0;margin-bottom:0;vertical-align:middle}.form-inline .radio label,.form-inline .checkbox label{padding-left:0}.form-inline .radio input[type=radio],.form-inline .checkbox input[type=checkbox]{position:relative;margin-left:0}.form-inline .has-feedback .form-control-feedback{top:0}}.form-horizontal .radio,.form-horizontal .checkbox,.form-horizontal .radio-inline,.form-horizontal .checkbox-inline{padding-top:7px;margin-top:0;margin-bottom:0}.form-horizontal .radio,.form-horizontal .checkbox{min-height:27px}.form-horizontal .form-group{margin-right:-15px;margin-left:-15px}@media(min-width:768px){.form-horizontal .control-label{padding-top:7px;margin-bottom:0;text-align:right}}.form-horizontal .has-feedback .form-control-feedback{right:15px}@media(min-width:768px){.form-horizontal .form-group-lg .control-label{padding-top:11px;font-size:18px}}@media(min-width:768px){.form-horizontal .form-group-sm .control-label{padding-top:6px;font-size:12px}}.btn{display:inline-block;padding:6px 12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1px solid transparent;border-radius:4px}.btn:focus,.btn:active:focus,.btn.active:focus,.btn.focus,.btn:active.focus,.btn.active.focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}.btn:hover,.btn:focus,.btn.focus{color:#333;text-decoration:none}.btn:active,.btn.active{background-image:none;outline:0;box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}.btn.disabled,.btn[disabled],fieldset[disabled] .btn{cursor:not-allowed;filter:alpha(opacity=65);box-shadow:none;opacity:.65}a.btn.disabled,fieldset[disabled] a.btn{pointer-events:none}.btn-default{color:#333;background-color:#fff;border-color:#ccc}.btn-default:focus,.btn-default.focus{color:#333;background-color:#e6e6e6;border-color:#8c8c8c}.btn-default:hover{color:#333;background-color:#e6e6e6;border-color:#adadad}.btn-default:active,.btn-default.active,.open>.dropdown-toggle.btn-default{color:#333;background-color:#e6e6e6;border-color:#adadad}.btn-default:active:hover,.btn-default.active:hover,.open>.dropdown-toggle.btn-default:hover,.btn-default:active:focus,.btn-default.active:focus,.open>.dropdown-toggle.btn-default:focus,.btn-default:active.focus,.btn-default.active.focus,.open>.dropdown-toggle.btn-default.focus{color:#333;background-color:#d4d4d4;border-color:#8c8c8c}.btn-default:active,.btn-default.active,.open>.dropdown-toggle.btn-default{background-image:none}.btn-default.disabled:hover,.btn-default[disabled]:hover,fieldset[disabled] .btn-default:hover,.btn-default.disabled:focus,.btn-default[disabled]:focus,fieldset[disabled] .btn-default:focus,.btn-default.disabled.focus,.btn-default[disabled].focus,fieldset[disabled] .btn-default.focus{background-color:#fff;border-color:#ccc}.btn-default .badge{color:#fff;background-color:#333}.btn-primary{color:#fff;background-color:#337ab7;border-color:#2e6da4}.btn-primary:focus,.btn-primary.focus{color:#fff;background-color:#286090;border-color:#122b40}.btn-primary:hover{color:#fff;background-color:#286090;border-color:#204d74}.btn-primary:active,.btn-primary.active,.open>.dropdown-toggle.btn-primary{color:#fff;background-color:#286090;border-color:#204d74}.btn-primary:active:hover,.btn-primary.active:hover,.open>.dropdown-toggle.btn-primary:hover,.btn-primary:active:focus,.btn-primary.active:focus,.open>.dropdown-toggle.btn-primary:focus,.btn-primary:active.focus,.btn-primary.active.focus,.open>.dropdown-toggle.btn-primary.focus{color:#fff;background-color:#204d74;border-color:#122b40}.btn-primary:active,.btn-primary.active,.open>.dropdown-toggle.btn-primary{background-image:none}.btn-primary.disabled:hover,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary:hover,.btn-primary.disabled:focus,.btn-primary[disabled]:focus,fieldset[disabled] .btn-primary:focus,.btn-primary.disabled.focus,.btn-primary[disabled].focus,fieldset[disabled] .btn-primary.focus{background-color:#337ab7;border-color:#2e6da4}.btn-primary .badge{color:#337ab7;background-color:#fff}.btn-success{color:#fff;background-color:#5cb85c;border-color:#4cae4c}.btn-success:focus,.btn-success.focus{color:#fff;background-color:#449d44;border-color:#255625}.btn-success:hover{color:#fff;background-color:#449d44;border-color:#398439}.btn-success:active,.btn-success.active,.open>.dropdown-toggle.btn-success{color:#fff;background-color:#449d44;border-color:#398439}.btn-success:active:hover,.btn-success.active:hover,.open>.dropdown-toggle.btn-success:hover,.btn-success:active:focus,.btn-success.active:focus,.open>.dropdown-toggle.btn-success:focus,.btn-success:active.focus,.btn-success.active.focus,.open>.dropdown-toggle.btn-success.focus{color:#fff;background-color:#398439;border-color:#255625}.btn-success:active,.btn-success.active,.open>.dropdown-toggle.btn-success{background-image:none}.btn-success.disabled:hover,.btn-success[disabled]:hover,fieldset[disabled] .btn-success:hover,.btn-success.disabled:focus,.btn-success[disabled]:focus,fieldset[disabled] .btn-success:focus,.btn-success.disabled.focus,.btn-success[disabled].focus,fieldset[disabled] .btn-success.focus{background-color:#5cb85c;border-color:#4cae4c}.btn-success .badge{color:#5cb85c;background-color:#fff}.btn-info{color:#fff;background-color:#5bc0de;border-color:#46b8da}.btn-info:focus,.btn-info.focus{color:#fff;background-color:#31b0d5;border-color:#1b6d85}.btn-info:hover{color:#fff;background-color:#31b0d5;border-color:#269abc}.btn-info:active,.btn-info.active,.open>.dropdown-toggle.btn-info{color:#fff;background-color:#31b0d5;border-color:#269abc}.btn-info:active:hover,.btn-info.active:hover,.open>.dropdown-toggle.btn-info:hover,.btn-info:active:focus,.btn-info.active:focus,.open>.dropdown-toggle.btn-info:focus,.btn-info:active.focus,.btn-info.active.focus,.open>.dropdown-toggle.btn-info.focus{color:#fff;background-color:#269abc;border-color:#1b6d85}.btn-info:active,.btn-info.active,.open>.dropdown-toggle.btn-info{background-image:none}.btn-info.disabled:hover,.btn-info[disabled]:hover,fieldset[disabled] .btn-info:hover,.btn-info.disabled:focus,.btn-info[disabled]:focus,fieldset[disabled] .btn-info:focus,.btn-info.disabled.focus,.btn-info[disabled].focus,fieldset[disabled] .btn-info.focus{background-color:#5bc0de;border-color:#46b8da}.btn-info .badge{color:#5bc0de;background-color:#fff}.btn-warning{color:#fff;background-color:#f0ad4e;border-color:#eea236}.btn-warning:focus,.btn-warning.focus{color:#fff;background-color:#ec971f;border-color:#985f0d}.btn-warning:hover{color:#fff;background-color:#ec971f;border-color:#d58512}.btn-warning:active,.btn-warning.active,.open>.dropdown-toggle.btn-warning{color:#fff;background-color:#ec971f;border-color:#d58512}.btn-warning:active:hover,.btn-warning.active:hover,.open>.dropdown-toggle.btn-warning:hover,.btn-warning:active:focus,.btn-warning.active:focus,.open>.dropdown-toggle.btn-warning:focus,.btn-warning:active.focus,.btn-warning.active.focus,.open>.dropdown-toggle.btn-warning.focus{color:#fff;background-color:#d58512;border-color:#985f0d}.btn-warning:active,.btn-warning.active,.open>.dropdown-toggle.btn-warning{background-image:none}.btn-warning.disabled:hover,.btn-warning[disabled]:hover,fieldset[disabled] .btn-warning:hover,.btn-warning.disabled:focus,.btn-warning[disabled]:focus,fieldset[disabled] .btn-warning:focus,.btn-warning.disabled.focus,.btn-warning[disabled].focus,fieldset[disabled] .btn-warning.focus{background-color:#f0ad4e;border-color:#eea236}.btn-warning .badge{color:#f0ad4e;background-color:#fff}.btn-danger{color:#fff;background-color:#d9534f;border-color:#d43f3a}.btn-danger:focus,.btn-danger.focus{color:#fff;background-color:#c9302c;border-color:#761c19}.btn-danger:hover{color:#fff;background-color:#c9302c;border-color:#ac2925}.btn-danger:active,.btn-danger.active,.open>.dropdown-toggle.btn-danger{color:#fff;background-color:#c9302c;border-color:#ac2925}.btn-danger:active:hover,.btn-danger.active:hover,.open>.dropdown-toggle.btn-danger:hover,.btn-danger:active:focus,.btn-danger.active:focus,.open>.dropdown-toggle.btn-danger:focus,.btn-danger:active.focus,.btn-danger.active.focus,.open>.dropdown-toggle.btn-danger.focus{color:#fff;background-color:#ac2925;border-color:#761c19}.btn-danger:active,.btn-danger.active,.open>.dropdown-toggle.btn-danger{background-image:none}.btn-danger.disabled:hover,.btn-danger[disabled]:hover,fieldset[disabled] .btn-danger:hover,.btn-danger.disabled:focus,.btn-danger[disabled]:focus,fieldset[disabled] .btn-danger:focus,.btn-danger.disabled.focus,.btn-danger[disabled].focus,fieldset[disabled] .btn-danger.focus{background-color:#d9534f;border-color:#d43f3a}.btn-danger .badge{color:#d9534f;background-color:#fff}.btn-link{font-weight:400;color:#337ab7;border-radius:0}.btn-link,.btn-link:active,.btn-link.active,.btn-link[disabled],fieldset[disabled] .btn-link{background-color:transparent;box-shadow:none}.btn-link,.btn-link:hover,.btn-link:focus,.btn-link:active{border-color:transparent}.btn-link:hover,.btn-link:focus{color:#23527c;text-decoration:underline;background-color:transparent}.btn-link[disabled]:hover,fieldset[disabled] .btn-link:hover,.btn-link[disabled]:focus,fieldset[disabled] .btn-link:focus{color:#777;text-decoration:none}.btn-lg,.btn-group-lg>.btn{padding:10px 16px;font-size:18px;line-height:1.3333333;border-radius:6px}.btn-sm,.btn-group-sm>.btn{padding:5px 10px;font-size:12px;line-height:1.5;border-radius:3px}.btn-xs,.btn-group-xs>.btn{padding:1px 5px;font-size:12px;line-height:1.5;border-radius:3px}.btn-block{display:block;width:100%}.btn-block+.btn-block{margin-top:5px}input[type=submit].btn-block,input[type=reset].btn-block,input[type=button].btn-block{width:100%}.fade{opacity:0;transition:opacity .15s linear}.fade.in{opacity:1}.collapse{display:none}.collapse.in{display:block}tr.collapse.in{display:table-row}tbody.collapse.in{display:table-row-group}.collapsing{position:relative;height:0;overflow:hidden;transition-timing-function:ease;transition-duration:.35s;transition-property:height,visibility}.caret{display:inline-block;width:0;height:0;margin-left:2px;vertical-align:middle;border-top:4px dashed;border-top:4px solid \\9;border-right:4px solid transparent;border-left:4px solid transparent}.dropup,.dropdown{position:relative}.dropdown-toggle:focus{outline:0}.dropdown-menu{position:absolute;top:100%;left:0;z-index:1000;display:none;float:left;min-width:160px;padding:5px 0;margin:2px 0 0;font-size:14px;text-align:left;list-style:none;background-color:#fff;background-clip:padding-box;border:1px solid #ccc;border:1px solid rgba(0,0,0,.15);border-radius:4px;box-shadow:0 6px 12px rgba(0,0,0,.175)}.dropdown-menu.pull-right{right:0;left:auto}.dropdown-menu .divider{height:1px;margin:9px 0;overflow:hidden;background-color:#e5e5e5}.dropdown-menu>li>a{display:block;padding:3px 20px;clear:both;font-weight:400;line-height:1.42857143;color:#333;white-space:nowrap}.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus{color:#262626;text-decoration:none;background-color:#f5f5f5}.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{color:#fff;text-decoration:none;background-color:#337ab7;outline:0}.dropdown-menu>.disabled>a,.dropdown-menu>.disabled>a:hover,.dropdown-menu>.disabled>a:focus{color:#777}.dropdown-menu>.disabled>a:hover,.dropdown-menu>.disabled>a:focus{text-decoration:none;cursor:not-allowed;background-color:transparent;background-image:none;filter:progid:DXImageTransform.Microsoft.gradient(enabled = false)}.open>.dropdown-menu{display:block}.open>a{outline:0}.dropdown-menu-right{right:0;left:auto}.dropdown-menu-left{right:auto;left:0}.dropdown-header{display:block;padding:3px 20px;font-size:12px;line-height:1.42857143;color:#777;white-space:nowrap}.dropdown-backdrop{position:fixed;top:0;right:0;bottom:0;left:0;z-index:990}.pull-right>.dropdown-menu{right:0;left:auto}.dropup .caret,.navbar-fixed-bottom .dropdown .caret{content:\"\";border-top:0;border-bottom:4px dashed;border-bottom:4px solid \\9}.dropup .dropdown-menu,.navbar-fixed-bottom .dropdown .dropdown-menu{top:auto;bottom:100%;margin-bottom:2px}@media(min-width:768px){.navbar-right .dropdown-menu{right:0;left:auto}.navbar-right .dropdown-menu-left{right:auto;left:0}}.btn-group,.btn-group-vertical{position:relative;display:inline-block;vertical-align:middle}.btn-group>.btn,.btn-group-vertical>.btn{position:relative;float:left}.btn-group>.btn:hover,.btn-group-vertical>.btn:hover,.btn-group>.btn:focus,.btn-group-vertical>.btn:focus,.btn-group>.btn:active,.btn-group-vertical>.btn:active,.btn-group>.btn.active,.btn-group-vertical>.btn.active{z-index:2}.btn-group .btn+.btn,.btn-group .btn+.btn-group,.btn-group .btn-group+.btn,.btn-group .btn-group+.btn-group{margin-left:-1px}.btn-toolbar{margin-left:-5px}.btn-toolbar .btn,.btn-toolbar .btn-group,.btn-toolbar .input-group{float:left}.btn-toolbar>.btn,.btn-toolbar>.btn-group,.btn-toolbar>.input-group{margin-left:5px}.btn-group>.btn:not(:first-child):not(:last-child):not(.dropdown-toggle){border-radius:0}.btn-group>.btn:first-child{margin-left:0}.btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle){border-top-right-radius:0;border-bottom-right-radius:0}.btn-group>.btn:last-child:not(:first-child),.btn-group>.dropdown-toggle:not(:first-child){border-top-left-radius:0;border-bottom-left-radius:0}.btn-group>.btn-group{float:left}.btn-group>.btn-group:not(:first-child):not(:last-child)>.btn{border-radius:0}.btn-group>.btn-group:first-child:not(:last-child)>.btn:last-child,.btn-group>.btn-group:first-child:not(:last-child)>.dropdown-toggle{border-top-right-radius:0;border-bottom-right-radius:0}.btn-group>.btn-group:last-child:not(:first-child)>.btn:first-child{border-top-left-radius:0;border-bottom-left-radius:0}.btn-group .dropdown-toggle:active,.btn-group.open .dropdown-toggle{outline:0}.btn-group>.btn+.dropdown-toggle{padding-right:8px;padding-left:8px}.btn-group>.btn-lg+.dropdown-toggle{padding-right:12px;padding-left:12px}.btn-group.open .dropdown-toggle{box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}.btn-group.open .dropdown-toggle.btn-link{box-shadow:none}.btn .caret{margin-left:0}.btn-lg .caret{border-width:5px 5px 0;border-bottom-width:0}.dropup .btn-lg .caret{border-width:0 5px 5px}.btn-group-vertical>.btn,.btn-group-vertical>.btn-group,.btn-group-vertical>.btn-group>.btn{display:block;float:none;width:100%;max-width:100%}.btn-group-vertical>.btn-group>.btn{float:none}.btn-group-vertical>.btn+.btn,.btn-group-vertical>.btn+.btn-group,.btn-group-vertical>.btn-group+.btn,.btn-group-vertical>.btn-group+.btn-group{margin-top:-1px;margin-left:0}.btn-group-vertical>.btn:not(:first-child):not(:last-child){border-radius:0}.btn-group-vertical>.btn:first-child:not(:last-child){border-top-left-radius:4px;border-top-right-radius:4px;border-bottom-right-radius:0;border-bottom-left-radius:0}.btn-group-vertical>.btn:last-child:not(:first-child){border-top-left-radius:0;border-top-right-radius:0;border-bottom-right-radius:4px;border-bottom-left-radius:4px}.btn-group-vertical>.btn-group:not(:first-child):not(:last-child)>.btn{border-radius:0}.btn-group-vertical>.btn-group:first-child:not(:last-child)>.btn:last-child,.btn-group-vertical>.btn-group:first-child:not(:last-child)>.dropdown-toggle{border-bottom-right-radius:0;border-bottom-left-radius:0}.btn-group-vertical>.btn-group:last-child:not(:first-child)>.btn:first-child{border-top-left-radius:0;border-top-right-radius:0}.btn-group-justified{display:table;width:100%;table-layout:fixed;border-collapse:separate}.btn-group-justified>.btn,.btn-group-justified>.btn-group{display:table-cell;float:none;width:1%}.btn-group-justified>.btn-group .btn{width:100%}.btn-group-justified>.btn-group .dropdown-menu{left:auto}[data-toggle=\"buttons\"]>.btn input[type=\"radio\"],[data-toggle=\"buttons\"]>.btn-group>.btn input[type=\"radio\"],[data-toggle=\"buttons\"]>.btn input[type=\"checkbox\"],[data-toggle=\"buttons\"]>.btn-group>.btn input[type=\"checkbox\"]{position:absolute;clip:rect(0,0,0,0);pointer-events:none}.input-group{position:relative;display:table;border-collapse:separate}.input-group[class*=col-]{float:none;padding-right:0;padding-left:0}.input-group .form-control{position:relative;z-index:2;float:left;width:100%;margin-bottom:0}.input-group .form-control:focus{z-index:3}.input-group-lg>.form-control,.input-group-lg>.input-group-addon,.input-group-lg>.input-group-btn>.btn{height:46px;padding:10px 16px;font-size:18px;line-height:1.3333333;border-radius:6px}select.input-group-lg>.form-control,select.input-group-lg>.input-group-addon,select.input-group-lg>.input-group-btn>.btn{height:46px;line-height:46px}textarea.input-group-lg>.form-control,textarea.input-group-lg>.input-group-addon,textarea.input-group-lg>.input-group-btn>.btn,select[multiple].input-group-lg>.form-control,select[multiple].input-group-lg>.input-group-addon,select[multiple].input-group-lg>.input-group-btn>.btn{height:auto}.input-group-sm>.form-control,.input-group-sm>.input-group-addon,.input-group-sm>.input-group-btn>.btn{height:30px;padding:5px 10px;font-size:12px;line-height:1.5;border-radius:3px}select.input-group-sm>.form-control,select.input-group-sm>.input-group-addon,select.input-group-sm>.input-group-btn>.btn{height:30px;line-height:30px}textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon,textarea.input-group-sm>.input-group-btn>.btn,select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.input-group-addon,select[multiple].input-group-sm>.input-group-btn>.btn{height:auto}.input-group-addon,.input-group-btn,.input-group .form-control{display:table-cell}.input-group-addon:not(:first-child):not(:last-child),.input-group-btn:not(:first-child):not(:last-child),.input-group .form-control:not(:first-child):not(:last-child){border-radius:0}.input-group-addon,.input-group-btn{width:1%;white-space:nowrap;vertical-align:middle}.input-group-addon{padding:6px 12px;font-size:14px;font-weight:400;line-height:1;color:#555;text-align:center;background-color:#eee;border:1px solid #ccc;border-radius:4px}.input-group-addon.input-sm{padding:5px 10px;font-size:12px;border-radius:3px}.input-group-addon.input-lg{padding:10px 16px;font-size:18px;border-radius:6px}.input-group-addon input[type=radio],.input-group-addon input[type=checkbox]{margin-top:0}.input-group .form-control:first-child,.input-group-addon:first-child,.input-group-btn:first-child>.btn,.input-group-btn:first-child>.btn-group>.btn,.input-group-btn:first-child>.dropdown-toggle,.input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle),.input-group-btn:last-child>.btn-group:not(:last-child)>.btn{border-top-right-radius:0;border-bottom-right-radius:0}.input-group-addon:first-child{border-right:0}.input-group .form-control:last-child,.input-group-addon:last-child,.input-group-btn:last-child>.btn,.input-group-btn:last-child>.btn-group>.btn,.input-group-btn:last-child>.dropdown-toggle,.input-group-btn:first-child>.btn:not(:first-child),.input-group-btn:first-child>.btn-group:not(:first-child)>.btn{border-top-left-radius:0;border-bottom-left-radius:0}.input-group-addon:last-child{border-left:0}.input-group-btn{position:relative;font-size:0;white-space:nowrap}.input-group-btn>.btn{position:relative}.input-group-btn>.btn+.btn{margin-left:-1px}.input-group-btn>.btn:hover,.input-group-btn>.btn:focus,.input-group-btn>.btn:active{z-index:2}.input-group-btn:first-child>.btn,.input-group-btn:first-child>.btn-group{margin-right:-1px}.input-group-btn:last-child>.btn,.input-group-btn:last-child>.btn-group{z-index:2;margin-left:-1px}.nav{padding-left:0;margin-bottom:0;list-style:none}.nav>li{position:relative;display:block}.nav>li>a{position:relative;display:block;padding:10px 15px}.nav>li>a:hover,.nav>li>a:focus{text-decoration:none;background-color:#eee}.nav>li.disabled>a{color:#777}.nav>li.disabled>a:hover,.nav>li.disabled>a:focus{color:#777;text-decoration:none;cursor:not-allowed;background-color:transparent}.nav .open>a,.nav .open>a:hover,.nav .open>a:focus{background-color:#eee;border-color:#337ab7}.nav .nav-divider{height:1px;margin:9px 0;overflow:hidden;background-color:#e5e5e5}.nav>li>a>img{max-width:none}.nav-tabs{border-bottom:1px solid #ddd}.nav-tabs>li{float:left;margin-bottom:-1px}.nav-tabs>li>a{margin-right:2px;line-height:1.42857143;border:1px solid transparent;border-radius:4px 4px 0 0}.nav-tabs>li>a:hover{border-color:#eee #eee #ddd}.nav-tabs>li.active>a,.nav-tabs>li.active>a:hover,.nav-tabs>li.active>a:focus{color:#555;cursor:default;background-color:#fff;border:1px solid #ddd;border-bottom-color:transparent}.nav-tabs.nav-justified{width:100%;border-bottom:0}.nav-tabs.nav-justified>li{float:none}.nav-tabs.nav-justified>li>a{margin-bottom:5px;text-align:center}.nav-tabs.nav-justified>.dropdown .dropdown-menu{top:auto;left:auto}@media(min-width:768px){.nav-tabs.nav-justified>li{display:table-cell;width:1%}.nav-tabs.nav-justified>li>a{margin-bottom:0}}.nav-tabs.nav-justified>li>a{margin-right:0;border-radius:4px}.nav-tabs.nav-justified>.active>a,.nav-tabs.nav-justified>.active>a:hover,.nav-tabs.nav-justified>.active>a:focus{border:1px solid #ddd}@media(min-width:768px){.nav-tabs.nav-justified>li>a{border-bottom:1px solid #ddd;border-radius:4px 4px 0 0}.nav-tabs.nav-justified>.active>a,.nav-tabs.nav-justified>.active>a:hover,.nav-tabs.nav-justified>.active>a:focus{border-bottom-color:#fff}}.nav-pills>li{float:left}.nav-pills>li>a{border-radius:4px}.nav-pills>li+li{margin-left:2px}.nav-pills>li.active>a,.nav-pills>li.active>a:hover,.nav-pills>li.active>a:focus{color:#fff;background-color:#337ab7}.nav-stacked>li{float:none}.nav-stacked>li+li{margin-top:2px;margin-left:0}.nav-justified{width:100%}.nav-justified>li{float:none}.nav-justified>li>a{margin-bottom:5px;text-align:center}.nav-justified>.dropdown .dropdown-menu{top:auto;left:auto}@media(min-width:768px){.nav-justified>li{display:table-cell;width:1%}.nav-justified>li>a{margin-bottom:0}}.nav-tabs-justified{border-bottom:0}.nav-tabs-justified>li>a{margin-right:0;border-radius:4px}.nav-tabs-justified>.active>a,.nav-tabs-justified>.active>a:hover,.nav-tabs-justified>.active>a:focus{border:1px solid #ddd}@media(min-width:768px){.nav-tabs-justified>li>a{border-bottom:1px solid #ddd;border-radius:4px 4px 0 0}.nav-tabs-justified>.active>a,.nav-tabs-justified>.active>a:hover,.nav-tabs-justified>.active>a:focus{border-bottom-color:#fff}}.tab-content>.tab-pane{display:none}.tab-content>.active{display:block}.nav-tabs .dropdown-menu{margin-top:-1px;border-top-left-radius:0;border-top-right-radius:0}.navbar{position:relative;min-height:50px;margin-bottom:20px;border:1px solid transparent}@media(min-width:768px){.navbar{border-radius:4px}}@media(min-width:768px){.navbar-header{float:left}}.navbar-collapse{padding-right:15px;padding-left:15px;overflow-x:visible;-webkit-overflow-scrolling:touch;border-top:1px solid transparent;box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}.navbar-collapse.in{overflow-y:auto}@media(min-width:768px){.navbar-collapse{width:auto;border-top:0;box-shadow:none}.navbar-collapse.collapse{display:block!important;height:auto!important;padding-bottom:0;overflow:visible!important}.navbar-collapse.in{overflow-y:visible}.navbar-fixed-top .navbar-collapse,.navbar-static-top .navbar-collapse,.navbar-fixed-bottom .navbar-collapse{padding-right:0;padding-left:0}}.navbar-fixed-top .navbar-collapse,.navbar-fixed-bottom .navbar-collapse{max-height:340px}@media(max-device-width:480px) and (orientation:landscape){.navbar-fixed-top .navbar-collapse,.navbar-fixed-bottom .navbar-collapse{max-height:200px}}.container>.navbar-header,.container-fluid>.navbar-header,.container>.navbar-collapse,.container-fluid>.navbar-collapse{margin-right:-15px;margin-left:-15px}@media(min-width:768px){.container>.navbar-header,.container-fluid>.navbar-header,.container>.navbar-collapse,.container-fluid>.navbar-collapse{margin-right:0;margin-left:0}}.navbar-static-top{z-index:1000;border-width:0 0 1px}@media(min-width:768px){.navbar-static-top{border-radius:0}}.navbar-fixed-top,.navbar-fixed-bottom{position:fixed;right:0;left:0;z-index:1030}@media(min-width:768px){.navbar-fixed-top,.navbar-fixed-bottom{border-radius:0}}.navbar-fixed-top{top:0;border-width:0 0 1px}.navbar-fixed-bottom{bottom:0;margin-bottom:0;border-width:1px 0 0}.navbar-brand{float:left;height:50px;padding:15px;font-size:18px;line-height:20px}.navbar-brand:hover,.navbar-brand:focus{text-decoration:none}.navbar-brand>img{display:block}@media(min-width:768px){.navbar>.container .navbar-brand,.navbar>.container-fluid .navbar-brand{margin-left:-15px}}.navbar-toggle{position:relative;float:right;padding:9px 10px;margin-top:8px;margin-right:15px;margin-bottom:8px;background-color:transparent;background-image:none;border:1px solid transparent;border-radius:4px}.navbar-toggle:focus{outline:0}.navbar-toggle .icon-bar{display:block;width:22px;height:2px;border-radius:1px}.navbar-toggle .icon-bar+.icon-bar{margin-top:4px}@media(min-width:768px){.navbar-toggle{display:none}}.navbar-nav{margin:7.5px -15px}.navbar-nav>li>a{padding-top:10px;padding-bottom:10px;line-height:20px}@media(max-width:767px){.navbar-nav .open .dropdown-menu{position:static;float:none;width:auto;margin-top:0;background-color:transparent;border:0;box-shadow:none}.navbar-nav .open .dropdown-menu>li>a,.navbar-nav .open .dropdown-menu .dropdown-header{padding:5px 15px 5px 25px}.navbar-nav .open .dropdown-menu>li>a{line-height:20px}.navbar-nav .open .dropdown-menu>li>a:hover,.navbar-nav .open .dropdown-menu>li>a:focus{background-image:none}}@media(min-width:768px){.navbar-nav{float:left;margin:0}.navbar-nav>li{float:left}.navbar-nav>li>a{padding-top:15px;padding-bottom:15px}}.navbar-form{padding:10px 15px;margin-top:8px;margin-right:-15px;margin-bottom:8px;margin-left:-15px;border-top:1px solid transparent;border-bottom:1px solid transparent;box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 1px 0 rgba(255,255,255,.1)}@media(min-width:768px){.navbar-form .form-group{display:inline-block;margin-bottom:0;vertical-align:middle}.navbar-form .form-control{display:inline-block;width:auto;vertical-align:middle}.navbar-form .form-control-static{display:inline-block}.navbar-form .input-group{display:inline-table;vertical-align:middle}.navbar-form .input-group .input-group-addon,.navbar-form .input-group .input-group-btn,.navbar-form .input-group .form-control{width:auto}.navbar-form .input-group>.form-control{width:100%}.navbar-form .control-label{margin-bottom:0;vertical-align:middle}.navbar-form .radio,.navbar-form .checkbox{display:inline-block;margin-top:0;margin-bottom:0;vertical-align:middle}.navbar-form .radio label,.navbar-form .checkbox label{padding-left:0}.navbar-form .radio input[type=radio],.navbar-form .checkbox input[type=checkbox]{position:relative;margin-left:0}.navbar-form .has-feedback .form-control-feedback{top:0}}@media(max-width:767px){.navbar-form .form-group{margin-bottom:5px}.navbar-form .form-group:last-child{margin-bottom:0}}@media(min-width:768px){.navbar-form{width:auto;padding-top:0;padding-bottom:0;margin-right:0;margin-left:0;border:0;box-shadow:none}}.navbar-nav>li>.dropdown-menu{margin-top:0;border-top-left-radius:0;border-top-right-radius:0}.navbar-fixed-bottom .navbar-nav>li>.dropdown-menu{margin-bottom:0;border-top-left-radius:4px;border-top-right-radius:4px;border-bottom-right-radius:0;border-bottom-left-radius:0}.navbar-btn{margin-top:8px;margin-bottom:8px}.navbar-btn.btn-sm{margin-top:10px;margin-bottom:10px}.navbar-btn.btn-xs{margin-top:14px;margin-bottom:14px}.navbar-text{margin-top:15px;margin-bottom:15px}@media(min-width:768px){.navbar-text{float:left;margin-right:15px;margin-left:15px}}@media(min-width:768px){.navbar-left{float:left!important}.navbar-right{float:right!important;margin-right:-15px}.navbar-right~.navbar-right{margin-right:0}}.navbar-default{background-color:#f8f8f8;border-color:#e7e7e7}.navbar-default .navbar-brand{color:#777}.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus{color:#5e5e5e;background-color:transparent}.navbar-default .navbar-text{color:#777}.navbar-default .navbar-nav>li>a{color:#777}.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a:focus{color:#333;background-color:transparent}.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus{color:#555;background-color:#e7e7e7}.navbar-default .navbar-nav>.disabled>a,.navbar-default .navbar-nav>.disabled>a:hover,.navbar-default .navbar-nav>.disabled>a:focus{color:#ccc;background-color:transparent}.navbar-default .navbar-toggle{border-color:#ddd}.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{background-color:#ddd}.navbar-default .navbar-toggle .icon-bar{background-color:#888}.navbar-default .navbar-collapse,.navbar-default .navbar-form{border-color:#e7e7e7}.navbar-default .navbar-nav>.open>a,.navbar-default .navbar-nav>.open>a:hover,.navbar-default .navbar-nav>.open>a:focus{color:#555;background-color:#e7e7e7}@media(max-width:767px){.navbar-default .navbar-nav .open .dropdown-menu>li>a{color:#777}.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus{color:#333;background-color:transparent}.navbar-default .navbar-nav .open .dropdown-menu>.active>a,.navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover,.navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus{color:#555;background-color:#e7e7e7}.navbar-default .navbar-nav .open .dropdown-menu>.disabled>a,.navbar-default .navbar-nav .open .dropdown-menu>.disabled>a:hover,.navbar-default .navbar-nav .open .dropdown-menu>.disabled>a:focus{color:#ccc;background-color:transparent}}.navbar-default .navbar-link{color:#777}.navbar-default .navbar-link:hover{color:#333}.navbar-default .btn-link{color:#777}.navbar-default .btn-link:hover,.navbar-default .btn-link:focus{color:#333}.navbar-default .btn-link[disabled]:hover,fieldset[disabled] .navbar-default .btn-link:hover,.navbar-default .btn-link[disabled]:focus,fieldset[disabled] .navbar-default .btn-link:focus{color:#ccc}.navbar-inverse{background-color:#222;border-color:#080808}.navbar-inverse .navbar-brand{color:#9d9d9d}.navbar-inverse .navbar-brand:hover,.navbar-inverse .navbar-brand:focus{color:#fff;background-color:transparent}.navbar-inverse .navbar-text{color:#9d9d9d}.navbar-inverse .navbar-nav>li>a{color:#9d9d9d}.navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-nav>li>a:focus{color:#fff;background-color:transparent}.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>.active>a:focus{color:#fff;background-color:#080808}.navbar-inverse .navbar-nav>.disabled>a,.navbar-inverse .navbar-nav>.disabled>a:hover,.navbar-inverse .navbar-nav>.disabled>a:focus{color:#444;background-color:transparent}.navbar-inverse .navbar-toggle{border-color:#333}.navbar-inverse .navbar-toggle:hover,.navbar-inverse .navbar-toggle:focus{background-color:#333}.navbar-inverse .navbar-toggle .icon-bar{background-color:#fff}.navbar-inverse .navbar-collapse,.navbar-inverse .navbar-form{border-color:#101010}.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a:focus{color:#fff;background-color:#080808}@media(max-width:767px){.navbar-inverse .navbar-nav .open .dropdown-menu>.dropdown-header{border-color:#080808}.navbar-inverse .navbar-nav .open .dropdown-menu .divider{background-color:#080808}.navbar-inverse .navbar-nav .open .dropdown-menu>li>a{color:#9d9d9d}.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover,.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:focus{color:#fff;background-color:transparent}.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a,.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:hover,.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:focus{color:#fff;background-color:#080808}.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a,.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a:hover,.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a:focus{color:#444;background-color:transparent}}.navbar-inverse .navbar-link{color:#9d9d9d}.navbar-inverse .navbar-link:hover{color:#fff}.navbar-inverse .btn-link{color:#9d9d9d}.navbar-inverse .btn-link:hover,.navbar-inverse .btn-link:focus{color:#fff}.navbar-inverse .btn-link[disabled]:hover,fieldset[disabled] .navbar-inverse .btn-link:hover,.navbar-inverse .btn-link[disabled]:focus,fieldset[disabled] .navbar-inverse .btn-link:focus{color:#444}.breadcrumb{padding:8px 15px;margin-bottom:20px;list-style:none;background-color:#f5f5f5;border-radius:4px}.breadcrumb>li{display:inline-block}.breadcrumb>li+li:before{padding:0 5px;color:#ccc;content:\"/\\00a0\"}.breadcrumb>.active{color:#777}.pagination{display:inline-block;padding-left:0;margin:20px 0;border-radius:4px}.pagination>li{display:inline}.pagination>li>a,.pagination>li>span{position:relative;float:left;padding:6px 12px;margin-left:-1px;line-height:1.42857143;color:#337ab7;text-decoration:none;background-color:#fff;border:1px solid #ddd}.pagination>li:first-child>a,.pagination>li:first-child>span{margin-left:0;border-top-left-radius:4px;border-bottom-left-radius:4px}.pagination>li:last-child>a,.pagination>li:last-child>span{border-top-right-radius:4px;border-bottom-right-radius:4px}.pagination>li>a:hover,.pagination>li>span:hover,.pagination>li>a:focus,.pagination>li>span:focus{z-index:2;color:#23527c;background-color:#eee;border-color:#ddd}.pagination>.active>a,.pagination>.active>span,.pagination>.active>a:hover,.pagination>.active>span:hover,.pagination>.active>a:focus,.pagination>.active>span:focus{z-index:3;color:#fff;cursor:default;background-color:#337ab7;border-color:#337ab7}.pagination>.disabled>span,.pagination>.disabled>span:hover,.pagination>.disabled>span:focus,.pagination>.disabled>a,.pagination>.disabled>a:hover,.pagination>.disabled>a:focus{color:#777;cursor:not-allowed;background-color:#fff;border-color:#ddd}.pagination-lg>li>a,.pagination-lg>li>span{padding:10px 16px;font-size:18px;line-height:1.3333333}.pagination-lg>li:first-child>a,.pagination-lg>li:first-child>span{border-top-left-radius:6px;border-bottom-left-radius:6px}.pagination-lg>li:last-child>a,.pagination-lg>li:last-child>span{border-top-right-radius:6px;border-bottom-right-radius:6px}.pagination-sm>li>a,.pagination-sm>li>span{padding:5px 10px;font-size:12px;line-height:1.5}.pagination-sm>li:first-child>a,.pagination-sm>li:first-child>span{border-top-left-radius:3px;border-bottom-left-radius:3px}.pagination-sm>li:last-child>a,.pagination-sm>li:last-child>span{border-top-right-radius:3px;border-bottom-right-radius:3px}.pager{padding-left:0;margin:20px 0;text-align:center;list-style:none}.pager li{display:inline}.pager li>a,.pager li>span{display:inline-block;padding:5px 14px;background-color:#fff;border:1px solid #ddd;border-radius:15px}.pager li>a:hover,.pager li>a:focus{text-decoration:none;background-color:#eee}.pager .next>a,.pager .next>span{float:right}.pager .previous>a,.pager .previous>span{float:left}.pager .disabled>a,.pager .disabled>a:hover,.pager .disabled>a:focus,.pager .disabled>span{color:#777;cursor:not-allowed;background-color:#fff}.label{display:inline;padding:.2em .6em .3em;font-size:75%;font-weight:700;line-height:1;color:#fff;text-align:center;white-space:nowrap;vertical-align:baseline;border-radius:.25em}a.label:hover,a.label:focus{color:#fff;text-decoration:none;cursor:pointer}.label:empty{display:none}.btn .label{position:relative;top:-1px}.label-default{background-color:#777}.label-default[href]:hover,.label-default[href]:focus{background-color:#5e5e5e}.label-primary{background-color:#337ab7}.label-primary[href]:hover,.label-primary[href]:focus{background-color:#286090}.label-success{background-color:#5cb85c}.label-success[href]:hover,.label-success[href]:focus{background-color:#449d44}.label-info{background-color:#5bc0de}.label-info[href]:hover,.label-info[href]:focus{background-color:#31b0d5}.label-warning{background-color:#f0ad4e}.label-warning[href]:hover,.label-warning[href]:focus{background-color:#ec971f}.label-danger{background-color:#d9534f}.label-danger[href]:hover,.label-danger[href]:focus{background-color:#c9302c}.badge{display:inline-block;min-width:10px;padding:3px 7px;font-size:12px;font-weight:700;line-height:1;color:#fff;text-align:center;white-space:nowrap;vertical-align:middle;background-color:#777;border-radius:10px}.badge:empty{display:none}.btn .badge{position:relative;top:-1px}.btn-xs .badge,.btn-group-xs>.btn .badge{top:0;padding:1px 5px}a.badge:hover,a.badge:focus{color:#fff;text-decoration:none;cursor:pointer}.list-group-item.active>.badge,.nav-pills>.active>a>.badge{color:#337ab7;background-color:#fff}.list-group-item>.badge{float:right}.list-group-item>.badge+.badge{margin-right:5px}.nav-pills>li>a>.badge{margin-left:3px}.jumbotron{padding-top:30px;padding-bottom:30px;margin-bottom:30px;color:inherit;background-color:#eee}.jumbotron h1,.jumbotron .h1{color:inherit}.jumbotron p{margin-bottom:15px;font-size:21px;font-weight:200}.jumbotron>hr{border-top-color:#d5d5d5}.container .jumbotron,.container-fluid .jumbotron{padding-right:15px;padding-left:15px;border-radius:6px}.jumbotron .container{max-width:100%}@media screen and (min-width:768px){.jumbotron{padding-top:48px;padding-bottom:48px}.container .jumbotron,.container-fluid .jumbotron{padding-right:60px;padding-left:60px}.jumbotron h1,.jumbotron .h1{font-size:63px}}.thumbnail{display:block;padding:4px;margin-bottom:20px;line-height:1.42857143;background-color:#fff;border:1px solid #ddd;border-radius:4px;transition:border .2s ease-in-out}.thumbnail>img,.thumbnail a>img{margin-right:auto;margin-left:auto}a.thumbnail:hover,a.thumbnail:focus,a.thumbnail.active{border-color:#337ab7}.thumbnail .caption{padding:9px;color:#333}.alert{padding:15px;margin-bottom:20px;border:1px solid transparent;border-radius:4px}.alert h4{margin-top:0;color:inherit}.alert .alert-link{font-weight:700}.alert>p,.alert>ul{margin-bottom:0}.alert>p+p{margin-top:5px}.alert-dismissable,.alert-dismissible{padding-right:35px}.alert-dismissable .close,.alert-dismissible .close{position:relative;top:-2px;right:-21px;color:inherit}.alert-success{color:#3c763d;background-color:#dff0d8;border-color:#d6e9c6}.alert-success hr{border-top-color:#c9e2b3}.alert-success .alert-link{color:#2b542c}.alert-info{color:#31708f;background-color:#d9edf7;border-color:#bce8f1}.alert-info hr{border-top-color:#a6e1ec}.alert-info .alert-link{color:#245269}.alert-warning{color:#8a6d3b;background-color:#fcf8e3;border-color:#faebcc}.alert-warning hr{border-top-color:#f7e1b5}.alert-warning .alert-link{color:#66512c}.alert-danger{color:#a94442;background-color:#f2dede;border-color:#ebccd1}.alert-danger hr{border-top-color:#e4b9c0}.alert-danger .alert-link{color:#843534}@-webkit-keyframes progress-bar-stripes{from{background-position:40px 0}to{background-position:0 0}}@keyframes progress-bar-stripes{from{background-position:40px 0}to{background-position:0 0}}.progress{height:20px;margin-bottom:20px;overflow:hidden;background-color:#f5f5f5;border-radius:4px;box-shadow:inset 0 1px 2px rgba(0,0,0,.1)}.progress-bar{float:left;width:0;height:100%;font-size:12px;line-height:20px;color:#fff;text-align:center;background-color:#337ab7;box-shadow:inset 0 -1px 0 rgba(0,0,0,.15);transition:width .6s ease}.progress-striped .progress-bar,.progress-bar-striped{background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-size:40px 40px}.progress.active .progress-bar,.progress-bar.active{-webkit-animation:progress-bar-stripes 2s linear infinite;animation:progress-bar-stripes 2s linear infinite}.progress-bar-success{background-color:#5cb85c}.progress-striped .progress-bar-success{background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)}.progress-bar-info{background-color:#5bc0de}.progress-striped .progress-bar-info{background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)}.progress-bar-warning{background-color:#f0ad4e}.progress-striped .progress-bar-warning{background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)}.progress-bar-danger{background-color:#d9534f}.progress-striped .progress-bar-danger{background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)}.media{margin-top:15px}.media:first-child{margin-top:0}.media,.media-body{overflow:hidden;zoom:1}.media-body{width:10000px}.media-object{display:block}.media-object.img-thumbnail{max-width:none}.media-right,.media>.pull-right{padding-left:10px}.media-left,.media>.pull-left{padding-right:10px}.media-left,.media-right,.media-body{display:table-cell;vertical-align:top}.media-middle{vertical-align:middle}.media-bottom{vertical-align:bottom}.media-heading{margin-top:0;margin-bottom:5px}.media-list{padding-left:0;list-style:none}.list-group{padding-left:0;margin-bottom:20px}.list-group-item{position:relative;display:block;padding:10px 15px;margin-bottom:-1px;background-color:#fff;border:1px solid #ddd}.list-group-item:first-child{border-top-left-radius:4px;border-top-right-radius:4px}.list-group-item:last-child{margin-bottom:0;border-bottom-right-radius:4px;border-bottom-left-radius:4px}a.list-group-item,button.list-group-item{color:#555}a.list-group-item .list-group-item-heading,button.list-group-item .list-group-item-heading{color:#333}a.list-group-item:hover,button.list-group-item:hover,a.list-group-item:focus,button.list-group-item:focus{color:#555;text-decoration:none;background-color:#f5f5f5}button.list-group-item{width:100%;text-align:left}.list-group-item.disabled,.list-group-item.disabled:hover,.list-group-item.disabled:focus{color:#777;cursor:not-allowed;background-color:#eee}.list-group-item.disabled .list-group-item-heading,.list-group-item.disabled:hover .list-group-item-heading,.list-group-item.disabled:focus .list-group-item-heading{color:inherit}.list-group-item.disabled .list-group-item-text,.list-group-item.disabled:hover .list-group-item-text,.list-group-item.disabled:focus .list-group-item-text{color:#777}.list-group-item.active,.list-group-item.active:hover,.list-group-item.active:focus{z-index:2;color:#fff;background-color:#337ab7;border-color:#337ab7}.list-group-item.active .list-group-item-heading,.list-group-item.active:hover .list-group-item-heading,.list-group-item.active:focus .list-group-item-heading,.list-group-item.active .list-group-item-heading>small,.list-group-item.active:hover .list-group-item-heading>small,.list-group-item.active:focus .list-group-item-heading>small,.list-group-item.active .list-group-item-heading>.small,.list-group-item.active:hover .list-group-item-heading>.small,.list-group-item.active:focus .list-group-item-heading>.small{color:inherit}.list-group-item.active .list-group-item-text,.list-group-item.active:hover .list-group-item-text,.list-group-item.active:focus .list-group-item-text{color:#c7ddef}.list-group-item-success{color:#3c763d;background-color:#dff0d8}a.list-group-item-success,button.list-group-item-success{color:#3c763d}a.list-group-item-success .list-group-item-heading,button.list-group-item-success .list-group-item-heading{color:inherit}a.list-group-item-success:hover,button.list-group-item-success:hover,a.list-group-item-success:focus,button.list-group-item-success:focus{color:#3c763d;background-color:#d0e9c6}a.list-group-item-success.active,button.list-group-item-success.active,a.list-group-item-success.active:hover,button.list-group-item-success.active:hover,a.list-group-item-success.active:focus,button.list-group-item-success.active:focus{color:#fff;background-color:#3c763d;border-color:#3c763d}.list-group-item-info{color:#31708f;background-color:#d9edf7}a.list-group-item-info,button.list-group-item-info{color:#31708f}a.list-group-item-info .list-group-item-heading,button.list-group-item-info .list-group-item-heading{color:inherit}a.list-group-item-info:hover,button.list-group-item-info:hover,a.list-group-item-info:focus,button.list-group-item-info:focus{color:#31708f;background-color:#c4e3f3}a.list-group-item-info.active,button.list-group-item-info.active,a.list-group-item-info.active:hover,button.list-group-item-info.active:hover,a.list-group-item-info.active:focus,button.list-group-item-info.active:focus{color:#fff;background-color:#31708f;border-color:#31708f}.list-group-item-warning{color:#8a6d3b;background-color:#fcf8e3}a.list-group-item-warning,button.list-group-item-warning{color:#8a6d3b}a.list-group-item-warning .list-group-item-heading,button.list-group-item-warning .list-group-item-heading{color:inherit}a.list-group-item-warning:hover,button.list-group-item-warning:hover,a.list-group-item-warning:focus,button.list-group-item-warning:focus{color:#8a6d3b;background-color:#faf2cc}a.list-group-item-warning.active,button.list-group-item-warning.active,a.list-group-item-warning.active:hover,button.list-group-item-warning.active:hover,a.list-group-item-warning.active:focus,button.list-group-item-warning.active:focus{color:#fff;background-color:#8a6d3b;border-color:#8a6d3b}.list-group-item-danger{color:#a94442;background-color:#f2dede}a.list-group-item-danger,button.list-group-item-danger{color:#a94442}a.list-group-item-danger .list-group-item-heading,button.list-group-item-danger .list-group-item-heading{color:inherit}a.list-group-item-danger:hover,button.list-group-item-danger:hover,a.list-group-item-danger:focus,button.list-group-item-danger:focus{color:#a94442;background-color:#ebcccc}a.list-group-item-danger.active,button.list-group-item-danger.active,a.list-group-item-danger.active:hover,button.list-group-item-danger.active:hover,a.list-group-item-danger.active:focus,button.list-group-item-danger.active:focus{color:#fff;background-color:#a94442;border-color:#a94442}.list-group-item-heading{margin-top:0;margin-bottom:5px}.list-group-item-text{margin-bottom:0;line-height:1.3}.panel{margin-bottom:20px;background-color:#fff;border:1px solid transparent;border-radius:4px;box-shadow:0 1px 1px rgba(0,0,0,.05)}.panel-body{padding:15px}.panel-heading{padding:10px 15px;border-bottom:1px solid transparent;border-top-left-radius:3px;border-top-right-radius:3px}.panel-heading>.dropdown .dropdown-toggle{color:inherit}.panel-title{margin-top:0;margin-bottom:0;font-size:16px;color:inherit}.panel-title>a,.panel-title>small,.panel-title>.small,.panel-title>small>a,.panel-title>.small>a{color:inherit}.panel-footer{padding:10px 15px;background-color:#f5f5f5;border-top:1px solid #ddd;border-bottom-right-radius:3px;border-bottom-left-radius:3px}.panel>.list-group,.panel>.panel-collapse>.list-group{margin-bottom:0}.panel>.list-group .list-group-item,.panel>.panel-collapse>.list-group .list-group-item{border-width:1px 0;border-radius:0}.panel>.list-group:first-child .list-group-item:first-child,.panel>.panel-collapse>.list-group:first-child .list-group-item:first-child{border-top:0;border-top-left-radius:3px;border-top-right-radius:3px}.panel>.list-group:last-child .list-group-item:last-child,.panel>.panel-collapse>.list-group:last-child .list-group-item:last-child{border-bottom:0;border-bottom-right-radius:3px;border-bottom-left-radius:3px}.panel>.panel-heading+.panel-collapse>.list-group .list-group-item:first-child{border-top-left-radius:0;border-top-right-radius:0}.panel-heading+.list-group .list-group-item:first-child{border-top-width:0}.list-group+.panel-footer{border-top-width:0}.panel>.table,.panel>.table-responsive>.table,.panel>.panel-collapse>.table{margin-bottom:0}.panel>.table caption,.panel>.table-responsive>.table caption,.panel>.panel-collapse>.table caption{padding-right:15px;padding-left:15px}.panel>.table:first-child,.panel>.table-responsive:first-child>.table:first-child{border-top-left-radius:3px;border-top-right-radius:3px}.panel>.table:first-child>thead:first-child>tr:first-child,.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child,.panel>.table:first-child>tbody:first-child>tr:first-child,.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child{border-top-left-radius:3px;border-top-right-radius:3px}.panel>.table:first-child>thead:first-child>tr:first-child td:first-child,.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child td:first-child,.panel>.table:first-child>tbody:first-child>tr:first-child td:first-child,.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child td:first-child,.panel>.table:first-child>thead:first-child>tr:first-child th:first-child,.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child th:first-child,.panel>.table:first-child>tbody:first-child>tr:first-child th:first-child,.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child th:first-child{border-top-left-radius:3px}.panel>.table:first-child>thead:first-child>tr:first-child td:last-child,.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child td:last-child,.panel>.table:first-child>tbody:first-child>tr:first-child td:last-child,.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child td:last-child,.panel>.table:first-child>thead:first-child>tr:first-child th:last-child,.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child th:last-child,.panel>.table:first-child>tbody:first-child>tr:first-child th:last-child,.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child th:last-child{border-top-right-radius:3px}.panel>.table:last-child,.panel>.table-responsive:last-child>.table:last-child{border-bottom-right-radius:3px;border-bottom-left-radius:3px}.panel>.table:last-child>tbody:last-child>tr:last-child,.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child,.panel>.table:last-child>tfoot:last-child>tr:last-child,.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child{border-bottom-right-radius:3px;border-bottom-left-radius:3px}.panel>.table:last-child>tbody:last-child>tr:last-child td:first-child,.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child td:first-child,.panel>.table:last-child>tfoot:last-child>tr:last-child td:first-child,.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child td:first-child,.panel>.table:last-child>tbody:last-child>tr:last-child th:first-child,.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child th:first-child,.panel>.table:last-child>tfoot:last-child>tr:last-child th:first-child,.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child th:first-child{border-bottom-left-radius:3px}.panel>.table:last-child>tbody:last-child>tr:last-child td:last-child,.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child td:last-child,.panel>.table:last-child>tfoot:last-child>tr:last-child td:last-child,.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child td:last-child,.panel>.table:last-child>tbody:last-child>tr:last-child th:last-child,.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child th:last-child,.panel>.table:last-child>tfoot:last-child>tr:last-child th:last-child,.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child th:last-child{border-bottom-right-radius:3px}.panel>.panel-body+.table,.panel>.panel-body+.table-responsive,.panel>.table+.panel-body,.panel>.table-responsive+.panel-body{border-top:1px solid #ddd}.panel>.table>tbody:first-child>tr:first-child th,.panel>.table>tbody:first-child>tr:first-child td{border-top:0}.panel>.table-bordered,.panel>.table-responsive>.table-bordered{border:0}.panel>.table-bordered>thead>tr>th:first-child,.panel>.table-responsive>.table-bordered>thead>tr>th:first-child,.panel>.table-bordered>tbody>tr>th:first-child,.panel>.table-responsive>.table-bordered>tbody>tr>th:first-child,.panel>.table-bordered>tfoot>tr>th:first-child,.panel>.table-responsive>.table-bordered>tfoot>tr>th:first-child,.panel>.table-bordered>thead>tr>td:first-child,.panel>.table-responsive>.table-bordered>thead>tr>td:first-child,.panel>.table-bordered>tbody>tr>td:first-child,.panel>.table-responsive>.table-bordered>tbody>tr>td:first-child,.panel>.table-bordered>tfoot>tr>td:first-child,.panel>.table-responsive>.table-bordered>tfoot>tr>td:first-child{border-left:0}.panel>.table-bordered>thead>tr>th:last-child,.panel>.table-responsive>.table-bordered>thead>tr>th:last-child,.panel>.table-bordered>tbody>tr>th:last-child,.panel>.table-responsive>.table-bordered>tbody>tr>th:last-child,.panel>.table-bordered>tfoot>tr>th:last-child,.panel>.table-responsive>.table-bordered>tfoot>tr>th:last-child,.panel>.table-bordered>thead>tr>td:last-child,.panel>.table-responsive>.table-bordered>thead>tr>td:last-child,.panel>.table-bordered>tbody>tr>td:last-child,.panel>.table-responsive>.table-bordered>tbody>tr>td:last-child,.panel>.table-bordered>tfoot>tr>td:last-child,.panel>.table-responsive>.table-bordered>tfoot>tr>td:last-child{border-right:0}.panel>.table-bordered>thead>tr:first-child>td,.panel>.table-responsive>.table-bordered>thead>tr:first-child>td,.panel>.table-bordered>tbody>tr:first-child>td,.panel>.table-responsive>.table-bordered>tbody>tr:first-child>td,.panel>.table-bordered>thead>tr:first-child>th,.panel>.table-responsive>.table-bordered>thead>tr:first-child>th,.panel>.table-bordered>tbody>tr:first-child>th,.panel>.table-responsive>.table-bordered>tbody>tr:first-child>th{border-bottom:0}.panel>.table-bordered>tbody>tr:last-child>td,.panel>.table-responsive>.table-bordered>tbody>tr:last-child>td,.panel>.table-bordered>tfoot>tr:last-child>td,.panel>.table-responsive>.table-bordered>tfoot>tr:last-child>td,.panel>.table-bordered>tbody>tr:last-child>th,.panel>.table-responsive>.table-bordered>tbody>tr:last-child>th,.panel>.table-bordered>tfoot>tr:last-child>th,.panel>.table-responsive>.table-bordered>tfoot>tr:last-child>th{border-bottom:0}.panel>.table-responsive{margin-bottom:0;border:0}.panel-group{margin-bottom:20px}.panel-group .panel{margin-bottom:0;border-radius:4px}.panel-group .panel+.panel{margin-top:5px}.panel-group .panel-heading{border-bottom:0}.panel-group .panel-heading+.panel-collapse>.panel-body,.panel-group .panel-heading+.panel-collapse>.list-group{border-top:1px solid #ddd}.panel-group .panel-footer{border-top:0}.panel-group .panel-footer+.panel-collapse .panel-body{border-bottom:1px solid #ddd}.panel-default{border-color:#ddd}.panel-default>.panel-heading{color:#333;background-color:#f5f5f5;border-color:#ddd}.panel-default>.panel-heading+.panel-collapse>.panel-body{border-top-color:#ddd}.panel-default>.panel-heading .badge{color:#f5f5f5;background-color:#333}.panel-default>.panel-footer+.panel-collapse>.panel-body{border-bottom-color:#ddd}.panel-primary{border-color:#337ab7}.panel-primary>.panel-heading{color:#fff;background-color:#337ab7;border-color:#337ab7}.panel-primary>.panel-heading+.panel-collapse>.panel-body{border-top-color:#337ab7}.panel-primary>.panel-heading .badge{color:#337ab7;background-color:#fff}.panel-primary>.panel-footer+.panel-collapse>.panel-body{border-bottom-color:#337ab7}.panel-success{border-color:#d6e9c6}.panel-success>.panel-heading{color:#3c763d;background-color:#dff0d8;border-color:#d6e9c6}.panel-success>.panel-heading+.panel-collapse>.panel-body{border-top-color:#d6e9c6}.panel-success>.panel-heading .badge{color:#dff0d8;background-color:#3c763d}.panel-success>.panel-footer+.panel-collapse>.panel-body{border-bottom-color:#d6e9c6}.panel-info{border-color:#bce8f1}.panel-info>.panel-heading{color:#31708f;background-color:#d9edf7;border-color:#bce8f1}.panel-info>.panel-heading+.panel-collapse>.panel-body{border-top-color:#bce8f1}.panel-info>.panel-heading .badge{color:#d9edf7;background-color:#31708f}.panel-info>.panel-footer+.panel-collapse>.panel-body{border-bottom-color:#bce8f1}.panel-warning{border-color:#faebcc}.panel-warning>.panel-heading{color:#8a6d3b;background-color:#fcf8e3;border-color:#faebcc}.panel-warning>.panel-heading+.panel-collapse>.panel-body{border-top-color:#faebcc}.panel-warning>.panel-heading .badge{color:#fcf8e3;background-color:#8a6d3b}.panel-warning>.panel-footer+.panel-collapse>.panel-body{border-bottom-color:#faebcc}.panel-danger{border-color:#ebccd1}.panel-danger>.panel-heading{color:#a94442;background-color:#f2dede;border-color:#ebccd1}.panel-danger>.panel-heading+.panel-collapse>.panel-body{border-top-color:#ebccd1}.panel-danger>.panel-heading .badge{color:#f2dede;background-color:#a94442}.panel-danger>.panel-footer+.panel-collapse>.panel-body{border-bottom-color:#ebccd1}.embed-responsive{position:relative;display:block;height:0;padding:0;overflow:hidden}.embed-responsive .embed-responsive-item,.embed-responsive iframe,.embed-responsive embed,.embed-responsive object,.embed-responsive video{position:absolute;top:0;bottom:0;left:0;width:100%;height:100%;border:0}.embed-responsive-16by9{padding-bottom:56.25%}.embed-responsive-4by3{padding-bottom:75%}.well{min-height:20px;padding:19px;margin-bottom:20px;background-color:#f5f5f5;border:1px solid #e3e3e3;border-radius:4px;box-shadow:inset 0 1px 1px rgba(0,0,0,.05)}.well blockquote{border-color:#ddd;border-color:rgba(0,0,0,.15)}.well-lg{padding:24px;border-radius:6px}.well-sm{padding:9px;border-radius:3px}.close{float:right;font-size:21px;font-weight:700;line-height:1;color:#000;text-shadow:0 1px 0 #fff;filter:alpha(opacity=20);opacity:.2}.close:hover,.close:focus{color:#000;text-decoration:none;cursor:pointer;filter:alpha(opacity=50);opacity:.5}button.close{-webkit-appearance:none;padding:0;cursor:pointer;background:transparent;border:0}.modal-open{overflow:hidden}.modal{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1050;display:none;overflow:hidden;-webkit-overflow-scrolling:touch;outline:0}.modal.fade .modal-dialog{transition:-webkit-transform .3s ease-out;transition:transform .3s ease-out;-webkit-transform:translate(0,-25%);transform:translate(0,-25%)}.modal.in .modal-dialog{-webkit-transform:translate(0,0);transform:translate(0,0)}.modal-open .modal{overflow-x:hidden;overflow-y:auto}.modal-dialog{position:relative;width:auto;margin:10px}.modal-content{position:relative;background-color:#fff;background-clip:padding-box;border:1px solid #999;border:1px solid rgba(0,0,0,.2);border-radius:6px;outline:0;box-shadow:0 3px 9px rgba(0,0,0,.5)}.modal-backdrop{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1040;background-color:#000}.modal-backdrop.fade{filter:alpha(opacity=0);opacity:0}.modal-backdrop.in{filter:alpha(opacity=50);opacity:.5}.modal-header{padding:15px;border-bottom:1px solid #e5e5e5}.modal-header .close{margin-top:-2px}.modal-title{margin:0;line-height:1.42857143}.modal-body{position:relative;padding:15px}.modal-footer{padding:15px;text-align:right;border-top:1px solid #e5e5e5}.modal-footer .btn+.btn{margin-bottom:0;margin-left:5px}.modal-footer .btn-group .btn+.btn{margin-left:-1px}.modal-footer .btn-block+.btn-block{margin-left:0}.modal-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}@media(min-width:768px){.modal-dialog{width:600px;margin:30px auto}.modal-content{box-shadow:0 5px 15px rgba(0,0,0,.5)}.modal-sm{width:300px}}@media(min-width:992px){.modal-lg{width:900px}}.tooltip{position:absolute;z-index:1070;display:block;font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:12px;font-style:normal;font-weight:400;line-height:1.42857143;text-align:left;text-align:start;text-decoration:none;text-shadow:none;text-transform:none;letter-spacing:normal;word-break:normal;word-spacing:normal;word-wrap:normal;white-space:normal;filter:alpha(opacity=0);opacity:0;line-break:auto}.tooltip.in{filter:alpha(opacity=90);opacity:.9}.tooltip.top{padding:5px 0;margin-top:-3px}.tooltip.right{padding:0 5px;margin-left:3px}.tooltip.bottom{padding:5px 0;margin-top:3px}.tooltip.left{padding:0 5px;margin-left:-3px}.tooltip-inner{max-width:200px;padding:3px 8px;color:#fff;text-align:center;background-color:#000;border-radius:4px}.tooltip-arrow{position:absolute;width:0;height:0;border-color:transparent;border-style:solid}.tooltip.top .tooltip-arrow{bottom:0;left:50%;margin-left:-5px;border-width:5px 5px 0;border-top-color:#000}.tooltip.top-left .tooltip-arrow{right:5px;bottom:0;margin-bottom:-5px;border-width:5px 5px 0;border-top-color:#000}.tooltip.top-right .tooltip-arrow{bottom:0;left:5px;margin-bottom:-5px;border-width:5px 5px 0;border-top-color:#000}.tooltip.right .tooltip-arrow{top:50%;left:0;margin-top:-5px;border-width:5px 5px 5px 0;border-right-color:#000}.tooltip.left .tooltip-arrow{top:50%;right:0;margin-top:-5px;border-width:5px 0 5px 5px;border-left-color:#000}.tooltip.bottom .tooltip-arrow{top:0;left:50%;margin-left:-5px;border-width:0 5px 5px;border-bottom-color:#000}.tooltip.bottom-left .tooltip-arrow{top:0;right:5px;margin-top:-5px;border-width:0 5px 5px;border-bottom-color:#000}.tooltip.bottom-right .tooltip-arrow{top:0;left:5px;margin-top:-5px;border-width:0 5px 5px;border-bottom-color:#000}.popover{position:absolute;top:0;left:0;z-index:1060;display:none;max-width:276px;padding:1px;font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:14px;font-style:normal;font-weight:400;line-height:1.42857143;text-align:left;text-align:start;text-decoration:none;text-shadow:none;text-transform:none;letter-spacing:normal;word-break:normal;word-spacing:normal;word-wrap:normal;white-space:normal;background-color:#fff;background-clip:padding-box;border:1px solid #ccc;border:1px solid rgba(0,0,0,.2);border-radius:6px;box-shadow:0 5px 10px rgba(0,0,0,.2);line-break:auto}.popover.top{margin-top:-10px}.popover.right{margin-left:10px}.popover.bottom{margin-top:10px}.popover.left{margin-left:-10px}.popover-title{padding:8px 14px;margin:0;font-size:14px;background-color:#f7f7f7;border-bottom:1px solid #ebebeb;border-radius:5px 5px 0 0}.popover-content{padding:9px 14px}.popover>.arrow,.popover>.arrow:after{position:absolute;display:block;width:0;height:0;border-color:transparent;border-style:solid}.popover>.arrow{border-width:11px}.popover>.arrow:after{content:\"\";border-width:10px}.popover.top>.arrow{bottom:-11px;left:50%;margin-left:-11px;border-top-color:#999;border-top-color:rgba(0,0,0,.25);border-bottom-width:0}.popover.top>.arrow:after{bottom:1px;margin-left:-10px;content:\" \";border-top-color:#fff;border-bottom-width:0}.popover.right>.arrow{top:50%;left:-11px;margin-top:-11px;border-right-color:#999;border-right-color:rgba(0,0,0,.25);border-left-width:0}.popover.right>.arrow:after{bottom:-10px;left:1px;content:\" \";border-right-color:#fff;border-left-width:0}.popover.bottom>.arrow{top:-11px;left:50%;margin-left:-11px;border-top-width:0;border-bottom-color:#999;border-bottom-color:rgba(0,0,0,.25)}.popover.bottom>.arrow:after{top:1px;margin-left:-10px;content:\" \";border-top-width:0;border-bottom-color:#fff}.popover.left>.arrow{top:50%;right:-11px;margin-top:-11px;border-right-width:0;border-left-color:#999;border-left-color:rgba(0,0,0,.25)}.popover.left>.arrow:after{right:1px;bottom:-10px;content:\" \";border-right-width:0;border-left-color:#fff}.carousel{position:relative}.carousel-inner{position:relative;width:100%;overflow:hidden}.carousel-inner>.item{position:relative;display:none;transition:.6s ease-in-out left}.carousel-inner>.item>img,.carousel-inner>.item>a>img{line-height:1}@media all and (transform-3d),(-webkit-transform-3d){.carousel-inner>.item{transition:-webkit-transform .6s ease-in-out;transition:transform .6s ease-in-out;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-perspective:1000px;perspective:1000px}.carousel-inner>.item.next,.carousel-inner>.item.active.right{left:0;-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}.carousel-inner>.item.prev,.carousel-inner>.item.active.left{left:0;-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}.carousel-inner>.item.next.left,.carousel-inner>.item.prev.right,.carousel-inner>.item.active{left:0;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}.carousel-inner>.active,.carousel-inner>.next,.carousel-inner>.prev{display:block}.carousel-inner>.active{left:0}.carousel-inner>.next,.carousel-inner>.prev{position:absolute;top:0;width:100%}.carousel-inner>.next{left:100%}.carousel-inner>.prev{left:-100%}.carousel-inner>.next.left,.carousel-inner>.prev.right{left:0}.carousel-inner>.active.left{left:-100%}.carousel-inner>.active.right{left:100%}.carousel-control{position:absolute;top:0;bottom:0;left:0;width:15%;font-size:20px;color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.6);background-color:transparent;filter:alpha(opacity=50);opacity:.5}.carousel-control.left{background-image:linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000',endColorstr='#00000000',GradientType=1);background-repeat:repeat-x}.carousel-control.right{right:0;left:auto;background-image:linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000',endColorstr='#80000000',GradientType=1);background-repeat:repeat-x}.carousel-control:hover,.carousel-control:focus{color:#fff;text-decoration:none;filter:alpha(opacity=90);outline:0;opacity:.9}.carousel-control .icon-prev,.carousel-control .icon-next,.carousel-control .glyphicon-chevron-left,.carousel-control .glyphicon-chevron-right{position:absolute;top:50%;z-index:5;display:inline-block;margin-top:-10px}.carousel-control .icon-prev,.carousel-control .glyphicon-chevron-left{left:50%;margin-left:-10px}.carousel-control .icon-next,.carousel-control .glyphicon-chevron-right{right:50%;margin-right:-10px}.carousel-control .icon-prev,.carousel-control .icon-next{width:20px;height:20px;font-family:serif;line-height:1}.carousel-control .icon-prev:before{content:'\\2039'}.carousel-control .icon-next:before{content:'\\203a'}.carousel-indicators{position:absolute;bottom:10px;left:50%;z-index:15;width:60%;padding-left:0;margin-left:-30%;text-align:center;list-style:none}.carousel-indicators li{display:inline-block;width:10px;height:10px;margin:1px;text-indent:-999px;cursor:pointer;background-color:#000 \\9;background-color:transparent;border:1px solid #fff;border-radius:10px}.carousel-indicators .active{width:12px;height:12px;margin:0;background-color:#fff}.carousel-caption{position:absolute;right:15%;bottom:20px;left:15%;z-index:10;padding-top:20px;padding-bottom:20px;color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.6)}.carousel-caption .btn{text-shadow:none}@media screen and (min-width:768px){.carousel-control .glyphicon-chevron-left,.carousel-control .glyphicon-chevron-right,.carousel-control .icon-prev,.carousel-control .icon-next{width:30px;height:30px;margin-top:-10px;font-size:30px}.carousel-control .glyphicon-chevron-left,.carousel-control .icon-prev{margin-left:-10px}.carousel-control .glyphicon-chevron-right,.carousel-control .icon-next{margin-right:-10px}.carousel-caption{right:20%;left:20%;padding-bottom:30px}.carousel-indicators{bottom:20px}}.clearfix:before,.clearfix:after,.dl-horizontal dd:before,.dl-horizontal dd:after,.container:before,.container:after,.container-fluid:before,.container-fluid:after,.row:before,.row:after,.form-horizontal .form-group:before,.form-horizontal .form-group:after,.btn-toolbar:before,.btn-toolbar:after,.btn-group-vertical>.btn-group:before,.btn-group-vertical>.btn-group:after,.nav:before,.nav:after,.navbar:before,.navbar:after,.navbar-header:before,.navbar-header:after,.navbar-collapse:before,.navbar-collapse:after,.pager:before,.pager:after,.panel-body:before,.panel-body:after,.modal-header:before,.modal-header:after,.modal-footer:before,.modal-footer:after{display:table;content:\" \"}.clearfix:after,.dl-horizontal dd:after,.container:after,.container-fluid:after,.row:after,.form-horizontal .form-group:after,.btn-toolbar:after,.btn-group-vertical>.btn-group:after,.nav:after,.navbar:after,.navbar-header:after,.navbar-collapse:after,.pager:after,.panel-body:after,.modal-header:after,.modal-footer:after{clear:both}.center-block{display:block;margin-right:auto;margin-left:auto}.pull-right{float:right!important}.pull-left{float:left!important}.hide{display:none!important}.show{display:block!important}.invisible{visibility:hidden}.text-hide{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0}.hidden{display:none!important}.affix{position:fixed}@-ms-viewport{width:device-width}.visible-xs,.visible-sm,.visible-md,.visible-lg{display:none!important}.visible-xs-block,.visible-xs-inline,.visible-xs-inline-block,.visible-sm-block,.visible-sm-inline,.visible-sm-inline-block,.visible-md-block,.visible-md-inline,.visible-md-inline-block,.visible-lg-block,.visible-lg-inline,.visible-lg-inline-block{display:none!important}@media(max-width:767px){.visible-xs{display:block!important}table.visible-xs{display:table!important}tr.visible-xs{display:table-row!important}th.visible-xs,td.visible-xs{display:table-cell!important}}@media(max-width:767px){.visible-xs-block{display:block!important}}@media(max-width:767px){.visible-xs-inline{display:inline!important}}@media(max-width:767px){.visible-xs-inline-block{display:inline-block!important}}@media(min-width:768px) and (max-width:991px){.visible-sm{display:block!important}table.visible-sm{display:table!important}tr.visible-sm{display:table-row!important}th.visible-sm,td.visible-sm{display:table-cell!important}}@media(min-width:768px) and (max-width:991px){.visible-sm-block{display:block!important}}@media(min-width:768px) and (max-width:991px){.visible-sm-inline{display:inline!important}}@media(min-width:768px) and (max-width:991px){.visible-sm-inline-block{display:inline-block!important}}@media(min-width:992px) and (max-width:1199px){.visible-md{display:block!important}table.visible-md{display:table!important}tr.visible-md{display:table-row!important}th.visible-md,td.visible-md{display:table-cell!important}}@media(min-width:992px) and (max-width:1199px){.visible-md-block{display:block!important}}@media(min-width:992px) and (max-width:1199px){.visible-md-inline{display:inline!important}}@media(min-width:992px) and (max-width:1199px){.visible-md-inline-block{display:inline-block!important}}@media(min-width:1200px){.visible-lg{display:block!important}table.visible-lg{display:table!important}tr.visible-lg{display:table-row!important}th.visible-lg,td.visible-lg{display:table-cell!important}}@media(min-width:1200px){.visible-lg-block{display:block!important}}@media(min-width:1200px){.visible-lg-inline{display:inline!important}}@media(min-width:1200px){.visible-lg-inline-block{display:inline-block!important}}@media(max-width:767px){.hidden-xs{display:none!important}}@media(min-width:768px) and (max-width:991px){.hidden-sm{display:none!important}}@media(min-width:992px) and (max-width:1199px){.hidden-md{display:none!important}}@media(min-width:1200px){.hidden-lg{display:none!important}}.visible-print{display:none!important}@media print{.visible-print{display:block!important}table.visible-print{display:table!important}tr.visible-print{display:table-row!important}th.visible-print,td.visible-print{display:table-cell!important}}.visible-print-block{display:none!important}@media print{.visible-print-block{display:block!important}}.visible-print-inline{display:none!important}@media print{.visible-print-inline{display:inline!important}}.visible-print-inline-block{display:none!important}@media print{.visible-print-inline-block{display:inline-block!important}}@media print{.hidden-print{display:none!important}}\n/*# sourceMappingURL=bootstrap.css.map */", ""]);
+	exports.push([module.id, "/*!\n * Bootstrap v3.3.7 (http://getbootstrap.com)\n * Copyright 2011-2016 Twitter, Inc.\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n *//*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{margin:.67em 0;font-size:2em}mark{color:#000;background:#ff0}small{font-size:80%}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{height:0;box-sizing:content-box}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{margin:0;font:inherit;color:inherit}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{box-sizing:content-box;-webkit-appearance:textfield}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{padding:.35em .625em .75em;margin:0 2px;border:1px solid silver}legend{padding:0;border:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-spacing:0;border-collapse:collapse}td,th{padding:0}/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */@media print{*,*:before,*:after{color:#000!important;text-shadow:none!important;background:transparent!important;box-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:\" (\" attr(href) \")\"}abbr[title]:after{content:\" (\" attr(title) \")\"}a[href^=\"#\"]:after,a[href^=\"javascript:\"]:after{content:\"\"}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100%!important}p,h2,h3{orphans:3;widows:3}h2,h3{page-break-after:avoid}.navbar{display:none}.btn>.caret,.dropup>.btn>.caret{border-top-color:#000!important}.label{border:1px solid #000}.table{border-collapse:collapse!important}.table td,.table th{background-color:#fff!important}.table-bordered th,.table-bordered td{border:1px solid #ddd!important}}@font-face{font-family:Glyphicons Halflings;src:url("+__webpack_require__(5)+");src:url("+__webpack_require__(5)+"?#iefix) format('embedded-opentype'),url("+__webpack_require__(6)+") format('woff2'),url("+__webpack_require__(7)+") format('woff'),url("+__webpack_require__(8)+") format('truetype'),url("+__webpack_require__(9)+"#glyphicons_halflingsregular) format('svg')}.glyphicon{position:relative;top:1px;display:inline-block;font-family:Glyphicons Halflings;font-style:normal;font-weight:400;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.glyphicon-asterisk:before{content:\"\\002a\"}.glyphicon-plus:before{content:\"\\002b\"}.glyphicon-euro:before,.glyphicon-eur:before{content:\"\\20ac\"}.glyphicon-minus:before{content:\"\\2212\"}.glyphicon-cloud:before{content:\"\\2601\"}.glyphicon-envelope:before{content:\"\\2709\"}.glyphicon-pencil:before{content:\"\\270f\"}.glyphicon-glass:before{content:\"\\e001\"}.glyphicon-music:before{content:\"\\e002\"}.glyphicon-search:before{content:\"\\e003\"}.glyphicon-heart:before{content:\"\\e005\"}.glyphicon-star:before{content:\"\\e006\"}.glyphicon-star-empty:before{content:\"\\e007\"}.glyphicon-user:before{content:\"\\e008\"}.glyphicon-film:before{content:\"\\e009\"}.glyphicon-th-large:before{content:\"\\e010\"}.glyphicon-th:before{content:\"\\e011\"}.glyphicon-th-list:before{content:\"\\e012\"}.glyphicon-ok:before{content:\"\\e013\"}.glyphicon-remove:before{content:\"\\e014\"}.glyphicon-zoom-in:before{content:\"\\e015\"}.glyphicon-zoom-out:before{content:\"\\e016\"}.glyphicon-off:before{content:\"\\e017\"}.glyphicon-signal:before{content:\"\\e018\"}.glyphicon-cog:before{content:\"\\e019\"}.glyphicon-trash:before{content:\"\\e020\"}.glyphicon-home:before{content:\"\\e021\"}.glyphicon-file:before{content:\"\\e022\"}.glyphicon-time:before{content:\"\\e023\"}.glyphicon-road:before{content:\"\\e024\"}.glyphicon-download-alt:before{content:\"\\e025\"}.glyphicon-download:before{content:\"\\e026\"}.glyphicon-upload:before{content:\"\\e027\"}.glyphicon-inbox:before{content:\"\\e028\"}.glyphicon-play-circle:before{content:\"\\e029\"}.glyphicon-repeat:before{content:\"\\e030\"}.glyphicon-refresh:before{content:\"\\e031\"}.glyphicon-list-alt:before{content:\"\\e032\"}.glyphicon-lock:before{content:\"\\e033\"}.glyphicon-flag:before{content:\"\\e034\"}.glyphicon-headphones:before{content:\"\\e035\"}.glyphicon-volume-off:before{content:\"\\e036\"}.glyphicon-volume-down:before{content:\"\\e037\"}.glyphicon-volume-up:before{content:\"\\e038\"}.glyphicon-qrcode:before{content:\"\\e039\"}.glyphicon-barcode:before{content:\"\\e040\"}.glyphicon-tag:before{content:\"\\e041\"}.glyphicon-tags:before{content:\"\\e042\"}.glyphicon-book:before{content:\"\\e043\"}.glyphicon-bookmark:before{content:\"\\e044\"}.glyphicon-print:before{content:\"\\e045\"}.glyphicon-camera:before{content:\"\\e046\"}.glyphicon-font:before{content:\"\\e047\"}.glyphicon-bold:before{content:\"\\e048\"}.glyphicon-italic:before{content:\"\\e049\"}.glyphicon-text-height:before{content:\"\\e050\"}.glyphicon-text-width:before{content:\"\\e051\"}.glyphicon-align-left:before{content:\"\\e052\"}.glyphicon-align-center:before{content:\"\\e053\"}.glyphicon-align-right:before{content:\"\\e054\"}.glyphicon-align-justify:before{content:\"\\e055\"}.glyphicon-list:before{content:\"\\e056\"}.glyphicon-indent-left:before{content:\"\\e057\"}.glyphicon-indent-right:before{content:\"\\e058\"}.glyphicon-facetime-video:before{content:\"\\e059\"}.glyphicon-picture:before{content:\"\\e060\"}.glyphicon-map-marker:before{content:\"\\e062\"}.glyphicon-adjust:before{content:\"\\e063\"}.glyphicon-tint:before{content:\"\\e064\"}.glyphicon-edit:before{content:\"\\e065\"}.glyphicon-share:before{content:\"\\e066\"}.glyphicon-check:before{content:\"\\e067\"}.glyphicon-move:before{content:\"\\e068\"}.glyphicon-step-backward:before{content:\"\\e069\"}.glyphicon-fast-backward:before{content:\"\\e070\"}.glyphicon-backward:before{content:\"\\e071\"}.glyphicon-play:before{content:\"\\e072\"}.glyphicon-pause:before{content:\"\\e073\"}.glyphicon-stop:before{content:\"\\e074\"}.glyphicon-forward:before{content:\"\\e075\"}.glyphicon-fast-forward:before{content:\"\\e076\"}.glyphicon-step-forward:before{content:\"\\e077\"}.glyphicon-eject:before{content:\"\\e078\"}.glyphicon-chevron-left:before{content:\"\\e079\"}.glyphicon-chevron-right:before{content:\"\\e080\"}.glyphicon-plus-sign:before{content:\"\\e081\"}.glyphicon-minus-sign:before{content:\"\\e082\"}.glyphicon-remove-sign:before{content:\"\\e083\"}.glyphicon-ok-sign:before{content:\"\\e084\"}.glyphicon-question-sign:before{content:\"\\e085\"}.glyphicon-info-sign:before{content:\"\\e086\"}.glyphicon-screenshot:before{content:\"\\e087\"}.glyphicon-remove-circle:before{content:\"\\e088\"}.glyphicon-ok-circle:before{content:\"\\e089\"}.glyphicon-ban-circle:before{content:\"\\e090\"}.glyphicon-arrow-left:before{content:\"\\e091\"}.glyphicon-arrow-right:before{content:\"\\e092\"}.glyphicon-arrow-up:before{content:\"\\e093\"}.glyphicon-arrow-down:before{content:\"\\e094\"}.glyphicon-share-alt:before{content:\"\\e095\"}.glyphicon-resize-full:before{content:\"\\e096\"}.glyphicon-resize-small:before{content:\"\\e097\"}.glyphicon-exclamation-sign:before{content:\"\\e101\"}.glyphicon-gift:before{content:\"\\e102\"}.glyphicon-leaf:before{content:\"\\e103\"}.glyphicon-fire:before{content:\"\\e104\"}.glyphicon-eye-open:before{content:\"\\e105\"}.glyphicon-eye-close:before{content:\"\\e106\"}.glyphicon-warning-sign:before{content:\"\\e107\"}.glyphicon-plane:before{content:\"\\e108\"}.glyphicon-calendar:before{content:\"\\e109\"}.glyphicon-random:before{content:\"\\e110\"}.glyphicon-comment:before{content:\"\\e111\"}.glyphicon-magnet:before{content:\"\\e112\"}.glyphicon-chevron-up:before{content:\"\\e113\"}.glyphicon-chevron-down:before{content:\"\\e114\"}.glyphicon-retweet:before{content:\"\\e115\"}.glyphicon-shopping-cart:before{content:\"\\e116\"}.glyphicon-folder-close:before{content:\"\\e117\"}.glyphicon-folder-open:before{content:\"\\e118\"}.glyphicon-resize-vertical:before{content:\"\\e119\"}.glyphicon-resize-horizontal:before{content:\"\\e120\"}.glyphicon-hdd:before{content:\"\\e121\"}.glyphicon-bullhorn:before{content:\"\\e122\"}.glyphicon-bell:before{content:\"\\e123\"}.glyphicon-certificate:before{content:\"\\e124\"}.glyphicon-thumbs-up:before{content:\"\\e125\"}.glyphicon-thumbs-down:before{content:\"\\e126\"}.glyphicon-hand-right:before{content:\"\\e127\"}.glyphicon-hand-left:before{content:\"\\e128\"}.glyphicon-hand-up:before{content:\"\\e129\"}.glyphicon-hand-down:before{content:\"\\e130\"}.glyphicon-circle-arrow-right:before{content:\"\\e131\"}.glyphicon-circle-arrow-left:before{content:\"\\e132\"}.glyphicon-circle-arrow-up:before{content:\"\\e133\"}.glyphicon-circle-arrow-down:before{content:\"\\e134\"}.glyphicon-globe:before{content:\"\\e135\"}.glyphicon-wrench:before{content:\"\\e136\"}.glyphicon-tasks:before{content:\"\\e137\"}.glyphicon-filter:before{content:\"\\e138\"}.glyphicon-briefcase:before{content:\"\\e139\"}.glyphicon-fullscreen:before{content:\"\\e140\"}.glyphicon-dashboard:before{content:\"\\e141\"}.glyphicon-paperclip:before{content:\"\\e142\"}.glyphicon-heart-empty:before{content:\"\\e143\"}.glyphicon-link:before{content:\"\\e144\"}.glyphicon-phone:before{content:\"\\e145\"}.glyphicon-pushpin:before{content:\"\\e146\"}.glyphicon-usd:before{content:\"\\e148\"}.glyphicon-gbp:before{content:\"\\e149\"}.glyphicon-sort:before{content:\"\\e150\"}.glyphicon-sort-by-alphabet:before{content:\"\\e151\"}.glyphicon-sort-by-alphabet-alt:before{content:\"\\e152\"}.glyphicon-sort-by-order:before{content:\"\\e153\"}.glyphicon-sort-by-order-alt:before{content:\"\\e154\"}.glyphicon-sort-by-attributes:before{content:\"\\e155\"}.glyphicon-sort-by-attributes-alt:before{content:\"\\e156\"}.glyphicon-unchecked:before{content:\"\\e157\"}.glyphicon-expand:before{content:\"\\e158\"}.glyphicon-collapse-down:before{content:\"\\e159\"}.glyphicon-collapse-up:before{content:\"\\e160\"}.glyphicon-log-in:before{content:\"\\e161\"}.glyphicon-flash:before{content:\"\\e162\"}.glyphicon-log-out:before{content:\"\\e163\"}.glyphicon-new-window:before{content:\"\\e164\"}.glyphicon-record:before{content:\"\\e165\"}.glyphicon-save:before{content:\"\\e166\"}.glyphicon-open:before{content:\"\\e167\"}.glyphicon-saved:before{content:\"\\e168\"}.glyphicon-import:before{content:\"\\e169\"}.glyphicon-export:before{content:\"\\e170\"}.glyphicon-send:before{content:\"\\e171\"}.glyphicon-floppy-disk:before{content:\"\\e172\"}.glyphicon-floppy-saved:before{content:\"\\e173\"}.glyphicon-floppy-remove:before{content:\"\\e174\"}.glyphicon-floppy-save:before{content:\"\\e175\"}.glyphicon-floppy-open:before{content:\"\\e176\"}.glyphicon-credit-card:before{content:\"\\e177\"}.glyphicon-transfer:before{content:\"\\e178\"}.glyphicon-cutlery:before{content:\"\\e179\"}.glyphicon-header:before{content:\"\\e180\"}.glyphicon-compressed:before{content:\"\\e181\"}.glyphicon-earphone:before{content:\"\\e182\"}.glyphicon-phone-alt:before{content:\"\\e183\"}.glyphicon-tower:before{content:\"\\e184\"}.glyphicon-stats:before{content:\"\\e185\"}.glyphicon-sd-video:before{content:\"\\e186\"}.glyphicon-hd-video:before{content:\"\\e187\"}.glyphicon-subtitles:before{content:\"\\e188\"}.glyphicon-sound-stereo:before{content:\"\\e189\"}.glyphicon-sound-dolby:before{content:\"\\e190\"}.glyphicon-sound-5-1:before{content:\"\\e191\"}.glyphicon-sound-6-1:before{content:\"\\e192\"}.glyphicon-sound-7-1:before{content:\"\\e193\"}.glyphicon-copyright-mark:before{content:\"\\e194\"}.glyphicon-registration-mark:before{content:\"\\e195\"}.glyphicon-cloud-download:before{content:\"\\e197\"}.glyphicon-cloud-upload:before{content:\"\\e198\"}.glyphicon-tree-conifer:before{content:\"\\e199\"}.glyphicon-tree-deciduous:before{content:\"\\e200\"}.glyphicon-cd:before{content:\"\\e201\"}.glyphicon-save-file:before{content:\"\\e202\"}.glyphicon-open-file:before{content:\"\\e203\"}.glyphicon-level-up:before{content:\"\\e204\"}.glyphicon-copy:before{content:\"\\e205\"}.glyphicon-paste:before{content:\"\\e206\"}.glyphicon-alert:before{content:\"\\e209\"}.glyphicon-equalizer:before{content:\"\\e210\"}.glyphicon-king:before{content:\"\\e211\"}.glyphicon-queen:before{content:\"\\e212\"}.glyphicon-pawn:before{content:\"\\e213\"}.glyphicon-bishop:before{content:\"\\e214\"}.glyphicon-knight:before{content:\"\\e215\"}.glyphicon-baby-formula:before{content:\"\\e216\"}.glyphicon-tent:before{content:\"\\26fa\"}.glyphicon-blackboard:before{content:\"\\e218\"}.glyphicon-bed:before{content:\"\\e219\"}.glyphicon-apple:before{content:\"\\f8ff\"}.glyphicon-erase:before{content:\"\\e221\"}.glyphicon-hourglass:before{content:\"\\231b\"}.glyphicon-lamp:before{content:\"\\e223\"}.glyphicon-duplicate:before{content:\"\\e224\"}.glyphicon-piggy-bank:before{content:\"\\e225\"}.glyphicon-scissors:before{content:\"\\e226\"}.glyphicon-bitcoin:before{content:\"\\e227\"}.glyphicon-btc:before{content:\"\\e227\"}.glyphicon-xbt:before{content:\"\\e227\"}.glyphicon-yen:before{content:\"\\00a5\"}.glyphicon-jpy:before{content:\"\\00a5\"}.glyphicon-ruble:before{content:\"\\20bd\"}.glyphicon-rub:before{content:\"\\20bd\"}.glyphicon-scale:before{content:\"\\e230\"}.glyphicon-ice-lolly:before{content:\"\\e231\"}.glyphicon-ice-lolly-tasted:before{content:\"\\e232\"}.glyphicon-education:before{content:\"\\e233\"}.glyphicon-option-horizontal:before{content:\"\\e234\"}.glyphicon-option-vertical:before{content:\"\\e235\"}.glyphicon-menu-hamburger:before{content:\"\\e236\"}.glyphicon-modal-window:before{content:\"\\e237\"}.glyphicon-oil:before{content:\"\\e238\"}.glyphicon-grain:before{content:\"\\e239\"}.glyphicon-sunglasses:before{content:\"\\e240\"}.glyphicon-text-size:before{content:\"\\e241\"}.glyphicon-text-color:before{content:\"\\e242\"}.glyphicon-text-background:before{content:\"\\e243\"}.glyphicon-object-align-top:before{content:\"\\e244\"}.glyphicon-object-align-bottom:before{content:\"\\e245\"}.glyphicon-object-align-horizontal:before{content:\"\\e246\"}.glyphicon-object-align-left:before{content:\"\\e247\"}.glyphicon-object-align-vertical:before{content:\"\\e248\"}.glyphicon-object-align-right:before{content:\"\\e249\"}.glyphicon-triangle-right:before{content:\"\\e250\"}.glyphicon-triangle-left:before{content:\"\\e251\"}.glyphicon-triangle-bottom:before{content:\"\\e252\"}.glyphicon-triangle-top:before{content:\"\\e253\"}.glyphicon-console:before{content:\"\\e254\"}.glyphicon-superscript:before{content:\"\\e255\"}.glyphicon-subscript:before{content:\"\\e256\"}.glyphicon-menu-left:before{content:\"\\e257\"}.glyphicon-menu-right:before{content:\"\\e258\"}.glyphicon-menu-down:before{content:\"\\e259\"}.glyphicon-menu-up:before{content:\"\\e260\"}*{box-sizing:border-box}*:before,*:after{box-sizing:border-box}html{font-size:10px;-webkit-tap-highlight-color:transparent}body{font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;color:#333;background-color:#fff}input,button,select,textarea{font-family:inherit;font-size:inherit;line-height:inherit}a{color:#337ab7;text-decoration:none}a:hover,a:focus{color:#23527c;text-decoration:underline}a:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}figure{margin:0}img{vertical-align:middle}.img-responsive,.thumbnail>img,.thumbnail a>img,.carousel-inner>.item>img,.carousel-inner>.item>a>img{display:block;max-width:100%;height:auto}.img-rounded{border-radius:6px}.img-thumbnail{display:inline-block;max-width:100%;height:auto;padding:4px;line-height:1.42857143;background-color:#fff;border:1px solid #ddd;border-radius:4px;transition:all .2s ease-in-out}.img-circle{border-radius:50%}hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #eee}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}.sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}[role=button]{cursor:pointer}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{font-family:inherit;font-weight:500;line-height:1.1;color:inherit}h1 small,h2 small,h3 small,h4 small,h5 small,h6 small,.h1 small,.h2 small,.h3 small,.h4 small,.h5 small,.h6 small,h1 .small,h2 .small,h3 .small,h4 .small,h5 .small,h6 .small,.h1 .small,.h2 .small,.h3 .small,.h4 .small,.h5 .small,.h6 .small{font-weight:400;line-height:1;color:#777}h1,.h1,h2,.h2,h3,.h3{margin-top:20px;margin-bottom:10px}h1 small,.h1 small,h2 small,.h2 small,h3 small,.h3 small,h1 .small,.h1 .small,h2 .small,.h2 .small,h3 .small,.h3 .small{font-size:65%}h4,.h4,h5,.h5,h6,.h6{margin-top:10px;margin-bottom:10px}h4 small,.h4 small,h5 small,.h5 small,h6 small,.h6 small,h4 .small,.h4 .small,h5 .small,.h5 .small,h6 .small,.h6 .small{font-size:75%}h1,.h1{font-size:36px}h2,.h2{font-size:30px}h3,.h3{font-size:24px}h4,.h4{font-size:18px}h5,.h5{font-size:14px}h6,.h6{font-size:12px}p{margin:0 0 10px}.lead{margin-bottom:20px;font-size:16px;font-weight:300;line-height:1.4}@media(min-width:768px){.lead{font-size:21px}}small,.small{font-size:85%}mark,.mark{padding:.2em;background-color:#fcf8e3}.text-left{text-align:left}.text-right{text-align:right}.text-center{text-align:center}.text-justify{text-align:justify}.text-nowrap{white-space:nowrap}.text-lowercase{text-transform:lowercase}.text-uppercase{text-transform:uppercase}.text-capitalize{text-transform:capitalize}.text-muted{color:#777}.text-primary{color:#337ab7}a.text-primary:hover,a.text-primary:focus{color:#286090}.text-success{color:#3c763d}a.text-success:hover,a.text-success:focus{color:#2b542c}.text-info{color:#31708f}a.text-info:hover,a.text-info:focus{color:#245269}.text-warning{color:#8a6d3b}a.text-warning:hover,a.text-warning:focus{color:#66512c}.text-danger{color:#a94442}a.text-danger:hover,a.text-danger:focus{color:#843534}.bg-primary{color:#fff;background-color:#337ab7}a.bg-primary:hover,a.bg-primary:focus{background-color:#286090}.bg-success{background-color:#dff0d8}a.bg-success:hover,a.bg-success:focus{background-color:#c1e2b3}.bg-info{background-color:#d9edf7}a.bg-info:hover,a.bg-info:focus{background-color:#afd9ee}.bg-warning{background-color:#fcf8e3}a.bg-warning:hover,a.bg-warning:focus{background-color:#f7ecb5}.bg-danger{background-color:#f2dede}a.bg-danger:hover,a.bg-danger:focus{background-color:#e4b9b9}.page-header{padding-bottom:9px;margin:40px 0 20px;border-bottom:1px solid #eee}ul,ol{margin-top:0;margin-bottom:10px}ul ul,ol ul,ul ol,ol ol{margin-bottom:0}.list-unstyled{padding-left:0;list-style:none}.list-inline{padding-left:0;margin-left:-5px;list-style:none}.list-inline>li{display:inline-block;padding-right:5px;padding-left:5px}dl{margin-top:0;margin-bottom:20px}dt,dd{line-height:1.42857143}dt{font-weight:700}dd{margin-left:0}@media(min-width:768px){.dl-horizontal dt{float:left;width:160px;overflow:hidden;clear:left;text-align:right;text-overflow:ellipsis;white-space:nowrap}.dl-horizontal dd{margin-left:180px}}abbr[title],abbr[data-original-title]{cursor:help;border-bottom:1px dotted #777}.initialism{font-size:90%;text-transform:uppercase}blockquote{padding:10px 20px;margin:0 0 20px;font-size:17.5px;border-left:5px solid #eee}blockquote p:last-child,blockquote ul:last-child,blockquote ol:last-child{margin-bottom:0}blockquote footer,blockquote small,blockquote .small{display:block;font-size:80%;line-height:1.42857143;color:#777}blockquote footer:before,blockquote small:before,blockquote .small:before{content:'\\2014 \\00A0'}.blockquote-reverse,blockquote.pull-right{padding-right:15px;padding-left:0;text-align:right;border-right:5px solid #eee;border-left:0}.blockquote-reverse footer:before,blockquote.pull-right footer:before,.blockquote-reverse small:before,blockquote.pull-right small:before,.blockquote-reverse .small:before,blockquote.pull-right .small:before{content:''}.blockquote-reverse footer:after,blockquote.pull-right footer:after,.blockquote-reverse small:after,blockquote.pull-right small:after,.blockquote-reverse .small:after,blockquote.pull-right .small:after{content:'\\00A0 \\2014'}address{margin-bottom:20px;font-style:normal;line-height:1.42857143}code,kbd,pre,samp{font-family:Menlo,Monaco,Consolas,Courier New,monospace}code{padding:2px 4px;font-size:90%;color:#c7254e;background-color:#f9f2f4;border-radius:4px}kbd{padding:2px 4px;font-size:90%;color:#fff;background-color:#333;border-radius:3px;box-shadow:inset 0 -1px 0 rgba(0,0,0,.25)}kbd kbd{padding:0;font-size:100%;font-weight:700;box-shadow:none}pre{display:block;padding:9.5px;margin:0 0 10px;font-size:13px;line-height:1.42857143;color:#333;word-break:break-all;word-wrap:break-word;background-color:#f5f5f5;border:1px solid #ccc;border-radius:4px}pre code{padding:0;font-size:inherit;color:inherit;white-space:pre-wrap;background-color:transparent;border-radius:0}.pre-scrollable{max-height:340px;overflow-y:scroll}.container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media(min-width:768px){.container{width:750px}}@media(min-width:992px){.container{width:970px}}@media(min-width:1200px){.container{width:1170px}}.container-fluid{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.row{margin-right:-15px;margin-left:-15px}.col-xs-1,.col-sm-1,.col-md-1,.col-lg-1,.col-xs-2,.col-sm-2,.col-md-2,.col-lg-2,.col-xs-3,.col-sm-3,.col-md-3,.col-lg-3,.col-xs-4,.col-sm-4,.col-md-4,.col-lg-4,.col-xs-5,.col-sm-5,.col-md-5,.col-lg-5,.col-xs-6,.col-sm-6,.col-md-6,.col-lg-6,.col-xs-7,.col-sm-7,.col-md-7,.col-lg-7,.col-xs-8,.col-sm-8,.col-md-8,.col-lg-8,.col-xs-9,.col-sm-9,.col-md-9,.col-lg-9,.col-xs-10,.col-sm-10,.col-md-10,.col-lg-10,.col-xs-11,.col-sm-11,.col-md-11,.col-lg-11,.col-xs-12,.col-sm-12,.col-md-12,.col-lg-12{position:relative;min-height:1px;padding-right:15px;padding-left:15px}.col-xs-1,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-10,.col-xs-11,.col-xs-12{float:left}.col-xs-12{width:100%}.col-xs-11{width:91.66666667%}.col-xs-10{width:83.33333333%}.col-xs-9{width:75%}.col-xs-8{width:66.66666667%}.col-xs-7{width:58.33333333%}.col-xs-6{width:50%}.col-xs-5{width:41.66666667%}.col-xs-4{width:33.33333333%}.col-xs-3{width:25%}.col-xs-2{width:16.66666667%}.col-xs-1{width:8.33333333%}.col-xs-pull-12{right:100%}.col-xs-pull-11{right:91.66666667%}.col-xs-pull-10{right:83.33333333%}.col-xs-pull-9{right:75%}.col-xs-pull-8{right:66.66666667%}.col-xs-pull-7{right:58.33333333%}.col-xs-pull-6{right:50%}.col-xs-pull-5{right:41.66666667%}.col-xs-pull-4{right:33.33333333%}.col-xs-pull-3{right:25%}.col-xs-pull-2{right:16.66666667%}.col-xs-pull-1{right:8.33333333%}.col-xs-pull-0{right:auto}.col-xs-push-12{left:100%}.col-xs-push-11{left:91.66666667%}.col-xs-push-10{left:83.33333333%}.col-xs-push-9{left:75%}.col-xs-push-8{left:66.66666667%}.col-xs-push-7{left:58.33333333%}.col-xs-push-6{left:50%}.col-xs-push-5{left:41.66666667%}.col-xs-push-4{left:33.33333333%}.col-xs-push-3{left:25%}.col-xs-push-2{left:16.66666667%}.col-xs-push-1{left:8.33333333%}.col-xs-push-0{left:auto}.col-xs-offset-12{margin-left:100%}.col-xs-offset-11{margin-left:91.66666667%}.col-xs-offset-10{margin-left:83.33333333%}.col-xs-offset-9{margin-left:75%}.col-xs-offset-8{margin-left:66.66666667%}.col-xs-offset-7{margin-left:58.33333333%}.col-xs-offset-6{margin-left:50%}.col-xs-offset-5{margin-left:41.66666667%}.col-xs-offset-4{margin-left:33.33333333%}.col-xs-offset-3{margin-left:25%}.col-xs-offset-2{margin-left:16.66666667%}.col-xs-offset-1{margin-left:8.33333333%}.col-xs-offset-0{margin-left:0}@media(min-width:768px){.col-sm-1,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-10,.col-sm-11,.col-sm-12{float:left}.col-sm-12{width:100%}.col-sm-11{width:91.66666667%}.col-sm-10{width:83.33333333%}.col-sm-9{width:75%}.col-sm-8{width:66.66666667%}.col-sm-7{width:58.33333333%}.col-sm-6{width:50%}.col-sm-5{width:41.66666667%}.col-sm-4{width:33.33333333%}.col-sm-3{width:25%}.col-sm-2{width:16.66666667%}.col-sm-1{width:8.33333333%}.col-sm-pull-12{right:100%}.col-sm-pull-11{right:91.66666667%}.col-sm-pull-10{right:83.33333333%}.col-sm-pull-9{right:75%}.col-sm-pull-8{right:66.66666667%}.col-sm-pull-7{right:58.33333333%}.col-sm-pull-6{right:50%}.col-sm-pull-5{right:41.66666667%}.col-sm-pull-4{right:33.33333333%}.col-sm-pull-3{right:25%}.col-sm-pull-2{right:16.66666667%}.col-sm-pull-1{right:8.33333333%}.col-sm-pull-0{right:auto}.col-sm-push-12{left:100%}.col-sm-push-11{left:91.66666667%}.col-sm-push-10{left:83.33333333%}.col-sm-push-9{left:75%}.col-sm-push-8{left:66.66666667%}.col-sm-push-7{left:58.33333333%}.col-sm-push-6{left:50%}.col-sm-push-5{left:41.66666667%}.col-sm-push-4{left:33.33333333%}.col-sm-push-3{left:25%}.col-sm-push-2{left:16.66666667%}.col-sm-push-1{left:8.33333333%}.col-sm-push-0{left:auto}.col-sm-offset-12{margin-left:100%}.col-sm-offset-11{margin-left:91.66666667%}.col-sm-offset-10{margin-left:83.33333333%}.col-sm-offset-9{margin-left:75%}.col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-7{margin-left:58.33333333%}.col-sm-offset-6{margin-left:50%}.col-sm-offset-5{margin-left:41.66666667%}.col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-3{margin-left:25%}.col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-1{margin-left:8.33333333%}.col-sm-offset-0{margin-left:0}}@media(min-width:992px){.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12{float:left}.col-md-12{width:100%}.col-md-11{width:91.66666667%}.col-md-10{width:83.33333333%}.col-md-9{width:75%}.col-md-8{width:66.66666667%}.col-md-7{width:58.33333333%}.col-md-6{width:50%}.col-md-5{width:41.66666667%}.col-md-4{width:33.33333333%}.col-md-3{width:25%}.col-md-2{width:16.66666667%}.col-md-1{width:8.33333333%}.col-md-pull-12{right:100%}.col-md-pull-11{right:91.66666667%}.col-md-pull-10{right:83.33333333%}.col-md-pull-9{right:75%}.col-md-pull-8{right:66.66666667%}.col-md-pull-7{right:58.33333333%}.col-md-pull-6{right:50%}.col-md-pull-5{right:41.66666667%}.col-md-pull-4{right:33.33333333%}.col-md-pull-3{right:25%}.col-md-pull-2{right:16.66666667%}.col-md-pull-1{right:8.33333333%}.col-md-pull-0{right:auto}.col-md-push-12{left:100%}.col-md-push-11{left:91.66666667%}.col-md-push-10{left:83.33333333%}.col-md-push-9{left:75%}.col-md-push-8{left:66.66666667%}.col-md-push-7{left:58.33333333%}.col-md-push-6{left:50%}.col-md-push-5{left:41.66666667%}.col-md-push-4{left:33.33333333%}.col-md-push-3{left:25%}.col-md-push-2{left:16.66666667%}.col-md-push-1{left:8.33333333%}.col-md-push-0{left:auto}.col-md-offset-12{margin-left:100%}.col-md-offset-11{margin-left:91.66666667%}.col-md-offset-10{margin-left:83.33333333%}.col-md-offset-9{margin-left:75%}.col-md-offset-8{margin-left:66.66666667%}.col-md-offset-7{margin-left:58.33333333%}.col-md-offset-6{margin-left:50%}.col-md-offset-5{margin-left:41.66666667%}.col-md-offset-4{margin-left:33.33333333%}.col-md-offset-3{margin-left:25%}.col-md-offset-2{margin-left:16.66666667%}.col-md-offset-1{margin-left:8.33333333%}.col-md-offset-0{margin-left:0}}@media(min-width:1200px){.col-lg-1,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-10,.col-lg-11,.col-lg-12{float:left}.col-lg-12{width:100%}.col-lg-11{width:91.66666667%}.col-lg-10{width:83.33333333%}.col-lg-9{width:75%}.col-lg-8{width:66.66666667%}.col-lg-7{width:58.33333333%}.col-lg-6{width:50%}.col-lg-5{width:41.66666667%}.col-lg-4{width:33.33333333%}.col-lg-3{width:25%}.col-lg-2{width:16.66666667%}.col-lg-1{width:8.33333333%}.col-lg-pull-12{right:100%}.col-lg-pull-11{right:91.66666667%}.col-lg-pull-10{right:83.33333333%}.col-lg-pull-9{right:75%}.col-lg-pull-8{right:66.66666667%}.col-lg-pull-7{right:58.33333333%}.col-lg-pull-6{right:50%}.col-lg-pull-5{right:41.66666667%}.col-lg-pull-4{right:33.33333333%}.col-lg-pull-3{right:25%}.col-lg-pull-2{right:16.66666667%}.col-lg-pull-1{right:8.33333333%}.col-lg-pull-0{right:auto}.col-lg-push-12{left:100%}.col-lg-push-11{left:91.66666667%}.col-lg-push-10{left:83.33333333%}.col-lg-push-9{left:75%}.col-lg-push-8{left:66.66666667%}.col-lg-push-7{left:58.33333333%}.col-lg-push-6{left:50%}.col-lg-push-5{left:41.66666667%}.col-lg-push-4{left:33.33333333%}.col-lg-push-3{left:25%}.col-lg-push-2{left:16.66666667%}.col-lg-push-1{left:8.33333333%}.col-lg-push-0{left:auto}.col-lg-offset-12{margin-left:100%}.col-lg-offset-11{margin-left:91.66666667%}.col-lg-offset-10{margin-left:83.33333333%}.col-lg-offset-9{margin-left:75%}.col-lg-offset-8{margin-left:66.66666667%}.col-lg-offset-7{margin-left:58.33333333%}.col-lg-offset-6{margin-left:50%}.col-lg-offset-5{margin-left:41.66666667%}.col-lg-offset-4{margin-left:33.33333333%}.col-lg-offset-3{margin-left:25%}.col-lg-offset-2{margin-left:16.66666667%}.col-lg-offset-1{margin-left:8.33333333%}.col-lg-offset-0{margin-left:0}}table{background-color:transparent}caption{padding-top:8px;padding-bottom:8px;color:#777;text-align:left}th{text-align:left}.table{width:100%;max-width:100%;margin-bottom:20px}.table>thead>tr>th,.table>tbody>tr>th,.table>tfoot>tr>th,.table>thead>tr>td,.table>tbody>tr>td,.table>tfoot>tr>td{padding:8px;line-height:1.42857143;vertical-align:top;border-top:1px solid #ddd}.table>thead>tr>th{vertical-align:bottom;border-bottom:2px solid #ddd}.table>caption+thead>tr:first-child>th,.table>colgroup+thead>tr:first-child>th,.table>thead:first-child>tr:first-child>th,.table>caption+thead>tr:first-child>td,.table>colgroup+thead>tr:first-child>td,.table>thead:first-child>tr:first-child>td{border-top:0}.table>tbody+tbody{border-top:2px solid #ddd}.table .table{background-color:#fff}.table-condensed>thead>tr>th,.table-condensed>tbody>tr>th,.table-condensed>tfoot>tr>th,.table-condensed>thead>tr>td,.table-condensed>tbody>tr>td,.table-condensed>tfoot>tr>td{padding:5px}.table-bordered{border:1px solid #ddd}.table-bordered>thead>tr>th,.table-bordered>tbody>tr>th,.table-bordered>tfoot>tr>th,.table-bordered>thead>tr>td,.table-bordered>tbody>tr>td,.table-bordered>tfoot>tr>td{border:1px solid #ddd}.table-bordered>thead>tr>th,.table-bordered>thead>tr>td{border-bottom-width:2px}.table-striped>tbody>tr:nth-of-type(odd){background-color:#f9f9f9}.table-hover>tbody>tr:hover{background-color:#f5f5f5}table col[class*=col-]{position:static;display:table-column;float:none}table td[class*=col-],table th[class*=col-]{position:static;display:table-cell;float:none}.table>thead>tr>td.active,.table>tbody>tr>td.active,.table>tfoot>tr>td.active,.table>thead>tr>th.active,.table>tbody>tr>th.active,.table>tfoot>tr>th.active,.table>thead>tr.active>td,.table>tbody>tr.active>td,.table>tfoot>tr.active>td,.table>thead>tr.active>th,.table>tbody>tr.active>th,.table>tfoot>tr.active>th{background-color:#f5f5f5}.table-hover>tbody>tr>td.active:hover,.table-hover>tbody>tr>th.active:hover,.table-hover>tbody>tr.active:hover>td,.table-hover>tbody>tr:hover>.active,.table-hover>tbody>tr.active:hover>th{background-color:#e8e8e8}.table>thead>tr>td.success,.table>tbody>tr>td.success,.table>tfoot>tr>td.success,.table>thead>tr>th.success,.table>tbody>tr>th.success,.table>tfoot>tr>th.success,.table>thead>tr.success>td,.table>tbody>tr.success>td,.table>tfoot>tr.success>td,.table>thead>tr.success>th,.table>tbody>tr.success>th,.table>tfoot>tr.success>th{background-color:#dff0d8}.table-hover>tbody>tr>td.success:hover,.table-hover>tbody>tr>th.success:hover,.table-hover>tbody>tr.success:hover>td,.table-hover>tbody>tr:hover>.success,.table-hover>tbody>tr.success:hover>th{background-color:#d0e9c6}.table>thead>tr>td.info,.table>tbody>tr>td.info,.table>tfoot>tr>td.info,.table>thead>tr>th.info,.table>tbody>tr>th.info,.table>tfoot>tr>th.info,.table>thead>tr.info>td,.table>tbody>tr.info>td,.table>tfoot>tr.info>td,.table>thead>tr.info>th,.table>tbody>tr.info>th,.table>tfoot>tr.info>th{background-color:#d9edf7}.table-hover>tbody>tr>td.info:hover,.table-hover>tbody>tr>th.info:hover,.table-hover>tbody>tr.info:hover>td,.table-hover>tbody>tr:hover>.info,.table-hover>tbody>tr.info:hover>th{background-color:#c4e3f3}.table>thead>tr>td.warning,.table>tbody>tr>td.warning,.table>tfoot>tr>td.warning,.table>thead>tr>th.warning,.table>tbody>tr>th.warning,.table>tfoot>tr>th.warning,.table>thead>tr.warning>td,.table>tbody>tr.warning>td,.table>tfoot>tr.warning>td,.table>thead>tr.warning>th,.table>tbody>tr.warning>th,.table>tfoot>tr.warning>th{background-color:#fcf8e3}.table-hover>tbody>tr>td.warning:hover,.table-hover>tbody>tr>th.warning:hover,.table-hover>tbody>tr.warning:hover>td,.table-hover>tbody>tr:hover>.warning,.table-hover>tbody>tr.warning:hover>th{background-color:#faf2cc}.table>thead>tr>td.danger,.table>tbody>tr>td.danger,.table>tfoot>tr>td.danger,.table>thead>tr>th.danger,.table>tbody>tr>th.danger,.table>tfoot>tr>th.danger,.table>thead>tr.danger>td,.table>tbody>tr.danger>td,.table>tfoot>tr.danger>td,.table>thead>tr.danger>th,.table>tbody>tr.danger>th,.table>tfoot>tr.danger>th{background-color:#f2dede}.table-hover>tbody>tr>td.danger:hover,.table-hover>tbody>tr>th.danger:hover,.table-hover>tbody>tr.danger:hover>td,.table-hover>tbody>tr:hover>.danger,.table-hover>tbody>tr.danger:hover>th{background-color:#ebcccc}.table-responsive{min-height:.01%;overflow-x:auto}@media screen and (max-width:767px){.table-responsive{width:100%;margin-bottom:15px;overflow-y:hidden;-ms-overflow-style:-ms-autohiding-scrollbar;border:1px solid #ddd}.table-responsive>.table{margin-bottom:0}.table-responsive>.table>thead>tr>th,.table-responsive>.table>tbody>tr>th,.table-responsive>.table>tfoot>tr>th,.table-responsive>.table>thead>tr>td,.table-responsive>.table>tbody>tr>td,.table-responsive>.table>tfoot>tr>td{white-space:nowrap}.table-responsive>.table-bordered{border:0}.table-responsive>.table-bordered>thead>tr>th:first-child,.table-responsive>.table-bordered>tbody>tr>th:first-child,.table-responsive>.table-bordered>tfoot>tr>th:first-child,.table-responsive>.table-bordered>thead>tr>td:first-child,.table-responsive>.table-bordered>tbody>tr>td:first-child,.table-responsive>.table-bordered>tfoot>tr>td:first-child{border-left:0}.table-responsive>.table-bordered>thead>tr>th:last-child,.table-responsive>.table-bordered>tbody>tr>th:last-child,.table-responsive>.table-bordered>tfoot>tr>th:last-child,.table-responsive>.table-bordered>thead>tr>td:last-child,.table-responsive>.table-bordered>tbody>tr>td:last-child,.table-responsive>.table-bordered>tfoot>tr>td:last-child{border-right:0}.table-responsive>.table-bordered>tbody>tr:last-child>th,.table-responsive>.table-bordered>tfoot>tr:last-child>th,.table-responsive>.table-bordered>tbody>tr:last-child>td,.table-responsive>.table-bordered>tfoot>tr:last-child>td{border-bottom:0}}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;padding:0;margin-bottom:20px;font-size:21px;line-height:inherit;color:#333;border:0;border-bottom:1px solid #e5e5e5}label{display:inline-block;max-width:100%;margin-bottom:5px;font-weight:700}input[type=search]{box-sizing:border-box}input[type=radio],input[type=checkbox]{margin:4px 0 0;margin-top:1px \\9;line-height:normal}input[type=file]{display:block}input[type=range]{display:block;width:100%}select[multiple],select[size]{height:auto}input[type=file]:focus,input[type=radio]:focus,input[type=checkbox]:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}output{display:block;padding-top:7px;font-size:14px;line-height:1.42857143;color:#555}.form-control{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;box-shadow:inset 0 1px 1px rgba(0,0,0,.075);transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}.form-control:focus{border-color:#66afe9;outline:0;box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)}.form-control::-moz-placeholder{color:#999;opacity:1}.form-control:-ms-input-placeholder{color:#999}.form-control::-webkit-input-placeholder{color:#999}.form-control::-ms-expand{background-color:transparent;border:0}.form-control[disabled],.form-control[readonly],fieldset[disabled] .form-control{background-color:#eee;opacity:1}.form-control[disabled],fieldset[disabled] .form-control{cursor:not-allowed}textarea.form-control{height:auto}input[type=search]{-webkit-appearance:none}@media screen and (-webkit-min-device-pixel-ratio:0){input[type=date].form-control,input[type=time].form-control,input[type=datetime-local].form-control,input[type=month].form-control{line-height:34px}input[type=date].input-sm,input[type=time].input-sm,input[type=datetime-local].input-sm,input[type=month].input-sm,.input-group-sm input[type=date],.input-group-sm input[type=time],.input-group-sm input[type=datetime-local],.input-group-sm input[type=month]{line-height:30px}input[type=date].input-lg,input[type=time].input-lg,input[type=datetime-local].input-lg,input[type=month].input-lg,.input-group-lg input[type=date],.input-group-lg input[type=time],.input-group-lg input[type=datetime-local],.input-group-lg input[type=month]{line-height:46px}}.form-group{margin-bottom:15px}.radio,.checkbox{position:relative;display:block;margin-top:10px;margin-bottom:10px}.radio label,.checkbox label{min-height:20px;padding-left:20px;margin-bottom:0;font-weight:400;cursor:pointer}.radio input[type=radio],.radio-inline input[type=radio],.checkbox input[type=checkbox],.checkbox-inline input[type=checkbox]{position:absolute;margin-top:4px \\9;margin-left:-20px}.radio+.radio,.checkbox+.checkbox{margin-top:-5px}.radio-inline,.checkbox-inline{position:relative;display:inline-block;padding-left:20px;margin-bottom:0;font-weight:400;vertical-align:middle;cursor:pointer}.radio-inline+.radio-inline,.checkbox-inline+.checkbox-inline{margin-top:0;margin-left:10px}input[type=radio][disabled],input[type=checkbox][disabled],input[type=radio].disabled,input[type=checkbox].disabled,fieldset[disabled] input[type=radio],fieldset[disabled] input[type=checkbox]{cursor:not-allowed}.radio-inline.disabled,.checkbox-inline.disabled,fieldset[disabled] .radio-inline,fieldset[disabled] .checkbox-inline{cursor:not-allowed}.radio.disabled label,.checkbox.disabled label,fieldset[disabled] .radio label,fieldset[disabled] .checkbox label{cursor:not-allowed}.form-control-static{min-height:34px;padding-top:7px;padding-bottom:7px;margin-bottom:0}.form-control-static.input-lg,.form-control-static.input-sm{padding-right:0;padding-left:0}.input-sm{height:30px;padding:5px 10px;font-size:12px;line-height:1.5;border-radius:3px}select.input-sm{height:30px;line-height:30px}textarea.input-sm,select[multiple].input-sm{height:auto}.form-group-sm .form-control{height:30px;padding:5px 10px;font-size:12px;line-height:1.5;border-radius:3px}.form-group-sm select.form-control{height:30px;line-height:30px}.form-group-sm textarea.form-control,.form-group-sm select[multiple].form-control{height:auto}.form-group-sm .form-control-static{height:30px;min-height:32px;padding:6px 10px;font-size:12px;line-height:1.5}.input-lg{height:46px;padding:10px 16px;font-size:18px;line-height:1.3333333;border-radius:6px}select.input-lg{height:46px;line-height:46px}textarea.input-lg,select[multiple].input-lg{height:auto}.form-group-lg .form-control{height:46px;padding:10px 16px;font-size:18px;line-height:1.3333333;border-radius:6px}.form-group-lg select.form-control{height:46px;line-height:46px}.form-group-lg textarea.form-control,.form-group-lg select[multiple].form-control{height:auto}.form-group-lg .form-control-static{height:46px;min-height:38px;padding:11px 16px;font-size:18px;line-height:1.3333333}.has-feedback{position:relative}.has-feedback .form-control{padding-right:42.5px}.form-control-feedback{position:absolute;top:0;right:0;z-index:2;display:block;width:34px;height:34px;line-height:34px;text-align:center;pointer-events:none}.input-lg+.form-control-feedback,.input-group-lg+.form-control-feedback,.form-group-lg .form-control+.form-control-feedback{width:46px;height:46px;line-height:46px}.input-sm+.form-control-feedback,.input-group-sm+.form-control-feedback,.form-group-sm .form-control+.form-control-feedback{width:30px;height:30px;line-height:30px}.has-success .help-block,.has-success .control-label,.has-success .radio,.has-success .checkbox,.has-success .radio-inline,.has-success .checkbox-inline,.has-success.radio label,.has-success.checkbox label,.has-success.radio-inline label,.has-success.checkbox-inline label{color:#3c763d}.has-success .form-control{border-color:#3c763d;box-shadow:inset 0 1px 1px rgba(0,0,0,.075)}.has-success .form-control:focus{border-color:#2b542c;box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #67b168}.has-success .input-group-addon{color:#3c763d;background-color:#dff0d8;border-color:#3c763d}.has-success .form-control-feedback{color:#3c763d}.has-warning .help-block,.has-warning .control-label,.has-warning .radio,.has-warning .checkbox,.has-warning .radio-inline,.has-warning .checkbox-inline,.has-warning.radio label,.has-warning.checkbox label,.has-warning.radio-inline label,.has-warning.checkbox-inline label{color:#8a6d3b}.has-warning .form-control{border-color:#8a6d3b;box-shadow:inset 0 1px 1px rgba(0,0,0,.075)}.has-warning .form-control:focus{border-color:#66512c;box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #c0a16b}.has-warning .input-group-addon{color:#8a6d3b;background-color:#fcf8e3;border-color:#8a6d3b}.has-warning .form-control-feedback{color:#8a6d3b}.has-error .help-block,.has-error .control-label,.has-error .radio,.has-error .checkbox,.has-error .radio-inline,.has-error .checkbox-inline,.has-error.radio label,.has-error.checkbox label,.has-error.radio-inline label,.has-error.checkbox-inline label{color:#a94442}.has-error .form-control{border-color:#a94442;box-shadow:inset 0 1px 1px rgba(0,0,0,.075)}.has-error .form-control:focus{border-color:#843534;box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483}.has-error .input-group-addon{color:#a94442;background-color:#f2dede;border-color:#a94442}.has-error .form-control-feedback{color:#a94442}.has-feedback label~.form-control-feedback{top:25px}.has-feedback label.sr-only~.form-control-feedback{top:0}.help-block{display:block;margin-top:5px;margin-bottom:10px;color:#737373}@media(min-width:768px){.form-inline .form-group{display:inline-block;margin-bottom:0;vertical-align:middle}.form-inline .form-control{display:inline-block;width:auto;vertical-align:middle}.form-inline .form-control-static{display:inline-block}.form-inline .input-group{display:inline-table;vertical-align:middle}.form-inline .input-group .input-group-addon,.form-inline .input-group .input-group-btn,.form-inline .input-group .form-control{width:auto}.form-inline .input-group>.form-control{width:100%}.form-inline .control-label{margin-bottom:0;vertical-align:middle}.form-inline .radio,.form-inline .checkbox{display:inline-block;margin-top:0;margin-bottom:0;vertical-align:middle}.form-inline .radio label,.form-inline .checkbox label{padding-left:0}.form-inline .radio input[type=radio],.form-inline .checkbox input[type=checkbox]{position:relative;margin-left:0}.form-inline .has-feedback .form-control-feedback{top:0}}.form-horizontal .radio,.form-horizontal .checkbox,.form-horizontal .radio-inline,.form-horizontal .checkbox-inline{padding-top:7px;margin-top:0;margin-bottom:0}.form-horizontal .radio,.form-horizontal .checkbox{min-height:27px}.form-horizontal .form-group{margin-right:-15px;margin-left:-15px}@media(min-width:768px){.form-horizontal .control-label{padding-top:7px;margin-bottom:0;text-align:right}}.form-horizontal .has-feedback .form-control-feedback{right:15px}@media(min-width:768px){.form-horizontal .form-group-lg .control-label{padding-top:11px;font-size:18px}}@media(min-width:768px){.form-horizontal .form-group-sm .control-label{padding-top:6px;font-size:12px}}.btn{display:inline-block;padding:6px 12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1px solid transparent;border-radius:4px}.btn:focus,.btn:active:focus,.btn.active:focus,.btn.focus,.btn:active.focus,.btn.active.focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}.btn:hover,.btn:focus,.btn.focus{color:#333;text-decoration:none}.btn:active,.btn.active{background-image:none;outline:0;box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}.btn.disabled,.btn[disabled],fieldset[disabled] .btn{cursor:not-allowed;filter:alpha(opacity=65);box-shadow:none;opacity:.65}a.btn.disabled,fieldset[disabled] a.btn{pointer-events:none}.btn-default{color:#333;background-color:#fff;border-color:#ccc}.btn-default:focus,.btn-default.focus{color:#333;background-color:#e6e6e6;border-color:#8c8c8c}.btn-default:hover{color:#333;background-color:#e6e6e6;border-color:#adadad}.btn-default:active,.btn-default.active,.open>.dropdown-toggle.btn-default{color:#333;background-color:#e6e6e6;border-color:#adadad}.btn-default:active:hover,.btn-default.active:hover,.open>.dropdown-toggle.btn-default:hover,.btn-default:active:focus,.btn-default.active:focus,.open>.dropdown-toggle.btn-default:focus,.btn-default:active.focus,.btn-default.active.focus,.open>.dropdown-toggle.btn-default.focus{color:#333;background-color:#d4d4d4;border-color:#8c8c8c}.btn-default:active,.btn-default.active,.open>.dropdown-toggle.btn-default{background-image:none}.btn-default.disabled:hover,.btn-default[disabled]:hover,fieldset[disabled] .btn-default:hover,.btn-default.disabled:focus,.btn-default[disabled]:focus,fieldset[disabled] .btn-default:focus,.btn-default.disabled.focus,.btn-default[disabled].focus,fieldset[disabled] .btn-default.focus{background-color:#fff;border-color:#ccc}.btn-default .badge{color:#fff;background-color:#333}.btn-primary{color:#fff;background-color:#337ab7;border-color:#2e6da4}.btn-primary:focus,.btn-primary.focus{color:#fff;background-color:#286090;border-color:#122b40}.btn-primary:hover{color:#fff;background-color:#286090;border-color:#204d74}.btn-primary:active,.btn-primary.active,.open>.dropdown-toggle.btn-primary{color:#fff;background-color:#286090;border-color:#204d74}.btn-primary:active:hover,.btn-primary.active:hover,.open>.dropdown-toggle.btn-primary:hover,.btn-primary:active:focus,.btn-primary.active:focus,.open>.dropdown-toggle.btn-primary:focus,.btn-primary:active.focus,.btn-primary.active.focus,.open>.dropdown-toggle.btn-primary.focus{color:#fff;background-color:#204d74;border-color:#122b40}.btn-primary:active,.btn-primary.active,.open>.dropdown-toggle.btn-primary{background-image:none}.btn-primary.disabled:hover,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary:hover,.btn-primary.disabled:focus,.btn-primary[disabled]:focus,fieldset[disabled] .btn-primary:focus,.btn-primary.disabled.focus,.btn-primary[disabled].focus,fieldset[disabled] .btn-primary.focus{background-color:#337ab7;border-color:#2e6da4}.btn-primary .badge{color:#337ab7;background-color:#fff}.btn-success{color:#fff;background-color:#5cb85c;border-color:#4cae4c}.btn-success:focus,.btn-success.focus{color:#fff;background-color:#449d44;border-color:#255625}.btn-success:hover{color:#fff;background-color:#449d44;border-color:#398439}.btn-success:active,.btn-success.active,.open>.dropdown-toggle.btn-success{color:#fff;background-color:#449d44;border-color:#398439}.btn-success:active:hover,.btn-success.active:hover,.open>.dropdown-toggle.btn-success:hover,.btn-success:active:focus,.btn-success.active:focus,.open>.dropdown-toggle.btn-success:focus,.btn-success:active.focus,.btn-success.active.focus,.open>.dropdown-toggle.btn-success.focus{color:#fff;background-color:#398439;border-color:#255625}.btn-success:active,.btn-success.active,.open>.dropdown-toggle.btn-success{background-image:none}.btn-success.disabled:hover,.btn-success[disabled]:hover,fieldset[disabled] .btn-success:hover,.btn-success.disabled:focus,.btn-success[disabled]:focus,fieldset[disabled] .btn-success:focus,.btn-success.disabled.focus,.btn-success[disabled].focus,fieldset[disabled] .btn-success.focus{background-color:#5cb85c;border-color:#4cae4c}.btn-success .badge{color:#5cb85c;background-color:#fff}.btn-info{color:#fff;background-color:#5bc0de;border-color:#46b8da}.btn-info:focus,.btn-info.focus{color:#fff;background-color:#31b0d5;border-color:#1b6d85}.btn-info:hover{color:#fff;background-color:#31b0d5;border-color:#269abc}.btn-info:active,.btn-info.active,.open>.dropdown-toggle.btn-info{color:#fff;background-color:#31b0d5;border-color:#269abc}.btn-info:active:hover,.btn-info.active:hover,.open>.dropdown-toggle.btn-info:hover,.btn-info:active:focus,.btn-info.active:focus,.open>.dropdown-toggle.btn-info:focus,.btn-info:active.focus,.btn-info.active.focus,.open>.dropdown-toggle.btn-info.focus{color:#fff;background-color:#269abc;border-color:#1b6d85}.btn-info:active,.btn-info.active,.open>.dropdown-toggle.btn-info{background-image:none}.btn-info.disabled:hover,.btn-info[disabled]:hover,fieldset[disabled] .btn-info:hover,.btn-info.disabled:focus,.btn-info[disabled]:focus,fieldset[disabled] .btn-info:focus,.btn-info.disabled.focus,.btn-info[disabled].focus,fieldset[disabled] .btn-info.focus{background-color:#5bc0de;border-color:#46b8da}.btn-info .badge{color:#5bc0de;background-color:#fff}.btn-warning{color:#fff;background-color:#f0ad4e;border-color:#eea236}.btn-warning:focus,.btn-warning.focus{color:#fff;background-color:#ec971f;border-color:#985f0d}.btn-warning:hover{color:#fff;background-color:#ec971f;border-color:#d58512}.btn-warning:active,.btn-warning.active,.open>.dropdown-toggle.btn-warning{color:#fff;background-color:#ec971f;border-color:#d58512}.btn-warning:active:hover,.btn-warning.active:hover,.open>.dropdown-toggle.btn-warning:hover,.btn-warning:active:focus,.btn-warning.active:focus,.open>.dropdown-toggle.btn-warning:focus,.btn-warning:active.focus,.btn-warning.active.focus,.open>.dropdown-toggle.btn-warning.focus{color:#fff;background-color:#d58512;border-color:#985f0d}.btn-warning:active,.btn-warning.active,.open>.dropdown-toggle.btn-warning{background-image:none}.btn-warning.disabled:hover,.btn-warning[disabled]:hover,fieldset[disabled] .btn-warning:hover,.btn-warning.disabled:focus,.btn-warning[disabled]:focus,fieldset[disabled] .btn-warning:focus,.btn-warning.disabled.focus,.btn-warning[disabled].focus,fieldset[disabled] .btn-warning.focus{background-color:#f0ad4e;border-color:#eea236}.btn-warning .badge{color:#f0ad4e;background-color:#fff}.btn-danger{color:#fff;background-color:#d9534f;border-color:#d43f3a}.btn-danger:focus,.btn-danger.focus{color:#fff;background-color:#c9302c;border-color:#761c19}.btn-danger:hover{color:#fff;background-color:#c9302c;border-color:#ac2925}.btn-danger:active,.btn-danger.active,.open>.dropdown-toggle.btn-danger{color:#fff;background-color:#c9302c;border-color:#ac2925}.btn-danger:active:hover,.btn-danger.active:hover,.open>.dropdown-toggle.btn-danger:hover,.btn-danger:active:focus,.btn-danger.active:focus,.open>.dropdown-toggle.btn-danger:focus,.btn-danger:active.focus,.btn-danger.active.focus,.open>.dropdown-toggle.btn-danger.focus{color:#fff;background-color:#ac2925;border-color:#761c19}.btn-danger:active,.btn-danger.active,.open>.dropdown-toggle.btn-danger{background-image:none}.btn-danger.disabled:hover,.btn-danger[disabled]:hover,fieldset[disabled] .btn-danger:hover,.btn-danger.disabled:focus,.btn-danger[disabled]:focus,fieldset[disabled] .btn-danger:focus,.btn-danger.disabled.focus,.btn-danger[disabled].focus,fieldset[disabled] .btn-danger.focus{background-color:#d9534f;border-color:#d43f3a}.btn-danger .badge{color:#d9534f;background-color:#fff}.btn-link{font-weight:400;color:#337ab7;border-radius:0}.btn-link,.btn-link:active,.btn-link.active,.btn-link[disabled],fieldset[disabled] .btn-link{background-color:transparent;box-shadow:none}.btn-link,.btn-link:hover,.btn-link:focus,.btn-link:active{border-color:transparent}.btn-link:hover,.btn-link:focus{color:#23527c;text-decoration:underline;background-color:transparent}.btn-link[disabled]:hover,fieldset[disabled] .btn-link:hover,.btn-link[disabled]:focus,fieldset[disabled] .btn-link:focus{color:#777;text-decoration:none}.btn-lg,.btn-group-lg>.btn{padding:10px 16px;font-size:18px;line-height:1.3333333;border-radius:6px}.btn-sm,.btn-group-sm>.btn{padding:5px 10px;font-size:12px;line-height:1.5;border-radius:3px}.btn-xs,.btn-group-xs>.btn{padding:1px 5px;font-size:12px;line-height:1.5;border-radius:3px}.btn-block{display:block;width:100%}.btn-block+.btn-block{margin-top:5px}input[type=submit].btn-block,input[type=reset].btn-block,input[type=button].btn-block{width:100%}.fade{opacity:0;transition:opacity .15s linear}.fade.in{opacity:1}.collapse{display:none}.collapse.in{display:block}tr.collapse.in{display:table-row}tbody.collapse.in{display:table-row-group}.collapsing{position:relative;height:0;overflow:hidden;transition-timing-function:ease;transition-duration:.35s;transition-property:height,visibility}.caret{display:inline-block;width:0;height:0;margin-left:2px;vertical-align:middle;border-top:4px dashed;border-top:4px solid \\9;border-right:4px solid transparent;border-left:4px solid transparent}.dropup,.dropdown{position:relative}.dropdown-toggle:focus{outline:0}.dropdown-menu{position:absolute;top:100%;left:0;z-index:1000;display:none;float:left;min-width:160px;padding:5px 0;margin:2px 0 0;font-size:14px;text-align:left;list-style:none;background-color:#fff;background-clip:padding-box;border:1px solid #ccc;border:1px solid rgba(0,0,0,.15);border-radius:4px;box-shadow:0 6px 12px rgba(0,0,0,.175)}.dropdown-menu.pull-right{right:0;left:auto}.dropdown-menu .divider{height:1px;margin:9px 0;overflow:hidden;background-color:#e5e5e5}.dropdown-menu>li>a{display:block;padding:3px 20px;clear:both;font-weight:400;line-height:1.42857143;color:#333;white-space:nowrap}.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus{color:#262626;text-decoration:none;background-color:#f5f5f5}.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{color:#fff;text-decoration:none;background-color:#337ab7;outline:0}.dropdown-menu>.disabled>a,.dropdown-menu>.disabled>a:hover,.dropdown-menu>.disabled>a:focus{color:#777}.dropdown-menu>.disabled>a:hover,.dropdown-menu>.disabled>a:focus{text-decoration:none;cursor:not-allowed;background-color:transparent;background-image:none;filter:progid:DXImageTransform.Microsoft.gradient(enabled = false)}.open>.dropdown-menu{display:block}.open>a{outline:0}.dropdown-menu-right{right:0;left:auto}.dropdown-menu-left{right:auto;left:0}.dropdown-header{display:block;padding:3px 20px;font-size:12px;line-height:1.42857143;color:#777;white-space:nowrap}.dropdown-backdrop{position:fixed;top:0;right:0;bottom:0;left:0;z-index:990}.pull-right>.dropdown-menu{right:0;left:auto}.dropup .caret,.navbar-fixed-bottom .dropdown .caret{content:\"\";border-top:0;border-bottom:4px dashed;border-bottom:4px solid \\9}.dropup .dropdown-menu,.navbar-fixed-bottom .dropdown .dropdown-menu{top:auto;bottom:100%;margin-bottom:2px}@media(min-width:768px){.navbar-right .dropdown-menu{right:0;left:auto}.navbar-right .dropdown-menu-left{right:auto;left:0}}.btn-group,.btn-group-vertical{position:relative;display:inline-block;vertical-align:middle}.btn-group>.btn,.btn-group-vertical>.btn{position:relative;float:left}.btn-group>.btn:hover,.btn-group-vertical>.btn:hover,.btn-group>.btn:focus,.btn-group-vertical>.btn:focus,.btn-group>.btn:active,.btn-group-vertical>.btn:active,.btn-group>.btn.active,.btn-group-vertical>.btn.active{z-index:2}.btn-group .btn+.btn,.btn-group .btn+.btn-group,.btn-group .btn-group+.btn,.btn-group .btn-group+.btn-group{margin-left:-1px}.btn-toolbar{margin-left:-5px}.btn-toolbar .btn,.btn-toolbar .btn-group,.btn-toolbar .input-group{float:left}.btn-toolbar>.btn,.btn-toolbar>.btn-group,.btn-toolbar>.input-group{margin-left:5px}.btn-group>.btn:not(:first-child):not(:last-child):not(.dropdown-toggle){border-radius:0}.btn-group>.btn:first-child{margin-left:0}.btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle){border-top-right-radius:0;border-bottom-right-radius:0}.btn-group>.btn:last-child:not(:first-child),.btn-group>.dropdown-toggle:not(:first-child){border-top-left-radius:0;border-bottom-left-radius:0}.btn-group>.btn-group{float:left}.btn-group>.btn-group:not(:first-child):not(:last-child)>.btn{border-radius:0}.btn-group>.btn-group:first-child:not(:last-child)>.btn:last-child,.btn-group>.btn-group:first-child:not(:last-child)>.dropdown-toggle{border-top-right-radius:0;border-bottom-right-radius:0}.btn-group>.btn-group:last-child:not(:first-child)>.btn:first-child{border-top-left-radius:0;border-bottom-left-radius:0}.btn-group .dropdown-toggle:active,.btn-group.open .dropdown-toggle{outline:0}.btn-group>.btn+.dropdown-toggle{padding-right:8px;padding-left:8px}.btn-group>.btn-lg+.dropdown-toggle{padding-right:12px;padding-left:12px}.btn-group.open .dropdown-toggle{box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}.btn-group.open .dropdown-toggle.btn-link{box-shadow:none}.btn .caret{margin-left:0}.btn-lg .caret{border-width:5px 5px 0;border-bottom-width:0}.dropup .btn-lg .caret{border-width:0 5px 5px}.btn-group-vertical>.btn,.btn-group-vertical>.btn-group,.btn-group-vertical>.btn-group>.btn{display:block;float:none;width:100%;max-width:100%}.btn-group-vertical>.btn-group>.btn{float:none}.btn-group-vertical>.btn+.btn,.btn-group-vertical>.btn+.btn-group,.btn-group-vertical>.btn-group+.btn,.btn-group-vertical>.btn-group+.btn-group{margin-top:-1px;margin-left:0}.btn-group-vertical>.btn:not(:first-child):not(:last-child){border-radius:0}.btn-group-vertical>.btn:first-child:not(:last-child){border-top-left-radius:4px;border-top-right-radius:4px;border-bottom-right-radius:0;border-bottom-left-radius:0}.btn-group-vertical>.btn:last-child:not(:first-child){border-top-left-radius:0;border-top-right-radius:0;border-bottom-right-radius:4px;border-bottom-left-radius:4px}.btn-group-vertical>.btn-group:not(:first-child):not(:last-child)>.btn{border-radius:0}.btn-group-vertical>.btn-group:first-child:not(:last-child)>.btn:last-child,.btn-group-vertical>.btn-group:first-child:not(:last-child)>.dropdown-toggle{border-bottom-right-radius:0;border-bottom-left-radius:0}.btn-group-vertical>.btn-group:last-child:not(:first-child)>.btn:first-child{border-top-left-radius:0;border-top-right-radius:0}.btn-group-justified{display:table;width:100%;table-layout:fixed;border-collapse:separate}.btn-group-justified>.btn,.btn-group-justified>.btn-group{display:table-cell;float:none;width:1%}.btn-group-justified>.btn-group .btn{width:100%}.btn-group-justified>.btn-group .dropdown-menu{left:auto}[data-toggle=\"buttons\"]>.btn input[type=\"radio\"],[data-toggle=\"buttons\"]>.btn-group>.btn input[type=\"radio\"],[data-toggle=\"buttons\"]>.btn input[type=\"checkbox\"],[data-toggle=\"buttons\"]>.btn-group>.btn input[type=\"checkbox\"]{position:absolute;clip:rect(0,0,0,0);pointer-events:none}.input-group{position:relative;display:table;border-collapse:separate}.input-group[class*=col-]{float:none;padding-right:0;padding-left:0}.input-group .form-control{position:relative;z-index:2;float:left;width:100%;margin-bottom:0}.input-group .form-control:focus{z-index:3}.input-group-lg>.form-control,.input-group-lg>.input-group-addon,.input-group-lg>.input-group-btn>.btn{height:46px;padding:10px 16px;font-size:18px;line-height:1.3333333;border-radius:6px}select.input-group-lg>.form-control,select.input-group-lg>.input-group-addon,select.input-group-lg>.input-group-btn>.btn{height:46px;line-height:46px}textarea.input-group-lg>.form-control,textarea.input-group-lg>.input-group-addon,textarea.input-group-lg>.input-group-btn>.btn,select[multiple].input-group-lg>.form-control,select[multiple].input-group-lg>.input-group-addon,select[multiple].input-group-lg>.input-group-btn>.btn{height:auto}.input-group-sm>.form-control,.input-group-sm>.input-group-addon,.input-group-sm>.input-group-btn>.btn{height:30px;padding:5px 10px;font-size:12px;line-height:1.5;border-radius:3px}select.input-group-sm>.form-control,select.input-group-sm>.input-group-addon,select.input-group-sm>.input-group-btn>.btn{height:30px;line-height:30px}textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon,textarea.input-group-sm>.input-group-btn>.btn,select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.input-group-addon,select[multiple].input-group-sm>.input-group-btn>.btn{height:auto}.input-group-addon,.input-group-btn,.input-group .form-control{display:table-cell}.input-group-addon:not(:first-child):not(:last-child),.input-group-btn:not(:first-child):not(:last-child),.input-group .form-control:not(:first-child):not(:last-child){border-radius:0}.input-group-addon,.input-group-btn{width:1%;white-space:nowrap;vertical-align:middle}.input-group-addon{padding:6px 12px;font-size:14px;font-weight:400;line-height:1;color:#555;text-align:center;background-color:#eee;border:1px solid #ccc;border-radius:4px}.input-group-addon.input-sm{padding:5px 10px;font-size:12px;border-radius:3px}.input-group-addon.input-lg{padding:10px 16px;font-size:18px;border-radius:6px}.input-group-addon input[type=radio],.input-group-addon input[type=checkbox]{margin-top:0}.input-group .form-control:first-child,.input-group-addon:first-child,.input-group-btn:first-child>.btn,.input-group-btn:first-child>.btn-group>.btn,.input-group-btn:first-child>.dropdown-toggle,.input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle),.input-group-btn:last-child>.btn-group:not(:last-child)>.btn{border-top-right-radius:0;border-bottom-right-radius:0}.input-group-addon:first-child{border-right:0}.input-group .form-control:last-child,.input-group-addon:last-child,.input-group-btn:last-child>.btn,.input-group-btn:last-child>.btn-group>.btn,.input-group-btn:last-child>.dropdown-toggle,.input-group-btn:first-child>.btn:not(:first-child),.input-group-btn:first-child>.btn-group:not(:first-child)>.btn{border-top-left-radius:0;border-bottom-left-radius:0}.input-group-addon:last-child{border-left:0}.input-group-btn{position:relative;font-size:0;white-space:nowrap}.input-group-btn>.btn{position:relative}.input-group-btn>.btn+.btn{margin-left:-1px}.input-group-btn>.btn:hover,.input-group-btn>.btn:focus,.input-group-btn>.btn:active{z-index:2}.input-group-btn:first-child>.btn,.input-group-btn:first-child>.btn-group{margin-right:-1px}.input-group-btn:last-child>.btn,.input-group-btn:last-child>.btn-group{z-index:2;margin-left:-1px}.nav{padding-left:0;margin-bottom:0;list-style:none}.nav>li{position:relative;display:block}.nav>li>a{position:relative;display:block;padding:10px 15px}.nav>li>a:hover,.nav>li>a:focus{text-decoration:none;background-color:#eee}.nav>li.disabled>a{color:#777}.nav>li.disabled>a:hover,.nav>li.disabled>a:focus{color:#777;text-decoration:none;cursor:not-allowed;background-color:transparent}.nav .open>a,.nav .open>a:hover,.nav .open>a:focus{background-color:#eee;border-color:#337ab7}.nav .nav-divider{height:1px;margin:9px 0;overflow:hidden;background-color:#e5e5e5}.nav>li>a>img{max-width:none}.nav-tabs{border-bottom:1px solid #ddd}.nav-tabs>li{float:left;margin-bottom:-1px}.nav-tabs>li>a{margin-right:2px;line-height:1.42857143;border:1px solid transparent;border-radius:4px 4px 0 0}.nav-tabs>li>a:hover{border-color:#eee #eee #ddd}.nav-tabs>li.active>a,.nav-tabs>li.active>a:hover,.nav-tabs>li.active>a:focus{color:#555;cursor:default;background-color:#fff;border:1px solid #ddd;border-bottom-color:transparent}.nav-tabs.nav-justified{width:100%;border-bottom:0}.nav-tabs.nav-justified>li{float:none}.nav-tabs.nav-justified>li>a{margin-bottom:5px;text-align:center}.nav-tabs.nav-justified>.dropdown .dropdown-menu{top:auto;left:auto}@media(min-width:768px){.nav-tabs.nav-justified>li{display:table-cell;width:1%}.nav-tabs.nav-justified>li>a{margin-bottom:0}}.nav-tabs.nav-justified>li>a{margin-right:0;border-radius:4px}.nav-tabs.nav-justified>.active>a,.nav-tabs.nav-justified>.active>a:hover,.nav-tabs.nav-justified>.active>a:focus{border:1px solid #ddd}@media(min-width:768px){.nav-tabs.nav-justified>li>a{border-bottom:1px solid #ddd;border-radius:4px 4px 0 0}.nav-tabs.nav-justified>.active>a,.nav-tabs.nav-justified>.active>a:hover,.nav-tabs.nav-justified>.active>a:focus{border-bottom-color:#fff}}.nav-pills>li{float:left}.nav-pills>li>a{border-radius:4px}.nav-pills>li+li{margin-left:2px}.nav-pills>li.active>a,.nav-pills>li.active>a:hover,.nav-pills>li.active>a:focus{color:#fff;background-color:#337ab7}.nav-stacked>li{float:none}.nav-stacked>li+li{margin-top:2px;margin-left:0}.nav-justified{width:100%}.nav-justified>li{float:none}.nav-justified>li>a{margin-bottom:5px;text-align:center}.nav-justified>.dropdown .dropdown-menu{top:auto;left:auto}@media(min-width:768px){.nav-justified>li{display:table-cell;width:1%}.nav-justified>li>a{margin-bottom:0}}.nav-tabs-justified{border-bottom:0}.nav-tabs-justified>li>a{margin-right:0;border-radius:4px}.nav-tabs-justified>.active>a,.nav-tabs-justified>.active>a:hover,.nav-tabs-justified>.active>a:focus{border:1px solid #ddd}@media(min-width:768px){.nav-tabs-justified>li>a{border-bottom:1px solid #ddd;border-radius:4px 4px 0 0}.nav-tabs-justified>.active>a,.nav-tabs-justified>.active>a:hover,.nav-tabs-justified>.active>a:focus{border-bottom-color:#fff}}.tab-content>.tab-pane{display:none}.tab-content>.active{display:block}.nav-tabs .dropdown-menu{margin-top:-1px;border-top-left-radius:0;border-top-right-radius:0}.navbar{position:relative;min-height:50px;margin-bottom:20px;border:1px solid transparent}@media(min-width:768px){.navbar{border-radius:4px}}@media(min-width:768px){.navbar-header{float:left}}.navbar-collapse{padding-right:15px;padding-left:15px;overflow-x:visible;-webkit-overflow-scrolling:touch;border-top:1px solid transparent;box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}.navbar-collapse.in{overflow-y:auto}@media(min-width:768px){.navbar-collapse{width:auto;border-top:0;box-shadow:none}.navbar-collapse.collapse{display:block!important;height:auto!important;padding-bottom:0;overflow:visible!important}.navbar-collapse.in{overflow-y:visible}.navbar-fixed-top .navbar-collapse,.navbar-static-top .navbar-collapse,.navbar-fixed-bottom .navbar-collapse{padding-right:0;padding-left:0}}.navbar-fixed-top .navbar-collapse,.navbar-fixed-bottom .navbar-collapse{max-height:340px}@media(max-device-width:480px) and (orientation:landscape){.navbar-fixed-top .navbar-collapse,.navbar-fixed-bottom .navbar-collapse{max-height:200px}}.container>.navbar-header,.container-fluid>.navbar-header,.container>.navbar-collapse,.container-fluid>.navbar-collapse{margin-right:-15px;margin-left:-15px}@media(min-width:768px){.container>.navbar-header,.container-fluid>.navbar-header,.container>.navbar-collapse,.container-fluid>.navbar-collapse{margin-right:0;margin-left:0}}.navbar-static-top{z-index:1000;border-width:0 0 1px}@media(min-width:768px){.navbar-static-top{border-radius:0}}.navbar-fixed-top,.navbar-fixed-bottom{position:fixed;right:0;left:0;z-index:1030}@media(min-width:768px){.navbar-fixed-top,.navbar-fixed-bottom{border-radius:0}}.navbar-fixed-top{top:0;border-width:0 0 1px}.navbar-fixed-bottom{bottom:0;margin-bottom:0;border-width:1px 0 0}.navbar-brand{float:left;height:50px;padding:15px;font-size:18px;line-height:20px}.navbar-brand:hover,.navbar-brand:focus{text-decoration:none}.navbar-brand>img{display:block}@media(min-width:768px){.navbar>.container .navbar-brand,.navbar>.container-fluid .navbar-brand{margin-left:-15px}}.navbar-toggle{position:relative;float:right;padding:9px 10px;margin-top:8px;margin-right:15px;margin-bottom:8px;background-color:transparent;background-image:none;border:1px solid transparent;border-radius:4px}.navbar-toggle:focus{outline:0}.navbar-toggle .icon-bar{display:block;width:22px;height:2px;border-radius:1px}.navbar-toggle .icon-bar+.icon-bar{margin-top:4px}@media(min-width:768px){.navbar-toggle{display:none}}.navbar-nav{margin:7.5px -15px}.navbar-nav>li>a{padding-top:10px;padding-bottom:10px;line-height:20px}@media(max-width:767px){.navbar-nav .open .dropdown-menu{position:static;float:none;width:auto;margin-top:0;background-color:transparent;border:0;box-shadow:none}.navbar-nav .open .dropdown-menu>li>a,.navbar-nav .open .dropdown-menu .dropdown-header{padding:5px 15px 5px 25px}.navbar-nav .open .dropdown-menu>li>a{line-height:20px}.navbar-nav .open .dropdown-menu>li>a:hover,.navbar-nav .open .dropdown-menu>li>a:focus{background-image:none}}@media(min-width:768px){.navbar-nav{float:left;margin:0}.navbar-nav>li{float:left}.navbar-nav>li>a{padding-top:15px;padding-bottom:15px}}.navbar-form{padding:10px 15px;margin-top:8px;margin-right:-15px;margin-bottom:8px;margin-left:-15px;border-top:1px solid transparent;border-bottom:1px solid transparent;box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 1px 0 rgba(255,255,255,.1)}@media(min-width:768px){.navbar-form .form-group{display:inline-block;margin-bottom:0;vertical-align:middle}.navbar-form .form-control{display:inline-block;width:auto;vertical-align:middle}.navbar-form .form-control-static{display:inline-block}.navbar-form .input-group{display:inline-table;vertical-align:middle}.navbar-form .input-group .input-group-addon,.navbar-form .input-group .input-group-btn,.navbar-form .input-group .form-control{width:auto}.navbar-form .input-group>.form-control{width:100%}.navbar-form .control-label{margin-bottom:0;vertical-align:middle}.navbar-form .radio,.navbar-form .checkbox{display:inline-block;margin-top:0;margin-bottom:0;vertical-align:middle}.navbar-form .radio label,.navbar-form .checkbox label{padding-left:0}.navbar-form .radio input[type=radio],.navbar-form .checkbox input[type=checkbox]{position:relative;margin-left:0}.navbar-form .has-feedback .form-control-feedback{top:0}}@media(max-width:767px){.navbar-form .form-group{margin-bottom:5px}.navbar-form .form-group:last-child{margin-bottom:0}}@media(min-width:768px){.navbar-form{width:auto;padding-top:0;padding-bottom:0;margin-right:0;margin-left:0;border:0;box-shadow:none}}.navbar-nav>li>.dropdown-menu{margin-top:0;border-top-left-radius:0;border-top-right-radius:0}.navbar-fixed-bottom .navbar-nav>li>.dropdown-menu{margin-bottom:0;border-top-left-radius:4px;border-top-right-radius:4px;border-bottom-right-radius:0;border-bottom-left-radius:0}.navbar-btn{margin-top:8px;margin-bottom:8px}.navbar-btn.btn-sm{margin-top:10px;margin-bottom:10px}.navbar-btn.btn-xs{margin-top:14px;margin-bottom:14px}.navbar-text{margin-top:15px;margin-bottom:15px}@media(min-width:768px){.navbar-text{float:left;margin-right:15px;margin-left:15px}}@media(min-width:768px){.navbar-left{float:left!important}.navbar-right{float:right!important;margin-right:-15px}.navbar-right~.navbar-right{margin-right:0}}.navbar-default{background-color:#f8f8f8;border-color:#e7e7e7}.navbar-default .navbar-brand{color:#777}.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus{color:#5e5e5e;background-color:transparent}.navbar-default .navbar-text{color:#777}.navbar-default .navbar-nav>li>a{color:#777}.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a:focus{color:#333;background-color:transparent}.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus{color:#555;background-color:#e7e7e7}.navbar-default .navbar-nav>.disabled>a,.navbar-default .navbar-nav>.disabled>a:hover,.navbar-default .navbar-nav>.disabled>a:focus{color:#ccc;background-color:transparent}.navbar-default .navbar-toggle{border-color:#ddd}.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{background-color:#ddd}.navbar-default .navbar-toggle .icon-bar{background-color:#888}.navbar-default .navbar-collapse,.navbar-default .navbar-form{border-color:#e7e7e7}.navbar-default .navbar-nav>.open>a,.navbar-default .navbar-nav>.open>a:hover,.navbar-default .navbar-nav>.open>a:focus{color:#555;background-color:#e7e7e7}@media(max-width:767px){.navbar-default .navbar-nav .open .dropdown-menu>li>a{color:#777}.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus{color:#333;background-color:transparent}.navbar-default .navbar-nav .open .dropdown-menu>.active>a,.navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover,.navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus{color:#555;background-color:#e7e7e7}.navbar-default .navbar-nav .open .dropdown-menu>.disabled>a,.navbar-default .navbar-nav .open .dropdown-menu>.disabled>a:hover,.navbar-default .navbar-nav .open .dropdown-menu>.disabled>a:focus{color:#ccc;background-color:transparent}}.navbar-default .navbar-link{color:#777}.navbar-default .navbar-link:hover{color:#333}.navbar-default .btn-link{color:#777}.navbar-default .btn-link:hover,.navbar-default .btn-link:focus{color:#333}.navbar-default .btn-link[disabled]:hover,fieldset[disabled] .navbar-default .btn-link:hover,.navbar-default .btn-link[disabled]:focus,fieldset[disabled] .navbar-default .btn-link:focus{color:#ccc}.navbar-inverse{background-color:#222;border-color:#080808}.navbar-inverse .navbar-brand{color:#9d9d9d}.navbar-inverse .navbar-brand:hover,.navbar-inverse .navbar-brand:focus{color:#fff;background-color:transparent}.navbar-inverse .navbar-text{color:#9d9d9d}.navbar-inverse .navbar-nav>li>a{color:#9d9d9d}.navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-nav>li>a:focus{color:#fff;background-color:transparent}.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>.active>a:focus{color:#fff;background-color:#080808}.navbar-inverse .navbar-nav>.disabled>a,.navbar-inverse .navbar-nav>.disabled>a:hover,.navbar-inverse .navbar-nav>.disabled>a:focus{color:#444;background-color:transparent}.navbar-inverse .navbar-toggle{border-color:#333}.navbar-inverse .navbar-toggle:hover,.navbar-inverse .navbar-toggle:focus{background-color:#333}.navbar-inverse .navbar-toggle .icon-bar{background-color:#fff}.navbar-inverse .navbar-collapse,.navbar-inverse .navbar-form{border-color:#101010}.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a:focus{color:#fff;background-color:#080808}@media(max-width:767px){.navbar-inverse .navbar-nav .open .dropdown-menu>.dropdown-header{border-color:#080808}.navbar-inverse .navbar-nav .open .dropdown-menu .divider{background-color:#080808}.navbar-inverse .navbar-nav .open .dropdown-menu>li>a{color:#9d9d9d}.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover,.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:focus{color:#fff;background-color:transparent}.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a,.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:hover,.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:focus{color:#fff;background-color:#080808}.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a,.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a:hover,.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a:focus{color:#444;background-color:transparent}}.navbar-inverse .navbar-link{color:#9d9d9d}.navbar-inverse .navbar-link:hover{color:#fff}.navbar-inverse .btn-link{color:#9d9d9d}.navbar-inverse .btn-link:hover,.navbar-inverse .btn-link:focus{color:#fff}.navbar-inverse .btn-link[disabled]:hover,fieldset[disabled] .navbar-inverse .btn-link:hover,.navbar-inverse .btn-link[disabled]:focus,fieldset[disabled] .navbar-inverse .btn-link:focus{color:#444}.breadcrumb{padding:8px 15px;margin-bottom:20px;list-style:none;background-color:#f5f5f5;border-radius:4px}.breadcrumb>li{display:inline-block}.breadcrumb>li+li:before{padding:0 5px;color:#ccc;content:\"/\\00a0\"}.breadcrumb>.active{color:#777}.pagination{display:inline-block;padding-left:0;margin:20px 0;border-radius:4px}.pagination>li{display:inline}.pagination>li>a,.pagination>li>span{position:relative;float:left;padding:6px 12px;margin-left:-1px;line-height:1.42857143;color:#337ab7;text-decoration:none;background-color:#fff;border:1px solid #ddd}.pagination>li:first-child>a,.pagination>li:first-child>span{margin-left:0;border-top-left-radius:4px;border-bottom-left-radius:4px}.pagination>li:last-child>a,.pagination>li:last-child>span{border-top-right-radius:4px;border-bottom-right-radius:4px}.pagination>li>a:hover,.pagination>li>span:hover,.pagination>li>a:focus,.pagination>li>span:focus{z-index:2;color:#23527c;background-color:#eee;border-color:#ddd}.pagination>.active>a,.pagination>.active>span,.pagination>.active>a:hover,.pagination>.active>span:hover,.pagination>.active>a:focus,.pagination>.active>span:focus{z-index:3;color:#fff;cursor:default;background-color:#337ab7;border-color:#337ab7}.pagination>.disabled>span,.pagination>.disabled>span:hover,.pagination>.disabled>span:focus,.pagination>.disabled>a,.pagination>.disabled>a:hover,.pagination>.disabled>a:focus{color:#777;cursor:not-allowed;background-color:#fff;border-color:#ddd}.pagination-lg>li>a,.pagination-lg>li>span{padding:10px 16px;font-size:18px;line-height:1.3333333}.pagination-lg>li:first-child>a,.pagination-lg>li:first-child>span{border-top-left-radius:6px;border-bottom-left-radius:6px}.pagination-lg>li:last-child>a,.pagination-lg>li:last-child>span{border-top-right-radius:6px;border-bottom-right-radius:6px}.pagination-sm>li>a,.pagination-sm>li>span{padding:5px 10px;font-size:12px;line-height:1.5}.pagination-sm>li:first-child>a,.pagination-sm>li:first-child>span{border-top-left-radius:3px;border-bottom-left-radius:3px}.pagination-sm>li:last-child>a,.pagination-sm>li:last-child>span{border-top-right-radius:3px;border-bottom-right-radius:3px}.pager{padding-left:0;margin:20px 0;text-align:center;list-style:none}.pager li{display:inline}.pager li>a,.pager li>span{display:inline-block;padding:5px 14px;background-color:#fff;border:1px solid #ddd;border-radius:15px}.pager li>a:hover,.pager li>a:focus{text-decoration:none;background-color:#eee}.pager .next>a,.pager .next>span{float:right}.pager .previous>a,.pager .previous>span{float:left}.pager .disabled>a,.pager .disabled>a:hover,.pager .disabled>a:focus,.pager .disabled>span{color:#777;cursor:not-allowed;background-color:#fff}.label{display:inline;padding:.2em .6em .3em;font-size:75%;font-weight:700;line-height:1;color:#fff;text-align:center;white-space:nowrap;vertical-align:baseline;border-radius:.25em}a.label:hover,a.label:focus{color:#fff;text-decoration:none;cursor:pointer}.label:empty{display:none}.btn .label{position:relative;top:-1px}.label-default{background-color:#777}.label-default[href]:hover,.label-default[href]:focus{background-color:#5e5e5e}.label-primary{background-color:#337ab7}.label-primary[href]:hover,.label-primary[href]:focus{background-color:#286090}.label-success{background-color:#5cb85c}.label-success[href]:hover,.label-success[href]:focus{background-color:#449d44}.label-info{background-color:#5bc0de}.label-info[href]:hover,.label-info[href]:focus{background-color:#31b0d5}.label-warning{background-color:#f0ad4e}.label-warning[href]:hover,.label-warning[href]:focus{background-color:#ec971f}.label-danger{background-color:#d9534f}.label-danger[href]:hover,.label-danger[href]:focus{background-color:#c9302c}.badge{display:inline-block;min-width:10px;padding:3px 7px;font-size:12px;font-weight:700;line-height:1;color:#fff;text-align:center;white-space:nowrap;vertical-align:middle;background-color:#777;border-radius:10px}.badge:empty{display:none}.btn .badge{position:relative;top:-1px}.btn-xs .badge,.btn-group-xs>.btn .badge{top:0;padding:1px 5px}a.badge:hover,a.badge:focus{color:#fff;text-decoration:none;cursor:pointer}.list-group-item.active>.badge,.nav-pills>.active>a>.badge{color:#337ab7;background-color:#fff}.list-group-item>.badge{float:right}.list-group-item>.badge+.badge{margin-right:5px}.nav-pills>li>a>.badge{margin-left:3px}.jumbotron{padding-top:30px;padding-bottom:30px;margin-bottom:30px;color:inherit;background-color:#eee}.jumbotron h1,.jumbotron .h1{color:inherit}.jumbotron p{margin-bottom:15px;font-size:21px;font-weight:200}.jumbotron>hr{border-top-color:#d5d5d5}.container .jumbotron,.container-fluid .jumbotron{padding-right:15px;padding-left:15px;border-radius:6px}.jumbotron .container{max-width:100%}@media screen and (min-width:768px){.jumbotron{padding-top:48px;padding-bottom:48px}.container .jumbotron,.container-fluid .jumbotron{padding-right:60px;padding-left:60px}.jumbotron h1,.jumbotron .h1{font-size:63px}}.thumbnail{display:block;padding:4px;margin-bottom:20px;line-height:1.42857143;background-color:#fff;border:1px solid #ddd;border-radius:4px;transition:border .2s ease-in-out}.thumbnail>img,.thumbnail a>img{margin-right:auto;margin-left:auto}a.thumbnail:hover,a.thumbnail:focus,a.thumbnail.active{border-color:#337ab7}.thumbnail .caption{padding:9px;color:#333}.alert{padding:15px;margin-bottom:20px;border:1px solid transparent;border-radius:4px}.alert h4{margin-top:0;color:inherit}.alert .alert-link{font-weight:700}.alert>p,.alert>ul{margin-bottom:0}.alert>p+p{margin-top:5px}.alert-dismissable,.alert-dismissible{padding-right:35px}.alert-dismissable .close,.alert-dismissible .close{position:relative;top:-2px;right:-21px;color:inherit}.alert-success{color:#3c763d;background-color:#dff0d8;border-color:#d6e9c6}.alert-success hr{border-top-color:#c9e2b3}.alert-success .alert-link{color:#2b542c}.alert-info{color:#31708f;background-color:#d9edf7;border-color:#bce8f1}.alert-info hr{border-top-color:#a6e1ec}.alert-info .alert-link{color:#245269}.alert-warning{color:#8a6d3b;background-color:#fcf8e3;border-color:#faebcc}.alert-warning hr{border-top-color:#f7e1b5}.alert-warning .alert-link{color:#66512c}.alert-danger{color:#a94442;background-color:#f2dede;border-color:#ebccd1}.alert-danger hr{border-top-color:#e4b9c0}.alert-danger .alert-link{color:#843534}@keyframes progress-bar-stripes{from{background-position:40px 0}to{background-position:0 0}}.progress{height:20px;margin-bottom:20px;overflow:hidden;background-color:#f5f5f5;border-radius:4px;box-shadow:inset 0 1px 2px rgba(0,0,0,.1)}.progress-bar{float:left;width:0;height:100%;font-size:12px;line-height:20px;color:#fff;text-align:center;background-color:#337ab7;box-shadow:inset 0 -1px 0 rgba(0,0,0,.15);transition:width .6s ease}.progress-striped .progress-bar,.progress-bar-striped{background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-size:40px 40px}.progress.active .progress-bar,.progress-bar.active{animation:progress-bar-stripes 2s linear infinite}.progress-bar-success{background-color:#5cb85c}.progress-striped .progress-bar-success{background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)}.progress-bar-info{background-color:#5bc0de}.progress-striped .progress-bar-info{background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)}.progress-bar-warning{background-color:#f0ad4e}.progress-striped .progress-bar-warning{background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)}.progress-bar-danger{background-color:#d9534f}.progress-striped .progress-bar-danger{background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)}.media{margin-top:15px}.media:first-child{margin-top:0}.media,.media-body{overflow:hidden;zoom:1}.media-body{width:10000px}.media-object{display:block}.media-object.img-thumbnail{max-width:none}.media-right,.media>.pull-right{padding-left:10px}.media-left,.media>.pull-left{padding-right:10px}.media-left,.media-right,.media-body{display:table-cell;vertical-align:top}.media-middle{vertical-align:middle}.media-bottom{vertical-align:bottom}.media-heading{margin-top:0;margin-bottom:5px}.media-list{padding-left:0;list-style:none}.list-group{padding-left:0;margin-bottom:20px}.list-group-item{position:relative;display:block;padding:10px 15px;margin-bottom:-1px;background-color:#fff;border:1px solid #ddd}.list-group-item:first-child{border-top-left-radius:4px;border-top-right-radius:4px}.list-group-item:last-child{margin-bottom:0;border-bottom-right-radius:4px;border-bottom-left-radius:4px}a.list-group-item,button.list-group-item{color:#555}a.list-group-item .list-group-item-heading,button.list-group-item .list-group-item-heading{color:#333}a.list-group-item:hover,button.list-group-item:hover,a.list-group-item:focus,button.list-group-item:focus{color:#555;text-decoration:none;background-color:#f5f5f5}button.list-group-item{width:100%;text-align:left}.list-group-item.disabled,.list-group-item.disabled:hover,.list-group-item.disabled:focus{color:#777;cursor:not-allowed;background-color:#eee}.list-group-item.disabled .list-group-item-heading,.list-group-item.disabled:hover .list-group-item-heading,.list-group-item.disabled:focus .list-group-item-heading{color:inherit}.list-group-item.disabled .list-group-item-text,.list-group-item.disabled:hover .list-group-item-text,.list-group-item.disabled:focus .list-group-item-text{color:#777}.list-group-item.active,.list-group-item.active:hover,.list-group-item.active:focus{z-index:2;color:#fff;background-color:#337ab7;border-color:#337ab7}.list-group-item.active .list-group-item-heading,.list-group-item.active:hover .list-group-item-heading,.list-group-item.active:focus .list-group-item-heading,.list-group-item.active .list-group-item-heading>small,.list-group-item.active:hover .list-group-item-heading>small,.list-group-item.active:focus .list-group-item-heading>small,.list-group-item.active .list-group-item-heading>.small,.list-group-item.active:hover .list-group-item-heading>.small,.list-group-item.active:focus .list-group-item-heading>.small{color:inherit}.list-group-item.active .list-group-item-text,.list-group-item.active:hover .list-group-item-text,.list-group-item.active:focus .list-group-item-text{color:#c7ddef}.list-group-item-success{color:#3c763d;background-color:#dff0d8}a.list-group-item-success,button.list-group-item-success{color:#3c763d}a.list-group-item-success .list-group-item-heading,button.list-group-item-success .list-group-item-heading{color:inherit}a.list-group-item-success:hover,button.list-group-item-success:hover,a.list-group-item-success:focus,button.list-group-item-success:focus{color:#3c763d;background-color:#d0e9c6}a.list-group-item-success.active,button.list-group-item-success.active,a.list-group-item-success.active:hover,button.list-group-item-success.active:hover,a.list-group-item-success.active:focus,button.list-group-item-success.active:focus{color:#fff;background-color:#3c763d;border-color:#3c763d}.list-group-item-info{color:#31708f;background-color:#d9edf7}a.list-group-item-info,button.list-group-item-info{color:#31708f}a.list-group-item-info .list-group-item-heading,button.list-group-item-info .list-group-item-heading{color:inherit}a.list-group-item-info:hover,button.list-group-item-info:hover,a.list-group-item-info:focus,button.list-group-item-info:focus{color:#31708f;background-color:#c4e3f3}a.list-group-item-info.active,button.list-group-item-info.active,a.list-group-item-info.active:hover,button.list-group-item-info.active:hover,a.list-group-item-info.active:focus,button.list-group-item-info.active:focus{color:#fff;background-color:#31708f;border-color:#31708f}.list-group-item-warning{color:#8a6d3b;background-color:#fcf8e3}a.list-group-item-warning,button.list-group-item-warning{color:#8a6d3b}a.list-group-item-warning .list-group-item-heading,button.list-group-item-warning .list-group-item-heading{color:inherit}a.list-group-item-warning:hover,button.list-group-item-warning:hover,a.list-group-item-warning:focus,button.list-group-item-warning:focus{color:#8a6d3b;background-color:#faf2cc}a.list-group-item-warning.active,button.list-group-item-warning.active,a.list-group-item-warning.active:hover,button.list-group-item-warning.active:hover,a.list-group-item-warning.active:focus,button.list-group-item-warning.active:focus{color:#fff;background-color:#8a6d3b;border-color:#8a6d3b}.list-group-item-danger{color:#a94442;background-color:#f2dede}a.list-group-item-danger,button.list-group-item-danger{color:#a94442}a.list-group-item-danger .list-group-item-heading,button.list-group-item-danger .list-group-item-heading{color:inherit}a.list-group-item-danger:hover,button.list-group-item-danger:hover,a.list-group-item-danger:focus,button.list-group-item-danger:focus{color:#a94442;background-color:#ebcccc}a.list-group-item-danger.active,button.list-group-item-danger.active,a.list-group-item-danger.active:hover,button.list-group-item-danger.active:hover,a.list-group-item-danger.active:focus,button.list-group-item-danger.active:focus{color:#fff;background-color:#a94442;border-color:#a94442}.list-group-item-heading{margin-top:0;margin-bottom:5px}.list-group-item-text{margin-bottom:0;line-height:1.3}.panel{margin-bottom:20px;background-color:#fff;border:1px solid transparent;border-radius:4px;box-shadow:0 1px 1px rgba(0,0,0,.05)}.panel-body{padding:15px}.panel-heading{padding:10px 15px;border-bottom:1px solid transparent;border-top-left-radius:3px;border-top-right-radius:3px}.panel-heading>.dropdown .dropdown-toggle{color:inherit}.panel-title{margin-top:0;margin-bottom:0;font-size:16px;color:inherit}.panel-title>a,.panel-title>small,.panel-title>.small,.panel-title>small>a,.panel-title>.small>a{color:inherit}.panel-footer{padding:10px 15px;background-color:#f5f5f5;border-top:1px solid #ddd;border-bottom-right-radius:3px;border-bottom-left-radius:3px}.panel>.list-group,.panel>.panel-collapse>.list-group{margin-bottom:0}.panel>.list-group .list-group-item,.panel>.panel-collapse>.list-group .list-group-item{border-width:1px 0;border-radius:0}.panel>.list-group:first-child .list-group-item:first-child,.panel>.panel-collapse>.list-group:first-child .list-group-item:first-child{border-top:0;border-top-left-radius:3px;border-top-right-radius:3px}.panel>.list-group:last-child .list-group-item:last-child,.panel>.panel-collapse>.list-group:last-child .list-group-item:last-child{border-bottom:0;border-bottom-right-radius:3px;border-bottom-left-radius:3px}.panel>.panel-heading+.panel-collapse>.list-group .list-group-item:first-child{border-top-left-radius:0;border-top-right-radius:0}.panel-heading+.list-group .list-group-item:first-child{border-top-width:0}.list-group+.panel-footer{border-top-width:0}.panel>.table,.panel>.table-responsive>.table,.panel>.panel-collapse>.table{margin-bottom:0}.panel>.table caption,.panel>.table-responsive>.table caption,.panel>.panel-collapse>.table caption{padding-right:15px;padding-left:15px}.panel>.table:first-child,.panel>.table-responsive:first-child>.table:first-child{border-top-left-radius:3px;border-top-right-radius:3px}.panel>.table:first-child>thead:first-child>tr:first-child,.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child,.panel>.table:first-child>tbody:first-child>tr:first-child,.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child{border-top-left-radius:3px;border-top-right-radius:3px}.panel>.table:first-child>thead:first-child>tr:first-child td:first-child,.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child td:first-child,.panel>.table:first-child>tbody:first-child>tr:first-child td:first-child,.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child td:first-child,.panel>.table:first-child>thead:first-child>tr:first-child th:first-child,.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child th:first-child,.panel>.table:first-child>tbody:first-child>tr:first-child th:first-child,.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child th:first-child{border-top-left-radius:3px}.panel>.table:first-child>thead:first-child>tr:first-child td:last-child,.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child td:last-child,.panel>.table:first-child>tbody:first-child>tr:first-child td:last-child,.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child td:last-child,.panel>.table:first-child>thead:first-child>tr:first-child th:last-child,.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child th:last-child,.panel>.table:first-child>tbody:first-child>tr:first-child th:last-child,.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child th:last-child{border-top-right-radius:3px}.panel>.table:last-child,.panel>.table-responsive:last-child>.table:last-child{border-bottom-right-radius:3px;border-bottom-left-radius:3px}.panel>.table:last-child>tbody:last-child>tr:last-child,.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child,.panel>.table:last-child>tfoot:last-child>tr:last-child,.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child{border-bottom-right-radius:3px;border-bottom-left-radius:3px}.panel>.table:last-child>tbody:last-child>tr:last-child td:first-child,.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child td:first-child,.panel>.table:last-child>tfoot:last-child>tr:last-child td:first-child,.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child td:first-child,.panel>.table:last-child>tbody:last-child>tr:last-child th:first-child,.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child th:first-child,.panel>.table:last-child>tfoot:last-child>tr:last-child th:first-child,.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child th:first-child{border-bottom-left-radius:3px}.panel>.table:last-child>tbody:last-child>tr:last-child td:last-child,.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child td:last-child,.panel>.table:last-child>tfoot:last-child>tr:last-child td:last-child,.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child td:last-child,.panel>.table:last-child>tbody:last-child>tr:last-child th:last-child,.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child th:last-child,.panel>.table:last-child>tfoot:last-child>tr:last-child th:last-child,.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child th:last-child{border-bottom-right-radius:3px}.panel>.panel-body+.table,.panel>.panel-body+.table-responsive,.panel>.table+.panel-body,.panel>.table-responsive+.panel-body{border-top:1px solid #ddd}.panel>.table>tbody:first-child>tr:first-child th,.panel>.table>tbody:first-child>tr:first-child td{border-top:0}.panel>.table-bordered,.panel>.table-responsive>.table-bordered{border:0}.panel>.table-bordered>thead>tr>th:first-child,.panel>.table-responsive>.table-bordered>thead>tr>th:first-child,.panel>.table-bordered>tbody>tr>th:first-child,.panel>.table-responsive>.table-bordered>tbody>tr>th:first-child,.panel>.table-bordered>tfoot>tr>th:first-child,.panel>.table-responsive>.table-bordered>tfoot>tr>th:first-child,.panel>.table-bordered>thead>tr>td:first-child,.panel>.table-responsive>.table-bordered>thead>tr>td:first-child,.panel>.table-bordered>tbody>tr>td:first-child,.panel>.table-responsive>.table-bordered>tbody>tr>td:first-child,.panel>.table-bordered>tfoot>tr>td:first-child,.panel>.table-responsive>.table-bordered>tfoot>tr>td:first-child{border-left:0}.panel>.table-bordered>thead>tr>th:last-child,.panel>.table-responsive>.table-bordered>thead>tr>th:last-child,.panel>.table-bordered>tbody>tr>th:last-child,.panel>.table-responsive>.table-bordered>tbody>tr>th:last-child,.panel>.table-bordered>tfoot>tr>th:last-child,.panel>.table-responsive>.table-bordered>tfoot>tr>th:last-child,.panel>.table-bordered>thead>tr>td:last-child,.panel>.table-responsive>.table-bordered>thead>tr>td:last-child,.panel>.table-bordered>tbody>tr>td:last-child,.panel>.table-responsive>.table-bordered>tbody>tr>td:last-child,.panel>.table-bordered>tfoot>tr>td:last-child,.panel>.table-responsive>.table-bordered>tfoot>tr>td:last-child{border-right:0}.panel>.table-bordered>thead>tr:first-child>td,.panel>.table-responsive>.table-bordered>thead>tr:first-child>td,.panel>.table-bordered>tbody>tr:first-child>td,.panel>.table-responsive>.table-bordered>tbody>tr:first-child>td,.panel>.table-bordered>thead>tr:first-child>th,.panel>.table-responsive>.table-bordered>thead>tr:first-child>th,.panel>.table-bordered>tbody>tr:first-child>th,.panel>.table-responsive>.table-bordered>tbody>tr:first-child>th{border-bottom:0}.panel>.table-bordered>tbody>tr:last-child>td,.panel>.table-responsive>.table-bordered>tbody>tr:last-child>td,.panel>.table-bordered>tfoot>tr:last-child>td,.panel>.table-responsive>.table-bordered>tfoot>tr:last-child>td,.panel>.table-bordered>tbody>tr:last-child>th,.panel>.table-responsive>.table-bordered>tbody>tr:last-child>th,.panel>.table-bordered>tfoot>tr:last-child>th,.panel>.table-responsive>.table-bordered>tfoot>tr:last-child>th{border-bottom:0}.panel>.table-responsive{margin-bottom:0;border:0}.panel-group{margin-bottom:20px}.panel-group .panel{margin-bottom:0;border-radius:4px}.panel-group .panel+.panel{margin-top:5px}.panel-group .panel-heading{border-bottom:0}.panel-group .panel-heading+.panel-collapse>.panel-body,.panel-group .panel-heading+.panel-collapse>.list-group{border-top:1px solid #ddd}.panel-group .panel-footer{border-top:0}.panel-group .panel-footer+.panel-collapse .panel-body{border-bottom:1px solid #ddd}.panel-default{border-color:#ddd}.panel-default>.panel-heading{color:#333;background-color:#f5f5f5;border-color:#ddd}.panel-default>.panel-heading+.panel-collapse>.panel-body{border-top-color:#ddd}.panel-default>.panel-heading .badge{color:#f5f5f5;background-color:#333}.panel-default>.panel-footer+.panel-collapse>.panel-body{border-bottom-color:#ddd}.panel-primary{border-color:#337ab7}.panel-primary>.panel-heading{color:#fff;background-color:#337ab7;border-color:#337ab7}.panel-primary>.panel-heading+.panel-collapse>.panel-body{border-top-color:#337ab7}.panel-primary>.panel-heading .badge{color:#337ab7;background-color:#fff}.panel-primary>.panel-footer+.panel-collapse>.panel-body{border-bottom-color:#337ab7}.panel-success{border-color:#d6e9c6}.panel-success>.panel-heading{color:#3c763d;background-color:#dff0d8;border-color:#d6e9c6}.panel-success>.panel-heading+.panel-collapse>.panel-body{border-top-color:#d6e9c6}.panel-success>.panel-heading .badge{color:#dff0d8;background-color:#3c763d}.panel-success>.panel-footer+.panel-collapse>.panel-body{border-bottom-color:#d6e9c6}.panel-info{border-color:#bce8f1}.panel-info>.panel-heading{color:#31708f;background-color:#d9edf7;border-color:#bce8f1}.panel-info>.panel-heading+.panel-collapse>.panel-body{border-top-color:#bce8f1}.panel-info>.panel-heading .badge{color:#d9edf7;background-color:#31708f}.panel-info>.panel-footer+.panel-collapse>.panel-body{border-bottom-color:#bce8f1}.panel-warning{border-color:#faebcc}.panel-warning>.panel-heading{color:#8a6d3b;background-color:#fcf8e3;border-color:#faebcc}.panel-warning>.panel-heading+.panel-collapse>.panel-body{border-top-color:#faebcc}.panel-warning>.panel-heading .badge{color:#fcf8e3;background-color:#8a6d3b}.panel-warning>.panel-footer+.panel-collapse>.panel-body{border-bottom-color:#faebcc}.panel-danger{border-color:#ebccd1}.panel-danger>.panel-heading{color:#a94442;background-color:#f2dede;border-color:#ebccd1}.panel-danger>.panel-heading+.panel-collapse>.panel-body{border-top-color:#ebccd1}.panel-danger>.panel-heading .badge{color:#f2dede;background-color:#a94442}.panel-danger>.panel-footer+.panel-collapse>.panel-body{border-bottom-color:#ebccd1}.embed-responsive{position:relative;display:block;height:0;padding:0;overflow:hidden}.embed-responsive .embed-responsive-item,.embed-responsive iframe,.embed-responsive embed,.embed-responsive object,.embed-responsive video{position:absolute;top:0;bottom:0;left:0;width:100%;height:100%;border:0}.embed-responsive-16by9{padding-bottom:56.25%}.embed-responsive-4by3{padding-bottom:75%}.well{min-height:20px;padding:19px;margin-bottom:20px;background-color:#f5f5f5;border:1px solid #e3e3e3;border-radius:4px;box-shadow:inset 0 1px 1px rgba(0,0,0,.05)}.well blockquote{border-color:#ddd;border-color:rgba(0,0,0,.15)}.well-lg{padding:24px;border-radius:6px}.well-sm{padding:9px;border-radius:3px}.close{float:right;font-size:21px;font-weight:700;line-height:1;color:#000;text-shadow:0 1px 0 #fff;filter:alpha(opacity=20);opacity:.2}.close:hover,.close:focus{color:#000;text-decoration:none;cursor:pointer;filter:alpha(opacity=50);opacity:.5}button.close{-webkit-appearance:none;padding:0;cursor:pointer;background:transparent;border:0}.modal-open{overflow:hidden}.modal{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1050;display:none;overflow:hidden;-webkit-overflow-scrolling:touch;outline:0}.modal.fade .modal-dialog{transition:transform .3s ease-out;transform:translate(0,-25%)}.modal.in .modal-dialog{transform:translate(0,0)}.modal-open .modal{overflow-x:hidden;overflow-y:auto}.modal-dialog{position:relative;width:auto;margin:10px}.modal-content{position:relative;background-color:#fff;background-clip:padding-box;border:1px solid #999;border:1px solid rgba(0,0,0,.2);border-radius:6px;outline:0;box-shadow:0 3px 9px rgba(0,0,0,.5)}.modal-backdrop{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1040;background-color:#000}.modal-backdrop.fade{filter:alpha(opacity=0);opacity:0}.modal-backdrop.in{filter:alpha(opacity=50);opacity:.5}.modal-header{padding:15px;border-bottom:1px solid #e5e5e5}.modal-header .close{margin-top:-2px}.modal-title{margin:0;line-height:1.42857143}.modal-body{position:relative;padding:15px}.modal-footer{padding:15px;text-align:right;border-top:1px solid #e5e5e5}.modal-footer .btn+.btn{margin-bottom:0;margin-left:5px}.modal-footer .btn-group .btn+.btn{margin-left:-1px}.modal-footer .btn-block+.btn-block{margin-left:0}.modal-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}@media(min-width:768px){.modal-dialog{width:600px;margin:30px auto}.modal-content{box-shadow:0 5px 15px rgba(0,0,0,.5)}.modal-sm{width:300px}}@media(min-width:992px){.modal-lg{width:900px}}.tooltip{position:absolute;z-index:1070;display:block;font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:12px;font-style:normal;font-weight:400;line-height:1.42857143;text-align:left;text-align:start;text-decoration:none;text-shadow:none;text-transform:none;letter-spacing:normal;word-break:normal;word-spacing:normal;word-wrap:normal;white-space:normal;filter:alpha(opacity=0);opacity:0;line-break:auto}.tooltip.in{filter:alpha(opacity=90);opacity:.9}.tooltip.top{padding:5px 0;margin-top:-3px}.tooltip.right{padding:0 5px;margin-left:3px}.tooltip.bottom{padding:5px 0;margin-top:3px}.tooltip.left{padding:0 5px;margin-left:-3px}.tooltip-inner{max-width:200px;padding:3px 8px;color:#fff;text-align:center;background-color:#000;border-radius:4px}.tooltip-arrow{position:absolute;width:0;height:0;border-color:transparent;border-style:solid}.tooltip.top .tooltip-arrow{bottom:0;left:50%;margin-left:-5px;border-width:5px 5px 0;border-top-color:#000}.tooltip.top-left .tooltip-arrow{right:5px;bottom:0;margin-bottom:-5px;border-width:5px 5px 0;border-top-color:#000}.tooltip.top-right .tooltip-arrow{bottom:0;left:5px;margin-bottom:-5px;border-width:5px 5px 0;border-top-color:#000}.tooltip.right .tooltip-arrow{top:50%;left:0;margin-top:-5px;border-width:5px 5px 5px 0;border-right-color:#000}.tooltip.left .tooltip-arrow{top:50%;right:0;margin-top:-5px;border-width:5px 0 5px 5px;border-left-color:#000}.tooltip.bottom .tooltip-arrow{top:0;left:50%;margin-left:-5px;border-width:0 5px 5px;border-bottom-color:#000}.tooltip.bottom-left .tooltip-arrow{top:0;right:5px;margin-top:-5px;border-width:0 5px 5px;border-bottom-color:#000}.tooltip.bottom-right .tooltip-arrow{top:0;left:5px;margin-top:-5px;border-width:0 5px 5px;border-bottom-color:#000}.popover{position:absolute;top:0;left:0;z-index:1060;display:none;max-width:276px;padding:1px;font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:14px;font-style:normal;font-weight:400;line-height:1.42857143;text-align:left;text-align:start;text-decoration:none;text-shadow:none;text-transform:none;letter-spacing:normal;word-break:normal;word-spacing:normal;word-wrap:normal;white-space:normal;background-color:#fff;background-clip:padding-box;border:1px solid #ccc;border:1px solid rgba(0,0,0,.2);border-radius:6px;box-shadow:0 5px 10px rgba(0,0,0,.2);line-break:auto}.popover.top{margin-top:-10px}.popover.right{margin-left:10px}.popover.bottom{margin-top:10px}.popover.left{margin-left:-10px}.popover-title{padding:8px 14px;margin:0;font-size:14px;background-color:#f7f7f7;border-bottom:1px solid #ebebeb;border-radius:5px 5px 0 0}.popover-content{padding:9px 14px}.popover>.arrow,.popover>.arrow:after{position:absolute;display:block;width:0;height:0;border-color:transparent;border-style:solid}.popover>.arrow{border-width:11px}.popover>.arrow:after{content:\"\";border-width:10px}.popover.top>.arrow{bottom:-11px;left:50%;margin-left:-11px;border-top-color:#999;border-top-color:rgba(0,0,0,.25);border-bottom-width:0}.popover.top>.arrow:after{bottom:1px;margin-left:-10px;content:\" \";border-top-color:#fff;border-bottom-width:0}.popover.right>.arrow{top:50%;left:-11px;margin-top:-11px;border-right-color:#999;border-right-color:rgba(0,0,0,.25);border-left-width:0}.popover.right>.arrow:after{bottom:-10px;left:1px;content:\" \";border-right-color:#fff;border-left-width:0}.popover.bottom>.arrow{top:-11px;left:50%;margin-left:-11px;border-top-width:0;border-bottom-color:#999;border-bottom-color:rgba(0,0,0,.25)}.popover.bottom>.arrow:after{top:1px;margin-left:-10px;content:\" \";border-top-width:0;border-bottom-color:#fff}.popover.left>.arrow{top:50%;right:-11px;margin-top:-11px;border-right-width:0;border-left-color:#999;border-left-color:rgba(0,0,0,.25)}.popover.left>.arrow:after{right:1px;bottom:-10px;content:\" \";border-right-width:0;border-left-color:#fff}.carousel{position:relative}.carousel-inner{position:relative;width:100%;overflow:hidden}.carousel-inner>.item{position:relative;display:none;transition:.6s ease-in-out left}.carousel-inner>.item>img,.carousel-inner>.item>a>img{line-height:1}@media all and (transform-3d),(-webkit-transform-3d){.carousel-inner>.item{transition:transform .6s ease-in-out;backface-visibility:hidden;perspective:1000px}.carousel-inner>.item.next,.carousel-inner>.item.active.right{left:0;transform:translate3d(100%,0,0)}.carousel-inner>.item.prev,.carousel-inner>.item.active.left{left:0;transform:translate3d(-100%,0,0)}.carousel-inner>.item.next.left,.carousel-inner>.item.prev.right,.carousel-inner>.item.active{left:0;transform:translate3d(0,0,0)}}.carousel-inner>.active,.carousel-inner>.next,.carousel-inner>.prev{display:block}.carousel-inner>.active{left:0}.carousel-inner>.next,.carousel-inner>.prev{position:absolute;top:0;width:100%}.carousel-inner>.next{left:100%}.carousel-inner>.prev{left:-100%}.carousel-inner>.next.left,.carousel-inner>.prev.right{left:0}.carousel-inner>.active.left{left:-100%}.carousel-inner>.active.right{left:100%}.carousel-control{position:absolute;top:0;bottom:0;left:0;width:15%;font-size:20px;color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.6);background-color:transparent;filter:alpha(opacity=50);opacity:.5}.carousel-control.left{background-image:linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000',endColorstr='#00000000',GradientType=1);background-repeat:repeat-x}.carousel-control.right{right:0;left:auto;background-image:linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000',endColorstr='#80000000',GradientType=1);background-repeat:repeat-x}.carousel-control:hover,.carousel-control:focus{color:#fff;text-decoration:none;filter:alpha(opacity=90);outline:0;opacity:.9}.carousel-control .icon-prev,.carousel-control .icon-next,.carousel-control .glyphicon-chevron-left,.carousel-control .glyphicon-chevron-right{position:absolute;top:50%;z-index:5;display:inline-block;margin-top:-10px}.carousel-control .icon-prev,.carousel-control .glyphicon-chevron-left{left:50%;margin-left:-10px}.carousel-control .icon-next,.carousel-control .glyphicon-chevron-right{right:50%;margin-right:-10px}.carousel-control .icon-prev,.carousel-control .icon-next{width:20px;height:20px;font-family:serif;line-height:1}.carousel-control .icon-prev:before{content:'\\2039'}.carousel-control .icon-next:before{content:'\\203a'}.carousel-indicators{position:absolute;bottom:10px;left:50%;z-index:15;width:60%;padding-left:0;margin-left:-30%;text-align:center;list-style:none}.carousel-indicators li{display:inline-block;width:10px;height:10px;margin:1px;text-indent:-999px;cursor:pointer;background-color:#000 \\9;background-color:transparent;border:1px solid #fff;border-radius:10px}.carousel-indicators .active{width:12px;height:12px;margin:0;background-color:#fff}.carousel-caption{position:absolute;right:15%;bottom:20px;left:15%;z-index:10;padding-top:20px;padding-bottom:20px;color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.6)}.carousel-caption .btn{text-shadow:none}@media screen and (min-width:768px){.carousel-control .glyphicon-chevron-left,.carousel-control .glyphicon-chevron-right,.carousel-control .icon-prev,.carousel-control .icon-next{width:30px;height:30px;margin-top:-10px;font-size:30px}.carousel-control .glyphicon-chevron-left,.carousel-control .icon-prev{margin-left:-10px}.carousel-control .glyphicon-chevron-right,.carousel-control .icon-next{margin-right:-10px}.carousel-caption{right:20%;left:20%;padding-bottom:30px}.carousel-indicators{bottom:20px}}.clearfix:before,.clearfix:after,.dl-horizontal dd:before,.dl-horizontal dd:after,.container:before,.container:after,.container-fluid:before,.container-fluid:after,.row:before,.row:after,.form-horizontal .form-group:before,.form-horizontal .form-group:after,.btn-toolbar:before,.btn-toolbar:after,.btn-group-vertical>.btn-group:before,.btn-group-vertical>.btn-group:after,.nav:before,.nav:after,.navbar:before,.navbar:after,.navbar-header:before,.navbar-header:after,.navbar-collapse:before,.navbar-collapse:after,.pager:before,.pager:after,.panel-body:before,.panel-body:after,.modal-header:before,.modal-header:after,.modal-footer:before,.modal-footer:after{display:table;content:\" \"}.clearfix:after,.dl-horizontal dd:after,.container:after,.container-fluid:after,.row:after,.form-horizontal .form-group:after,.btn-toolbar:after,.btn-group-vertical>.btn-group:after,.nav:after,.navbar:after,.navbar-header:after,.navbar-collapse:after,.pager:after,.panel-body:after,.modal-header:after,.modal-footer:after{clear:both}.center-block{display:block;margin-right:auto;margin-left:auto}.pull-right{float:right!important}.pull-left{float:left!important}.hide{display:none!important}.show{display:block!important}.invisible{visibility:hidden}.text-hide{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0}.hidden{display:none!important}.affix{position:fixed}@-ms-viewport{width:device-width}.visible-xs,.visible-sm,.visible-md,.visible-lg{display:none!important}.visible-xs-block,.visible-xs-inline,.visible-xs-inline-block,.visible-sm-block,.visible-sm-inline,.visible-sm-inline-block,.visible-md-block,.visible-md-inline,.visible-md-inline-block,.visible-lg-block,.visible-lg-inline,.visible-lg-inline-block{display:none!important}@media(max-width:767px){.visible-xs{display:block!important}table.visible-xs{display:table!important}tr.visible-xs{display:table-row!important}th.visible-xs,td.visible-xs{display:table-cell!important}}@media(max-width:767px){.visible-xs-block{display:block!important}}@media(max-width:767px){.visible-xs-inline{display:inline!important}}@media(max-width:767px){.visible-xs-inline-block{display:inline-block!important}}@media(min-width:768px) and (max-width:991px){.visible-sm{display:block!important}table.visible-sm{display:table!important}tr.visible-sm{display:table-row!important}th.visible-sm,td.visible-sm{display:table-cell!important}}@media(min-width:768px) and (max-width:991px){.visible-sm-block{display:block!important}}@media(min-width:768px) and (max-width:991px){.visible-sm-inline{display:inline!important}}@media(min-width:768px) and (max-width:991px){.visible-sm-inline-block{display:inline-block!important}}@media(min-width:992px) and (max-width:1199px){.visible-md{display:block!important}table.visible-md{display:table!important}tr.visible-md{display:table-row!important}th.visible-md,td.visible-md{display:table-cell!important}}@media(min-width:992px) and (max-width:1199px){.visible-md-block{display:block!important}}@media(min-width:992px) and (max-width:1199px){.visible-md-inline{display:inline!important}}@media(min-width:992px) and (max-width:1199px){.visible-md-inline-block{display:inline-block!important}}@media(min-width:1200px){.visible-lg{display:block!important}table.visible-lg{display:table!important}tr.visible-lg{display:table-row!important}th.visible-lg,td.visible-lg{display:table-cell!important}}@media(min-width:1200px){.visible-lg-block{display:block!important}}@media(min-width:1200px){.visible-lg-inline{display:inline!important}}@media(min-width:1200px){.visible-lg-inline-block{display:inline-block!important}}@media(max-width:767px){.hidden-xs{display:none!important}}@media(min-width:768px) and (max-width:991px){.hidden-sm{display:none!important}}@media(min-width:992px) and (max-width:1199px){.hidden-md{display:none!important}}@media(min-width:1200px){.hidden-lg{display:none!important}}.visible-print{display:none!important}@media print{.visible-print{display:block!important}table.visible-print{display:table!important}tr.visible-print{display:table-row!important}th.visible-print,td.visible-print{display:table-cell!important}}.visible-print-block{display:none!important}@media print{.visible-print-block{display:block!important}}.visible-print-inline{display:none!important}@media print{.visible-print-inline{display:inline!important}}.visible-print-inline-block{display:none!important}@media print{.visible-print-inline-block{display:inline-block!important}}@media print{.hidden-print{display:none!important}}\n/*# sourceMappingURL=bootstrap.css.map */", ""]);
 
 /***/ }),
 /* 4 */
@@ -34249,8 +34719,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/kdodds/Desktop/angular-formly-website/node_modules/css-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/postcss-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/app/utilities.css", function() {
-			var newContent = require("!!/Users/kdodds/Desktop/angular-formly-website/node_modules/css-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/postcss-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/app/utilities.css");
+		module.hot.accept("!!/home/abdellatif/www/contrib/angular-formly-website/node_modules/css-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/postcss-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/app/utilities.css", function() {
+			var newContent = require("!!/home/abdellatif/www/contrib/angular-formly-website/node_modules/css-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/postcss-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/app/utilities.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -34279,8 +34749,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/kdodds/Desktop/angular-formly-website/node_modules/css-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/postcss-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/app/index.css", function() {
-			var newContent = require("!!/Users/kdodds/Desktop/angular-formly-website/node_modules/css-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/postcss-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/app/index.css");
+		module.hot.accept("!!/home/abdellatif/www/contrib/angular-formly-website/node_modules/css-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/postcss-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/app/index.css", function() {
+			var newContent = require("!!/home/abdellatif/www/contrib/angular-formly-website/node_modules/css-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/postcss-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/app/index.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -46476,8 +46946,8 @@
 /***/ (function(module, exports) {
 
 	/**
-	 * @license AngularJS v1.6.6
-	 * (c) 2010-2017 Google, Inc. http://angularjs.org
+	 * @license AngularJS v1.6.9
+	 * (c) 2010-2018 Google, Inc. http://angularjs.org
 	 * License: MIT
 	 */
 	(function(window, angular) {'use strict';
@@ -46491,8 +46961,6 @@
 	 * [<abbr title="Accessible Rich Internet Applications">ARIA</abbr>](http://www.w3.org/TR/wai-aria/)
 	 * attributes that convey state or semantic information about the application for users
 	 * of assistive technologies, such as screen readers.
-	 *
-	 * <div doc-module-components="ngAria"></div>
 	 *
 	 * ## Usage
 	 *
@@ -46536,7 +47004,7 @@
 	 * {@link guide/accessibility Developer Guide}.
 	 */
 	var ngAriaModule = angular.module('ngAria', ['ng']).
-	                        info({ angularVersion: '1.6.6' }).
+	                        info({ angularVersion: '1.6.9' }).
 	                        provider('$aria', $AriaProvider);
 
 	/**
@@ -46893,8 +47361,8 @@
 /***/ (function(module, exports) {
 
 	/**
-	 * @license AngularJS v1.6.6
-	 * (c) 2010-2017 Google, Inc. http://angularjs.org
+	 * @license AngularJS v1.6.9
+	 * (c) 2010-2018 Google, Inc. http://angularjs.org
 	 * License: MIT
 	 */
 	(function(window, angular) {'use strict';
@@ -47422,11 +47890,11 @@
 	 * Note that only browsers that support CSS transitions and/or keyframe animations are capable of
 	 * rendering animations triggered via `$animateCss` (bad news for IE9 and lower).
 	 *
-	 * ## Usage
+	 * ## General Use
 	 * Once again, `$animateCss` is designed to be used inside of a registered JavaScript animation that
 	 * is powered by ngAnimate. It is possible to use `$animateCss` directly inside of a directive, however,
 	 * any automatic control over cancelling animations and/or preventing animations from being run on
-	 * child elements will not be handled by Angular. For this to work as expected, please use `$animate` to
+	 * child elements will not be handled by AngularJS. For this to work as expected, please use `$animate` to
 	 * trigger the animation and then setup a JavaScript animation that injects `$animateCss` to trigger
 	 * the CSS animation.
 	 *
@@ -48208,6 +48676,12 @@
 	      function onAnimationProgress(event) {
 	        event.stopPropagation();
 	        var ev = event.originalEvent || event;
+
+	        if (ev.target !== node) {
+	          // Since TransitionEvent / AnimationEvent bubble up,
+	          // we have to ignore events by finished child animations
+	          return;
+	        }
 
 	        // we now always use `Date.now()` due to the recent changes with
 	        // event.timeStamp in Firefox, Webkit and Chrome (see #13494 for more info)
@@ -49662,7 +50136,7 @@
 
 	      while (parentNode) {
 	        if (!rootNodeDetected) {
-	          // angular doesn't want to attempt to animate elements outside of the application
+	          // AngularJS doesn't want to attempt to animate elements outside of the application
 	          // therefore we need to ensure that the rootElement is an ancestor of the current element
 	          rootNodeDetected = (parentNode === rootNode);
 	        }
@@ -50275,11 +50749,9 @@
 	 * @description
 	 *
 	 * The `ngAnimate` module provides support for CSS-based animations (keyframes and transitions) as well as JavaScript-based animations via
-	 * callback hooks. Animations are not enabled by default, however, by including `ngAnimate` the animation hooks are enabled for an Angular app.
+	 * callback hooks. Animations are not enabled by default, however, by including `ngAnimate` the animation hooks are enabled for an AngularJS app.
 	 *
-	 * <div doc-module-components="ngAnimate"></div>
-	 *
-	 * # Usage
+	 * ## Usage
 	 * Simply put, there are two ways to make use of animations when ngAnimate is used: by using **CSS** and **JavaScript**. The former works purely based
 	 * using CSS (by using matching CSS selectors/styles) and the latter triggers animations that are registered via `module.animation()`. For
 	 * both CSS and JS animations the sole requirement is to have a matching `CSS class` that exists both in the registered animation and within
@@ -50297,7 +50769,7 @@
 	 * | {@link ng.directive:ngIf#animations ngIf}                                                                | enter and leave                                                          |
 	 * | {@link ng.directive:ngClass#animations ngClass}                                                          | add and remove (the CSS class(es) present)                               |
 	 * | {@link ng.directive:ngShow#animations ngShow} & {@link ng.directive:ngHide#animations ngHide}            | add and remove (the ng-hide class value)                                 |
-	 * | {@link ng.directive:form#animation-hooks form} & {@link ng.directive:ngModel#animation-hooks ngModel}    | add and remove (dirty, pristine, valid, invalid & all other validations) |
+	 * | {@link ng.directive:form#animations form} & {@link ng.directive:ngModel#animations ngModel}    | add and remove (dirty, pristine, valid, invalid & all other validations) |
 	 * | {@link module:ngMessages#animations ngMessages}                                                          | add and remove (ng-active & ng-inactive)                                 |
 	 * | {@link module:ngMessages#animations ngMessage}                                                           | enter and leave                                                          |
 	 *
@@ -50306,7 +50778,7 @@
 	 * ## CSS-based Animations
 	 *
 	 * CSS-based animations with ngAnimate are unique since they require no JavaScript code at all. By using a CSS class that we reference between our HTML
-	 * and CSS code we can create an animation that will be picked up by Angular when an underlying directive performs an operation.
+	 * and CSS code we can create an animation that will be picked up by AngularJS when an underlying directive performs an operation.
 	 *
 	 * The example below shows how an `enter` animation can be made possible on an element using `ng-if`:
 	 *
@@ -50565,7 +51037,7 @@
 	 *     enter: function(element, doneFn) {
 	 *       jQuery(element).fadeIn(1000, doneFn);
 	 *
-	 *       // remember to call doneFn so that angular
+	 *       // remember to call doneFn so that AngularJS
 	 *       // knows that the animation has concluded
 	 *     },
 	 *
@@ -50613,7 +51085,7 @@
 	 *
 	 * ## CSS + JS Animations Together
 	 *
-	 * AngularJS 1.4 and higher has taken steps to make the amalgamation of CSS and JS animations more flexible. However, unlike earlier versions of Angular,
+	 * AngularJS 1.4 and higher has taken steps to make the amalgamation of CSS and JS animations more flexible. However, unlike earlier versions of AngularJS,
 	 * defining CSS and JS animations to work off of the same CSS class will not work anymore. Therefore the example below will only result in **JS animations taking
 	 * charge of the animation**:
 	 *
@@ -50929,7 +51401,7 @@
 	 *
 	 * ## Using $animate in your directive code
 	 *
-	 * So far we've explored how to feed in animations into an Angular application, but how do we trigger animations within our own directives in our application?
+	 * So far we've explored how to feed in animations into an AngularJS application, but how do we trigger animations within our own directives in our application?
 	 * By injecting the `$animate` service into our directive code, we can trigger structural and class-based hooks which can then be consumed by animations. Let's
 	 * imagine we have a greeting box that shows and hides itself when the data changes
 	 *
@@ -50972,7 +51444,7 @@
 	 * });
 	 * ```
 	 *
-	 * (Note that earlier versions of Angular prior to v1.4 required the promise code to be wrapped using `$scope.$apply(...)`. This is not the case
+	 * (Note that earlier versions of AngularJS prior to v1.4 required the promise code to be wrapped using `$scope.$apply(...)`. This is not the case
 	 * anymore.)
 	 *
 	 * In addition to the animation promise, we can also make use of animation-related callbacks within our directives and controller code by registering
@@ -50987,7 +51459,7 @@
 	 * }])
 	 * ```
 	 *
-	 * (Note that you will need to trigger a digest within the callback to get angular to notice any scope-related changes.)
+	 * (Note that you will need to trigger a digest within the callback to get AngularJS to notice any scope-related changes.)
 	 */
 
 	var copy;
@@ -51014,7 +51486,7 @@
 	 * Click here {@link ng.$animate to learn more about animations with `$animate`}.
 	 */
 	angular.module('ngAnimate', [], function initAngularHelpers() {
-	  // Access helpers from angular core.
+	  // Access helpers from AngularJS core.
 	  // Do it inside a `config` block to ensure `window.angular` is available.
 	  noop        = angular.noop;
 	  copy        = angular.copy;
@@ -51029,7 +51501,7 @@
 	  isFunction  = angular.isFunction;
 	  isElement   = angular.isElement;
 	})
-	  .info({ angularVersion: '1.6.6' })
+	  .info({ angularVersion: '1.6.9' })
 	  .directive('ngAnimateSwap', ngAnimateSwapDirective)
 
 	  .directive('ngAnimateChildren', $$AnimateChildrenDirective)
@@ -51456,8 +51928,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/kdodds/Desktop/angular-formly-website/node_modules/css-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/postcss-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/app/states/root/components/directives/fd-example-search.css", function() {
-			var newContent = require("!!/Users/kdodds/Desktop/angular-formly-website/node_modules/css-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/postcss-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/app/states/root/components/directives/fd-example-search.css");
+		module.hot.accept("!!/home/abdellatif/www/contrib/angular-formly-website/node_modules/css-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/postcss-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/app/states/root/components/directives/fd-example-search.css", function() {
+			var newContent = require("!!/home/abdellatif/www/contrib/angular-formly-website/node_modules/css-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/postcss-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/app/states/root/components/directives/fd-example-search.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -51498,8 +51970,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/kdodds/Desktop/angular-formly-website/node_modules/css-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/postcss-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/app/states/root/index.css", function() {
-			var newContent = require("!!/Users/kdodds/Desktop/angular-formly-website/node_modules/css-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/postcss-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/app/states/root/index.css");
+		module.hot.accept("!!/home/abdellatif/www/contrib/angular-formly-website/node_modules/css-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/postcss-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/app/states/root/index.css", function() {
+			var newContent = require("!!/home/abdellatif/www/contrib/angular-formly-website/node_modules/css-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/postcss-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/app/states/root/index.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -51518,7 +51990,7 @@
 /* 46 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div>\n  <div class=\"jumbotron\">\n    <h1 class=\"+text-center +font-size-xlarge\">\n      <a fd-event-navigate=\"goHome\"><span style=\"display:block\"><img ng-src=\"{{::vm.logoSrc}}\" alt=\"Angular Formly logo\"/></span><span>angular-formly</span></a>\n      <br />\n      <small>JavaScript Powered Forms for AngularJS</small>\n    </h1>\n  </div>\n\n  <div class=\"container +margin-bottom-large\">\n    <hr/>\n    <div class=\"row +margin-bottom-large\">\n      <div class=\"col-sm-3\">\n        <p class=\"left-nav-title\">Links</p>\n        <a href=\"http://docs.angular-formly.com\">Documentation</a>\n        <br/>\n        <a href=\"http://docs.angular-formly.com/docs/learn-angular-formly\">Learn angular-formly</a>\n        <br/>\n        <a href=\"http://help.angular-formly.com\">Get Help</a>\n        <br/>\n        <a fd-event-navigate=\"showUsers\">Who uses angular-formly?</a>\n        <br/>\n        <a href=\"https://ng2.angular-formly.com\">Formly for Angular 2</a>\n        <hr/>\n        <p class=\"left-nav-title\">Examples</p>\n        <fd-example-search examples=\"vm.examples\"></fd-example-search>\n        <hr />\n        <a href=\"https://github.com/formly-js/angular-formly#financial-support\">$upport angular-formly</a>\n      </div>\n      <div class=\"col-sm-9 main-ui-view\">\n        <div ui-view></div>\n        <hr />\n        <a href=\"https://app.codesponsor.io/link/PKGFLnhDiFvsUA5P4kAXfiPs/formly-js/angular-formly\" rel=\"nofollow\"><img src=\"https://app.codesponsor.io/embed/PKGFLnhDiFvsUA5P4kAXfiPs/formly-js/angular-formly.svg\" style=\"width: 888px; height: 68px;\" alt=\"Sponsor\" /></a>\n      </div>\n    </div>\n  </div>\n\n</div>\n"
+	module.exports = "<div>\n  <div class=\"jumbotron\">\n    <h1 class=\"+text-center +font-size-xlarge\">\n      <a fd-event-navigate=\"goHome\"><span style=\"display:block\"><img ng-src=\"{{::vm.logoSrc}}\" alt=\"Angular Formly logo\"/></span><span>angular-formly</span></a>\n      <br />\n      <small>JavaScript Powered Forms for AngularJS</small>\n    </h1>\n  </div>\n\n  <div class=\"container +margin-bottom-large\">\n    <hr/>\n    <div class=\"row +margin-bottom-large\">\n      <div class=\"col-sm-3\">\n        <p class=\"left-nav-title\">Links</p>\n        <a href=\"http://docs.angular-formly.com\">Documentation</a>\n        <br/>\n        <a href=\"http://docs.angular-formly.com/docs/learn-angular-formly\">Learn angular-formly</a>\n        <br/>\n        <a href=\"http://help.angular-formly.com\">Get Help</a>\n        <br/>\n        <a fd-event-navigate=\"showUsers\">Who uses angular-formly?</a>\n        <br/>\n        <a href=\"https://formly-js.github.io/ngx-formly\">Formly for Angular 2</a>\n        <hr/>\n        <p class=\"left-nav-title\">Examples</p>\n        <fd-example-search examples=\"vm.examples\"></fd-example-search>\n        <hr />\n        <a href=\"https://github.com/formly-js/angular-formly#financial-support\">$upport angular-formly</a>\n      </div>\n      <div class=\"col-sm-9 main-ui-view\">\n        <div ui-view></div>\n        <hr />\n        <a href=\"https://app.codesponsor.io/link/PKGFLnhDiFvsUA5P4kAXfiPs/formly-js/angular-formly\" rel=\"nofollow\"><img src=\"https://app.codesponsor.io/embed/PKGFLnhDiFvsUA5P4kAXfiPs/formly-js/angular-formly.svg\" style=\"width: 888px; height: 68px;\" alt=\"Sponsor\" /></a>\n      </div>\n    </div>\n  </div>\n\n</div>\n"
 
 /***/ }),
 /* 47 */
@@ -52613,8 +53085,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/kdodds/Desktop/angular-formly-website/node_modules/css-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/postcss-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/highlight.js/styles/github.css", function() {
-			var newContent = require("!!/Users/kdodds/Desktop/angular-formly-website/node_modules/css-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/postcss-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/highlight.js/styles/github.css");
+		module.hot.accept("!!/home/abdellatif/www/contrib/angular-formly-website/node_modules/css-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/postcss-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/highlight.js/styles/github.css", function() {
+			var newContent = require("!!/home/abdellatif/www/contrib/angular-formly-website/node_modules/css-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/postcss-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/highlight.js/styles/github.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -66536,8 +67008,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/kdodds/Desktop/angular-formly-website/node_modules/css-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/postcss-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/app/states/root/children/users/index.css", function() {
-			var newContent = require("!!/Users/kdodds/Desktop/angular-formly-website/node_modules/css-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/postcss-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/app/states/root/children/users/index.css");
+		module.hot.accept("!!/home/abdellatif/www/contrib/angular-formly-website/node_modules/css-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/postcss-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/app/states/root/children/users/index.css", function() {
+			var newContent = require("!!/home/abdellatif/www/contrib/angular-formly-website/node_modules/css-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/postcss-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/app/states/root/children/users/index.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -66612,8 +67084,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/kdodds/Desktop/angular-formly-website/node_modules/css-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/postcss-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/app/states/root/children/users/components/directives/fd-user-logo.css", function() {
-			var newContent = require("!!/Users/kdodds/Desktop/angular-formly-website/node_modules/css-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/postcss-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/app/states/root/children/users/components/directives/fd-user-logo.css");
+		module.hot.accept("!!/home/abdellatif/www/contrib/angular-formly-website/node_modules/css-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/postcss-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/app/states/root/children/users/components/directives/fd-user-logo.css", function() {
+			var newContent = require("!!/home/abdellatif/www/contrib/angular-formly-website/node_modules/css-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/postcss-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/app/states/root/children/users/components/directives/fd-user-logo.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -66821,8 +67293,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/kdodds/Desktop/angular-formly-website/node_modules/css-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/postcss-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/app/states/root/children/examples/children/category/children/example/components/directives/fd-jsbin-example.css", function() {
-			var newContent = require("!!/Users/kdodds/Desktop/angular-formly-website/node_modules/css-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/node_modules/postcss-loader/index.js!/Users/kdodds/Desktop/angular-formly-website/app/states/root/children/examples/children/category/children/example/components/directives/fd-jsbin-example.css");
+		module.hot.accept("!!/home/abdellatif/www/contrib/angular-formly-website/node_modules/css-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/postcss-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/app/states/root/children/examples/children/category/children/example/components/directives/fd-jsbin-example.css", function() {
+			var newContent = require("!!/home/abdellatif/www/contrib/angular-formly-website/node_modules/css-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/node_modules/postcss-loader/index.js!/home/abdellatif/www/contrib/angular-formly-website/app/states/root/children/examples/children/category/children/example/components/directives/fd-jsbin-example.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
