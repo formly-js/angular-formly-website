@@ -51834,7 +51834,7 @@
 	  controllerAs: "vm",
 	  children: __webpack_require__(48),
 	  resolve: {
-	    examples: stateUtils.resolveRequest("https://rawgit.com/formly-js/angular-formly-website/master/examples.json"),
+	    examples: stateUtils.resolveRequest("/examples.json"),
 	    logoSrc: stateUtils.resolveIdentity(logoSrc)
 	  }
 	};
@@ -51990,7 +51990,7 @@
 /* 46 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div>\n  <div class=\"jumbotron\">\n    <h1 class=\"+text-center +font-size-xlarge\">\n      <a fd-event-navigate=\"goHome\"><span style=\"display:block\"><img ng-src=\"{{::vm.logoSrc}}\" alt=\"Angular Formly logo\"/></span><span>angular-formly</span></a>\n      <br />\n      <small>JavaScript Powered Forms for AngularJS</small>\n    </h1>\n  </div>\n\n  <div class=\"container +margin-bottom-large\">\n    <hr/>\n    <div class=\"row +margin-bottom-large\">\n      <div class=\"col-sm-3\">\n        <p class=\"left-nav-title\">Links</p>\n        <a href=\"http://docs.angular-formly.com\">Documentation</a>\n        <br/>\n        <a href=\"http://docs.angular-formly.com/docs/learn-angular-formly\">Learn angular-formly</a>\n        <br/>\n        <a href=\"http://help.angular-formly.com\">Get Help</a>\n        <br/>\n        <a fd-event-navigate=\"showUsers\">Who uses angular-formly?</a>\n        <br/>\n        <a href=\"https://formly-js.github.io/ngx-formly\">Formly for Angular 2</a>\n        <hr/>\n        <p class=\"left-nav-title\">Examples</p>\n        <fd-example-search examples=\"vm.examples\"></fd-example-search>\n        <hr />\n        <a href=\"https://github.com/formly-js/angular-formly#financial-support\">$upport angular-formly</a>\n      </div>\n      <div class=\"col-sm-9 main-ui-view\">\n        <div ui-view></div>\n        <hr />\n        <a href=\"https://app.codesponsor.io/link/PKGFLnhDiFvsUA5P4kAXfiPs/formly-js/angular-formly\" rel=\"nofollow\"><img src=\"https://app.codesponsor.io/embed/PKGFLnhDiFvsUA5P4kAXfiPs/formly-js/angular-formly.svg\" style=\"width: 888px; height: 68px;\" alt=\"Sponsor\" /></a>\n      </div>\n    </div>\n  </div>\n\n</div>\n"
+  module.exports = "<div>\n  <div class=\"jumbotron\">\n    <h1 class=\"+text-center +font-size-xlarge\">\n      <a fd-event-navigate=\"goHome\"><span style=\"display:block\"><img ng-src=\"{{::vm.logoSrc}}\" alt=\"Angular Formly logo\"/></span><span>angular-formly</span></a>\n<br />(UNMAINTAINED)      <br />\n      <small>JavaScript Powered Forms for AngularJS</small>\n    </h1>\n  </div>\n\n  <div class=\"container +margin-bottom-large\">\n    <hr/>\n    <div class=\"row +margin-bottom-large\">\n      <div class=\"col-sm-3\">\n        <p class=\"left-nav-title\">Links</p>\n        <a href=\"http://docs.angular-formly.com\">Documentation</a>\n        <br/>\n        <a href=\"http://docs.angular-formly.com/docs/learn-angular-formly\">Learn angular-formly</a>\n        <br/>\n        <a href=\"http://help.angular-formly.com\">Get Help</a>\n        <br/>\n        <a fd-event-navigate=\"showUsers\">Who uses angular-formly?</a>\n        <br/>\n        <a href=\"https://formly-js.github.io/ngx-formly\">Formly for Angular 2</a>\n        <hr/>\n        <p class=\"left-nav-title\">Examples</p>\n        <fd-example-search examples=\"vm.examples\"></fd-example-search>\n        <hr />\n        <a href=\"https://github.com/formly-js/angular-formly#financial-support\">$upport angular-formly</a>\n      </div>\n      <div class=\"col-sm-9 main-ui-view\">\n        <div ui-view></div>\n         </div>\n    </div>\n  </div>\n\n</div>\n"
 
 /***/ }),
 /* 47 */
@@ -67273,7 +67273,7 @@
 	      link: function link(scope, el) {
 	        // const s = scope.noSSL === 'true' ? '' : 's';
 	        var s = ""; // maybe eventually we'll add HTTPS support again...
-	        el.replaceWith(angular.element("\n          <div class=\"fd-jsbin-example\">\n            <iframe width=\"100%\"\n                    height=\"100%\"\n                    src=\"http" + s + "://jsbin.com/" + scope.jsbinId + "/embed?output\">\n            </iframe>\n          </div>\n        "));
+	        el.replaceWith(angular.element("\n          <div class=\"fd-jsbin-example\">\n            <iframe width=\"100%\"\n                    height=\"100%\"\n                    src=\"http://jsbin.com/" + scope.jsbinId + "/embed?output\">\n            </iframe>\n          </div>\n        "));
 	      }
 	    };
 	  }
@@ -67340,7 +67340,7 @@
 /* 240 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div>\n  <div ng-if=\"vm.example\">\n    <h2>{{vm.example.title}}</h2>\n    <fd-jsbin-example jsbin-id=\"{{::vm.example.jsbinId}}\" no-ssl=\"{{::vm.example.noSSL}}\"></fd-jsbin-example>\n  </div>\n  <div ng-if=\"!vm.example\" style=\"text-align: center\">\n    <h2>\n      :-(\n      <br/>\n      <small>Example not found</small>\n    </h2>\n    <p>\n      Why don't you look at some of the others though :-)\n    </p>\n  </div>\n  <style type=\"text/css\">\n    @media (min-width: 1600px) {\n      .container {  width: 90%; }\n    }\n  </style>\n</div>\n"
+  module.exports = "<div>\n  <div ng-if=\"vm.example\">\n    <h2><a href=\"https://jsbin.com/{{vm.example.jsbinId}}\">{{vm.example.title}}</a></h2>\n    <fd-jsbin-example jsbin-id=\"{{::vm.example.jsbinId}}\" no-ssl=\"{{::vm.example.noSSL}}\"></fd-jsbin-example>\n  </div>\n  <div ng-if=\"!vm.example\" style=\"text-align: center\">\n    <h2>\n      :-(\n      <br/>\n      <small>Example not found</small>\n    </h2>\n    <p>\n      Why don't you look at some of the others though :-)\n    </p>\n  </div>\n  <style type=\"text/css\">\n    @media (min-width: 1600px) {\n      .container {  width: 90%; }\n    }\n  </style>\n</div>\n"
 
 /***/ }),
 /* 241 */
